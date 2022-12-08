@@ -7,11 +7,11 @@ import Fitness from "./Fitness";
 import Ourblog from "./Ourblog";
 import Fotter from "../Common/Footer";
 import Review from "../About Us/Review";
-export default function Index() {
+export default function Index({headerData}) {
   return (
     <>
       <div className="hero-bg  relative">
-        <Navbar />
+        <Navbar headerData={headerData}/>
         <Hero />
       </div>
       <div className="mt-[309px] md:mt-20 lg:mt-0 sm:mt-40">
