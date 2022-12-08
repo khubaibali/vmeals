@@ -1,5 +1,4 @@
 import React from "react";
-import company from "../../assets/images/about our company-03.png";
 export default function journy() {
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
@@ -31,7 +30,7 @@ export default function journy() {
         </div>
         <div className="   col-span-12 xl:col-span-6  ">
           <img
-            src={company}
+            src="/images/about our company-03.png"
             alt=""
             className="w-full h-auto xl:mt-20 2xl:mt-0 "
           />

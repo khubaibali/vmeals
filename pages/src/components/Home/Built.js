@@ -1,7 +1,5 @@
 import React from "react";
-// import image1 from '../../assets/images/image 1-home.png'
-// import image2 from '../../assets/images/image 2-home.png'
-// import image3 from '../../assets/images/image 3-home.png'
+
 
 export default function Built() {
   return (

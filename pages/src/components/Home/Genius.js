@@ -1,5 +1,4 @@
 import React from "react";
-// import Gunjan from '../../assets/images/Gunjan-Photo 1.png'
 
 export default function Genius() {
   return (
