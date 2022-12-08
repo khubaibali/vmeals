@@ -1,0 +1,901 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  padding: 0;
+  margin: 0;
+ 
+}
+
+@font-face {
+  font-family: RobotoCondensed-Bold;
+  src: url("../pages/src/assets/font-family/RobotoCondensed-Bold.ttf");
+}
+@font-face {
+  font-family: RobotoCondensed-BoldItalic;
+  src: url("../pages/src/assets/font-family/RobotoCondensed-BoldItalic.ttf");
+}
+@font-face {
+  font-family: RobotoCondensed-Italic;
+  src: url("../pages/src/assets/font-family/RobotoCondensed-Italic.ttf");
+}
+@font-face {
+  font-family: RobotoCondensed-Light;
+  src: url("../pages/src/assets/font-family/RobotoCondensed-Light.ttf");
+}
+@font-face {
+  font-family: RobotoCondensed-Regular;
+  src: url("../pages/src/assets/font-family/RobotoCondensed-Regular.ttf");
+}
+
+.f-f-r{
+  font-family: RobotoCondensed-Regular;
+}
+.f-f-b{
+  font-family: RobotoCondensed-Bold;
+}
+.f-f-it{
+  font-family: RobotoCondensed-Italic;
+}
+.f-f-li{
+  font-family: RobotoCondensed-Light;
+}
+
+
+
+/* all css .................................... */
+
+.hero-bg{
+  background-image: url("/images/homebg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1103px;
+  width: 100%;
+}
+.shadow-nav{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (min-width: 2550px) {
+  .hero-bg{
+    height: 1342px;
+  }
+}
+@media only screen and (max-width: 1540px) {
+  .hero-bg{
+    height: 784px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .hero-bg{
+    height: 663px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .hero-bg{
+    height: 505px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .hero-bg{
+    background-image: url("/images/header Mobile .png");
+    height: 334px;
+  }
+}
+.about-bg{
+  background-image: url("/images/abouthero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .about-bg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .about-bg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .about-bg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .about-bg{
+    background-image: url("/images/Mobileabout.png");
+    height: 291px;
+  }
+}
+.ourplansbg{
+  background-image: url("/images/ourplansbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .ourplansbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .ourplansbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .ourplansbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .ourplansbg{
+    background-image: url("/images/ourplansmob.png");
+    height: 291px;
+  }
+}
+.classicbg{
+  background-image: url("/images/classicbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .classicbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .classicbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .classicbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .classicbg{
+    background-image: url("/images/classicdietmob.png");
+    height: 291px;
+  }
+}
+.greendietbg{
+  background-image: url("/images/greendietbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .greendietbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .greendietbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .greendietbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .greendietbg{
+    background-image: url("/images/greendietbg.png");
+    height: 291px;
+  }
+}
+.gluentdietbg{
+  background-image: url("/images/gluentdietbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .gluentdietbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .gluentdietbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .gluentdietbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .gluentdietbg{
+    background-image: url("/images/gluentdietbg.png");
+    height: 291px;
+  }
+}
+.indianfusiondietbg{
+  background-image: url("/images/indianfusiondietbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .indianfusiondietbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .indianfusiondietbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .indianfusiondietbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .indianfusiondietbg{
+    background-image: url("/images/indianfusiondietbg.png");
+    height: 291px;
+  }
+}
+.PescatarianDietbg{
+  background-image: url("/images/PescatarianDietbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .PescatarianDietbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .PescatarianDietbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .PescatarianDietbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .PescatarianDietbg{
+    background-image: url("/images/PescatarianDietbg.png");
+    height: 291px;
+  }
+}
+.blog-bg{
+  background-image: url("/images/OurBlog.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .blog-bg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .blog-bg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .blog-bg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .blog-bg{
+    background-image: url("/images/ourplansmob.png");
+    height: 291px;
+  }
+
+}
+.ketodietbg{
+  background-image: url("/images/ketodietbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .ketodietbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .ketodietbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .ketodietbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .ketodietbg{
+    background-image: url("/images/ketodietbg.png");
+    height: 291px;
+  }
+
+}
+.personalinformationbg{
+  background-image: url("/images/personalinformationbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .personalinformationbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .personalinformationbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .personalinformationbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .personalinformationbg{
+    background-image: url("/images/personalinformationbg.png");
+    height: 291px;
+  }
+
+}
+.DeliveryInformationbg{
+  background-image: url("/images/DeliveryInformationbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .DeliveryInformationbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .DeliveryInformationbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .DeliveryInformationbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .DeliveryInformationbg{
+    background-image: url("/images/DeliveryInformationbg.png");
+    height: 291px;
+  }
+
+}
+  .blog-bg-details{
+    background-image: url("/images/Blogdetailsbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 558px;
+  }
+  @media only screen and (max-width: 1540px) {
+    .blog-bg-details{
+      height: 440px;
+    }
+  }
+  @media only screen and (max-width: 1280px) {
+    .blog-bg-details{
+      height: 369px;
+    }
+  }
+  @media only screen and (max-width: 820px) {
+    .blog-bg-details{
+      height: 340px;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    .blog-bg-details{
+      background-image: url("/images/Blogdetailsbg.png");
+      height: 291px;
+    }
+}
+.faq-bg{
+  background-image: url("/images/faq-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .faq-bg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .faq-bg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .faq-bg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .faq-bg{
+    background-image: url("/images/faq-mob-bg.png");
+    height: 291px;
+  }
+}
+.our-partner-bg{
+  background-image: url("/images/ourpartnerbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .our-partner-bg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .our-partner-bg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .our-partner-bg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .our-partner-bg{
+    background-image: url("/images/ourpartner-bg.png");
+    height: 291px;
+  }
+}
+.contactus-bg{
+  background-image: url("/images/contactus-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .contactus-bg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .contactus-bg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .contactus-bg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .contactus-bg{
+    background-image: url("/images/contactusmob-bg.png");
+    height: 291px;
+  }
+}
+  .green-gradiant{
+    background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%) !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .liner{
+    background: linear-gradient(180deg, #41A53D 0%, #24721D 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+.blog-liner{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(111.54deg, rgba(255, 255, 255, 0.16) 26.09%, rgba(255, 255, 255, 0.04) 64.23%);
+backdrop-filter: blur(5px);
+border-radius: 0px 0px 30px 30px;
+}
+.input-footer{
+  background: #F3F3F3;
+border: 2px solid #3E9D2B;
+border-radius: 30px;
+}
+.input-footer::placeholder{
+  font-family: RobotoCondensed-Bold;
+  font-size: 22px;
+  padding-left: 29px;
+  padding-top: 21px;
+
+}
+.fitnessbg{
+  background: linear-gradient(180deg, #41A53D 0%, #24721D 100%);
+}
+.sub{
+  background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (max-width: 1540px) {
+  .input-footer::placeholder{
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .input-footer::placeholder{
+    font-size: 10px;
+    padding-left: 0px;
+    padding-top: unset !important;
+  
+  }
+}
+
+.outslick-setting .slick-prev{
+
+  height: 55px;
+  width: 55px;
+  z-index: 1;
+  left: 38%;
+  top: unset;
+  bottom: -50%;
+}
+.outslick-setting .slick-next{
+
+  height: 55px;
+  width: 55px;
+  z-index: 1;
+  right: 38%;
+  top: unset;
+  bottom:-50%;
+}
+@media only screen and (max-width: 1540px) {
+  .outslick-setting .slick-next{
+    height: 30px;
+    width: 30px;
+    right: 41%;
+  }
+  .outslick-setting .slick-prev{
+    height: 30px;
+    width: 30px;
+    left: 41%;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .outslick-setting .slick-next{
+    height: 55px;
+  width: 55px;
+  z-index: 1;
+  right: 38%;
+  bottom:-78%;
+  }
+  .outslick-setting .slick-prev{
+    height: 55px;
+    width: 55px;
+    left: 38%;
+    bottom:-78%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .outslick-setting .slick-next{
+    height: 28px;
+  width: 28px;
+  z-index: 1;
+  right: 38%;
+  bottom:-50%;
+  }
+  .outslick-setting .slick-prev{
+    height: 28px;
+    width: 28px;
+    left: 38%;
+    bottom:-50%;
+  }
+}
+.input-register{
+  background: #FFFFFF;
+border: 1px solid #41A53D;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+font-size: 18px;
+line-height: 21px;
+font-family: RobotoCondensed-Bold;
+padding: 17px 0px 17px 19px;
+outline: unset;
+width: 100%;
+}
+@media only screen and (max-width: 1540px) {
+  .input-register{
+    font-size: 14px;
+    padding: 13px 0px 13px 19px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .input-register{
+    font-size: 14px;
+    padding: 13px 0px 13px 19px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .input-register{
+    font-size: 14px;
+    padding: 13px 0px 13px 19px;
+    width: 100%;
+  }
+}
+.message-register{
+  background: #FFFFFF;
+  border: 1px solid #41A53D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: RobotoCondensed-Bold;
+  padding: 16px 0px 12px 25px;
+  outline: unset;
+  width: 100%;
+}
+.input-register-mob{
+  background: #FFFFFF;
+  border: 1px solid #41A53D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  line-height: 21px;
+  font-family: RobotoCondensed-Bold;
+  padding: 17px 28px 17px 19px;
+  outline: unset;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 100%;
+  
+}
+.input-register-mob:focus{
+  --tw-ring-shadow:unset ;
+}
+.mobile-btn{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+@media only screen and (max-width: 1540px) {
+  .input-register-mob{
+    font-size: 15px;
+    padding: 13px 15px 13px 19px;
+    width: 100%;
+  }
+ 
+}
+@media only screen and (max-width: 820px) {
+  .message-register{
+    width: 100%;
+  }
+  .input-register-mob{
+    width: 100%;
+  
+  }
+}@media only screen and (max-width: 420px) {
+  .message-register{
+    width: 100%;
+  }
+  .input-register-mob{
+    width: 100%;
+  
+  }
+ 
+}
+
+.submit{
+  background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.contact-btn{
+  border: 1px solid #41A53D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: RobotoCondensed-Bold;
+  padding: 17px 144px 17px 19px;
+  outline: unset;
+  position: relative;
+  width: 100%;
+}
+@media only screen and (max-width: 1540px) {
+  .contact-btn{
+    font-size: 14px;
+    padding: 13px 127px 13px 19px;
+    
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .contact-btn{
+    font-size: 14px;
+    padding: 13px 0px 13px 19px;
+    width: 100%;
+    
+  }
+}
+@media only screen and (max-width: 420px) {
+  .contact-btn{
+    padding:13px 99px 13px 19px;
+    width: 100%;
+  }
+}
+
+
+.faq-btn{
+  border: 1px solid #41A53D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  font-size: 30px;
+  line-height: 21px;
+  font-family: RobotoCondensed-Bold;
+  padding: 41px 83px 41px 19px;
+  outline: unset;
+  position: relative;
+}
+@media only screen and (max-width: 1540px) {
+  .faq-btn{
+    font-size: 14px;
+    padding: 13px 83px 13px 19px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .faq-btn{
+    font-size: 12px;
+    padding: 13px 9px 13px 0px;
+  }
+  .faqscrol{
+    max-width: 785px;
+    min-width: 785px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .planscrol{
+    max-width: 1016px;
+    min-width: 1016px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+.cardurdu{
+  background: #E6F5E5;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+}
+.classic{
+  background-image: url("/images/imagedata.png");
+background-repeat: no-repeat;
+background-size: cover;
+}
+.Green{
+  background-image: url("/images/green.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Gluten{
+  background-image: url("/images/gluent.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Indian{
+  background-image: url("/images/indian.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Pescatarian{
+  background-image: url("/images/percian.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Keto{
+  background-image: url("/images/keto.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.testtingcard{
+
+height: 300px;
+width: 350px;
+}
+@media only screen and (max-width: 1540px) {
+  .testtingcard{  
+  height: 259px;
+      width: 267px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .testtingcard{  
+    height: 259px;
+    width: 301px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .testtingcard{  
+    width: 370px;
+    height: 275px;
+  }
+}
+.cardblog{
+  background: #E6F5E5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+.cusntn{
+  background: #A4ED9F;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+.checkinpu{
+  background: #A4ED9F;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+height: 30px;
+width: 30px;
+color: #A4ED9F;
+outline: unset;
+--tw-ring-color:unset;
+}
+.checkinpu:checked {
+  background-image: url("/images/checkinp.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  --tw-ring-color:unset;
+}
+.checkinpu:focus {
+  --tw-ring-color:unset;
+  --tw-ring-offset-shadow:unset;
+  --tw-ring-shadow:unset;
+  border: none;
+}
+
+.personscrd{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(111.54deg, rgba(255, 255, 255, 0.16) 26.09%, rgba(255, 255, 255, 0.04) 64.23%);
+backdrop-filter: blur(10px);
+border-radius: 30px;
+}
+.personalslick .slick-prev {
+  left: unset;
+  right: 53px;
+  top: unset;
+  bottom: 10px;
+  z-index: 1;
+}
+.personalslick .slick-next {
+  left: unset;
+  right: 0px;
+  top: unset;
+  bottom: 10px;
+}
+
+
+
+/* input[type="checkbox"]:checked {
+  background-image: url("/images/checkinp.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  --tw-ring-color:unset;
+} */
