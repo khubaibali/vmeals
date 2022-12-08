@@ -7,7 +7,7 @@ import Customizeplan from "./Customizeplan";
 export default function Index() {
   return (
     <>
-      <div className="DeliveryInformationbg">
+      <div className="oldsummery">
         <Navbar />
         <Hero />
       </div>

@@ -37,6 +37,7 @@ module.exports = {
         },
         sky:{
           DEFAULT: '#159189',
+          nev:"#15918A",
         },
         pink:{
           DEFAULT: '#5F1471',

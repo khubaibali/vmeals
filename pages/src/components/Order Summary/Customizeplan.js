@@ -101,6 +101,7 @@ export default function Customizeplan() {
                 </div>
               </div>
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
+              <Link href="/ordersummary" >
                 <button class=" text-smtwo md:text-xstwo sub lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-white  rounded-full    px-[52px]  md:px-[42px] lg:px-[66px] xl:px-[59px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[71px] 2xl:py-[20px]">
                   <ul className="inline-flex">
                     <li>
@@ -112,6 +113,7 @@ export default function Customizeplan() {
                     <li className="mt-2 md:mt-3 ml-2 lg:ml-4">Order Summary</li>
                   </ul>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

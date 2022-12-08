@@ -82,6 +82,7 @@ export default function Meals() {
               </div>
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
+                <Link href="/deliveryInformation" >
                   <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
                     <ul className="inline-flex">
                       <li>
@@ -95,6 +96,7 @@ export default function Meals() {
                       </li>
                     </ul>
                   </button>
+                  </Link>
                   <img
                     src="/images/arrowplans.png"
                     className="  w-[36px] xl:w-[60px] absolute top-[50%] right-0  lg:-right-4 2xl:-right-6 "
@@ -102,6 +104,7 @@ export default function Meals() {
                 </div>
               </div>
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
+              <Link href="/ordersummary" >
                 <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
                   <ul className="inline-flex">
                     <li>
@@ -113,6 +116,7 @@ export default function Meals() {
                     <li className="mt-1 md:mt-3 ml-2 lg:ml-4">Order Summary</li>
                   </ul>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

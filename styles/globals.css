@@ -394,6 +394,94 @@ body {
   }
 
 }
+.oldsummery{
+  background-image: url("/images/Ordersummerbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .oldsummery{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .oldsummery{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .oldsummery{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .oldsummery{
+    background-image: url("/images/Ordersummerbg.png");
+    height: 291px;
+  }
+
+}
+.paymentbg{
+  background-image: url("/images/paymentbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .paymentbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .paymentbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .paymentbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .paymentbg{
+    background-image: url("/images/paymentbg.png");
+    height: 291px;
+  }
+
+}
+
+.servicedubaibg{
+  background-image: url("/images/servicedubaibg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .servicedubaibg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .servicedubaibg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .servicedubaibg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .servicedubaibg{
+    background-image: url("/images/servicedubaibg.png");
+    height: 291px;
+  }
+
+}
   .blog-bg-details{
     background-image: url("/images/Blogdetailsbg.png");
     background-repeat: no-repeat;
@@ -421,6 +509,62 @@ body {
       background-image: url("/images/Blogdetailsbg.png");
       height: 291px;
     }
+}
+.servicedubaibg2{
+  background-image: url("/images/servicedubaibg2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .servicedubaibg2{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .servicedubaibg2{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .servicedubaibg2{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .servicedubaibg2{
+    background-image: url("/images/servicedubaibg2.png");
+    height: 291px;
+  }
+}
+.servicesharjah{
+  background-image: url("/images/servicesharjah.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .servicesharjah{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .servicesharjah{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .servicesharjah{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .servicesharjah{
+    background-image: url("/images/servicedubaibg2.png");
+    height: 291px;
+  }
 }
 .faq-bg{
   background-image: url("/images/faq-bg.png");
