@@ -1,8 +1,5 @@
 import React from "react";
-import aboutmission from "../../assets/images/about-mission.png";
-import Design from "../../assets/images/Design.png";
-import aboutvalue from "../../assets/images/aboutvalue.png";
-import Goal from "../../assets/images/Goal.png";
+
 
 export default function Mission() {
   return (
@@ -11,7 +8,7 @@ export default function Mission() {
         <div className="   col-span-6 xl:col-span-3  ">
           <div className="relative">
             <img
-              src={aboutmission}
+              src="/images/about-mission.png"
               className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
@@ -63,7 +60,7 @@ export default function Mission() {
         <div className="   col-span-6 xl:col-span-3  ">
           <div className="relative">
             <img
-              src={Design}
+              src="/images/Design.png"
               className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
@@ -107,7 +104,7 @@ export default function Mission() {
         <div className="   col-span-6 xl:col-span-3  ">
           <div className="relative">
             <img
-              src={aboutvalue}
+              src="/images/aboutvalue.png"
               className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
@@ -150,7 +147,7 @@ export default function Mission() {
         <div className="   col-span-6 xl:col-span-3  ">
           <div className="relative">
             <img
-              src={Goal}
+              src="/images/Goal.png"
               className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
