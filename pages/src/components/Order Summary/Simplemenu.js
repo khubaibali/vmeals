@@ -1,9 +1,5 @@
 import React from "react";
-import breakfast from "../../assets/images/breakfast.png";
-import luch from "../../assets/images/luch.png";
-import dinner from "../../assets/images/dinner.png";
-import snack from "../../assets/images/snack.png";
-import drink from "../../assets/images/drink.png";
+
 
 import Slider from "react-slick";
 
@@ -48,7 +44,7 @@ export default function Simplemenu() {
           {/* one start */}
           <div>
             <div className="relative">
-              <img src={breakfast} className=" w-full h-[300px] " />
+              <img src="/images/breakfast.png" className=" w-full h-[300px] " />
               <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Breakfast
               </button>
@@ -61,7 +57,7 @@ export default function Simplemenu() {
           {/* one start */}
           <div>
             <div className="relative">
-              <img src={luch} className=" w-full h-[300px] " />
+              <img src="/images/luch.png" className=" w-full h-[300px] " />
               <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Lunch
               </button>
@@ -74,7 +70,7 @@ export default function Simplemenu() {
           {/* one start */}
           <div>
             <div className="relative">
-              <img src={dinner} className=" w-full h-[300px] " />
+              <img src="/images/dinner.png" className=" w-full h-[300px] " />
               <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Dinner
               </button>
@@ -87,7 +83,7 @@ export default function Simplemenu() {
           {/* one start */}
           <div>
             <div className="relative">
-              <img src={snack} className=" w-full h-[300px] " />
+              <img src="/images/snack.png" className=" w-full h-[300px] " />
               <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Snack
               </button>
@@ -100,7 +96,7 @@ export default function Simplemenu() {
           {/* one start */}
           <div>
             <div className="relative">
-              <img src={drink} className=" w-full h-[300px] " />
+              <img src="/images/drink.png" className=" w-full h-[300px] " />
               <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Drink
               </button>
