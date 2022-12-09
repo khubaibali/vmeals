@@ -257,7 +257,7 @@ export default function Welcomeinput() {
           <div className="   col-span-6 xl:col-span-6 ">
             <div className="text-center">
               <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
-              Next
+                Next
               </button>
             </div>
           </div>

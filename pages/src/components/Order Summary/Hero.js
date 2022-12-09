@@ -11,12 +11,12 @@ export default function Hero() {
           <li>
             <img
               src="/images/fi-sr-home.png"
-              className="w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-2"
+              className=" w-[12px] md:w-[22px]  2xl:w-[35px] h-auto mt-1 md:mt-0 2xl:-mt-2"
             />
           </li>
-          <li className=" ml-5 2xl:ml-10">
+          <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
-              className=" w-22px 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
+              className=" w-[7px] md:w-[22px] 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
               viewBox="0 0 14 26"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -27,14 +27,14 @@ export default function Hero() {
               />
             </svg>
           </li>
-          <li className=" ml-5 2xl:ml-10">
-            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+          <li className=" ml-3 md:ml-5 2xl:ml-10">
+            <h1 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
               Our Plans
             </h1>
           </li>
-          <li className=" ml-5 2xl:ml-10">
+          <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
-              className=" w-22px 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
+              className=" w-[7px] md:w-[22px] 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
               viewBox="0 0 14 26"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -45,14 +45,14 @@ export default function Hero() {
               />
             </svg>
           </li>
-          <li className=" ml-5 2xl:ml-10">
-            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
-            Classic Diet
+          <li className=" ml-3 md:ml-5 2xl:ml-10">
+            <h1 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+              Classic Diet
             </h1>
           </li>
-          <li className=" ml-5 2xl:ml-10">
+          <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
-              className=" w-22px 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
+              className=" w-[7px] md:w-[22px] 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
               viewBox="0 0 14 26"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -63,8 +63,8 @@ export default function Hero() {
               />
             </svg>
           </li>
-          <li className=" ml-5 2xl:ml-10">
-            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+          <li className=" ml-3 md:ml-5 2xl:ml-10">
+            <h1 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
               Order Summary
             </h1>
           </li>

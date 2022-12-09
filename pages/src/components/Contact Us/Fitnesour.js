@@ -3,14 +3,14 @@ import Contactusform from "../Common/Contactusform";
 
 export default function Fitnesour() {
   return (
-    <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
-      <div className="grid grid-cols-12  gap-8 lg:gap-14 mt-10 md:my-24 ">
+    <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
+      <div className="grid grid-cols-12  gap-8 lg:gap-14 mt-10 md:mt-10 lg:my-24  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
           <h1 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
             Need Assistance?
           </h1>
           {/* code started */}
-          <div className="w-11/12 ml-auto mr-auto md:w-12/12 mt-5 md:mt-20  ">
+          <div className="w-11/12 ml-auto mr-auto md:w-12/12 mt-5 md:mt-10  lg:mt-20  ">
             <ul className="inline-flex">
               <li>
                 {" "}
@@ -84,26 +84,26 @@ export default function Fitnesour() {
             Connect with us!
           </h1>
           <div className="text-center md:text-left">
-            <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[17px] sm:px-[32px] py-[10px] sm:py-[12px] 2xl:px-[37px] 2xl:py-[18px] mt-5 2xl:mt-8">
+            <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full  w-[152px] h-[55px] md:w-[219px] md:h-[79px]  mt-5 2xl:mt-8">
               <ul className="inline-flex">
                 <li>
                   <img
                     src="/images/contactwhatsapp.png"
-                    className="w-[30px] sm:w-[40px] h-[30px] md:h-auto "
+                    className="w-[30px] sm:w-[40px]   mt-1 2xl:mt-2   "
                   />
                 </li>
-                <li className="mt-1 md:mt-3 ml-2 md:ml-4">WhatsApp</li>
+                <li className="mt-2 md:mt-3 ml-2 md:ml-4">WhatsApp</li>
               </ul>
             </button>
-            <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full ml-6 md:ml-8 px-[17px] sm:px-[32px] py-[10px] sm:py-[12px] 2xl:px-[37px] 2xl:py-[18px] mt-5 2xl:mt-8">
+            <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full ml-6 md:ml-8  w-[152px] h-[55px] md:w-[219px] md:h-[79px]  mt-5 2xl:mt-8">
               <ul className="inline-flex">
                 <li>
                   <img
                     src="/images/chat.png"
-                    className="  w-[30px] sm:w-[40px] h-[30px] md:h-auto "
+                    className="  w-[30px] sm:w-[40px]   mt-1 2xl:mt-2   "
                   />
                 </li>
-                <li className="mt-1 md:mt-3 ml-2 md:ml-4">WhatsApp</li>
+                <li className="mt-2 md:mt-3 ml-2 md:ml-4">WhatsApp</li>
               </ul>
             </button>
           </div>

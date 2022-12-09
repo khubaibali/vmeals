@@ -12,7 +12,6 @@ export default function Index() {
         <Hero />
       </div>
       <Customizeplan />
-
       <Fotter />
     </>
   );

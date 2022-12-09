@@ -11,18 +11,18 @@ export default function Mission() {
                 src="/images/about-mission.png"
                 className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
               />
-              <div className="absolute top-[31%] w-[95%] right-0 left-0">
-                <div className="text-center w-10/12 ml-auto mr-auto    ">
+              <div className="absolute top-[30%] w-[95%] right-0 left-0">
+                <div className="text-center w-11/12 ml-auto mr-auto    ">
                   <h1 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                     Mission
                   </h1>
-                  <h1 className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4">
+                  <h1 className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:mt-0">
                     At VMeals we believe that the foundation of a happy life
                     lies in how healthy and good we feel about ourselves. This
                     company is devoted to changing lives by raising awareness
                     and providing solutions for a healthy lifestyle.
                   </h1>
-                  <h1 className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4 ">
+                  <h1 className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2  ">
                     In today’s world, it is becoming more difficult to manage a
                     busy lifestyle and schedule, especially in the United Arab
                     Emirates where nothing stays in one place, citizens and
@@ -34,7 +34,7 @@ export default function Mission() {
                   </h1>
                 </div>
               </div>
-              <div className="absolute bottom-[10%] left-[33%] ">
+              <div className="absolute bottom-[10%] left-[33%] md:left-[31%] lg:left-[33%] xl:left-[29%] 2xl:left-[34%] ">
                 <svg
                   width="101"
                   height="3"
@@ -51,7 +51,7 @@ export default function Mission() {
                     fill="#3E3E3E"
                   />
                 </svg>
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-1 text-center ">
                   01
                 </h2>
               </div>
@@ -63,8 +63,8 @@ export default function Mission() {
                 src="/images/Design.png"
                 className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
               />
-              <div className="absolute top-[31%] w-[95%] right-0 left-0">
-                <div className="text-center w-10/12 ml-auto mr-auto    ">
+              <div className="absolute top-[30%] w-[95%] right-0 left-0">
+                <div className="text-center w-11/12 ml-auto mr-auto    ">
                   <h1 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                     Vision
                   </h1>
@@ -78,7 +78,7 @@ export default function Mission() {
                   </h1>
                 </div>
               </div>
-              <div className="absolute bottom-[10%] left-[33%] ">
+              <div className="absolute bottom-[10%] left-[33%] md:left-[31%] lg:left-[33%] xl:left-[29%] 2xl:left-[34%] ">
                 <svg
                   width="101"
                   height="3"
@@ -95,7 +95,7 @@ export default function Mission() {
                     fill="#3E3E3E"
                   />
                 </svg>
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-1 text-center ">
                   02
                 </h2>
               </div>
@@ -107,8 +107,8 @@ export default function Mission() {
                 src="/images/aboutvalue.png"
                 className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
               />
-              <div className="absolute top-[31%] w-[95%] right-0 left-0">
-                <div className="text-center w-10/12 ml-auto mr-auto    ">
+              <div className="absolute top-[30%] w-[95%] right-0 left-0">
+                <div className="text-center w-11/12 ml-auto mr-auto    ">
                   <h1 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                     Value
                   </h1>
@@ -121,7 +121,7 @@ export default function Mission() {
                   </h1>
                 </div>
               </div>
-              <div className="absolute bottom-[10%] left-[33%] ">
+              <div className="absolute bottom-[10%] left-[33%] md:left-[31%] lg:left-[33%] xl:left-[29%] 2xl:left-[34%] ">
                 <svg
                   width="101"
                   height="3"
@@ -138,7 +138,7 @@ export default function Mission() {
                     fill="#3E3E3E"
                   />
                 </svg>
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-1 text-center ">
                   03
                 </h2>
               </div>
@@ -150,8 +150,8 @@ export default function Mission() {
                 src="/images/Goal.png"
                 className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
               />
-              <div className="absolute top-[31%] w-[95%] right-0 left-0">
-                <div className="text-center w-10/12 ml-auto mr-auto    ">
+              <div className="absolute top-[30%] w-[95%] right-0 left-0">
+                <div className="text-center w-11/12 ml-auto mr-auto    ">
                   <h1 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                     Goal
                   </h1>
@@ -160,7 +160,7 @@ export default function Mission() {
                     build muscle or just simply stay healthy - we are here to
                     help you achieve your desired milestone.
                   </h1>
-                  <h1 className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4 ">
+                  <h1 className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2  ">
                     We exist for people like you! Being constantly on the go,
                     working on complex projects, managing great ventures, having
                     an ambitious drive to grow in your career – it can be hard
@@ -169,7 +169,7 @@ export default function Mission() {
                   </h1>
                 </div>
               </div>
-              <div className="absolute bottom-[10%] left-[33%] ">
+              <div className="absolute bottom-[10%] left-[33%] md:left-[31%] lg:left-[33%] xl:left-[29%] 2xl:left-[34%] ">
                 <svg
                   width="101"
                   height="3"
@@ -186,7 +186,7 @@ export default function Mission() {
                     fill="#3E3E3E"
                   />
                 </svg>
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-1 text-center ">
                   04
                 </h2>
               </div>

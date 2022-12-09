@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Fitness() {
   return (
-    <div className="w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
+    <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto  my-10 md:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 lg:col-span-6  ">
           <h1 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">

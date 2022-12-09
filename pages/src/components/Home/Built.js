@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default function Built() {
   return (
     <>
@@ -8,8 +7,8 @@ export default function Built() {
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  gap-8  ">
             <div className="   col-span-12 lg:col-span-4  ">
-              <div className=" shadow-lg  sm:w-7/12 ml-auto mr-auto liner md:w-full w-[181px] h-[205px]  sm:h-[400px] 2xl:h-[539px] px-3 md:px-8 rounded-[20px] ">
-                <h1 className="  text-center text-tiny md:text-2xl 2xl:text-4xl f-f-li text-white pt-10 sm:pt-36 2xl:pt-44">
+              <div className=" shadow-lg  sm:w-7/12 ml-auto mr-auto liner  w-[181px] md:w-full h-[205px] md:h-[365px]  lg:h-[400px] 2xl:h-[539px] px-3 md:px-8 rounded-[20px] ">
+                <h1 className="  text-center text-tiny md:text-2xl 2xl:text-4xl f-f-li text-white pt-10 sm:pt-36 md:pt-24 lg:pt-36 2xl:pt-44">
                   BUILT FOR YOU
                 </h1>
                 <h2 className=" f-f-b text-center text-base md:text-2xl leading-[23px] md:leading-[31px] 2xl:leading-[46px] 2xl:text-6xl text-white pt-5 2xl:pt-10 ">

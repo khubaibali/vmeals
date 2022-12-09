@@ -12,8 +12,8 @@ export default function Index() {
         <Navbar />
         <Hero />
       </div>
-      <Abudebhisrv/>
-      <Mealabudehbhi/>
+      <Abudebhisrv />
+      <Mealabudehbhi />
       <Fotter />
     </>
   );

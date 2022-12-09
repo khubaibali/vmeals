@@ -107,15 +107,6 @@ export default function Simplemenu() {
           </div>
           {/* one end */}
 
-          {/* one start */}
-          {/* <div  >
-            <div className='relative'>
-        <img src={breakfast} className=" w-full h-[300px] "  />
-        <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">Breakfast</button>
-        </div>
-        <h1 className='text-black f-f-b text-sm 2xl:text-base text-center' >Stuffed Cheesy Omelette with Mushrooms</h1>
-        </div> */}
-          {/* one end */}
         </Slider>
       </div>
     </div>

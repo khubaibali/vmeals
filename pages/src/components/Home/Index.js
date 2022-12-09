@@ -14,7 +14,7 @@ export default function Index() {
         <Navbar />
         <Hero />
       </div>
-      <div className="mt-[309px] md:mt-20 lg:mt-0 sm:mt-40">
+      <div className="mt-[309px] md:mt-32 lg:mt-0 sm:mt-40">
         <Built />
       </div>
       <Genius />

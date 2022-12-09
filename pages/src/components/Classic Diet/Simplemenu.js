@@ -35,7 +35,7 @@ export default function Simplemenu() {
   };
   return (
     <div>
-      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-20">
+      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-5 md:my-10 lg:my-20">
         <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  leading-[56px] uppercase ">
           SAMPLE MENU
         </h1>

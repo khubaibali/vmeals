@@ -1,7 +1,4 @@
 import React from "react";
-
-
-
 import Informationslick from "./Informationslick";
 import Link from "next/link";
 
@@ -9,7 +6,7 @@ export default function Customizeplan() {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-20">
+      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-5 md:my-10 lg:my-20">
    
         <div className="grid grid-cols-12 gap-8 my-10 2xl:my-20   bg-green-light rounded-[100px] ">
           <div className="   col-span-12  lg:col-span-6  ">

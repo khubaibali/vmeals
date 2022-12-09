@@ -4,15 +4,15 @@ export default function Questions() {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <div className="relative  ">
-      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-20">
+      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
         <h1 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center  tracking-[1px] lg:tracking-[0.22em] ">
           FREQUENTLY ASKED QUESTIONS
         </h1>
 
         {/* code testing */}
-        <div className="flex flex-wrap mt-16  ">
-          <div className="w-full z-10">
-            <div className="no-scrollbar overflow-x-auto">
+        <div className="flex flex-wrap mt-5 md:mt-16  ">
+          <div className="w-full z-10  ">
+            <div className="no-scrollbar overflow-x-auto hidescrol">
               <div className=" faqscrol ">
                 <ul
                   className="flex mb-0 list-none flex-wrap   flex-row border-2 rounded-[30px] bg-white border-green "
@@ -21,7 +21,7 @@ export default function Questions() {
                   <li className="  flex-auto text-center">
                     <a
                       className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-5 py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
+                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
                         (openTab === 1
                           ? "text-white bg-green rounded-[30px]"
                           : "text- bg-white rounded-[30px] ")
@@ -40,7 +40,7 @@ export default function Questions() {
                   <li className="  flex-auto text-center">
                     <a
                       className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-5 py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
+                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
                         (openTab === 2
                           ? "text-white bg-green rounded-[30px]"
                           : "text- bg-white rounded-[30px]")
@@ -59,7 +59,7 @@ export default function Questions() {
                   <li className="  flex-auto text-center">
                     <a
                       className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-5 py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
+                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
                         (openTab === 3
                           ? "text-white bg-green rounded-[30px]"
                           : "text- bg-white rounded-[30px]")
@@ -78,7 +78,7 @@ export default function Questions() {
                   <li className="  flex-auto text-center">
                     <a
                       className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-5 py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
+                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
                         (openTab === 4
                           ? "text-white bg-green rounded-[30px]"
                           : "text- bg-white rounded-[30px]")
@@ -97,7 +97,7 @@ export default function Questions() {
                   <li className="  flex-auto text-center">
                     <a
                       className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-5 py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
+                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
                         (openTab === 5
                           ? "text-white bg-green rounded-[30px]"
                           : "text- bg-white rounded-[30px]")
@@ -116,7 +116,7 @@ export default function Questions() {
                   <li className="  flex-auto text-center">
                     <a
                       className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-5 py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
+                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
                         (openTab === 6
                           ? "text-white bg-green rounded-[30px]"
                           : "text- bg-white rounded-[30px]")
@@ -135,7 +135,7 @@ export default function Questions() {
                   <li className="  flex-auto text-center">
                     <a
                       className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-5 py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
+                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal " +
                         (openTab === 7
                           ? "text-white bg-green rounded-[30px]"
                           : "text- bg-white rounded-[30px]")

@@ -16,7 +16,7 @@ export default function Informationslick() {
       <Slider {...settings} className="personalslick">
         <div>
           <p className=" text-white f-f-li text-sm 2xl:text-tiny text-center  ">
-            {" "}
+           
             “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -34,7 +34,7 @@ export default function Informationslick() {
         </div>
         <div>
           <p className=" text-white f-f-li text-sm 2xl:text-tiny text-center  ">
-            {" "}
+           
             “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -52,7 +52,7 @@ export default function Informationslick() {
         </div>
         <div>
           <p className=" text-white f-f-li text-sm 2xl:text-tiny text-center  ">
-            {" "}
+           
             “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

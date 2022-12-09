@@ -65,6 +65,7 @@ module.exports = {
       'xsone': '9px',
       'xs': '10px',
       'smtwo': '12px',
+      'smnew': '13px',
       'sm': '15px',
       'tiny': '18px',
       'base': '20px',

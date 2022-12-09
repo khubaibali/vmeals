@@ -37,7 +37,7 @@ export default function Welcomeinput() {
             <h1 className=" text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
             </h1>
-            {/* <input placeholder='Enter your first name…' className=' input-register '  /> */}
+    
             <form>
               <div className="flex">
                 <label

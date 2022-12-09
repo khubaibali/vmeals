@@ -6,15 +6,15 @@ export default function Customizeplan() {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-20">
+      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
         {/* code testing */}
-        <div className="no-scrollbar overflow-x-auto">
+        <div className="no-scrollbar overflow-x-auto hidescrol ">
           <div className=" planscrol ">
             <div className="grid grid-cols-10  lg:gap-4  border-2 border-green   rounded-full bg-white shadow-lg ">
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
                   <Link href="/ourplans">
-                    <button class="  text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                    <button class="  text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -37,7 +37,7 @@ export default function Customizeplan() {
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
                   <Link href="/classicdiet">
-                    <button class=" text-smtwo md:text-xstwo  sub lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-white  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                    <button class=" text-smtwo md:text-xstwo  sub lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-white  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -61,7 +61,7 @@ export default function Customizeplan() {
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
                   <Link href="/personalInformation">
-                    <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                    <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -84,7 +84,7 @@ export default function Customizeplan() {
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
                 <Link href="/deliveryInformation" >
-                  <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                  <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                     <ul className="inline-flex">
                       <li>
                         <img
@@ -106,7 +106,7 @@ export default function Customizeplan() {
               </div>
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
               <Link href="/ordersummary" >
-                <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                   <ul className="inline-flex">
                     <li>
                       <img
@@ -124,9 +124,9 @@ export default function Customizeplan() {
         </div>
         {/* code testing ended */}
 
-        <div className="grid grid-cols-12 gap-8   mt-20   ">
+        <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
           <div className="   col-span-12  xl:col-span-6  ">
-            <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  leading-[56px] uppercase ">
+            <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  md:leading-[56px] uppercase ">
               (H2) Lorem ipsum dolor sit amet consectetur adipiscing
             </h1>
             <h2 class="   f-f-r text-black text-tiny  2xl:text-lg mt-2 md:mt-7  text-center xl:text-left leading-[25px] ">
@@ -483,6 +483,26 @@ export default function Customizeplan() {
                   <ul></ul>
                 </form>
               </div>
+                <div className="grid grid-cols-12 gap-8  md:mt-8   ">
+                <div className="   col-span-6 xl:col-span-6 ">
+                <ul class=" inline-flex mt-7  ">
+                <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
+                <li class=" ml-4 text-right ">
+                  <h2 class=" text-black text-base md:text-2xl f-f-b ">AED3050.00</h2>
+                  <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price inclusive of VAT</h3>
+                  </li>
+                </ul>
+          </div>
+          <div className="   col-span-6 xl:col-span-6 ">
+            <div className="text-center">
+              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8">
+              Next
+              </button>
+            </div>
+          </div>
+          </div>
+
+              
             </div>
           </div>
         </div>

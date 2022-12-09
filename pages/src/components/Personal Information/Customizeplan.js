@@ -9,15 +9,15 @@ export default function Customizeplan() {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-20">
+      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mb-5 mt-10 md:my-20">
         {/* code testing */}
-        <div className="no-scrollbar overflow-x-auto">
+        <div className="no-scrollbar overflow-x-auto hidescrol">
           <div className=" planscrol ">
             <div className="grid grid-cols-10  lg:gap-4  border-2 border-green   rounded-full bg-white shadow-lg ">
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
                   <Link href="/ourplans">
-                    <button class="  text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                    <button class="  text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[0px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -25,7 +25,7 @@ export default function Customizeplan() {
                             className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                           />
                         </li>
-                        <li className="mt-2 md:mt-3 ml-2 lg:ml-4">
+                        <li className="mt-2 md:mt-2.5 lg:mt-3 ml-2 lg:ml-4">
                           Select Plan
                         </li>
                       </ul>
@@ -41,7 +41,7 @@ export default function Customizeplan() {
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
                   <Link href="/classicdiet">
-                    <button class="  text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                    <button class="  text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[0px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -49,7 +49,7 @@ export default function Customizeplan() {
                             className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                           />
                         </li>
-                        <li className="mt-2 md:mt-3 ml-2 lg:ml-4">
+                        <li className="mt-2 md:mt-2.5 lg:mt-3 ml-2 lg:ml-4">
                           Customise Plan
                         </li>
                       </ul>
@@ -57,14 +57,14 @@ export default function Customizeplan() {
                   </Link>
                   <img
                     src="/images/arrowplans.png"
-                    className="  w-[36px] xl:w-[60px] absolute top-[50%] right-[31px] md:right-[21px]  lg:right-6 "
+                    className="  w-[36px] xl:w-[60px] absolute top-[50%] right-[31px] md:right-[17px]   lg:right-6 "
                   />
                 </div>
               </div>
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                 <div className="relative">
                 <Link href="/personalInformation" >
-                  <button class=" text-smtwo md:text-xstwo lg:text-xsone sub xl:text-smtwo 2xl:text-base f-f-r text-white  rounded-full    px-[32px] md:px-[13px] lg:px-[25px] xl:px-[17px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[29px] 2xl:py-[20px]">
+                  <button class=" text-smtwo md:text-xstwo lg:text-xsone sub xl:text-smtwo 2xl:text-base f-f-r text-white  rounded-full    px-[16px] md:px-[13px] lg:px-[25px] xl:px-[17px] addwidth py-[10px] lg:py-[6px] 2xl:px-[25px] 2xl:h-[74px]">
                     <ul className="inline-flex">
                       <li>
                         <img
@@ -72,7 +72,7 @@ export default function Customizeplan() {
                           className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                         />
                       </li>
-                      <li className="mt-2 md:mt-3 ml-2 lg:ml-4">
+                      <li className="mt-2 md:mt-2.5 lg:mt-3 ml-2 lg:ml-4">
                         Personal Information
                       </li>
                     </ul>
@@ -88,7 +88,7 @@ export default function Customizeplan() {
 
                 <div className="relative">
                   <Link href="/deliveryInformation">
-                  <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                  <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[0px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                     <ul className="inline-flex">
                       <li>
                         <img
@@ -96,7 +96,7 @@ export default function Customizeplan() {
                           className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                         />
                       </li>
-                      <li className="mt-2 md:mt-3 ml-2 lg:ml-4">
+                      <li className="mt-2 md:mt-2.5 lg:mt-3 ml-2 lg:ml-4">
                         Delivery Information
                       </li>
                     </ul>
@@ -110,7 +110,7 @@ export default function Customizeplan() {
               </div>
               <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
               <Link href="/ordersummary" >
-                <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:py-[20px]">
+                <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full     px-[32px] md:px-[25px] addwidth py-[10px] md:py-[0px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
                   <ul className="inline-flex">
                     <li>
                       <img
@@ -118,7 +118,7 @@ export default function Customizeplan() {
                         className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                       />
                     </li>
-                    <li className="mt-2 md:mt-3 ml-2 lg:ml-4">Order Summary</li>
+                    <li className="mt-2 md:mt-2.5 lg:mt-3 ml-2 lg:ml-4">Order Summary</li>
                   </ul>
                 </button>
                 </Link>
@@ -128,7 +128,7 @@ export default function Customizeplan() {
         </div>
         {/* code testing ended */}
 
-        <div className="grid grid-cols-12 gap-8 my-10 2xl:my-20   bg-green-light rounded-[100px] ">
+        <div className="grid grid-cols-12 gap-8 mt-10 md:my-10 2xl:my-20   bg-green-light rounded-[100px] ">
           <div className="   col-span-12  xl:col-span-6  ">
             <div className=" p-6 md:p-16 xl:p-7 2xl:p-[50px]">
               <h2 className=" text-green f-f-b text-center md:text-left text-xl  md:text-5xl xl:text-4xl 2xl:text-9xl  ">

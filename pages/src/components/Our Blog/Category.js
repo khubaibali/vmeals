@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Category() {
   return (
     <>
-      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
+      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
         <div className="grid grid-cols-12  gap-8  ">
           <div className="   col-span-12 lg:col-span-8 xl:col-span-8  ">
             {/* inner started */}

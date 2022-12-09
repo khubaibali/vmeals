@@ -4,7 +4,7 @@ import Registerform from "../Common/Registerform";
 
 export default function Fitnesour() {
   return (
-    <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
+    <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mb-3 mt-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
           <h1 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
@@ -28,7 +28,7 @@ export default function Fitnesour() {
         </div>
         <div className="   col-span-12 lg:col-span-1 xl:col-span-1  "></div>
         <div className="   col-span-12 lg:col-span-6 xl:col-span-6  ">
-          <div className=" bg-white-light p-5 xl:p-7 2xl:p-10 rounded-lg ">
+          <div className=" bg-white-light p-5 xl:p-7 2xl:p-10 rounded-[20px] -mt-4 md:mt-0 ">
             <h2 className=" text-green f-f-b text-center md:text-left text-xl  md:text-3xl 2xl:text-5xl ">
               Register your Company
             </h2>

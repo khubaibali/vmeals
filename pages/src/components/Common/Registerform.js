@@ -36,7 +36,7 @@ export default function Registerform() {
             <h1 className=" text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
             </h1>
-            {/* <input placeholder='Enter your first name…' className=' input-register '  /> */}
+         
             <form>
               <div className="flex">
                 <label
@@ -52,19 +52,7 @@ export default function Registerform() {
                   type="button"
                 >
                   +971{" "}
-                  <svg
-                    aria-hidden="true"
-                    className="w-4 h-4 ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
+                  <img src="/images/mobilearrow.png" className=" w-[12px] h-[12px] ml-1"/>
                 </button>
                 <div
                   id="dropdown"
@@ -152,7 +140,7 @@ export default function Registerform() {
           </div>
         </div>
         <div className="text-center">
-          <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+          <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[13px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
             Submit
           </button>
         </div>

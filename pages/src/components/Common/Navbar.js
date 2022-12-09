@@ -45,7 +45,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/"
-                    className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
+                    className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo lg:text-base 2xl:text-lg "
                   >
                     Home
                   </Link>
@@ -57,7 +57,7 @@ export default function Navbar() {
                       setaboutus(!aboutus);
                     }}
                     data-dropdown-toggle="dropdownNavbar"
-                    className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
+                    className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
                   >
                     About Us{" "}
                     <svg
@@ -79,7 +79,7 @@ export default function Navbar() {
                     id="dropdownNavbar"
                     className={`${
                       aboutus ? "" : "hidden"
-                    }  z-10  block font-normal divide-y divide-gray-100 rounded shadow  absolute bg-white left-0 top-[26px] w-full md:w-[83px] lg:w-[124px]`}
+                    }  z-10  block font-normal divide-y divide-gray-100 rounded shadow  md:absolute bg-white left-0 top-[26px] w-full md:w-[83px] lg:w-[124px]`}
                   >
                     <ul
                       className="py-1  text-black f-f-b   "
@@ -118,7 +118,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/ourplans"
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     Our Plans
                   </Link>
@@ -126,7 +126,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/contactus"
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     Need Assistance?
                   </Link>
@@ -135,7 +135,7 @@ export default function Navbar() {
                 <li className=" md:hidden">
                   <Link
                     href="/ourblog"
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 "
+                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 "
                   >
                     Blog
                   </Link>
@@ -143,7 +143,7 @@ export default function Navbar() {
                 <li className=" md:hidden">
                   <a
                     href="#"
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0 "
+                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0 "
                   >
                     Arabic / English
                   </a>
@@ -151,7 +151,7 @@ export default function Navbar() {
                 <li className=" md:hidden">
                   <a
                     href="#"
-                    className="block py-2 sm:py-4   f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant pl-4 sm:px-10  text-white  "
+                    className="block py-2 sm:py-4   f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded-[100px]   green-gradiant pl-4 sm:px-10  text-white  "
                   >
                     Get Started
                   </a>
@@ -166,7 +166,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/ourblog"
-                    className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     Blog
                   </Link>
@@ -174,7 +174,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="#"
-                    className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     Arabic / English
                   </a>
@@ -182,7 +182,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="#"
-                    className="block py-4   f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant px-10  text-white  "
+                    className="block py-4   f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded-[100px]   green-gradiant px-10  text-white  "
                   >
                     Get Started
                   </a>
