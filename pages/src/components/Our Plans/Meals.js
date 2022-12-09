@@ -140,7 +140,7 @@ export default function Meals() {
                   تواصل مع خبير التغذية لدينا ودع الخبراء يقررون ما هو الأفضل
                   لك!
                 </h2>
-                <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full w-[180px] sm:px-[29px] h-[50px] sm:py-[14px] 2xl:px-[63px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute right-[17px] bottom-[21px] ">
+                <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full w-[180px] 2xl:w-[221px] sm:px-[29px] h-[50px] sm:py-[14px] 2xl:px-[63px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute right-[17px] bottom-[21px] ">
                   احجز موعدك
                 </button>
                 <img
@@ -180,7 +180,7 @@ export default function Meals() {
                     {" "}
                     Classic Diet
                   </h1>
-                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-sky shadow-lg rounded-full w-[145px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] z-10 ">
+                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-sky shadow-lg rounded-full w-[145px] 2xl:w-[219px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] z-10 ">
                     Select Plan
                   </button>
                 </div>
@@ -193,7 +193,7 @@ export default function Meals() {
                     {" "}
                     Green Diet
                   </h1>
-                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  rounded-full w-[145px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] z-10 ">
+                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  rounded-full w-[145px] 2xl:w-[219px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] z-10 ">
                     Select Plan
                   </button>
                 </div>
@@ -207,7 +207,7 @@ export default function Meals() {
                     Gluten & Dairy <br />
                     Free Diet
                   </h1>
-                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-pink rounded-full w-[145px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
+                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-pink rounded-full w-[145px] 2xl:w-[219px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
                     Select Plan
                   </button>
                 </div>
@@ -221,7 +221,7 @@ export default function Meals() {
                     Indian Fusion <br />
                     Diet
                   </h1>
-                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-brownn rounded-full w-[145px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
+                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-brownn rounded-full w-[145px] 2xl:w-[219px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
                     Select Plan
                   </button>
                 </div>
@@ -236,7 +236,7 @@ export default function Meals() {
                     <br />
                     Diet
                   </h1>
-                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-pink-dark rounded-full w-[145px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
+                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-pink-dark rounded-full w-[145px] 2xl:w-[219px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
                     Select Plan
                   </button>
                 </div>
@@ -249,7 +249,7 @@ export default function Meals() {
                     {" "}
                     Keto Diet
                   </h1>
-                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-red-dark rounded-full w-[145px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
+                  <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white bg-red-dark rounded-full w-[145px] 2xl:w-[219px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[37px] 2xl:h-[74px] mt-5 2xl:mt-8  absolute left-[14px] bottom-[21px] z-10 ">
                     Select Plan
                   </button>
                 </div>

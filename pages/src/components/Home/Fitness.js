@@ -18,7 +18,7 @@ export default function Fitness() {
           />
           <ul className="inline-flex">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-16">
+              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 01.
               </h1>
             </li>
@@ -34,7 +34,7 @@ export default function Fitness() {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-16">
+              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 02.
               </h1>
             </li>
@@ -50,7 +50,7 @@ export default function Fitness() {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-16">
+              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 03.
               </h1>
             </li>
@@ -66,7 +66,7 @@ export default function Fitness() {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-16">
+              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 04.
               </h1>
             </li>
@@ -82,7 +82,7 @@ export default function Fitness() {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-16">
+              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 05.
               </h1>
             </li>
