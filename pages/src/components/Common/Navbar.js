@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { vmealsHeader } from '../../../../src/lib/APICommunications';
-const BaseURL = process.env.NEXT_PUBLIC_BASE_URL 
+const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import Link from "next/link";
-function Navbar({ headerData }) {
+function Navbar({ headerData = {} }) {
 
   const [first, setfirst] = useState(false);
   const [aboutus, setaboutus] = useState(false);
   const [ourplans, setourplans] = useState(false);
 
-  console.log('my data', headerData)
+  // console.log('my data', headerData)
 
   return (
     <>
@@ -46,102 +46,166 @@ function Navbar({ headerData }) {
               id="navbar-default"
             >
               <ul className=" ml-4 flex flex-col py-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-4 lg:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
-                <li>
-                  <Link
-                    href={`${BaseURL}${headerData?.VMealsHeaderMenuList[0]?.VMealsHeaderMenuItemLinkURL}`}
-                    className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
-                  >
-                    {/* Home */}
-                    {headerData?.VMealsHeaderMenuList[0]?.VMealsHeaderMenuItemTitle}
-                  </Link>
-                </li>
-                <li className="relative">
-                  <button
-                    id="dropdownNavbarLink"
-                    onClick={() => {
-                      setaboutus(!aboutus);
-                    }}
-                    data-dropdown-toggle="dropdownNavbar"
-                    className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
-                  >
-                    {/* About Us{" "} */}
-                    {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderMenuItemTitle}
-                    <svg
-                      className="w-5 h-5 ml-1"
-                      aria-hidden="true"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
+                <>
+                  {/* <li>
+                    <Link
+                      href={`${BaseURL}${headerData?.VMealsHeaderMenuList[0]?.VMealsHeaderMenuItemLinkURL}`}
+                      className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
                     >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </button>
+                      Home
+                      {headerData?.VMealsHeaderMenuList[0]?.VMealsHeaderMenuItemTitle}
+                    </Link>
+                  </li>
+                  <li className="relative">
+                    <button
+                      id="dropdownNavbarLink"
+                      onClick={() => {
+                        setaboutus(!aboutus);
+                      }}
+                      data-dropdown-toggle="dropdownNavbar"
+                      className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
+                    >
+                      About Us{" "}
+                      {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderMenuItemTitle}
+                      <svg
+                        className="w-5 h-5 ml-1"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
 
-                  <div
-                    id="dropdownNavbar"
-                    className={`${aboutus ? "" : "hidden"
-                      }  z-10  block font-normal divide-y divide-gray-100 rounded shadow  absolute bg-white left-0 top-[26px] w-full md:w-[83px] lg:w-[124px]`}
-                  >
-                    <ul
-                      className="py-1  text-black f-f-b   "
-                      aria-labelledby="dropdownLargeButton"
+                    <div
+                      id="dropdownNavbar"
+                      className={`${aboutus ? "" : "hidden"
+                        }  z-10  block font-normal divide-y divide-gray-100 rounded shadow  absolute bg-white left-0 top-[26px] w-full md:w-[83px] lg:w-[124px]`}
                     >
-                      <li>
-                        <Link
-                          href={headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[0]?.VMealsHeaderSubMenuLinkURL}
+                      <ul
+                        className="py-1  text-black f-f-b   "
+                        aria-labelledby="dropdownLargeButton"
+                      >
+                        <li>
+                          <Link
+                            href={headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[0]?.VMealsHeaderSubMenuLinkURL}
+                            className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
+                          >
+                            Our Company
+                            {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[0]?.VMealsHeaderSubMenuTitle}
+
+                          </Link>
+                        </li>
+
+                        <li>
+                          <Link
+                            href={headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[1]?.VMealsHeaderSubMenuLinkURL}
+                            className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
+                          >
+                            FAQs
+                            {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[1]?.VMealsHeaderSubMenuTitle}
+                          </Link>
+                        </li>
+
+                        <li>
+                          <Link
+                            href={headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[2]?.VMealsHeaderSubMenuLinkURL}
+                            className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-xsone lg:text-sm  "
+                          >
+                            Our Partners
+                            {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[2]?.VMealsHeaderSubMenuTitle}
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <Link
+                      href={headerData?.VMealsHeaderMenuList[2]?.VMealsHeaderMenuItemLinkURL}
+                      className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    >
+                      Our Plans
+                      {headerData?.VMealsHeaderMenuList[2]?.VMealsHeaderMenuItemTitle}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={headerData?.VMealsHeaderMenuList[3]?.VMealsHeaderMenuItemLinkURL}
+                      className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    >
+                      Need Assistance?
+                      {headerData?.VMealsHeaderMenuList[3]?.VMealsHeaderMenuItemTitle}
+                    </Link>
+                  </li> */}
+                </>
+
+                  {headerData?.VMealsHeaderMenuList.map((headerItem)=>(
+                    (headerItem.hasOwnProperty('VMealsHeaderSubMenuList') && headerItem?.VMealsHeaderSubMenuList.length>0)
+                    ? 
+                    <li className="relative">
+                    <button
+                      id="dropdownNavbarLink"
+                      onClick={() => {
+                        setaboutus(!aboutus);
+                      }}
+                      data-dropdown-toggle="dropdownNavbar"
+                      className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
+                    >
+                    
+                      {headerItem?.VMealsHeaderMenuItemTitle}
+                      <svg
+                        className="w-5 h-5 ml-1"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div
+                      id="dropdownNavbar"
+                      className={`${aboutus ? "" : "hidden"
+                        }  z-10  block font-normal divide-y divide-gray-100 rounded shadow  absolute bg-white left-0 top-[26px] w-full md:w-[83px] lg:w-[124px]`}
+                    >
+                      <ul
+                        className="py-1  text-black f-f-b   "
+                        aria-labelledby="dropdownLargeButton"
+                      >
+                        {headerItem?.VMealsHeaderSubMenuList.map((submenu)=>(
+                          <Link
+                          href={`${BaseURL}${submenu?.VMealsHeaderSubMenuLinkURL}`}
                           className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
                         >
                           {/* Our Company */}
-                          {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[0]?.VMealsHeaderSubMenuTitle}
+                          {submenu?.VMealsHeaderSubMenuTitle}
 
                         </Link>
-                      </li>
+                        ))}
 
-                      <li>
-                        <Link
-                          href={headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[1]?.VMealsHeaderSubMenuLinkURL}
-                          className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
-                        >
-                          {/* FAQs */}
-                          {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[1]?.VMealsHeaderSubMenuTitle}
-                        </Link>
+                      </ul>
+                    </div>
                       </li>
-
-                      <li>
-                        <Link
-                          href={headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[2]?.VMealsHeaderSubMenuLinkURL}
-                          className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-xsone lg:text-sm  "
-                        >
-                          {/* Our Partners */}
-                          {headerData?.VMealsHeaderMenuList[1]?.VMealsHeaderSubMenuList[2]?.VMealsHeaderSubMenuTitle}
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-
-                <li>
-                  <Link
-                    href={headerData?.VMealsHeaderMenuList[2]?.VMealsHeaderMenuItemLinkURL}
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
-                  >
-                    {/* Our Plans */}
-                    {headerData?.VMealsHeaderMenuList[2]?.VMealsHeaderMenuItemTitle}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={headerData?.VMealsHeaderMenuList[3]?.VMealsHeaderMenuItemLinkURL}
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
-                  >
-                    {/* Need Assistance? */}
-                    {headerData?.VMealsHeaderMenuList[3]?.VMealsHeaderMenuItemTitle}
-                  </Link>
-                </li>
+                    :  
+                    <li>
+                    <Link
+                      href={`${BaseURL}${headerItem?.VMealsHeaderMenuItemLinkURL}`}
+                      className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
+                    >
+                      {headerItem?.VMealsHeaderMenuItemTitle}
+                    </Link>
+                  </li>
+                  ))}
 
                 <li className=" md:hidden">
                   <Link
@@ -227,12 +291,13 @@ export async function getServerSideProps() {
     let vmealsHeaderData = await fetch(vmealsHeader)
     let data = await vmealsHeaderData.json()
     data = data?.docs?.find(p => p.VMealsHeaderEnableDisables == "Enable");
+    console.log("header data---?", data)
     return {
       props: { headerData: { ...data } }, // will be passed to the page component as props
     }
   } catch (error) {
     return {
-      props: { headerData: [] }
+      props: { headerData: {} }
     }
   }
 
