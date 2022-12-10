@@ -2,6 +2,8 @@ import React from "react";
 import { vmealsFAQ } from "../../../../src/lib/APICommunications";
 import DropDown from "../Common/DropDown";
 export default function Questions({ faqQuestions }) {
+  console.log('question component', faqQuestions)
+  const [openTab, setOpenTab] = React.useState(0);
 
   return (
     <div className="relative  ">
