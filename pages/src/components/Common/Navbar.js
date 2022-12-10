@@ -3,12 +3,18 @@ import { vmealsHeader } from '../../../../src/lib/APICommunications';
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import Link from "next/link";
 function Navbar({ headerData = {} }) {
-  console.log("headerDataheaderDataheaderData",headerData)
+  console.log("headerDataheaderDataheaderData", headerData)
   const [first, setfirst] = useState(false);
-  const [aboutus, setaboutus] = useState(false);
-  const [ourplans, setourplans] = useState(false);
+  const [openCloseSubMenu,setOpenClose] = useState({})
 
-  // console.log('my data', headerData)
+  function controlSubMenu(subMenu){
+    console.log(openCloseSubMenu,subMenu)
+    if(!openCloseSubMenu.hasOwnProperty(subMenu)){
+      setOpenClose({...openCloseSubMenu,[subMenu]:!Boolean(openCloseSubMenu[subMenu])})
+    }else{
+      setOpenClose({...openCloseSubMenu,[subMenu]:!Boolean(openCloseSubMenu[subMenu])})
+    }
+  }
 
   return (
     <>
@@ -145,67 +151,67 @@ function Navbar({ headerData = {} }) {
                   </li> */}
                 </>
 
-                  {headerData?.VMealsHeaderMenuList?.map((headerItem)=>(
-                    (headerItem.hasOwnProperty('VMealsHeaderSubMenuList') && headerItem?.VMealsHeaderSubMenuList.length>0)
-                    ? 
+                {headerData?.VMealsHeaderMenuList?.map((headerItem) => (
+                  (headerItem.hasOwnProperty('VMealsHeaderSubMenuList') && headerItem?.VMealsHeaderSubMenuList.length > 0)
+                    ?
                     <li className="relative">
-                    <button
-                      id="dropdownNavbarLink"
-                      onClick={() => {
-                        setaboutus(!aboutus);
-                      }}
-                      data-dropdown-toggle="dropdownNavbar"
-                      className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
-                    >
-                    
-                      {headerItem?.VMealsHeaderMenuItemTitle}
-                      <svg
-                        className="w-5 h-5 ml-1"
-                        aria-hidden="true"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <button
+                        id="dropdownNavbarLink"
+                        onClick={() => {
+                          controlSubMenu(headerItem?.VMealsHeaderMenuItemTitle)
+                        }}
+                        data-dropdown-toggle="dropdownNavbar"
+                        className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </button>
-                    <div
-                      id="dropdownNavbar"
-                      className={`${aboutus ? "" : "hidden"
-                        }  z-10  block font-normal divide-y divide-gray-100 rounded shadow  absolute bg-white left-0 top-[26px] w-full md:w-[83px] lg:w-[124px]`}
-                    >
-                      <ul
-                        className="py-1  text-black f-f-b   "
-                        aria-labelledby="dropdownLargeButton"
-                      >
-                        {headerItem?.VMealsHeaderSubMenuList.map((submenu)=>(
-                          <Link
-                          href={`/${submenu?.VMealsHeaderSubMenuLinkURL}`}
-                          className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
+
+                        {headerItem?.VMealsHeaderMenuItemTitle}
+                        <svg
+                          className="w-5 h-5 ml-1"
+                          aria-hidden="true"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          {/* Our Company */}
-                          {submenu?.VMealsHeaderSubMenuTitle}
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </button>
+                      <div
+                        id="dropdownNavbar"
+                        className={`${openCloseSubMenu[headerItem?.VMealsHeaderMenuItemTitle] ? "" : "hidden"
+                          }  z-10  block font-normal divide-y divide-gray-100 rounded shadow  absolute bg-white left-0 top-[26px] w-full md:w-[83px] lg:w-[124px]`}
+                      >
+                        <ul
+                          className="py-1  text-black f-f-b   "
+                          aria-labelledby="dropdownLargeButton"
+                        >
+                          {headerItem?.VMealsHeaderSubMenuList.map((submenu) => (
+                            <Link
+                              href={`/${submenu?.VMealsHeaderSubMenuLinkURL}`}
+                              className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
+                            >
+                              {/* Our Company */}
+                              {submenu?.VMealsHeaderSubMenuTitle}
 
-                        </Link>
-                        ))}
+                            </Link>
+                          ))}
 
-                      </ul>
-                    </div>
-                      </li>
-                    :  
+                        </ul>
+                      </div>
+                    </li>
+                    :
                     <li>
-                    <Link
-                      href={`/${headerItem?.VMealsHeaderMenuItemLinkURL}`}
-                      className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
-                    >
-                      {headerItem?.VMealsHeaderMenuItemTitle}
-                    </Link>
-                  </li>
-                  ))}
+                      <Link
+                        href={`/${headerItem?.VMealsHeaderMenuItemLinkURL}`}
+                        className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
+                      >
+                        {headerItem?.VMealsHeaderMenuItemTitle}
+                      </Link>
+                    </li>
+                ))}
 
                 <li className=" md:hidden">
                   <Link
@@ -269,11 +275,13 @@ function Navbar({ headerData = {} }) {
               </ul>
             </div>
             <div className="bg-white w-[70px] h-[70px] md:h-[100px] md:w-[100px] lg:h-[140px] lg:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[44%] -top-5 md:top-4 z-0 ">
-              <img
-                src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
-                alt={headerData?.VMealsHeaderLogoImage?.alt}
-                className=" w-[58px] h-[32px] md:w-[60px] md:h-[40px] lg:w-[100px] lg:h-[60px] 2xl:w-[154px] 2xl:h-[84px] relative top-5 left-2 md:top-14 md:left-4"
-              />
+              <Link href= {headerData?.VMealsHeaderLogoImageLinkURL}>
+                <img
+                  src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
+                  alt={headerData?.VMealsHeaderLogoImage?.alt}
+                  className=" w-[58px] h-[32px] md:w-[60px] md:h-[40px] lg:w-[100px] lg:h-[60px] 2xl:w-[154px] 2xl:h-[84px] relative top-5 left-2 md:top-14 md:left-4"
+                />
+              </Link>
             </div>
           </div>
         </nav>
