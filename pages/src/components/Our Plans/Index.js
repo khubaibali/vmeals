@@ -8,7 +8,7 @@ import Fitness from "../Home/Fitness";
 import Built from "../Home/Built";
 import Question from "../Faq/Questions";
 
-export default function Index({headerData,sliderBarData,builtData,ourGeniusData,homeFitnessData,ourHomeBlogData,socialMediaIcon,footerData,tradeMarkData}) {
+export default function Index({headerData,sliderBarData,builtData,homeFitnessData,socialMediaIcon,footerData,tradeMarkData}) {
   return (
     <>
       <div className="ourplansbg">
