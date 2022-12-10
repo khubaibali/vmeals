@@ -3,7 +3,7 @@ import { vmealsHeader } from '../../../../src/lib/APICommunications';
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import Link from "next/link";
 function Navbar({ headerData = {} }) {
-
+  console.log("headerDataheaderDataheaderData",headerData)
   const [first, setfirst] = useState(false);
   const [aboutus, setaboutus] = useState(false);
   const [ourplans, setourplans] = useState(false);
@@ -145,7 +145,7 @@ function Navbar({ headerData = {} }) {
                   </li> */}
                 </>
 
-                  {headerData?.VMealsHeaderMenuList.map((headerItem)=>(
+                  {headerData?.VMealsHeaderMenuList?.map((headerItem)=>(
                     (headerItem.hasOwnProperty('VMealsHeaderSubMenuList') && headerItem?.VMealsHeaderSubMenuList.length>0)
                     ? 
                     <li className="relative">
@@ -184,7 +184,7 @@ function Navbar({ headerData = {} }) {
                       >
                         {headerItem?.VMealsHeaderSubMenuList.map((submenu)=>(
                           <Link
-                          href={`${BaseURL}${submenu?.VMealsHeaderSubMenuLinkURL}`}
+                          href={`/${submenu?.VMealsHeaderSubMenuLinkURL}`}
                           className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
                         >
                           {/* Our Company */}
@@ -199,7 +199,7 @@ function Navbar({ headerData = {} }) {
                     :  
                     <li>
                     <Link
-                      href={`${BaseURL}${headerItem?.VMealsHeaderMenuItemLinkURL}`}
+                      href={`/${headerItem?.VMealsHeaderMenuItemLinkURL}`}
                       className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
                     >
                       {headerItem?.VMealsHeaderMenuItemTitle}
@@ -222,7 +222,7 @@ function Navbar({ headerData = {} }) {
                     className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0 "
                   >
                     {/* Arabic / English */}
-                    {headerData?.VMealsLanguagesList[0].VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList[1].VMealsLanguagesItemTitle}
+                    {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
                 </li>
                 <li className=" md:hidden">
@@ -254,7 +254,7 @@ function Navbar({ headerData = {} }) {
                     className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     {/* Arabic / English */}
-                    {headerData?.VMealsLanguagesList[0].VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList[1].VMealsLanguagesItemTitle}
+                    {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
                 </li>
                 <li>
