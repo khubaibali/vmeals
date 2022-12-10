@@ -215,7 +215,7 @@ function Navbar({ headerData = {} }) {
 
                 <li className=" md:hidden">
                   <Link
-                    href={`/${headerData?.VMealsHeaderBlogTextLinkURL}`}
+                    href={headerData?.VMealsHeaderBlogTextLinkURL}
                     className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 "
                   >
                     {/* Blog */}
@@ -295,11 +295,11 @@ export default Navbar
 
 export async function getServerSideProps() {
   try {
- 
+    console.log('comming here')
     let vmealsHeaderData = await fetch(vmealsHeader)
     let data = await vmealsHeaderData.json()
     data = data?.docs?.find(p => p.VMealsHeaderEnableDisables == "Enable");
-   
+    console.log("header data---?", data)
     return {
       props: { headerData: { ...data } }, // will be passed to the page component as props
     }
