@@ -5,16 +5,16 @@ import Review from "./Review";
 import Fotter from "../Common/Footer";
 import Questions from "./Questions";
 
-export default function Index() {
+export default function Index({tradeMarkData,headerData,footerData,sliderBarData,socialMediaIcon,faqQuestions}) {
   return (
     <>
       <div className="faq-bg">
-        <Navbar />
-        <Hero />
+        <Navbar headerData={headerData} />
+        <Hero sliderBarData={sliderBarData}/>
       </div>
-      <Questions />
+      <Questions faqQuestions={faqQuestions} />
       <Review />
-      <Fotter />
+      <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>
     </>
   );
 }
