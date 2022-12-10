@@ -68,8 +68,7 @@ export default function Built({builtData}) {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+       </div> 
     </>
   );
 }
