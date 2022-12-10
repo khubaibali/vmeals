@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsOurBlogs } from '../../../../src/lib/APICommunications';
@@ -79,6 +80,8 @@ export default function Ourblog({ ourHomeBlogData }) {
                 return  <>
                 {index <3 ? <div className="col-span-6 lg:col-span-4  ">
                   <div className="relative ">
+                    <Link href={blog.VmealsBlogURL}>
+                    
                     <img
                       //  src="/images/blog1.png"
                       src={`${BaseURL}${blog?.VMealsBlogBreadcrumbImage?.url}`}
@@ -86,7 +89,7 @@ export default function Ourblog({ ourHomeBlogData }) {
                       alt=""
                     />
                     <button className="bg-green f-f-b text-xs md:text-base 2xl:text-xl text-white py-2 px-3 md:px-9 md:py-4 rounded-full absolute top-2 md:top-10 left-2 md:left-5  ">
-                      Lorem Ipsum
+                      {blog?.VmealsBlogCategory?.VmealsBlogsCategoryName}
                     </button>
                     <div className="blog-liner p-2 md:py-5 md:p-5  absolute bottom-0">
                       <h2 className=" text-white f-f-r text-xs md:text-base 2xl:text-xl md:py-4 2xl:py-8 ">
@@ -97,6 +100,7 @@ export default function Ourblog({ ourHomeBlogData }) {
                         {blog.VmealsBlogTitle}
                       </p>
                     </div>
+                    </Link>
                   </div>
                 </div>:null}
                 </>
