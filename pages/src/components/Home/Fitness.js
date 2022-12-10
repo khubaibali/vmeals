@@ -1,15 +1,18 @@
 import React from "react";
-
-export default function Fitness() {
+const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+import { vmealsGetStarted } from '../../../../src/lib/APICommunications';
+export default function Fitness({ homeFitnessData }) {
   return (
     <div className="w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 lg:col-span-6  ">
           <h1 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
-            GET STARTED
+            {/* GET STARTED */}
+            {homeFitnessData[0]?.VMealsGetStartedHeading}
           </h1>
           <h1 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px] mt-4  md:mt-8">
-            Start your fitness journey with us!
+            {/* Start your fitness journey with us! */}
+            {homeFitnessData[0]?.VMealsGetStartedTitle}
           </h1>
           <img
             src="/images/start your finest journey with us-02.png"
@@ -24,11 +27,13 @@ export default function Fitness() {
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                Choose your plan
+                {/* Choose your plan */}
+                {homeFitnessData[0]?.VMealsGetStartedList[0]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
+                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -40,11 +45,11 @@ export default function Fitness() {
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                Customise your plan
+                {/* Customise your plan */}
+                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -56,11 +61,11 @@ export default function Fitness() {
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                Enter your information
+                {/* Enter your information */}
+                {homeFitnessData[0]?.VMealsGetStartedList[2]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -72,11 +77,11 @@ export default function Fitness() {
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                Place your order
+                {/* Place your order */}
+                {homeFitnessData[0]?.VMealsGetStartedList[3]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -88,11 +93,11 @@ export default function Fitness() {
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                Enjoy your meals!
+                {/* Enjoy your meals! */}
+                {homeFitnessData[0]?.VMealsGetStartedList[4]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -100,11 +105,31 @@ export default function Fitness() {
         <div className="   col-span-12 lg:col-span-6  ">
           <img
             alt=""
-            src="/images/start your finest journey with us-02.png"
+            // src="/images/start your finest journey with us-02.png"
+            src={`${BaseURL}${homeFitnessData[0]?.VMealsGetStartedImage?.url}`}
             className="w-full h-auto xl:h-[500px] 2xl:h-[707px] mt-96 hidden lg:block "
           />
         </div>
       </div>
     </div>
   );
+}
+
+
+export async function getServerSideProps() {
+  try {
+
+    let homeFitnessData = await fetch(vmealsGetStarted)
+    let data = await homeFitnessData.json()
+    console.log("slider bar ->>", data)
+
+    return {
+      props: { homeFitnessData: { ...data?.docs } }, // will be passed to the page component as props
+    }
+  } catch (error) {
+    return {
+      props: { homeFitnessData: [] }
+    }
+  }
+
 }
