@@ -1,5 +1,4 @@
-import '../styles/globals.css'
-import '../styles/Home.module.css'
+import '../public/styles/globals.css'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import type { AppProps } from 'next/app'

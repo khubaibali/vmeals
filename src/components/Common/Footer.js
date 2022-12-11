@@ -131,7 +131,7 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
                 </li> */}
                 
                 {
-                  tradeMarkData?.[0]?.VMealsFooterList.map((footeritem)=>(
+                  tradeMarkData?.[0]?.VMealsFooterList?.map((footeritem)=>(
                     <li>
                     <a
                       href={`${BaseURL}${footeritem?.VMealsOurPartnersFileUpload?.url}`}
