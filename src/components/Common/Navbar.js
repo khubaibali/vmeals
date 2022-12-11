@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { vmealsHeader } from '../../../src/lib/APICommunications';
+import { vmealsHeader } from '../../lib/APICommunications';
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import Link from "next/link";
 function Navbar({ headerData = {} }) {
