@@ -6,18 +6,31 @@ import { vmealsPages } from "../../../../src/lib/APICommunications";
 import PlanData from '../../../../src/lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../../../src/helpers";
+import { Multiselect } from "multiselect-react-dropdown";
 
 export default function Customizeplan({ heading, description, selectedPlan }) {
   const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
   const [selectedDuration, setSelectedDuration] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]);
   const [selectedDaysPerWeek, setSelectedDaysPerWeek] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]);
-  
-  
+  const [options, setOptions] = useState(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+    id: i + 1,
+    name: a
+  })));
+  const [allergies, setAllergiesData] = useState(null);
+  const [mealType, setMealType] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]);
+  const [offDays, setOffDays] = useState("Friday - Saturday");
+  const [price, setPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price);
+  const [totalPrice, setTotalPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price -(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price * 0.05));
+
   const [openTab, setOpenTab] = React.useState(1);
   const [aboutus, setaboutus] = React.useState(false);
   const [maximum, setmaximum] = React.useState(false);
 
-  console.log("selected Portion 2", selectedDaysPerWeek)
+  const setAlerg = (data) => {
+    console.log("hhhhhhhhhhhhhhhh", data);
+    // let res = data.map(a => a.allergy);
+    setAllergiesData(data);
+  };
   const getCustomizeActiveClass = (selected, checked, type) => {
     console.log("SELECTED", selected);
     if (type == "days") {
@@ -28,6 +41,8 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
       return selected?.id == checked?.id ? "cusntn" : "";
     }
   };
+
+  console.log("optionsoptions", options)
 
   return (
     <>
@@ -141,44 +156,56 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                   </div>
                 ))}
               </div>
-              <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
-                Choose your off days(s){" "}
-              </h1>
-
-              <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                <div className="   col-span-6  ">
-                  <button className=" cusntn w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      Friday - Saturday
-                    </h1>
-                  </button>
-                </div>
-                <div className="   col-span-6  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      {" "}
-                      Saturday - Sunday
-                    </h1>
-                  </button>
-                </div>
-              </div>
+              {selectedDaysPerWeek.days != 7 &&
+                <>
+                  <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                    Choose your off days(s){" "}
+                  </h1>
+                  <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
+                    <div className="   col-span-6  ">
+                      <button className=" cusntn w-full h-[47px] md:h-[59px] 2xl:h-[68px]   "
+                        onClick={() => {
+                          setOffDays(selectedDaysPerWeek.days == 6 ? "Friday" : "Friday - Saturday");
+                        }}
+                      >
+                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                          {selectedDaysPerWeek.days == 6 ? "Friday" : "Friday - Saturday"}
+                        </h1>
+                      </button>
+                    </div>
+                    <div className="   col-span-6  ">
+                      <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   "
+                        onClick={() => {
+                          setOffDays(selectedDaysPerWeek.days == 6 ? "Saturday" : "Saturday - Sunday");
+                        }}
+                      >
+                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                          {" "}
+                          {selectedDaysPerWeek.days == 6 ? "Saturday" : "Saturday - Sunday"}
+                        </h1>
+                      </button>
+                    </div>
+                  </div>
+                </>
+              }
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Choose your meal type
               </h1>
               <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
-                <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px] relative  " onClick={() => {
-                  setaboutus(!aboutus);
-                }}>
-                  <h1 className=" text-black f-f-b text-sm 2xl:text-base hidden md:block ">
-                    Breakfast + Lunch + Dinner + Snack + Drink{" "}
-                  </h1>
-                  <h1 className=" text-black f-f-b text-sm 2xl:text-base  md:hidden">
-                    Breakfast + Lunch + Dinner{" "}
-                  </h1>
+                {/* new code data started */}
+                <div className="relative" >
+                  <select id="cars" name="carlist" form="carform" className="f-f-b  text-xsone lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  " >
+                    {selectedDaysPerWeek?.mealType?.map((dpw) => (
+                      <option className=" text-center hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
+                        value={`${dpw.id}|${dpw.price}`} selected={mealType == dpw.id ? true : dpw.id == "Breakfast_Lunch_Dinner_Snack_Drink" ? true : false}
+                      >{dpw.name}</option>
+
+                    ))};
+                  </select>
                   <svg
                     width="36"
                     height="36"
-                    className=" absolute top-[6px] md:top-[15px] right-[17px] "
+                    className=" absolute top-[6px] md:top-[13px] right-[17px] "
                     viewBox="0 0 36 36"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -188,120 +215,43 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                       fill="#41A53D"
                     />
                   </svg>
-                </button>
-
-                {/*  drop down code started */}
-
-
-                <div
-                  id="dropdownNavbar"
-                  className={`${aboutus ? "" : "hidden"
-                    }  z-10  block font-normal divide-y divide-gray-100 rounded-b-[20px] shadow   bg-white  w-full `}
-                >
-                  <ul
-                    className="py-1  text-black f-f-b   "
-                    aria-labelledby="dropdownLargeButton"
-                  >
-                    <li>
-                      <Link
-                        href="/about"
-                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
-                      >
-                        Our Company
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        href="/faq"
-                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
-                      >
-                        FAQs
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        href="/ourpartner"
-                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-xsone lg:text-sm  "
-                      >
-                        Our Partners
-                      </Link>
-                    </li>
-                  </ul>
                 </div>
-                {/* drop down code ended */}
+                {/* new code data end */}
               </div>
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Select your allergies (5 maximum)
               </h1>
-              <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
-                <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px] relative  "
-
-                  onClick={() => {
-                    setmaximum(!maximum);
-                  }}>
-
-                  <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                    Breakfast{" "}
-                  </h1>
-
-                  <svg
-                    width="36"
-                    height="36"
-                    className=" absolute top-[6px] md:top-[15px] right-[17px] "
-                    viewBox="0 0 36 36"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M21.6253 23.3015L27.9574 16.6136C28.3458 16.2033 28.5552 15.6554 28.5396 15.0907C28.5241 14.5259 28.2848 13.9904 27.8744 13.6021C27.464 13.2137 26.9162 13.0043 26.3514 13.0199C25.7867 13.0354 25.2512 13.2747 24.8629 13.6851L18.5321 20.3729C18.468 20.4408 18.3911 20.4954 18.3059 20.5336C18.2206 20.5717 18.1287 20.5927 18.0353 20.5952C17.942 20.5978 17.849 20.5819 17.7618 20.5484C17.6746 20.515 17.5948 20.4647 17.5271 20.4004L10.8406 14.0682C10.4304 13.6797 9.8827 13.47 9.31791 13.4853C8.75313 13.5006 8.21756 13.7396 7.82902 14.1498C7.44048 14.56 7.23079 15.1077 7.24609 15.6725C7.26139 16.2373 7.50042 16.7729 7.9106 17.1614L14.5985 23.4935C15.5566 24.3982 16.8344 24.886 18.1516 24.85C19.4688 24.814 20.718 24.2571 21.6253 23.3015V23.3015Z"
-                      fill="#41A53D"
-                    />
-                  </svg>
-                </button>
-                {/*  drop down code started */}
-
-
-                <div
-                  id="dropdownNavbar"
-                  className={`${maximum ? "" : "hidden"
-                    }  z-10  block font-normal divide-y divide-gray-100 rounded-b-[20px] shadow   bg-white  w-full `}
+              {/* nabeel bhai code  */}
+              <div className="relative" >
+                <Multiselect
+                  placeholder="Select an option"
+                  selectionLimit="5"
+                  className=" my-4 border border-green shadow-xl rounded-[20px] bg-white  f-f-b  text-xsone lg:text-sm 2xl:text-tiny   w-full  multiselect-input  relative"
+                  options={options}
+                  onSelect={(e) => {
+                    console.log("eeeeeeeeeeee", e);
+                    setAlerg(e);
+                  }}
+                  displayValue="allergy"
+                  selectedValues={allergies}
+                />
+                <svg
+                  width="36"
+                  height="36"
+                  className=" absolute top-[6px] md:top-[13px] right-[17px] "
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <ul
-                    className="py-1  text-black f-f-b   "
-                    aria-labelledby="dropdownLargeButton"
-                  >
-                    <li>
-                      <Link
-                        href="/about"
-                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
-                      >
-                        Our Company
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        href="/faq"
-                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
-                      >
-                        FAQs
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        href="/ourpartner"
-                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-xsone lg:text-sm  "
-                      >
-                        Our Partners
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                {/* drop down code ended */}
+                  <path
+                    d="M21.6253 23.3015L27.9574 16.6136C28.3458 16.2033 28.5552 15.6554 28.5396 15.0907C28.5241 14.5259 28.2848 13.9904 27.8744 13.6021C27.464 13.2137 26.9162 13.0043 26.3514 13.0199C25.7867 13.0354 25.2512 13.2747 24.8629 13.6851L18.5321 20.3729C18.468 20.4408 18.3911 20.4954 18.3059 20.5336C18.2206 20.5717 18.1287 20.5927 18.0353 20.5952C17.942 20.5978 17.849 20.5819 17.7618 20.5484C17.6746 20.515 17.5948 20.4647 17.5271 20.4004L10.8406 14.0682C10.4304 13.6797 9.8827 13.47 9.31791 13.4853C8.75313 13.5006 8.21756 13.7396 7.82902 14.1498C7.44048 14.56 7.23079 15.1077 7.24609 15.6725C7.26139 16.2373 7.50042 16.7729 7.9106 17.1614L14.5985 23.4935C15.5566 24.3982 16.8344 24.886 18.1516 24.85C19.4688 24.814 20.718 24.2571 21.6253 23.3015V23.3015Z"
+                    fill="#41A53D"
+                  />
+                </svg>
               </div>
+              {/* nabeel bhai code ended */}
+              {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
+              </div> */}
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Add Ons
               </h1>
@@ -350,8 +300,10 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                   <ul class=" inline-flex mt-7  ">
                     <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
                     <li class=" ml-4 text-right ">
-                      <h2 class=" text-black text-base md:text-2xl f-f-b ">AED3050.00</h2>
+                      <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{totalPrice}</h2>
                       <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price inclusive of VAT</h3>
+                      <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{price}</h2>
+                      <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price TESt of VAT</h3>
                     </li>
                   </ul>
                 </div>

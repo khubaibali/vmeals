@@ -1086,3 +1086,40 @@ border-radius: 30px;
   background-repeat: no-repeat;
   --tw-ring-color:unset;
 } */
+
+
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+textarea:focus, input:focus , select:focus{
+  outline: none;
+}
+.multiselect-input .searchWrapper{
+  border: none;
+  min-height: unset;
+}
+
+.multiselect-input input {
+  height: 51px;
+  padding-left: 21px;
+  border: none;
+}
+
+@media only screen and (max-width: 1550px) {
+  .multiselect-input input {
+    height: 44px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .multiselect-input input {
+    height: 32px;
+  }
+}
