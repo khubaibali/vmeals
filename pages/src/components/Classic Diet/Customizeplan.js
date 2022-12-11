@@ -9,6 +9,7 @@ import { getDurationName } from "../../../../src/helpers";
 import { Multiselect } from "multiselect-react-dropdown";
 
 export default function Customizeplan({ heading, description, selectedPlan }) {
+  // const [selectedPlan, setSelectedPlan]
   const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
   const [selectedDuration, setSelectedDuration] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]);
   const [selectedDaysPerWeek, setSelectedDaysPerWeek] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]);
@@ -31,6 +32,7 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
     // let res = data.map(a => a.allergy);
     setAllergiesData(data);
   };
+  
   const getCustomizeActiveClass = (selected, checked, type) => {
     console.log("SELECTED", selected);
     if (type == "days") {
@@ -41,6 +43,10 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
       return selected?.id == checked?.id ? "cusntn" : "";
     }
   };
+
+  useEffect(() => {
+    setTotalPrice()
+  })
 
   console.log("optionsoptions", options)
 
@@ -88,23 +94,24 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
               </h1>
 
               <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                {PlanData[selectedPlan]?.portions?.map(p => (
+                {PlanData[selectedPlan]?.portions?.map(portion => (
                   <div className="   col-span-12  md:col-span-6  ">
                     <button
-                      className={`${getCustomizeActiveClass(selectedPortion, p, "id")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
+                      className={`${getCustomizeActiveClass(selectedPortion, portion, "id")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
                       onClick={() => {
-                        setSelectedPortion(p)
+                        setSelectedPortion(portion)
+                        setPrice(portion?.planDuration ?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days )?.mealType?.find((m) => m.id == mealType.id)?.price)
                       }}>
                       <ul>
                         <li>
                           <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
                             {" "}
-                            {p?.caloriesRange}
+                            {portion?.caloriesRange}
                           </h1>
                         </li>
                         <li>
                           <h1 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
-                            {p?.name}
+                            {portion?.name}
                           </h1>
                         </li>
                       </ul>
@@ -163,7 +170,7 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                   </h1>
                   <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
                     <div className="   col-span-6  ">
-                      <button className=" cusntn w-full h-[47px] md:h-[59px] 2xl:h-[68px]   "
+                      <button className={` ${offDays == "Friday" || offDays == "Friday - Saturday" ? "cusntn" : "" }  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                         onClick={() => {
                           setOffDays(selectedDaysPerWeek.days == 6 ? "Friday" : "Friday - Saturday");
                         }}
@@ -174,7 +181,7 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                       </button>
                     </div>
                     <div className="   col-span-6  ">
-                      <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   "
+                      <button className={` ${offDays == "Saturday" || offDays == "Saturday - Sunday" ? "cusntn" : "" }   w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                         onClick={() => {
                           setOffDays(selectedDaysPerWeek.days == 6 ? "Saturday" : "Saturday - Sunday");
                         }}
@@ -300,7 +307,7 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                   <ul class=" inline-flex mt-7  ">
                     <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
                     <li class=" ml-4 text-right ">
-                      <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{totalPrice}</h2>
+                      <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{price - (price*0.05)}</h2>
                       <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price inclusive of VAT</h3>
                       <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{price}</h2>
                       <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price TESt of VAT</h3>
