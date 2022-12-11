@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Ourslick from "./ourslick";
 import Registerform from "../Common/Registerform";
-import { vmealsOurPartners } from "../../../../src/lib/APICommunications";
+import { vmealsOurPartners } from "../../../src/lib/APICommunications";
 import OurSlickWraper from "./OurSlickWraper";
 export default function Fitnesour({ourParnersData}) {
   const [selectPartnerList,setPartnerListIndex] = useState(0)

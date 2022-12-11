@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
-import { vmealsRegisterCompany } from "../../../../src/lib/APICommunications";
+import { vmealsRegisterCompany } from "../../../src/lib/APICommunications";
 export default function Registerform() {
   const [registerForm, setFormData] = useState({})
   const [isDisabled,setDisable] = useState(false)

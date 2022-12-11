@@ -1,5 +1,5 @@
 import React from 'react'
-import Contactuspage from '../src/components/Contact Us/Index'
+import Contactuspage from '../src/components/ContactUs/Index'
 
 
 export default function Contactus() {
