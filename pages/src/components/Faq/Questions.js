@@ -1,8 +1,10 @@
 import React from "react";
 import { vmealsFAQ } from "../../../../src/lib/APICommunications";
-export default function Questions({faqQuestions}) {
-  console.log('question component',faqQuestions)
-  const [openTab, setOpenTab] = React.useState(1);
+import DropDown from "../Common/DropDown";
+export default function Questions({ faqQuestions }) {
+  console.log('question component', faqQuestions)
+  const [openTab, setOpenTab] = React.useState(0);
+
   return (
     <div className="relative  ">
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
@@ -20,46 +22,26 @@ export default function Questions({faqQuestions}) {
                   className="flex mb-0 list-none flex-wrap   flex-row border-2 rounded-[30px] bg-white border-green "
                   role="tablist"
                 >
-                  {/* <li className="  flex-auto text-center">
-                    <a
-                      className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
-                        (openTab === 1
-                          ? "text-white bg-green rounded-[30px]"
-                          : "text- bg-white rounded-[30px] ")
-                      }
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpenTab(1);
-                      }}
-                      data-toggle="tab"
-                      href="#link1"
-                      role="tablist"
-                    >
-                      About Us
-                    </a>
-                  </li> */}
-
-                  {faqQuestions[0]?.VMealsFaqsList?.map((Item,index)=>(
+                  {faqQuestions[0]?.VMealsFaqsList?.map((Item, index) => (
                     <li key={Item?.key} className="  flex-auto text-center">
-                    <a
-                      className={
-                        "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
-                        (openTab === index
-                          ? "text-white bg-green rounded-[30px]"
-                          : "text- bg-white rounded-[30px] ")
-                      }
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpenTab(index);
-                      }}
-                      data-toggle="tab"
-                      href="#link1"
-                      role="tablist"
-                    >
-                      {Item?.VMealsFaqsText}
-                    </a>
-                  </li>
+                      <a
+                        className={
+                          "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
+                          (openTab === index
+                            ? "text-white bg-green rounded-[30px]"
+                            : "text- bg-white rounded-[30px] ")
+                        }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpenTab(index);
+                        }}
+                        data-toggle="tab"
+                        href="#link1"
+                        role="tablist"
+                      >
+                        {Item?.VMealsFaqsText}
+                      </a>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -72,25 +54,16 @@ export default function Questions({faqQuestions}) {
                     id="link1"
                   >
                     <ul className="mt-0 md:mt-14">
-                      
-                      {faqQuestions[0]?.VMealsFaqsList[openTab]?.VMealsFaqsItemList?.map((faq,index)=>(
-                        <li key={faq.id} className={index !== 0 ? " mt-5" :""}>
-                        <button
-                          className="  inline-flex  justify-center items-center  text-white  w-full green-gradiant  text-center  focus:outline-none   faq-btn  "
-                          type="button"
-                        >
-                          {faq?.VMealsFaqsItemTitle}
-                          <img
-                            src="/images/faqarrow.png"
-                            className="absolute right-4 md:right-12 2xl:h-[30px] h-[8px] w-[6px] md:h-[18px] 2xl:w-[23px] md:w-[18px]  "
-                          />{" "}
-                        </button>
-                      </li>
+
+                      {faqQuestions[0]?.VMealsFaqsList[openTab]?.VMealsFaqsItemList?.map((faq, index) => (
+                        <li key={faq.id} className={index !== 0 ? " mt-5" : ""}>
+                          <DropDown title={faq?.VMealsFaqsItemTitle}>{faq?.VMealsFaqsItemDescription}</DropDown>
+                        </li>
                       ))}
-                      
+
                     </ul>
                   </div>
-                 
+
                 </div>
               </div>
             </div>
