@@ -237,6 +237,14 @@ export default function Welcomeinput({ setStep }) {
               yearDropdownItemNumber={50}
               className="input-register  pr-10"
             />
+            {errors?.length > 0 ? (
+              <p style={{ color: "red" }}>
+                {errors?.find((e) => e.field == "dob")
+                  ?.msg || ""}
+              </p>
+            ) : (
+              ""
+            )}
             {/* <input type="date" id="start" name="trip-start"
               className=" input-register  pr-10 "
               value="2018-07-22"
@@ -300,7 +308,14 @@ export default function Welcomeinput({ setStep }) {
                   </option>
                 ))}
               </select>
-
+              {errors?.length > 0 ? (
+              <p style={{ color: "red" }}>
+                {errors?.find((e) => e.field == "nationality")
+                  ?.msg || ""}
+              </p>
+            ) : (
+              ""
+            )}
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
