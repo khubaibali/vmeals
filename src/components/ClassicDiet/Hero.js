@@ -10,6 +10,7 @@ export default function Hero() {
         <ul className="inline-flex">
           <li>
             <img
+              alt=""
               src="/images/fi-sr-home.png"
               className="w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-2"
             />
@@ -28,7 +29,7 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
               Our Plans
             </h1>
           </li>
@@ -46,24 +47,13 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
               Classic Diet
             </h1>
           </li>
         </ul>
       </div>
-      <button className="absolute right-5 top-[44%] cursor-pointer">
-        <img
-          src="/images/WhatsApp-Floating-Button.png"
-          className=" hidden md:block w-[40px] lg:w-[48px] xl:w-[68px] 2xl:w-[90px] h-auto   "
-        />
-      </button>
-      <button className="absolute right-5 bottom-[13%] cursor-pointer">
-        <img
-          src="/images/Scroll-Up-Floating-Button.png"
-          className=" hidden md:block w-[40px] lg:w-[48px] xl:w-[68px] 2xl:w-[90px] h-auto   "
-        />
-      </button>
+
     </>
   );
 }
