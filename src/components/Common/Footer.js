@@ -1,46 +1,17 @@
 import Link from "next/link";
 import React from "react";
+import Whtsapps from '../Common/watsapp'
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsIcon,vmealsguide,vmealsFooter } from '../../lib/APICommunications';
 export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkData=[{}] }) {
   console.log("footer", footerData)
   return (
+    <>
     <div className=" pt-5 md:pt-10 2xl:pt-20">
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
         <div className=" text-center">
           <ul className=" inline-flex ">
-            <>
-            {/* <li>
-              <Link
-                href={socialMediaIcon[0]?.VMealsIconList[0]?.VMealsIconItemLink}
-              >
-                <img
-                  src="/images/facebook.png"
-                  className=" h-[34px] w-[34px]  md:h-[50px] md:w-[50px] 2xl:h-[75px] 2xl:w-[75px]"
-                />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={socialMediaIcon[0]?.VMealsIconList[1]?.VMealsIconItemLink}
-              >
-                <img
-                  src="/images/instagram.png"
-                  className=" ml-2 md:ml-4 h-[34px] w-[34px]  md:h-[50px] md:w-[50px] 2xl:h-[75px] 2xl:w-[75px]"
-                />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={socialMediaIcon[0]?.VMealsIconList[2]?.VMealsIconItemLink}
-              >
-                <img
-                  src="/images/whatsapp.png"
-                  className=" ml-2 md:ml-4 h-[34px] w-[34px]  md:h-[50px] md:w-[50px] 2xl:h-[75px] 2xl:w-[75px]"
-                />
-              </Link>
-            </li> */}
-            </>
+           
             {socialMediaIcon?.[0]?.VMealsIconList?.map((item)=>{
               return <li>
                <Link
@@ -149,6 +120,8 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
         </div>
       </div>
     </div>
+    <Whtsapps/>
+    </>
   );
 }
 

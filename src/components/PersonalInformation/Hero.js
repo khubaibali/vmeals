@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="text-center mt-5  2xl:mt-16 ">
         <ul className="inline-flex">
           <li>
-            <img
+            <img alt="" 
               src="/images/fi-sr-home.png"
               className="w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-2"
             />
@@ -52,18 +52,7 @@ export default function Hero() {
           </li>
         </ul>
       </div>
-      <button className="absolute right-5 top-[44%] cursor-pointer">
-        <img
-          src="/images/WhatsApp-Floating-Button.png"
-          className=" hidden md:block w-[40px] lg:w-[48px] xl:w-[68px] 2xl:w-[90px] h-auto   "
-        />
-      </button>
-      <button className="absolute right-5 bottom-[13%] cursor-pointer">
-        <img
-          src="/images/Scroll-Up-Floating-Button.png"
-          className=" hidden md:block w-[40px] lg:w-[48px] xl:w-[68px] 2xl:w-[90px] h-auto   "
-        />
-      </button>
+
     </>
   );
 }
