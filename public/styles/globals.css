@@ -1123,3 +1123,10 @@ textarea:focus, input:focus , select:focus{
     height: 32px;
   }
 }
+
+
+
+
+.optinbg{
+  background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%) !important;
+}

@@ -10,11 +10,11 @@ const Steps = ({ step }) => {
                             <div className="relative">
                                 <div className="text-left" >
                                     <Link href="/meal-plans">
-                                        <button class={`  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b  ${step == 1 ? 'sub   text-white' : 'text-black  '} rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                        <button class={`  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b  ${step == 6 ? 'sub   text-white' : 'text-black  '} rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                             <ul className="inline-flex">
                                                 <li>
                                                     <img
-                                                        src={`${step == 1 ? "/images/choose-plan-active 1.png" : "/images/choose-plan-inactive-diet.png" } `}
+                                                        src={`${step == 6 ? "/images/choose-plan-active 1.png" : "/images/choose-plan-inactive-diet.png" } `}
                                                         className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                                     />
                                                 </li>
@@ -35,11 +35,11 @@ const Steps = ({ step }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             {/* <Link href="/classicdiet" > */}
                             <div className="relative">
-                                <button class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 2 ? 'sub   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                <button class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? 'sub   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
-                                                src={`${step == 2 ? "/images/customize-active 1clasic.png" : "/images/customize-inactive.png"}`}
+                                                src={`${step == 1 ? "/images/customize-active 1clasic.png" : "/images/customize-inactive.png"}`}
                                                 className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                             />
                                         </li>

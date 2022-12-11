@@ -13,6 +13,7 @@ import SEO from "../Common/SEO";
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Keto Diet")
   const contentDataKetoDiet = Object.values(contentData).find(c => c.VmealsKetoDietEnableDisables == "Enable")
+
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />

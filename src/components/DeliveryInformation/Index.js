@@ -8,12 +8,12 @@ export default function Index() {
   return (
     <>
       <div className="DeliveryInformationbg">
-        <Navbar />
+        {/* <Navbar /> */}
         <Hero />
       </div>
       <Customizeplan />
 
-      <Fotter />
+      {/* <Fotter /> */}
     </>
   );
 }

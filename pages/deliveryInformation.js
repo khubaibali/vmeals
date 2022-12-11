@@ -1,5 +1,5 @@
 import React from 'react'
-import  Deliveryinfofopage from './src/components/Delivery Information/Index'
+import  Deliveryinfofopage from '../src/components/DeliveryInformation/Index'
 
 
 export default function deliveryInformation() {

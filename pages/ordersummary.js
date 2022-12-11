@@ -1,5 +1,5 @@
 import React from 'react'
-import  OrderSummarypage from './src/components/Order Summary/Index'
+import  OrderSummarypage from '../src/components/OrderSummary/Index'
 
 
 export default function ordersummary() {

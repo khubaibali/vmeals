@@ -8,11 +8,11 @@ export default function Index() {
   return (
     <>
       <div className="personalinformationbg">
-        <Navbar />
+        {/* <Navbar /> */}
         <Hero />
       </div>
       <Customizeplan />
-      <Fotter />
+      {/* <Fotter /> */}
     </>
   );
 }

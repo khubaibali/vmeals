@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Welcomeinput() {
+export default function Welcomeinput({ setStep }) {
   return (
     <div>
       {" "}
@@ -37,7 +37,7 @@ export default function Welcomeinput() {
             <h1 className=" text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
             </h1>
-    
+
             <form>
               <div className="flex">
                 <label
@@ -184,18 +184,22 @@ export default function Welcomeinput() {
               Nationality<span className="text-red">* </span>
             </h1>
 
-            <button
-              id="dropdown-button"
-              data-dropdown-toggle="dropdown"
-              className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white   green-gradiant  text-center  focus:outline-none  contact-btn relative "
-              type="button"
-            >
-              <h1 className="relative left-[40%]"> Select an option... </h1>
-              <img
+            {/* new code data started */}
+            <div className="relative" >
+              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " >
+
+                <option value="volvo" className="  text-black f-f-b  text-xsone lg:text-sm ">Volvo</option>
+                <option value="saab" className="  text-black f-f-b  text-xsone lg:text-sm ">Saab</option>
+                <option value="opel" className="  text-black f-f-b  text-xsone lg:text-sm ">Opel</option>
+                <option value="audi" className="  text-black f-f-b  text-xsone lg:text-sm ">Audi</option>
+              </select>
+
+              <img alt=""
                 src="/images/mobilearrow.png"
-                className="absolute right-4"
-              />{" "}
-            </button>
+                className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
+              />
+            </div>
+            {/* new code data end */}
             <div
               id="dropdown"
               className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
@@ -241,14 +245,16 @@ export default function Welcomeinput() {
           </div>
           <div className="   col-span-6 xl:col-span-6 ">
             <div className="text-center">
-              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8" onClick={() => setStep(1)}>
                 Back
               </button>
             </div>
           </div>
           <div className="   col-span-6 xl:col-span-6 ">
             <div className="text-center">
-              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8" onClick={() => {
+                setStep(3)
+              }}>
                 Submit
               </button>
             </div>

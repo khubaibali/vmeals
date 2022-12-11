@@ -1,129 +1,13 @@
 import React from "react";
 import Link from "next/link";
-export default function Customizeplan() {
+import Steps from "../OurPlans/Steps";
+export default function CustomizeplanOrderSummary(step) {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 md:my-20">
         {/* code testing */}
-        <div className="no-scrollbar overflow-x-auto">
-          <div className=" planscrol hidescrol ">
-            <div className="grid grid-cols-10  lg:gap-4  border-2 border-green   rounded-full bg-white shadow-lg ">
-              <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
-                <div className="relative">
-                  <Link href="/ourplans">
-                    <button class="  text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
-                      <ul className="inline-flex">
-                        <li>
-                          <img
-                            src="/images/choose-plan-inactive-diet.png"
-                            className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
-                          />
-                        </li>
-                        <li className="mt-2 md:mt-3 ml-2 lg:ml-4">
-                          Select Plan
-                        </li>
-                      </ul>
-                    </button>
-                  </Link>
-                  <img
-                    src="/images/arrowplans.png"
-                    className="  w-[36px] xl:w-[60px] absolute top-[50%] right-[31px] md:right-[21px]  lg:right-6 "
-                  />
-                </div>
-              </div>
-              {/*  */}
-              <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
-                <Link href="/classicdiet">
-                  <div className="relative">
-                    <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
-                      <ul className="inline-flex">
-                        <li>
-                          <img
-                            src="/images/customize-inactive.png"
-                            className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-1 lg:mt-2 2xl:mt-3  "
-                          />
-                        </li>
-                        <li className="mt-1 md:mt-2 lg:mt-3 ml-2 lg:ml-4">
-                          Customise Plan
-                        </li>
-                      </ul>
-                    </button>
-                    <img
-                      src="/images/arrowplans.png"
-                      className="  w-[36px] xl:w-[60px] absolute top-[50%] right-3 lg:right-0 "
-                    />
-                  </div>
-                </Link>
-              </div>
-              <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
-                <div className="relative">
-                  <Link href="/personalInformation">
-                    <button class=" text-smtwo md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[12px] addwidth py-[3px] lg:py-[6px] 2xl:px-[20px] 2xl:h-[74px]">
-                      <ul className="inline-flex">
-                        <li>
-                          <img
-                            src="/images/Sign-Up-Login-inactive.png"
-                            className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-1 lg:mt-2 2xl:mt-3  "
-                          />
-                        </li>
-                        <li className="mt-1 md:mt-2 lg:mt-3 ml-2 lg:ml-4">
-                          Personal Information
-                        </li>
-                      </ul>
-                    </button>
-                  </Link>
-                  <img
-                    src="/images/arrowplans.png"
-                    className="  w-[36px] xl:w-[60px] absolute top-[50%] right-0 md:right-[10px]  lg:right-[14px] xl:right-[1px] 2xl:right-[5px] "
-                  />
-                </div>
-              </div>
-              <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
-                <div className="relative">
-                  <Link href="/deliveryInformation">
-                    <button class=" text-smtwo md:text-xstwo   lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[12px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[25px] 2xl:h-[74px]">
-                      <ul className="inline-flex">
-                        <li>
-                          <img
-                            src="/images/delivery-icon-inactive.png"
-                            className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
-                          />
-                        </li>
-                        <li className="mt-2 md:mt-3 ml-2 lg:ml-4">
-                          Delivery Information
-                        </li>
-                      </ul>
-                    </button>
-                  </Link>
-                  <img
-                    src="/images/arrowplans.png"
-                    className="  w-[36px] xl:w-[60px] absolute top-[50%] right-[7px] md:right-[-6px]  lg:right-0 xl:-right-4  2xl:right-[9px]  "
-                  />
-                </div>
-              </div>
-              <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
-                <Link href="/ordersummary">
-                  <div className="text-right">
-                    <button class=" text-smtwo md:text-xstwo sub lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-white  rounded-full    px-[37px]  md:px-[29px] lg:px-[47px] xl:px-[38px] addwidth pb-[3px] lg:py-[6px] 2xl:px-[71px] 2xl:h-[74px]">
-                      <ul className="inline-flex">
-                        <li>
-                          <img
-                            src="/images/summary-active 1.png"
-                            className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
-                          />
-                        </li>
-                        <li className="mt-2 md:mt-3 ml-2 lg:ml-4">
-                          Order Summary
-                        </li>
-                      </ul>
-                    </button>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Steps step={step} />
         {/* code testing ended */}
         <div className=" md:w-8/12 ml-auto mr-auto lg:w-full ">
           <div className="grid grid-cols-12 gap-8 my-10 2xl:my-20    ">
