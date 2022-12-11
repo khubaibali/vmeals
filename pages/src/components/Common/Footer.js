@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsIcon,vmealsguide,vmealsFooter } from '../../../../src/lib/APICommunications';
-export default function Fotter({ socialMediaIcon,footerData,tradeMarkData }) {
+export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkData=[{}] }) {
   console.log("footer", footerData)
   return (
     <div className=" pt-5 md:pt-10 2xl:pt-20">

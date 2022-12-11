@@ -1,7 +1,7 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL 
 import { vmealsSliderBar } from '../../../../src/lib/APICommunications';
-export default function Hero({sliderBarData={}}) {
+export default function Hero({sliderBarData=[{}]}) {
   console.log("slider bar data",sliderBarData)
   return (
     <>

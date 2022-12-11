@@ -4,7 +4,7 @@ import { vmealsOurGeniuses } from '../../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
 // import Gunjan from '../../assets/images/Gunjan-Photo 1.png'
 
-export default function Genius({ ourGeniusData }) {
+export default function Genius({ ourGeniusData=[{}] }) {
   console.log("ourGeniusData--->", ourGeniusData)
   return (
     <>
