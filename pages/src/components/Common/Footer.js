@@ -41,7 +41,7 @@ export default function Fotter({ socialMediaIcon,footerData,tradeMarkData }) {
               </Link>
             </li> */}
             </>
-            {socialMediaIcon[0]?.VMealsIconList.map((item)=>{
+            {socialMediaIcon?.[0]?.VMealsIconList.map((item)=>{
               return <li>
                <Link
                  href={item?.VMealsIconItemLink}
@@ -61,7 +61,7 @@ export default function Fotter({ socialMediaIcon,footerData,tradeMarkData }) {
             <div className="col-span-3 md:col-span-3 xl:col-span-3   ">
               <img
                 // src="/images/Tablet-Pro-Mockup 1.png"
-                src={footerData[0]?.VMealsGuideInputImages?.url}
+                src={footerData?.[0]?.VMealsGuideInputImages?.url}
                 className="w-full h-auto mt-4 lg:mt-0 "
                 alt=""
               />
@@ -69,7 +69,7 @@ export default function Fotter({ socialMediaIcon,footerData,tradeMarkData }) {
             <div className="col-span-8 md:col-span-9  ">
               <h2 className=" text-black f-f-b  text-smtwo  md:text-2xl lg:text-3xl 2xl:text-5xl pt-3 md:pt-8 uppercase ">
                 Get your free 
-                <span className="text-green"> {footerData[0]?.VMealsGuideBoldColorTitle}</span>{" "}
+                <span className="text-green"> {footerData?.[0]?.VMealsGuideBoldColorTitle}</span>{" "}
                 guide today!
               </h2>
 
@@ -79,13 +79,13 @@ export default function Fotter({ socialMediaIcon,footerData,tradeMarkData }) {
                     type="text"
                     className="w-full  input-footer  mt-3 md:mt-4 lg:mt-4 2xl:mt-4 md:py-3 2xl:py-5  border-2 border-green pb-1 pt-0 "
                     // placeholder="Please enter your email address..."
-                    placeholder={footerData[0]?.VMealsGuideInputPlaceholderText}
+                    placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
                   />
                 </div>
                 <div className="  col-span-4 md:col-span-4 lg:col-span-3 text-center">
                   <button class="bg-green f-f-b text-xs md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5  px-3 md:px-9 py-2 md:py-5 2xl:py-5 mt-3 rounded-full  sub ">
                     {/* Subscribe */}
-                    {footerData[0]?.VMealsGuideInputButtonTitle}
+                    {footerData?.[0]?.VMealsGuideInputButtonTitle}
                   </button>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Fotter({ socialMediaIcon,footerData,tradeMarkData }) {
                 className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
               >
                 {/* VMeals - © All Rights Reserved - 2022 */}
-                {tradeMarkData[0]?.VMealsFooter}
+                {tradeMarkData?.[0]?.VMealsFooter}
               </a>
             </div>
             <div className=" col-span-6 md:col-span-6 lg:col-span-5 xl:col-span-4 text-center  ">
@@ -131,7 +131,7 @@ export default function Fotter({ socialMediaIcon,footerData,tradeMarkData }) {
                 </li> */}
                 
                 {
-                  tradeMarkData[0]?.VMealsFooterList.map((footeritem)=>(
+                  tradeMarkData?.[0]?.VMealsFooterList.map((footeritem)=>(
                     <li>
                     <a
                       href={`${BaseURL}${footeritem?.VMealsOurPartnersFileUpload?.url}`}

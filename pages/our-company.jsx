@@ -3,7 +3,7 @@ import Aboutpage from './src/components/About Us/Index'
 import { getServerSideProps as headerProps } from './src/components/Common/Navbar'
 import { getServerSideProps as sliderBarProps } from './src/components/Home/Hero'
 import { getServerSideProps as socialMediaIconsProps } from './src/components/Common/Footer'
-import { vmealsAboutUs } from '../src/lib/APICommunications'
+import { getServerSideProps as ourCompanyDataProps} from './src/components/About Us/JournyMissionWrapper'
 
 export default function about(props) {
   console.log("our-company props", props)
@@ -14,21 +14,21 @@ export default function about(props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({req,res}) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
   try {
-
-    let data = await headerProps()
-    let sliderBarData = await sliderBarProps()
-    let socialMediaIcon = await socialMediaIconsProps()
-    let ourCompanyData = await fetch(vmealsAboutUs)
-    ourCompanyData = await ourCompanyData.json()
+    let resolvedPromises = await Promise.all([headerProps(),sliderBarProps(),socialMediaIconsProps(),ourCompanyDataProps()])
+    let final = resolvedPromises.map((itx)=>(itx.props))
+    let newObject ={}
+    console.log("our company final", final)
+    final.forEach((x)=>{newObject={...newObject,...x}})
     
     return {
       props: {
-        ...data.props,    //navbar
-        ...sliderBarData.props,     //hero
-        ...socialMediaIcon.props,    //all footer data
-        ourCompanyData:{...ourCompanyData?.docs}
+        ...newObject
       }, // will be passed to the page component as props
     }
   } catch (error) {

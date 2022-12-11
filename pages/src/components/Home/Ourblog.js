@@ -75,7 +75,7 @@ export default function Ourblog({ ourHomeBlogData }) {
 
 
             {
-              ourHomeBlogData.docs.map((blog, index) => {
+              ourHomeBlogData?.docs?.map((blog, index) => {
                 
                 return  <>
                 {index <3 ? <div className="col-span-6 lg:col-span-4  ">
