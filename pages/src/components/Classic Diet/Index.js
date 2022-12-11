@@ -22,8 +22,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
         <Navbar headerData={headerData} />
         <Hero />
       </div>
-      <Customizeplan  heading={contentDataClassicDiet?.VMealsClassicDietHeading} description={contentDataClassicDiet?.VMealsClassicDietdescriptionParagraphs
-} />
+      <Customizeplan  heading={contentDataClassicDiet?.VMealsClassicDietHeading} description={contentDataClassicDiet?.VMealsClassicDietdescriptionParagraphs} selectedPlan={"ClassicDiet"} />
       <Simplemenu />
       <Built builtData={builtData} />
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">

@@ -1,0 +1,36 @@
+{
+    "cities": [
+        {
+            "name": "Abu Dhabi",
+            "timeSlots": ["2:00am – 6:00am", "4:00am – 8:00am", "6:00am – 10:00am", "9:00am – 1:00pm"]
+        },
+        {
+            "name": "Al Ain",
+            "timeSlots": ["2:00am – 6:00am", "4:00am – 8:00am", "6:00am – 10:00am", "9:00am – 1:00pm"]
+        },
+        {
+            "name": "Dubai",
+            "timeSlots": ["12:00am – 4:00am", "2:00am – 6:00am", "4:00am – 8:00am", "6:00am – 10:00am"]
+        },
+        {
+            "name": "Sharjah",
+            "timeSlots": ["2:00am – 6:00am"]
+        },
+        {
+            "name": "Ajman",
+            "timeSlots": ["2:00am – 6:00am"]
+        },
+        {
+            "name": "Ras Al Khaimah",
+            "timeSlots": ["2:00am – 6:00am", "4:00am – 8:00am"]
+        },
+        {
+            "name": "Umm Al Quwain",
+            "timeSlots": ["2:00am – 6:00am", "4:00am – 8:00am"]
+        },
+        {
+            "name": "Fujairah",
+            "timeSlots": ["2:00am – 6:00am", "4:00am – 8:00am", "6:00am – 10:00am"]
+        }
+    ]
+}

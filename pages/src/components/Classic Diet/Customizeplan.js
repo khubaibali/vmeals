@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "../Our Plans/Steps";
 import { vmealsPages } from "../../../../src/lib/APICommunications";
+import PlanData from '../../../../src/lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
 
-export default function Customizeplan({ heading, description }) {
-  console.log("contentDataClassicDiet")
+export default function Customizeplan({ heading, description, selectedPlan }) {
+  const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
   const [openTab, setOpenTab] = React.useState(1);
+
+
+
+  console.log("selected Portion 2", selectedPortion)
+  const getCustomizeActiveClass = (selected, checked, type) => {
+    console.log("SELECTED", selected);
+    if (type == "days") {
+      return selected?.days == checked?.days ? "cusntn" : "";
+    } else if (type == "name") {
+      return selected?.name == checked?.name ? "cusntn" : "";
+    } else {
+      return selected?.id == checked?.id ? "cusntn" : "";
+    }
+  };
+
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
@@ -52,24 +68,30 @@ export default function Customizeplan({ heading, description }) {
               </h1>
 
               <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                <div className="   col-span-12  md:col-span-6  ">
-                  <button className=" cusntn w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 ">
-                    <ul>
-                      <li>
-                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                          {" "}
-                          2400kCal - 3000kCal
-                        </h1>
-                      </li>
-                      <li>
-                        <h1 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
-                          Athlete
-                        </h1>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-                <div className="   col-span-12  md:col-span-6  ">
+                {PlanData[selectedPlan]?.portions?.map(p => (
+                  <div className="   col-span-12  md:col-span-6  ">
+                    <button
+                      className={`${getCustomizeActiveClass(selectedPortion, p, "id")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
+                      onClick={() => {
+                        setSelectedPortion(p)
+                      }}>
+                      <ul>
+                        <li>
+                          <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                            {" "}
+                            {p?.caloriesRange}
+                          </h1>
+                        </li>
+                        <li>
+                          <h1 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
+                            {p?.name}
+                          </h1>
+                        </li>
+                      </ul>
+                    </button>
+                  </div>
+                ))}
+                {/* <div className="   col-span-12  md:col-span-6  ">
                   <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 ">
                     <ul>
                       <li>
@@ -118,7 +140,7 @@ export default function Customizeplan({ heading, description }) {
                       </li>
                     </ul>
                   </button>
-                </div>
+                </div> */}
               </div>
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Choose deliveries per week{" "}
