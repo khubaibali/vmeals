@@ -8,21 +8,21 @@ import Question from "../Faq/Questions";
 import Customizeplan from "../Classic Diet/Customizeplan";
 import Simplemenu from "../Classic Diet/Simplemenu";
 
-export default function Index() {
+export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData }) {
   return (
     <>
       <div className="gluentdietbg">
-        <Navbar />
+        <Navbar  headerData={headerData} />
         <Hero />
       </div>
       <Customizeplan />
       <Simplemenu />
-      <Built />
+      <Built builtData={builtData} />
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-        <Question />
+        {/* <Question /> */}
       </div>
       <Review />
-      <Fotter />
+      <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
   );
 }
