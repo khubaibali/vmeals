@@ -1,6 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
+import NationalityData from "../../lib/data/nationality/data.json";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment/moment";
 
 export default function Welcomeinput({ setStep }) {
+  const [firstName, setFirstName] = useState(null)
+  const [lastName, setLastName] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [mobileNumber, setMobileNumber] = useState(null)
+  const [dateOfBirth, setDateOfBirth] = useState(null)
+  const [nationality, setNationality] = useState(null);
+  const [errors, setErrors] = useState(null);
+
+  const Validation = () => {
+    let err = [];
+    if (!firstName) {
+      err.push({
+        field: "firstName",
+        msg: "First Name is required!",
+      });
+    }
+    if (!lastName) {
+      err.push({
+        field: "lastName",
+        msg: "Last Name is required!",
+      });
+    }
+    if (!dateOfBirth) {
+      err.push({
+        field: "dob",
+        msg: "Date Of Birth is required!",
+      });
+    }
+    if (!nationality) {
+      err.push({
+        field: "nationality",
+        msg: "Nationality is required!",
+      });
+    }
+    if (!email) {
+      err.push({
+        field: "email",
+        msg: "Email is required!",
+      });
+    }
+    if (!mobileNumber) {
+      err.push({
+        field: "mobileNumber",
+        msg: "Mobile Number is required!",
+      });
+    }
+    setErrors(err);
+    if (err.length <= 0) {
+      setStep(3)
+    } else {
+      console.log("")
+    }
+  }
   return (
     <div>
       {" "}
@@ -13,7 +70,17 @@ export default function Welcomeinput({ setStep }) {
             <input
               placeholder="Enter your first name…"
               className=" input-register "
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
             />
+            {errors?.length > 0 ? (
+              <p style={{ color: "red" }}>
+                {errors?.find((e) => e.field == "firstName")
+                  ?.msg || ""}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h1 className=" text-base f-f-b text-black md:mt-10 mb-1 ">
@@ -22,7 +89,17 @@ export default function Welcomeinput({ setStep }) {
             <input
               placeholder="Enter your last name…"
               className=" input-register "
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
             />
+            {errors?.length > 0 ? (
+              <p style={{ color: "red" }}>
+                {errors?.find((e) => e.field == "lastName")
+                  ?.msg || ""}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h1 className=" text-base f-f-b text-bla  ">
@@ -31,7 +108,17 @@ export default function Welcomeinput({ setStep }) {
             <input
               placeholder="Enter your email address…"
               className=" input-register "
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
+            {errors?.length > 0 ? (
+              <p style={{ color: "red" }}>
+                {errors?.find((e) => e.field == "email")
+                  ?.msg || ""}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h1 className=" text-base f-f-b text-black  ">
@@ -111,15 +198,25 @@ export default function Welcomeinput({ setStep }) {
                 </div>
                 <div className="relative w-full">
                   <input
-                    type="search"
+                    type="number"
                     id="search-dropdown"
                     className="block  input-register-mob"
                     placeholder="Enter your mobile number…"
                     required
+                    onChange={(e) => setMobileNumber(e.target.value)}
+                    value={mobileNumber}
                   />
                 </div>
               </div>
             </form>
+            {errors?.length > 0 ? (
+              <p style={{ color: "red" }}>
+                {errors?.find((e) => e.field == "mobileNumber")
+                  ?.msg || ""}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h1 className=" text-base f-f-b text-bla  ">
@@ -127,10 +224,23 @@ export default function Welcomeinput({ setStep }) {
             </h1>
 
             {/* date input */}
-            <input type="date" id="start" name="trip-start"
+            <DatePicker
+              selected={dateOfBirth || ""}
+              onChange={(date) => setDateOfBirth(date)}
+              dateFormat="dd/MM/yyyy"
+              maxDate={moment().subtract(18, "years")._d}
+              showYearDropdown
+              scrollableYearDropdown
+              placeholderText={
+                "Please select your date of birth"
+              }
+              yearDropdownItemNumber={50}
+              className="input-register  pr-10"
+            />
+            {/* <input type="date" id="start" name="trip-start"
               className=" input-register  pr-10 "
               value="2018-07-22"
-              min="2018-01-01" max="2018-12-31" />
+              min="2018-01-01" max="2018-12-31" /> */}
             {/* date input ended  */}
             <div
               id="dropdown"
@@ -182,12 +292,13 @@ export default function Welcomeinput({ setStep }) {
 
             {/* new code data started */}
             <div className="relative" >
-              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " >
-
-                <option value="volvo" className="  text-black f-f-b  text-xsone lg:text-sm ">Volvo</option>
-                <option value="saab" className="  text-black f-f-b  text-xsone lg:text-sm ">Saab</option>
-                <option value="opel" className="  text-black f-f-b  text-xsone lg:text-sm ">Opel</option>
-                <option value="audi" className="  text-black f-f-b  text-xsone lg:text-sm ">Audi</option>
+              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " onChange={(e) => setNationality(e.target.value)} >
+                <option value={""}>Select Nationality</option>
+                {NationalityData.nationality.map((n) => (
+                  <option className="text-black" value={n.nationality} selected={n.nationality == nationality ? true : false}>
+                    {n.nationality}
+                  </option>
+                ))}
               </select>
 
               <img alt=""
@@ -249,7 +360,7 @@ export default function Welcomeinput({ setStep }) {
           <div className="   col-span-6 xl:col-span-6 ">
             <div className="text-center">
               <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8" onClick={() => {
-                setStep(3)
+                Validation()
               }}>
                 Submit
               </button>
