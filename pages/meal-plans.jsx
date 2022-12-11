@@ -1,12 +1,12 @@
 import React from 'react'
 import  Ourplanspage from '../src/components/Our Plans/Index'
-import {getServerSideProps as headerProps} from './src/components/Common/Navbar'
-import {getServerSideProps as sliderBarProps} from './src/components/Home/Hero'
-import {getServerSideProps as builtDataProps} from './src/components/Home/Built'
-import {getServerSideProps as ourGeniusDataProps} from './src/components/Home/Genius'
-import {getServerSideProps as homeFitnessDataProps} from './src/components/Home/Fitness'
-import {getServerSideProps as ourHomeBlogsDataProps} from './src/components/Home/Ourblog'
-import {getServerSideProps as socialMediaIconsProps} from './src/components/Common/Footer'
+import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
+import {getServerSideProps as sliderBarProps} from '../src/components/Home/Hero'
+import {getServerSideProps as builtDataProps} from '../src/components/Home/Built'
+import {getServerSideProps as ourGeniusDataProps} from '../src/components/Home/Genius'
+import {getServerSideProps as homeFitnessDataProps} from '../src/components/Home/Fitness'
+import {getServerSideProps as ourHomeBlogsDataProps} from '../src/components/Home/Ourblog'
+import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
 
 export default function ourplans(props) {
   return (

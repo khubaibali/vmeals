@@ -22,7 +22,10 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
   const [offDays, setOffDays] = useState("Friday - Saturday");
   const [price, setPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price);
   const [totalPrice, setTotalPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price -(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price * 0.05));
+  const [addOnFifty, setAddOnFifty] = useState(0);
+  const [addOnTwoHundred, setAddOnTwoHundred] = useState(0);
 
+  
   const [openTab, setOpenTab] = React.useState(1);
   const [aboutus, setaboutus] = React.useState(false);
   const [maximum, setmaximum] = React.useState(false);
@@ -131,6 +134,7 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                       className={` ${getCustomizeActiveClass(selectedDuration, duration, "name")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                       onClick={() => {
                         setSelectedDuration(duration)
+                        setPrice(duration?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
                       }}
                     >
                       <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
@@ -154,6 +158,7 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                       className={`${getCustomizeActiveClass(selectedDaysPerWeek, dpw, "days")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                       onClick={() => {
                         setSelectedDaysPerWeek(dpw)
+                        setPrice(dpw?.mealType?.find((m) => m.id == mealType.id)?.price)
                       }}
                     >
                       <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
@@ -201,7 +206,14 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
               <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
                 {/* new code data started */}
                 <div className="relative" >
-                  <select id="cars" name="carlist" form="carform" className="f-f-b  text-xsone lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  " >
+                  <select id="cars" name="carlist" form="carform" className="f-f-b  text-xsone lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  " 
+                  onChange={(e) => {
+                    setMealType(
+                      e.target.value?.split?.("|")?.[0]
+                    );
+                    setPrice(e.target.value?.split?.("|")?.[1]);
+                  }}
+                  >
                     {selectedDaysPerWeek?.mealType?.map((dpw) => (
                       <option className=" text-center hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
                         value={`${dpw.id}|${dpw.price}`} selected={mealType == dpw.id ? true : dpw.id == "Breakfast_Lunch_Dinner_Snack_Drink" ? true : false}
@@ -273,6 +285,20 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                         name="vehicle1"
                         value="Bike"
                         className=" checkinpu "
+                        checked={addOnFifty > 0 ? true : false}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setAddOnFifty(50);
+                            setPrice(
+                              Number(price) + 50
+                            );
+                          } else {
+                            setAddOnFifty(0);
+                            setPrice(
+                              Number(price) - 50
+                            );
+                          }
+                        }}
                       />
                       <label
                         for="vehicle1"
