@@ -5,14 +5,19 @@ import Steps from "../Our Plans/Steps";
 import { vmealsPages } from "../../../../src/lib/APICommunications";
 import PlanData from '../../../../src/lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
+import { getDurationName } from "../../../../src/helpers";
 
 export default function Customizeplan({ heading, description, selectedPlan }) {
   const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
+  const [selectedDuration, setSelectedDuration] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]);
+  const [selectedDaysPerWeek, setSelectedDaysPerWeek] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]);
+  
+  
   const [openTab, setOpenTab] = React.useState(1);
+  const [aboutus, setaboutus] = React.useState(false);
+  const [maximum, setmaximum] = React.useState(false);
 
-
-
-  console.log("selected Portion 2", selectedPortion)
+  console.log("selected Portion 2", selectedDaysPerWeek)
   const getCustomizeActiveClass = (selected, checked, type) => {
     console.log("SELECTED", selected);
     if (type == "days") {
@@ -91,86 +96,50 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                     </button>
                   </div>
                 ))}
-                {/* <div className="   col-span-12  md:col-span-6  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 ">
-                    <ul>
-                      <li>
-                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                          {" "}
-                          2000kCal - 2400kCal
-                        </h1>
-                      </li>
-                      <li>
-                        <h1 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
-                          Muscle Gain
-                        </h1>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-                <div className="   col-span-12  md:col-span-6  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 ">
-                    <ul>
-                      <li>
-                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                          1600kCal - 2000kCal
-                        </h1>
-                      </li>
-                      <li>
-                        <h1 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
-                          Wellness
-                        </h1>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-                <div className="   col-span-12  md:col-span-6  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 ">
-                    <ul>
-                      <li>
-                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                          {" "}
-                          1200kCal - 1600kCal
-                        </h1>
-                      </li>
-                      <li>
-                        <h1 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
-                          Weight Loss
-                        </h1>
-                      </li>
-                    </ul>
-                  </button>
-                </div> */}
               </div>
+
+              <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                Choose plan duration
+              </h1>
+              <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
+                {selectedPortion?.planDuration?.map(duration => (
+                  <div className="   col-span-6  ">
+
+                    <button
+                      className={` ${getCustomizeActiveClass(selectedDuration, duration, "name")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
+                      onClick={() => {
+                        setSelectedDuration(duration)
+                      }}
+                    >
+                      <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                        {" "}
+                        {getDurationName(duration?.name)}
+                      </h1>
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+
+
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Choose deliveries per week{" "}
               </h1>
-
               <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                <div className="   col-span-4  ">
-                  <button className=" cusntn w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      {" "}
-                      5 days/week
-                    </h1>
-                  </button>
-                </div>
-                <div className="   col-span-4  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      {" "}
-                      6 days/week
-                    </h1>
-                  </button>
-                </div>
-                <div className="   col-span-4  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      {" "}
-                      7 days/week
-                    </h1>
-                  </button>
-                </div>
+                {selectedDuration?.deliveriesPerWeek?.map(dpw => (
+                  <div className="   col-span-4  ">
+                    <button
+                      className={`${getCustomizeActiveClass(selectedDaysPerWeek, dpw, "days")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
+                      onClick={() => {
+                        setSelectedDaysPerWeek(dpw)
+                      }}
+                    >
+                      <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                        {dpw.days} days/week
+                      </h1>
+                    </button>
+                  </div>
+                ))}
               </div>
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Choose your off days(s){" "}
@@ -193,49 +162,13 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                   </button>
                 </div>
               </div>
-
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
-                Choose plan duration
-              </h1>
-
-              <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                <div className="   col-span-6  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      {" "}
-                      1 week
-                    </h1>
-                  </button>
-                </div>
-                <div className="   col-span-6  ">
-                  <button className=" cusntn w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      4 week
-                    </h1>
-                  </button>
-                </div>
-                <div className="   col-span-6  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      {" "}
-                      8 weeks
-                    </h1>
-                  </button>
-                </div>
-                <div className="   col-span-6  ">
-                  <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
-                    <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
-                      {" "}
-                      12 weeks
-                    </h1>
-                  </button>
-                </div>
-              </div>
-              <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
-                Choose plan duration
+                Choose your meal type
               </h1>
               <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
-                <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px] relative  ">
+                <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px] relative  " onClick={() => {
+                  setaboutus(!aboutus);
+                }}>
                   <h1 className=" text-black f-f-b text-sm 2xl:text-base hidden md:block ">
                     Breakfast + Lunch + Dinner + Snack + Drink{" "}
                   </h1>
@@ -256,12 +189,59 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                     />
                   </svg>
                 </button>
+
+                {/*  drop down code started */}
+
+
+                <div
+                  id="dropdownNavbar"
+                  className={`${aboutus ? "" : "hidden"
+                    }  z-10  block font-normal divide-y divide-gray-100 rounded-b-[20px] shadow   bg-white  w-full `}
+                >
+                  <ul
+                    className="py-1  text-black f-f-b   "
+                    aria-labelledby="dropdownLargeButton"
+                  >
+                    <li>
+                      <Link
+                        href="/about"
+                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
+                      >
+                        Our Company
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/faq"
+                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
+                      >
+                        FAQs
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/ourpartner"
+                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-xsone lg:text-sm  "
+                      >
+                        Our Partners
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                {/* drop down code ended */}
               </div>
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Select your allergies (5 maximum)
               </h1>
               <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
-                <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px] relative  ">
+                <button className="  w-full h-[47px] md:h-[59px] 2xl:h-[68px] relative  "
+
+                  onClick={() => {
+                    setmaximum(!maximum);
+                  }}>
+
                   <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
                     Breakfast{" "}
                   </h1>
@@ -280,6 +260,47 @@ export default function Customizeplan({ heading, description, selectedPlan }) {
                     />
                   </svg>
                 </button>
+                {/*  drop down code started */}
+
+
+                <div
+                  id="dropdownNavbar"
+                  className={`${maximum ? "" : "hidden"
+                    }  z-10  block font-normal divide-y divide-gray-100 rounded-b-[20px] shadow   bg-white  w-full `}
+                >
+                  <ul
+                    className="py-1  text-black f-f-b   "
+                    aria-labelledby="dropdownLargeButton"
+                  >
+                    <li>
+                      <Link
+                        href="/about"
+                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
+                      >
+                        Our Company
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/faq"
+                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
+                      >
+                        FAQs
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/ourpartner"
+                        className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-xsone lg:text-sm  "
+                      >
+                        Our Partners
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                {/* drop down code ended */}
               </div>
               <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                 Add Ons
