@@ -6,17 +6,17 @@ import Review from "./Review";
 import Fotter from "../Common/Footer";
 import Mission from "./Mission";
 
-export default function Index() {
+export default function Index({tradeMarkData,headerData,footerData,sliderBarData,socialMediaIcon}) {
   return (
     <>
       <div className="about-bg">
-        <Navbar />
-        <Hero />
+        <Navbar headerData={headerData} />
+        <Hero sliderBarData={sliderBarData} />
       </div>
       <Journy />
       <Mission />
       <Review />
-      <Fotter />
+      <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>
     </>
   );
 }
