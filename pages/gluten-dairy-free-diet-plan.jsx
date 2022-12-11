@@ -1,10 +1,10 @@
 import React from 'react'
-import Gluentdietpage from '../src/components/Gluent Diet/Index'
+import Gluentdietpage from '../src/components/GluentDiet/Index'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as builtDataProps } from '../src/components/Home/Built'
-import { getServerSideProps as contentDataProps } from '../src/components/Classic Diet/Customizeplan'
+import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
-import { getServerSideProps as contentDataPropsPage } from '../src/components/Gluent Diet/Index'
+import { getServerSideProps as contentDataPropsPage } from '../src/components/GluentDiet/Index'
 
 
 export default function gluent(props) {

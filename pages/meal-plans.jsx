@@ -1,5 +1,5 @@
 import React from 'react'
-import  Ourplanspage from '../src/components/Our Plans/Index'
+import  Ourplanspage from '../src/components/OurPlans/Index'
 import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
 import {getServerSideProps as sliderBarProps} from '../src/components/Home/Hero'
 import {getServerSideProps as builtDataProps} from '../src/components/Home/Built'

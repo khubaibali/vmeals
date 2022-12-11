@@ -1,10 +1,10 @@
 import React from 'react'
-import GreenDietpage from '../src/components/Green Diet/Index'
+import GreenDietpage from '../src/components/GreenDiet/Index'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as builtDataProps } from '../src/components/Home/Built'
-import { getServerSideProps as contentDataProps } from '../src/components/Classic Diet/Customizeplan'
+import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
-import { getServerSideProps as contentDataPropsPage } from '../src/components/Green Diet/Index'
+import { getServerSideProps as contentDataPropsPage } from '../src/components/GreenDiet/Index'
 
 export default function greendiet(props) {
   return (
