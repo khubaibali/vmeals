@@ -8,7 +8,7 @@ import Question from "../Faq/Questions";
 import Customizeplan from "./Customizeplan";
 import Simplemenu from "./Simplemenu";
 import SEO from "../Common/SEO";
-import { vmealsClassicDietContent } from "../../../../src/lib/APICommunications";
+import { vmealsClassicDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData, contentData, metaData }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Classic Diet")

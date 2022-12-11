@@ -1,5 +1,5 @@
 import React from 'react'
-import ClassicDietpage from './src/components/Classic Diet/Index'
+import ClassicDietpage from '../src/components/Classic Diet/Index'
 import { getServerSideProps as headerProps } from './src/components/Common/Navbar'
 import { getServerSideProps as builtDataProps } from './src/components/Home/Built'
 import { getServerSideProps as socialMediaIconsProps } from './src/components/Common/Footer'

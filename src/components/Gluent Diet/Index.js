@@ -7,7 +7,7 @@ import Built from "../Home/Built";
 import Question from "../Faq/Questions";
 import Customizeplan from "../Classic Diet/Customizeplan";
 import Simplemenu from "../Classic Diet/Simplemenu";
-import { vmealsGlutenAndDairyDietContent } from "../../../../src/lib/APICommunications";
+import { vmealsGlutenAndDairyDietContent } from "../../lib/APICommunications";
 import SEO from "../Common/SEO";
 
 export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData,contentData, metaData }) {

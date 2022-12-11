@@ -1,5 +1,5 @@
 import React from 'react'
-import Pescatarianpage from './src/components/Pescatarian Diet/Index'
+import Pescatarianpage from '../src/components/Pescatarian Diet/Index'
 import { getServerSideProps as headerProps } from './src/components/Common/Navbar'
 import { getServerSideProps as builtDataProps } from './src/components/Home/Built'
 import { getServerSideProps as contentDataProps } from './src/components/Classic Diet/Customizeplan'
