@@ -1,5 +1,5 @@
 import React from 'react'
-import SEO from '../Common/Seo'
+import SEO from '../Common/SEO'
 export default function Abudebhisrv() {
   return (
     <div>
