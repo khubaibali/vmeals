@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Homepage from './src/components/Home/Index'
+import Homepage from '../src/components/Home/Index'
 import React, { useState } from 'react'
 import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
 import {getServerSideProps as sliderBarProps} from '../src/components/Home/Hero'

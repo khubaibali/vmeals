@@ -1,6 +1,6 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
-import { vmealsGetStarted } from '../../../../src/lib/APICommunications';
+import { vmealsGetStarted } from '../../../src/lib/APICommunications';
 export default function Fitness({ homeFitnessData=[{}] }) {
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto  my-10 md:my-20">

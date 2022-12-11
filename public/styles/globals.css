@@ -10,23 +10,23 @@ body {
 
 @font-face {
   font-family: RobotoCondensed-Bold;
-  src: url("../pages/src/assets/font-family/RobotoCondensed-Bold.ttf");
+  src: url("../assets/font-family/RobotoCondensed-Bold.ttf");
 }
 @font-face {
   font-family: RobotoCondensed-BoldItalic;
-  src: url("../pages/src/assets/font-family/RobotoCondensed-BoldItalic.ttf");
+  src: url("../assets/font-family/RobotoCondensed-BoldItalic.ttf");
 }
 @font-face {
   font-family: RobotoCondensed-Italic;
-  src: url("../pages/src/assets/font-family/RobotoCondensed-Italic.ttf");
+  src: url("../assets/font-family/RobotoCondensed-Italic.ttf");
 }
 @font-face {
   font-family: RobotoCondensed-Light;
-  src: url("../pages/src/assets/font-family/RobotoCondensed-Light.ttf");
+  src: url("../assets/font-family/RobotoCondensed-Light.ttf");
 }
 @font-face {
   font-family: RobotoCondensed-Regular;
-  src: url("../pages/src/assets/font-family/RobotoCondensed-Regular.ttf");
+  src: url("../assets/font-family/RobotoCondensed-Regular.ttf");
 }
 
 .f-f-r{

@@ -1,10 +1,10 @@
 import React from 'react'
-import Ourpartnerpage from './src/components/Our Partner/Index'
-import {getServerSideProps as headerProps} from './src/components/Common/Navbar'
-import {getServerSideProps as sliderBarProps} from './src/components/Home/Hero'
-import {getServerSideProps as socialMediaIconsProps} from './src/components/Common/Footer'
-import {getServerSideProps as faqQuestionsProps} from './src/components/Faq/Questions'
-import { getServerSideProps as ourSidePartnerProps } from  './src/components/Our Partner/Fitnesour'
+import Ourpartnerpage from '../src/components/Our Partner/Index'
+import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
+import {getServerSideProps as sliderBarProps} from '../src/components/Home/Hero'
+import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
+import {getServerSideProps as faqQuestionsProps} from '../src/components/Faq/Questions'
+import { getServerSideProps as ourSidePartnerProps } from  '../src/components/Our Partner/Fitnesour'
 export default function ourpartner(props) {
   return (
     <div>

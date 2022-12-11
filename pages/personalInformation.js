@@ -1,5 +1,5 @@
 import React from 'react'
-import  Personalinfopage from './src/components/Personal Information/Index'
+import  Personalinfopage from '../src/components/Personal Information/Index'
 
 
 export default function personalInformation() {
