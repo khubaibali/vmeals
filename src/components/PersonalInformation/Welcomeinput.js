@@ -126,16 +126,12 @@ export default function Welcomeinput({ setStep }) {
               Date of Birth <span className="text-red">* </span>
             </h1>
 
-            <button
-              id="dropdown-button"
-              data-dropdown-toggle="dropdown"
-              className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white   green-gradiant  text-center  focus:outline-none  contact-btn "
-              type="button"
-            >
-              {" "}
-              <h1 className="relative left-[60%]"> 04/10/2022 </h1>{" "}
-              <img src="/images/mobilearrow.png" className="absolute right-4" />{" "}
-            </button>
+            {/* date input */}
+            <input type="date" id="start" name="trip-start"
+              className=" input-register  pr-10 "
+              value="2018-07-22"
+              min="2018-01-01" max="2018-12-31" />
+            {/* date input ended  */}
             <div
               id="dropdown"
               className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
