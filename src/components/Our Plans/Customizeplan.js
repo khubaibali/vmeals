@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
-import Steps from "../Our Plans/Steps";
-import { vmealsPages } from "../../../../src/lib/APICommunications";
-import PlanData from '../../../../src/lib/data/meal-plans/data.json'
+import Steps from "./Steps";
+import { vmealsPages } from "../../lib/APICommunications";
+import PlanData from '../../lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
-import { getDurationName } from "../../../../src/helpers";
+import { getDurationName } from "../../helpers";
 import { Multiselect } from "multiselect-react-dropdown";
 
 export default function Customizeplan({ heading, description, selectedPlan }) {

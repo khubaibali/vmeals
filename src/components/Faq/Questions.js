@@ -1,5 +1,5 @@
 import React from "react";
-import { vmealsFAQ } from "../../../../src/lib/APICommunications";
+import { vmealsFAQ } from "../../lib/APICommunications";
 import DropDown from "../Common/DropDown";
 export default function Questions({ faqQuestions=[{}] }) {
   console.log('question component', faqQuestions)

@@ -5,7 +5,7 @@ import Review from "../About Us/Review";
 import Fotter from "../Common/Footer";
 import Built from "../Home/Built";
 import Question from "../Faq/Questions";
-import Customizeplan from "../Classic Diet/Customizeplan";
+import Customizeplan from "../Our Plans/Customizeplan";
 import Simplemenu from "../Classic Diet/Simplemenu";
 import SEO from "../Common/SEO";
 import { vmealsGreenDietContent } from "../../lib/APICommunications";
