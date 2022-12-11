@@ -41,7 +41,7 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
               </Link>
             </li> */}
             </>
-            {socialMediaIcon?.[0]?.VMealsIconList.map((item)=>{
+            {socialMediaIcon?.[0]?.VMealsIconList?.map((item)=>{
               return <li>
                <Link
                  href={item?.VMealsIconItemLink}

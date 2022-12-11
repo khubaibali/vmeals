@@ -1,5 +1,5 @@
 import React from 'react'
-import  Srvicdubai from './src/components/Service Dubai/Index'
+import  Srvicdubai from '../src/components/ServiceDubai/Index.js'
 
 export default function servicedubai() {
   return (

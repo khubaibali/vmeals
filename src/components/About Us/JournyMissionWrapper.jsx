@@ -1,4 +1,4 @@
-import { vmealsAboutUs } from "../../../../src/lib/APICommunications"
+import { vmealsAboutUs } from "../../../src/lib/APICommunications"
 import dynamic from "next/dynamic"
 const Journy = dynamic(() => import("./journy"))
 const Mission = dynamic(() => import("./Mission"))
