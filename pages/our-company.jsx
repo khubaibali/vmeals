@@ -1,9 +1,9 @@
 import React from 'react'
-import Aboutpage from './src/components/About Us/Index'
-import { getServerSideProps as headerProps } from './src/components/Common/Navbar'
-import { getServerSideProps as sliderBarProps } from './src/components/Home/Hero'
-import { getServerSideProps as socialMediaIconsProps } from './src/components/Common/Footer'
-import { getServerSideProps as ourCompanyDataProps} from './src/components/About Us/JournyMissionWrapper'
+import Aboutpage from '../src/components/About Us/Index'
+import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
+import { getServerSideProps as sliderBarProps } from '../src/components/Home/Hero'
+import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
+import { getServerSideProps as ourCompanyDataProps} from '../src/components/About Us/JournyMissionWrapper'
 
 export default function about(props) {
   console.log("our-company props", props)

@@ -1,9 +1,9 @@
 import React from 'react'
-import Faqpage from './src/components/Faq/Index'
-import {getServerSideProps as headerProps} from './src/components/Common/Navbar'
-import {getServerSideProps as sliderBarProps} from './src/components/Home/Hero'
-import {getServerSideProps as socialMediaIconsProps} from './src/components/Common/Footer'
-import {getServerSideProps as faqQuestionsProps} from './src/components/Faq/Questions'
+import Faqpage from '../src/components/Faq/Index'
+import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
+import {getServerSideProps as sliderBarProps} from '../src/components/Home/Hero'
+import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
+import {getServerSideProps as faqQuestionsProps} from '../src/components/Faq/Questions'
 export default function Faq(props) {
   console.log('faq page',props)
   return (

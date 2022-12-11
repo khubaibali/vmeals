@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
-import { vmealsOurBlogs } from '../../../../src/lib/APICommunications';
+import { vmealsOurBlogs } from '../../../src/lib/APICommunications';
 export default function Ourblog({ ourHomeBlogData }) {
   console.log("ourHomeData", ourHomeBlogData)
   return (

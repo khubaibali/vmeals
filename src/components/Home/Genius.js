@@ -1,6 +1,6 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
-import { vmealsOurGeniuses } from '../../../../src/lib/APICommunications';
+import { vmealsOurGeniuses } from '../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
 // import Gunjan from '../../assets/images/Gunjan-Photo 1.png'
 
