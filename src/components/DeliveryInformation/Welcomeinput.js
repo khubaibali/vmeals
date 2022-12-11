@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Welcomeinput() {
+export default function Welcomeinput({ step, setStep }) {
   return (
     <div>
       {" "}
@@ -249,14 +249,14 @@ export default function Welcomeinput() {
           </div>
           <div className="   col-span-6 xl:col-span-6 ">
             <div className="text-center">
-              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8" onClick={() => setStep(2)}>
                 Back
               </button>
             </div>
           </div>
           <div className="   col-span-6 xl:col-span-6 ">
             <div className="text-center">
-              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+              <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8" onClick={() => setStep(4)}>
                 Next
               </button>
             </div>
