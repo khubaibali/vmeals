@@ -1,22 +1,25 @@
 import React from "react";
-import Navbar from "../Common/Navbar";
-import Hero from "./Hero";
-import Journy from "./journy";
-import Review from "./Review";
-import Fotter from "../Common/Footer";
-import Mission from "./Mission";
+import dynamic from "next/dynamic";
+import JournyMissionWrapper from "./JournyMissionWrapper";
+const Navbar = dynamic(() => import( "../Common/Navbar"))
+const Hero=  dynamic(() => import( "./Hero"))
+const Review  = dynamic(()=>import ("./Review"))
+const Fotter  = dynamic(()=>import ("../Common/Footer"))
 
-export default function Index() {
+
+
+
+
+export default function Index({tradeMarkData,headerData,footerData,sliderBarData,socialMediaIcon,ourCompanyData}) {
   return (
     <>
       <div className="about-bg">
-        <Navbar />
-        <Hero />
+        <Navbar headerData={headerData} />
+        <Hero sliderBarData={sliderBarData} />
       </div>
-      <Journy />
-      <Mission />
+      <JournyMissionWrapper ourCompanyData={ourCompanyData}/>
       <Review />
-      <Fotter />
+      <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>
     </>
   );
 }

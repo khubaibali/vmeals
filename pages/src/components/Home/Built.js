@@ -5,7 +5,7 @@ import { vmealsCustomersChooseUs } from '../../../../src/lib/APICommunications';
 // import image2 from '../../assets/images/image 2-home.png'
 // import image3 from '../../assets/images/image 3-home.png'
 
-export default function Built({builtData}) {
+export default function Built({builtData=[{}]}) {
   return (
     <>
       <div>

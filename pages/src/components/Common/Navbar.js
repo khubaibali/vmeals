@@ -3,7 +3,7 @@ import { vmealsHeader } from '../../../../src/lib/APICommunications';
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import Link from "next/link";
 function Navbar({ headerData = {} }) {
-  console.log("headerDataheaderDataheaderData", headerData)
+
   const [first, setfirst] = useState(false);
   const [openCloseSubMenu,setOpenClose] = useState({})
 
@@ -190,7 +190,7 @@ function Navbar({ headerData = {} }) {
                         >
                           {headerItem?.VMealsHeaderSubMenuList.map((submenu) => (
                             <Link
-                              href={`/${submenu?.VMealsHeaderSubMenuLinkURL}`}
+                              href={`/${submenu?.VMealsHeaderSubMenuLinkURL ?submenu?.VMealsHeaderSubMenuLinkURL:"" }`}
                               className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
                             >
                               {/* Our Company */}
@@ -205,7 +205,7 @@ function Navbar({ headerData = {} }) {
                     :
                     <li>
                       <Link
-                        href={`/${headerItem?.VMealsHeaderMenuItemLinkURL}`}
+                        href={`/${headerItem?.VMealsHeaderMenuItemLinkURL ? headerItem?.VMealsHeaderMenuItemLinkURL : ""}`}
                         className="block py-2 pl-3 pr-4 text-white bg-green rounded md:bg-transparent md:text-black   md:p-0 f-f-b  text-smtwo xl:text-base 2xl:text-lg "
                       >
                         {headerItem?.VMealsHeaderMenuItemTitle}
@@ -215,7 +215,7 @@ function Navbar({ headerData = {} }) {
 
                 <li className=" md:hidden">
                   <Link
-                    href={headerData?.VMealsHeaderBlogTextLinkURL}
+                    href={headerData?.VMealsHeaderBlogTextLinkURL ? headerData?.VMealsHeaderBlogTextLinkURL : ""}
                     className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 "
                   >
                     {/* Blog */}
@@ -248,7 +248,7 @@ function Navbar({ headerData = {} }) {
               <ul className="flex flex-col p-4  border border-gray-100    md:flex-row md:space-x-4 lg:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-transparent ">
                 <li>
                   <Link
-                    href={headerData?.VMealsHeaderBlogTextLinkURL}
+                    href={headerData?.VMealsHeaderBlogTextLinkURL ? headerData?.VMealsHeaderBlogTextLinkURL:"" }
                     className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     {headerData?.VMealsHeaderBlogText}
@@ -275,7 +275,7 @@ function Navbar({ headerData = {} }) {
               </ul>
             </div>
             <div className="bg-white w-[70px] h-[70px] md:h-[100px] md:w-[100px] lg:h-[140px] lg:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[44%] -top-5 md:top-4 z-0 ">
-              <Link href= {headerData?.VMealsHeaderLogoImageLinkURL}>
+              <Link href= {headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
                   src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
                   alt={headerData?.VMealsHeaderLogoImage?.alt}
@@ -295,11 +295,10 @@ export default Navbar
 
 export async function getServerSideProps() {
   try {
-    console.log('comming here')
+    console.log('header fetching')
     let vmealsHeaderData = await fetch(vmealsHeader)
     let data = await vmealsHeaderData.json()
     data = data?.docs?.find(p => p.VMealsHeaderEnableDisables == "Enable");
-    console.log("header data---?", data)
     return {
       props: { headerData: { ...data } }, // will be passed to the page component as props
     }

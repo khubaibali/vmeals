@@ -19,26 +19,21 @@ function Home(props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({req,res}) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
   try {
     console.log("calling")
-   let data = await headerProps()
-   let sliderBarData = await sliderBarProps()
-   let builtData = await builtDataProps()
-   let ourGeniusData = await ourGeniusDataProps()
-   let homeFitnessData = await homeFitnessDataProps()
-   let ourHomeBlogData = await ourHomeBlogsDataProps()
-   let socialMediaIcon = await socialMediaIconsProps()
-   console.log("header props",sliderBarData)
+    let resolvedPromises= await Promise.all([headerProps(),sliderBarProps(),builtDataProps(),ourGeniusDataProps(),homeFitnessDataProps(),ourHomeBlogsDataProps(),socialMediaIconsProps()])
+    let final = resolvedPromises.map((itx)=>(itx.props))
+    let newObject ={}
+    final.forEach((x)=>{newObject={...newObject,...x}})
+   console.log("header props",final)
     return {
       props: { 
-        ...data.props,
-        ...sliderBarData.props,
-        ...builtData.props,
-        ...ourGeniusData.props,
-        ...homeFitnessData.props,
-        ...ourHomeBlogData.props,
-        ...socialMediaIcon.props
+        ...newObject
       }, // will be passed to the page component as props
     }
   } catch (error) {

@@ -1,12 +1,14 @@
+import dynamic from 'next/dynamic'
 import React from "react";
-import Navbar from "../Common/Navbar";
-import Hero from "./Hero";
-import Built from "./Built";
-import Genius from "./Genius";
-import Fitness from "./Fitness";
-import Ourblog from "./Ourblog";
-import Fotter from "../Common/Footer";
-import Review from "../About Us/Review";
+const Navbar = dynamic(() => import( "../Common/Navbar"))
+const Hero=  dynamic(() => import( "./Hero"))
+const Built=dynamic(() => import( "./Built"))
+const Genius=dynamic(() => import( "./Genius"))
+const Fitness=dynamic(() => import( "./Fitness"))
+const Ourblog=dynamic(() => import("./Ourblog"))
+const Fotter=dynamic(() => import( "../Common/Footer"))
+const Review=dynamic(() => import( "../About Us/Review"))
+
 export default function Index({headerData,sliderBarData,builtData,ourGeniusData,homeFitnessData,ourHomeBlogData,socialMediaIcon,footerData,tradeMarkData}) {
   return (
     <>
