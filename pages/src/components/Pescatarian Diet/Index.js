@@ -7,22 +7,45 @@ import Built from "../Home/Built";
 import Question from "../Faq/Questions";
 import Customizeplan from "../Classic Diet/Customizeplan";
 import Simplemenu from "../Classic Diet/Simplemenu";
+import SEO from "../Common/SEO";
+import { vmealsPescatarianDietContent } from "../../../../src/lib/APICommunications";
 
-export default function Index() {
+export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData }) {
+  const metaDataContent = Object.values(metaData).find(c => c.title == "Pescatarian Diet")
+  const contentDataPescatarian = Object.values(contentData).find(c => c.VmealsPescatarianDietEnableDisables == "Enable")
   return (
     <>
+      <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
       <div className="indianfusiondietbg">
-        <Navbar />
+        <Navbar headerData={headerData}  />
         <Hero />
       </div>
-      <Customizeplan />
+      <Customizeplan heading={contentDataPescatarian?.VmealsPescatarianDietHeading} description={contentDataPescatarian?.VmealsPescatarianDietdescriptionParagraphs} selectedPlan={"PescatarianDiet"} />
       <Simplemenu />
-      <Built />
+      <Built  builtData={builtData} />
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-        <Question />
+        {/* <Question /> */}
       </div>
       <Review />
-      <Fotter />
+      <Fotter  socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  try {
+   
+    let contentDataPescatarianDiet = await fetch(vmealsPescatarianDietContent)
+    let data = await contentDataPescatarianDiet.json()
+    console.log("slider bar ->>",data)
+   
+    return {
+      props: { contentDataPescatarianDiet: { ...data?.docs } }, // will be passed to the page component as props
+    }
+  } catch (error) {
+    return {
+      props: { contentDataPescatarianDiet: [] }
+    }
+  }
+
 }
