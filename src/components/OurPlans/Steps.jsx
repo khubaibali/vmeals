@@ -10,7 +10,7 @@ const Steps = ({ step }) => {
                             <div className="relative">
                                 <div className="text-left" >
                                     <Link href="/meal-plans">
-                                        <button class={`  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b  ${step == 6 ? 'sub   text-white' : 'text-black  '} rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                        <button class={`  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b  ${step == 6 ? 'green-gradiant-2   text-white' : 'text-black  '} rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                             <ul className="inline-flex">
                                                 <li>
                                                     <img
@@ -35,7 +35,7 @@ const Steps = ({ step }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             {/* <Link href="/classicdiet" > */}
                             <div className="relative">
-                                <button class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? 'sub   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                <button class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? 'green-gradiant-2   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img

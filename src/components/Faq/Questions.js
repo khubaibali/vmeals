@@ -26,7 +26,7 @@ export default function Questions({ faqQuestions=[{}] }) {
                     <li key={Item?.key} className="  flex-auto text-center">
                       <a
                         className={
-                          "f-f-b  text-sm md:text-smtwo lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
+                          "f-f-b  text-sm md:text-smtwo text-center lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
                           (openTab === index
                             ? "text-white bg-green rounded-[30px]"
                             : "text- bg-white rounded-[30px] ")
@@ -74,7 +74,7 @@ export default function Questions({ faqQuestions=[{}] }) {
       </div>
       <img
         src="/images/faqtabbg.png"
-        className="2xl:w-[965px]  hidden md:block 2xl:h-[823px] xl:w-[662px]  xl:h-[523px] md:w-[398px] lg:w-[487px]  md:h-[497px] absolute top-[100px] z-[-1px]  "
+        className="2xl:w-[965px]  hidden md:block 2xl:h-[823px] xl:w-[662px]  xl:h-[523px] md:w-[398px] lg:w-[487px]  md:h-[497px] absolute top-[100px] z-[-1px]   "
       />
       <img
         src="/images/FAQ Mobile Shape.png"

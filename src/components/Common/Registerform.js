@@ -81,7 +81,7 @@ export default function Registerform() {
                 <button
                   id="dropdown-button"
                   data-dropdown-toggle="dropdown"
-                  className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn "
+                  className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant-2  text-center  focus:outline-none  mobile-btn "
                   type="button"
                 >
                   +971{" "}

@@ -85,13 +85,13 @@ export default function Ourblog({ ourHomeBlogData }) {
                     <img
                       //  src="/images/blog1.png"
                       src={`${BaseURL}${blog?.VMealsBlogBreadcrumbImage?.url}`}
-                      className="w-full h-auto "
+                      className="w-full h-[206px] md:h-[453px] 2xl:h-[512px] rounded-[30px] "
                       alt=""
                     />
                     <button className="bg-green f-f-b text-xs md:text-base 2xl:text-xl text-white py-2 px-3 md:px-9 md:py-4 rounded-full absolute top-2 md:top-10 left-2 md:left-5  ">
                       {blog?.VmealsBlogCategory?.VmealsBlogsCategoryName}
                     </button>
-                    <div className="blog-liner p-2 md:py-5 md:p-5  absolute bottom-0">
+                    <div className="blog-liner p-2 md:py-5 md:p-5  absolute bottom-0 orcrd w-full ">
                       <h2 className=" text-white f-f-r text-xs md:text-base 2xl:text-xl md:py-4 2xl:py-8 ">
                         28th September, 2022
                       </h2>

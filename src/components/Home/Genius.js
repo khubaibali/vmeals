@@ -2,7 +2,6 @@ import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsOurGeniuses } from '../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
-// import Gunjan from '../../assets/images/Gunjan-Photo 1.png'
 
 export default function Genius({ ourGeniusData=[{}] }) {
   console.log("ourGeniusData--->", ourGeniusData)
@@ -12,7 +11,7 @@ export default function Genius({ ourGeniusData=[{}] }) {
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
             <div className="   col-span-12 lg:col-span-6  lg:hidden ">
-              <h1 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-40 tracking-[1px] lg:tracking-[0.22em] ">
+              <h1 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10  tracking-[1px] lg:tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
               </h1>
@@ -26,7 +25,7 @@ export default function Genius({ ourGeniusData=[{}] }) {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.{" "}
               </h2> */}
-              <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription}/>
+              <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription}  />
 
               <div className="text-center">
                 <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  ">
@@ -35,15 +34,15 @@ export default function Genius({ ourGeniusData=[{}] }) {
                 </button>
               </div>
             </div>
-            <div className="   col-span-12 lg:col-span-6  ">
+            <div className="   col-span-12 lg:col-span-6 relative ">
               <img
                 src="/images/Gunjan-Photo 1.png"
                 alt=""
-                className="w-full h-auto"
+                className="w-full h-auto lg:absolute lg:bottom-0 "
               />
             </div>
             <div className="   col-span-12 lg:col-span-6 hidden lg:block ">
-              <h1 className="  text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-40 tracking-[1px] lg:tracking-[0.22em] ">
+              <h1 className="  text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-0 tracking-[1px] lg:tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
               </h1>
@@ -58,7 +57,7 @@ export default function Genius({ ourGeniusData=[{}] }) {
                 nisi ut aliquip ex ea commodo consequat.{" "}
               </h2> */}
               <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription}/>
-              <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  ">
+              <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full mb-10 ">
                 {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
               </button>
             </div>

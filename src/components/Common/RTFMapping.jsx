@@ -6,7 +6,7 @@ const RTFMapping = ({ data }) => {
 			{data?.map((d, i) => {
 				if (!d.type) {
 					return (
-						<p key={i}>
+						<p key={i}  className="text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px]">
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (
@@ -47,17 +47,17 @@ const RTFMapping = ({ data }) => {
 					);
 				} else if (d.type == "p") {
 					return (
-						<p key={i}>
+						<p key={i} className="text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-2 leading-[23px]">
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (
-										<span>
+										<span  className="text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-2 leading-[23px]" >
 											<b>{child.text}</b>
 										</span>
 									);
 								} else if (child.italic) {
 									return (
-										<span>
+										<span className="text-center lg:text-left f-f-li text-black text-tiny  2xl:text-base mt-2 leading-[23px]">
 											<i>{child.text}</i>
 										</span>
 									);
@@ -102,7 +102,7 @@ const RTFMapping = ({ data }) => {
 					);
 				} else if (d.type == "h1") {
 					return (
-						<h2 key={i} >
+						<h2 key={i}  className="text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-2 leading-[23px]">
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (
@@ -143,7 +143,7 @@ const RTFMapping = ({ data }) => {
 					);
 				} else if (d.type == "h2") {
 					return (
-						<h2 key={i}>
+						<h2 key={i} className="text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-2 leading-[23px]">
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (
