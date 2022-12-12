@@ -1,9 +1,7 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL 
 import { vmealsCustomersChooseUs } from '../../../src/lib/APICommunications';
-// import image1 from '../../assets/images/image 1-home.png'
-// import image2 from '../../assets/images/image 2-home.png'
-// import image3 from '../../assets/images/image 3-home.png'
+
 
 export default function Built({builtData=[{}]}) {
   return (
@@ -23,7 +21,7 @@ export default function Built({builtData=[{}]}) {
                 </h2>
               </div>
               </div>
-            </div>
+          
             <div className="   col-span-12 lg:col-span-8  ">
               <div className="grid grid-cols-12  gap-5 ">
                 <div className="  col-span-4 lg:col-span-4  ">
@@ -66,6 +64,7 @@ export default function Built({builtData=[{}]}) {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
        </div> 

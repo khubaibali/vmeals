@@ -5,6 +5,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color:#F3f3f3;
  
 }
 
@@ -654,6 +655,17 @@ body {
     background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%) !important;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  .green-gradiant:hover{
+    background: white !important;
+    border: 1px solid #41A52D ;
+    color: #41A52D    ;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .green-gradiant-2{
+    background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%) !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
   .liner{
     background: linear-gradient(180deg, #41A53D 0%, #24721D 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -667,11 +679,14 @@ border-radius: 0px 0px 30px 30px;
   background: #F3F3F3;
 border: 2px solid #3E9D2B;
 border-radius: 30px;
+font-family: RobotoCondensed-Bold;
+font-size: 22px;
+padding-left: 29px;
+color: #979797;
 }
 .input-footer::placeholder{
   font-family: RobotoCondensed-Bold;
   font-size: 22px;
-  padding-left: 29px;
   padding-top: 21px;
 
 }
@@ -682,18 +697,28 @@ border-radius: 30px;
   background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.sub:hover{
+  background: white;
+  border: 2px solid #41A52D;
+  color: #41A52D;
+}
 @media only screen and (max-width: 1540px) {
+  .input-footer{
+    font-size: 15px;
+  }
   .input-footer::placeholder{
     font-size: 15px;
   }
 }
 @media only screen and (max-width: 420px) {
+  .input-footer{
+    padding-left: 10px;
+  }
   .input-footer::placeholder{
     font-size: 8px;
-    padding-left: 10px;
     padding-top: 0px;
     position: relative;
-    top: -4px;
+    top: -2px;
   
   }
 }
@@ -734,13 +759,13 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 55px;
   z-index: 1;
   right: 38%;
-  bottom:-78%;
+  bottom:-38%;
   }
   .outslick-setting .slick-prev{
     height: 55px;
     width: 55px;
     left: 38%;
-    bottom:-78%;
+    bottom:-38%;
   }
 }
 @media only screen and (max-width: 420px) {
@@ -1001,7 +1026,7 @@ background-size: cover;
 .testtingcard{
 
 height: 300px;
-width: 350px;
+width: 326px;
 }
 @media only screen and (max-width: 1540px) {
   .testtingcard{  
@@ -1059,6 +1084,15 @@ outline: unset;
   --tw-ring-shadow:unset;
   border: none;
 }
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #A4ED9F;
+  /* Not removed via appearance */
+  margin: 0;
+}
 
 .personscrd{
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(111.54deg, rgba(255, 255, 255, 0.16) 26.09%, rgba(255, 255, 255, 0.04) 64.23%);
@@ -1079,16 +1113,14 @@ border-radius: 30px;
   bottom: 10px;
 }
 
+@media only screen and (max-width: 360px) {
+  .smallmobcard{  
+    width: 88%;
+    height: 187px;
+  }
+}
 
-/* input[type="checkbox"]:checked {
-  background-image: url("/images/checkinp.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  --tw-ring-color:unset;
-} */
-
-
-
+/* ......................................................................... */
 select::-ms-expand {
   display: none;
 }
@@ -1124,9 +1156,7 @@ textarea:focus, input:focus , select:focus{
   }
 }
 
-
-
-
 .optinbg{
   background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%) !important;
 }
+

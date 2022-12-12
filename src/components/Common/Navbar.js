@@ -125,15 +125,15 @@ function Navbar({ headerData = {} }) {
                     {headerData?.VMealsHeaderBlogText}
                   </Link>
                 </li>
-                <li className=" md:hidden">
+                {/* <li className=" md:hidden">
                   <a
                     href="#"
                     className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0 "
                   >
-                    {/* Arabic / English */}
+                    Arabic / English
                     {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
-                </li>
+                </li> */}
                 <li className=" md:hidden">
                   <a
                     href="#"
@@ -157,14 +157,15 @@ function Navbar({ headerData = {} }) {
                     {headerData?.VMealsHeaderBlogText}
                   </Link>
                 </li>
-                <li className=" md:hidden">
+                <li className=" ">
                   <Link
                     href="/contactus"
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-sm xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     Need Assistance?
                   </Link>
                 </li>
+  
                 <li>
                   <a
                     href="#"
@@ -177,7 +178,7 @@ function Navbar({ headerData = {} }) {
                 <li>
                   <a
                     href="#"
-                    className="block py-4   f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded-[100px]   green-gradiant px-10  text-white  "
+                    className="block py-4   f-f-b  text-smtwo lg:text-sm xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant-2 px-10  text-white  "
                   >
                     {/* Get Started */}
                     {headerData?.VMealsHeaderButtonText}
@@ -185,7 +186,7 @@ function Navbar({ headerData = {} }) {
                 </li>
               </ul>
             </div>
-            <div className="bg-white w-[70px] h-[70px] md:h-[100px] md:w-[100px] lg:h-[140px] lg:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[44%] -top-5 md:top-4 z-0 ">
+            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[100px] md:w-[100px] lg:h-[140px] lg:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[44%] -top-5 md:top-4 z-0 ">
               <Link href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
                   src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}

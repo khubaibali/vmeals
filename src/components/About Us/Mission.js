@@ -5,13 +5,13 @@ export default function Mission({ourCompanyData}) {
   return (
     <div className="relative  ">
       <div className=" z-10 w-11/12 md:w-10/12 lg:w-7/12 xl:w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
-        <div className="grid grid-cols-12 gap-4 md:gap-8  z-10  "> 
+        <div className="grid grid-cols-12 md:gap-8  z-10  "> 
           {ourCompanyData?.[0]?.VMealsAboutUsCardsList.map((item,index)=>(
-            <div className="   col-span-6 xl:col-span-3  " key={item?.id}>
+            <div className="  col-span-6 xl:col-span-3  " key={item?.id}>
             <div className="relative">
               <img
                 src="/images/Goal.png"
-                className="w-full h-[374px] md:h-[640px] 2xl:h-[759px]  "
+                className="w-full h-[711px] md:h-[640px] 2xl:h-[759px]  "
               />
               <div className="absolute top-[30%] w-[95%] right-0 left-0">
                 <div className="text-center w-11/12 ml-auto mr-auto    ">
