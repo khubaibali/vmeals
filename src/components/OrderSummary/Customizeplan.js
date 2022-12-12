@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
-export default function CustomizeplanOrderSummary({step, setStep, deliveryInformation,personalInformation,planInformation}) {
+export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation }) {
   const [openTab, setOpenTab] = React.useState(1);
   const [finalPrice, setFinalPrice] = useState(planInformation?.price)
   const mapPlanName = (plan) => {
-    if(plan == "ClassicDiet") return "Classic Diet"
+    if (plan == "ClassicDiet") return "Classic Diet"
     else return plan
   }
+
+ 
+
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 md:my-20">
@@ -41,7 +44,7 @@ export default function CustomizeplanOrderSummary({step, setStep, deliveryInform
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Off-Day(s):
                   <span className=" float-right  f-f-r ">
-                  {planInformation?.offDays}
+                    {planInformation?.offDays}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
@@ -51,7 +54,7 @@ export default function CustomizeplanOrderSummary({step, setStep, deliveryInform
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Meal Type:
                   <span className=" float-right  f-f-r ">
-                  {planInformation?.mealType?.name}
+                    {planInformation?.mealType?.name}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
@@ -172,7 +175,7 @@ export default function CustomizeplanOrderSummary({step, setStep, deliveryInform
               <div className="grid grid-cols-12 gap-8  md:mt-10   ">
                 <div className="   col-span-6 xl:col-span-6 ">
                   <div className="text-center">
-                    <button onClick={() =>  setStep(3)} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+                    <button onClick={() => setStep(3)} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
                       Back
                     </button>
                   </div>
@@ -203,7 +206,7 @@ export default function CustomizeplanOrderSummary({step, setStep, deliveryInform
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Address:
                   <span className=" float-right  f-f-r ">
-                  {deliveryInformation?.address}
+                    {deliveryInformation?.address}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
@@ -226,7 +229,7 @@ export default function CustomizeplanOrderSummary({step, setStep, deliveryInform
                   </div>
                   <div className="   col-span-12  xl:col-span-8  ">
                     <h2 className=" text-black text-sm 2xl:text-base  text-right f-f-r ">
-                    {deliveryInformation?.googleLink}
+                      {deliveryInformation?.googleLink}
                     </h2>
                   </div>
                 </div>
@@ -234,7 +237,7 @@ export default function CustomizeplanOrderSummary({step, setStep, deliveryInform
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Delivery Instructions:
                   <span className=" float-right  f-f-r ">
-                  {deliveryInformation?.deliveryInstructions || "N/A"}
+                    {deliveryInformation?.deliveryInstructions || "N/A"}
                   </span>{" "}
                 </h2>
               </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "./Steps";
-import { vmealsPages } from "../../lib/APICommunications";
+import { vmealsCreatePayment, vmealsPages } from "../../lib/APICommunications";
 import PlanData from '../../lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../helpers";
@@ -55,6 +55,139 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       offDays
     })
   }
+
+  const applyCoupun = (e) => {
+    if (couponValue == "" || !couponValue) {
+      setCouponError("Please enter code first!");
+    } else {
+      setCouponError(null);
+      console.log("useee", couponValue);
+      axios
+        .post(useCoupon, { code: couponValue })
+        .then((res) => {
+          setCouponAPIResponse(res);
+
+          if (res?.data?.message == "Failed") {
+            setCouponError(res?.data?.err);
+            setCoupunApplied(false);
+            setCouponValue("");
+            return false;
+          } else {
+            setCouponError(null);
+            console.log(
+              "yyyyy",
+              Number(price),
+              Number(res?.doc?.discountPercentage),
+              typeof res?.data?.doc?.discountPercentage,
+              res
+            );
+
+            let onlyDiscountPrice =
+              Number(price) *
+              (Number(res?.data?.doc?.discountPercentage) / 100);
+
+            setDiscountPrice(onlyDiscountPrice);
+            setDiscountPercentage(Number(res?.data?.doc?.discountPercentage));
+            console.log(
+              "typeof",
+              typeof onlyDiscountPrice,
+              onlyDiscountPrice,
+              price,
+              totalPrice,
+              typeof price,
+              typeof totalPrice
+            );
+            let priceConverted = Number(price);
+            let totalPriceConverted = Number(totalPrice);
+            let priceFinal = priceConverted - onlyDiscountPrice;
+            let totalPriceFinal = totalPriceConverted - onlyDiscountPrice;
+            console.log(
+              "aaaaaaa",
+              priceFinal,
+              typeof priceFinal,
+              totalPriceFinal,
+              typeof totalPriceFinal
+            );
+            setPrice(Number(priceConverted) - Number(onlyDiscountPrice));
+            setTotalPrice(Number(totalPrice) - Number(onlyDiscountPrice));
+            setCoupunApplied(true);
+            return false;
+          }
+        })
+        .catch((err) => {
+          console.log("ERROR", err);
+          return false;
+        });
+    }
+  };
+
+  const checkout = () => {
+    setLoading(true);
+    let body = {
+      amount: price,
+      totals: {
+        subtotal: price,
+        tax: 0,
+        discount: 0,
+        skipTotalsValidation: true,
+      },
+      items: [
+        {
+          name: selectedPlan,
+          quantity: 1,
+          linetotal: totalPrice,
+        },
+      ],
+      customer: {
+        id: "123456",
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: mobileNumber,
+      },
+      billingAddress: {
+        name: firstName + " " + lastName,
+        address1: address,
+        address2: "",
+        city: city || "Dubai",
+        state: "",
+        zip: "",
+        country: "AE",
+      },
+      deliveryAddress: {
+        name: firstName + " " + lastName,
+        address1: address,
+        address2: "",
+        city: city || "Dubai",
+        state: "",
+        zip: "",
+        country: "AE",
+      },
+      returnUrl: process.env.NEXT_PUBLIC_PAYMENT_REDIRECT_URL,
+    };
+    axios
+      .post(vmealsCreatePayment, body)
+      .then((res) => {
+        // setPaymentAPIResponse(res);
+
+        console.log("payment api response");
+        if (res?.data?.doc?.success == false) {
+          toast.success(res?.data?.doc?.error);
+        }
+        if (res?.data?.doc?.success == true) {
+          // createOrder();
+          console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
+          // window.location = res?.data?.doc?.result?.redirectUrl;
+          // setLoading(false)
+        }
+        console.log("RES", res);
+        return false;
+      })
+      .catch((err) => {
+        console.log("ERROR", err);
+        return false;
+      });
+  };
 
   console.log("Personal Information", personalInformation)
 
