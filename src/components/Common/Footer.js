@@ -38,7 +38,7 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
               />
             </div>
             <div className="col-span-8 md:col-span-9  ">
-              <h2 className=" text-black f-f-b  text-smtwo  md:text-2xl lg:text-3xl 2xl:text-5xl pt-3 md:pt-8 uppercase ">
+              <h2 className=" text-black f-f-b  text-smtwo  md:text-xl lg:text-3xl 2xl:text-6xl pt-4 lg:pt-8 2xl:pt-16 uppercase ">
                 Get your free 
                 <span className="text-green"> {footerData?.[0]?.VMealsGuideBoldColorTitle}</span>{" "}
                 guide today!
@@ -48,13 +48,13 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
                 <div className="col-span-8 md:col-span-7 lg:col-span-7 2xl:col-span-7  ">
                   <input
                     type="text"
-                    className="w-full  input-footer  mt-3 md:mt-4 lg:mt-4 2xl:mt-4 md:py-3 2xl:py-5  border-2 border-green pb-1 pt-0 "
+                    className="w-full  input-footer  mt-1 md:mt-4 lg:mt-4 2xl:mt-4 md:py-3 md:h-[52px] 2xl:h-[85px]  2xl:w-[545px] border-2 border-green h-[25px]  "
                     // placeholder="Please enter your email address..."
                     placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
                   />
                 </div>
                 <div className="  col-span-4 md:col-span-4 lg:col-span-3 text-center">
-                  <button class="bg-green f-f-b text-xs md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5  px-3 md:px-9 py-2 md:py-5 2xl:py-5 mt-3 rounded-full  sub ">
+                  <button class="bg-green  f-f-b text-xsone md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5 2xl:h-[79px] h-[25px] w-[60px] md:h-[52px] md:w-[143px] 2xl:w-[219px] mt-1 rounded-full sub ">
                     {/* Subscribe */}
                     {footerData?.[0]?.VMealsGuideInputButtonTitle}
                   </button>
@@ -68,34 +68,34 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
       <div className="bg-green-dark py-1 md:py-5 ">
         <div className="w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  gap-2   ">
-            <div className="col-span-6 md:col-span-6 lg:col-span-7 xl:col-span-8  ">
+            <div className="col-span-4 md:col-span-4 lg:col-span-6 xl:col-span-4 2xl:col-span-5   ">
               <a
                 href="#"
-                className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
+                className=" relative top-[-5px] md:top-[0px] lg:top-[12px] text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
               >
                 {/* VMeals - © All Rights Reserved - 2022 */}
                 {tradeMarkData?.[0]?.VMealsFooter}
               </a>
             </div>
-            <div className=" col-span-6 md:col-span-6 lg:col-span-5 xl:col-span-4 text-center  ">
+            <div className=" col-span-8 md:col-span-8 lg:col-span-6 xl:col-span-8 2xl:col-span-7 text-center   ">
               <ul className="inline-flex">
                 {/* <li>
                   <a
                     href="#"
-                    className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8  text-center"
+                    className=" text-white  text-xsvsmall md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8  text-center"
                   >
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-              <Link href="/servicedubai" className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center" >
+              <Link href="/servicedubai" className=" text-white  text-xsvsmall md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center" >
               Terms & Conditions
               </Link>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center"
+                    className=" text-white  text-xsvsmall md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center"
                   >
                     Sitemap
                   </a>
@@ -106,14 +106,26 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
                     <li>
                     <a
                       href={`${BaseURL}${footeritem?.VMealsOurPartnersFileUpload?.url}`}
-                      className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center"
+                      className="text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-2 md:ml-4 xl:ml-8  text-center relative top-[-5px] md:top-[0px] lg:top-[12px]"
                     >
                       {footeritem?.VMealsFooterItemTitle}
                     </a>
                   </li>
                   ))
                 }
+                    <li>
+              <Link href="/termcondition"  className="text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-2 md:ml-4 xl:ml-8  text-center relative top-[-5px] md:top-[0px] lg:top-[12px]" >
+              Refund & Cancellation Policy
+              </Link>
+                </li>
+         <li>
+                <img src="/images/VIsa-Logo.png"  className="    w-[30px] md:w-[40px] lg:w-[60px] 2xl:w-[100px] h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
 
+                </li>
+                <li>
+                <img src="/images/Mastercard-Logo.png"  className="  w-[30px]  md:w-[40px] lg:w-[60px] 2xl:w-[100px] h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
+
+                </li>
               </ul>
             </div>
           </div>

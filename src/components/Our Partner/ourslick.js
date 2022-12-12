@@ -9,8 +9,8 @@ export default function Slick({ data }) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <img src="/images/arrow-left-slick.png" />,
-    prevArrow: <img src="/images/arrow-right-slick.png" />,
+    nextArrow: <img alt=""  src="/images/arrow-left (1).png" />,
+    prevArrow: <img alt=""  src="/images/arrow-right.png" />,
     // beforeChange: (current, next) => this.setState({ activeSlide: next }),
     // afterChange: current => this.setState({ activeSlide2: current })
   };

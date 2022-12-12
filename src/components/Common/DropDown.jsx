@@ -5,7 +5,7 @@ export default function DropDown({ children,title }) {
     return (
         <>
             <button
-                className="  inline-flex  justify-center items-center  text-white  w-full green-gradiant  text-center  focus:outline-none   faq-btn  "
+                className="  inline-flex  justify-center items-center  text-white  w-full green-gradiant-2  text-center  focus:outline-none   faq-btn  "
                 type="button"
                 onClick={() => { setOpen(!isOpen) }}
             >
