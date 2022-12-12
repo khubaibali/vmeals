@@ -3,7 +3,7 @@ import Welcomeinput from "./Welcomeinput";
 import Informationslick from "./Informationslick";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
-export default function CustomizeplanDeliveryInformation({ step, setStep }) {
+export default function CustomizeplanDeliveryInformation({ step, setStep, setDeliveryInformation, planInformation, price, deliveryInformation }) {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
@@ -22,7 +22,7 @@ export default function CustomizeplanDeliveryInformation({ step, setStep }) {
                 We bring joy at your doorstep!
               </h1>
 
-              <Welcomeinput setStep={setStep} step={step} />
+              <Welcomeinput setStep={setStep} step={step} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
             </div>
           </div>
           <div className="   col-span-12  xl:col-span-6  ">
