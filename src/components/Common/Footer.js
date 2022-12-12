@@ -68,34 +68,34 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
       <div className="bg-green-dark py-1 md:py-5 ">
         <div className="w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  gap-2   ">
-            <div className="col-span-4 md:col-span-4 lg:col-span-6 xl:col-span-5 2xl:col-span-6   ">
+            <div className="col-span-4 md:col-span-4 lg:col-span-6 xl:col-span-4 2xl:col-span-5   ">
               <a
                 href="#"
-                className=" relative top-[-5px] md:top-[12px] text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
+                className=" relative top-[-5px] md:top-[0px] lg:top-[12px] text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
               >
                 {/* VMeals - © All Rights Reserved - 2022 */}
                 {tradeMarkData?.[0]?.VMealsFooter}
               </a>
             </div>
-            <div className=" col-span-8 md:col-span-8 lg:col-span-6 xl:col-span-7 2xl:col-span-6 text-center   ">
+            <div className=" col-span-8 md:col-span-8 lg:col-span-6 xl:col-span-8 2xl:col-span-7 text-center   ">
               <ul className="inline-flex">
                 {/* <li>
                   <a
                     href="#"
-                    className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8  text-center"
+                    className=" text-white  text-xsvsmall md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8  text-center"
                   >
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-              <Link href="/servicedubai" className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center" >
+              <Link href="/servicedubai" className=" text-white  text-xsvsmall md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center" >
               Terms & Conditions
               </Link>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className=" text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center"
+                    className=" text-white  text-xsvsmall md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-4 md:ml-8 text-center"
                   >
                     Sitemap
                   </a>
@@ -106,19 +106,24 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
                     <li>
                     <a
                       href={`${BaseURL}${footeritem?.VMealsOurPartnersFileUpload?.url}`}
-                      className="text-white text-xstwo  md:text-sm lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-2 md:ml-4 xl:ml-8  text-center relative top-[-5px] md:top-[12px]"
+                      className="text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-2 md:ml-4 xl:ml-8  text-center relative top-[-5px] md:top-[0px] lg:top-[12px]"
                     >
                       {footeritem?.VMealsFooterItemTitle}
                     </a>
                   </li>
                   ))
                 }
+                    <li>
+              <Link href="/termcondition"  className="text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-2 md:ml-4 xl:ml-8  text-center relative top-[-5px] md:top-[0px] lg:top-[12px]" >
+              Refund & Cancellation Policy
+              </Link>
+                </li>
          <li>
-                <img src="/images/VIsa-Logo.png"  className="    w-[30px] md:w-[60px] lg:w-[60px] 2xl:w-[100px] h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
+                <img src="/images/VIsa-Logo.png"  className="    w-[30px] md:w-[40px] lg:w-[60px] 2xl:w-[100px] h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
 
                 </li>
                 <li>
-                <img src="/images/Mastercard-Logo.png"  className="  w-[30px]  md:w-[60px] lg:w-[60px] 2xl:w-[100px] h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
+                <img src="/images/Mastercard-Logo.png"  className="  w-[30px]  md:w-[40px] lg:w-[60px] 2xl:w-[100px] h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
 
                 </li>
               </ul>

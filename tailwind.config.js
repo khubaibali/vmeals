@@ -61,6 +61,7 @@ module.exports = {
       
     },
     fontSize: {
+      'xsvsmall': '5px',
       'xstwo': '7px',
       'xsone': '9px',
       'xs': '10px',
