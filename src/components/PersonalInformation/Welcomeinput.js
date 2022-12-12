@@ -4,13 +4,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment/moment";
 
-export default function Welcomeinput({ setStep }) {
-  const [firstName, setFirstName] = useState(null)
-  const [lastName, setLastName] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [mobileNumber, setMobileNumber] = useState(null)
-  const [dateOfBirth, setDateOfBirth] = useState(null)
-  const [nationality, setNationality] = useState(null);
+export default function Welcomeinput({ setStep, setPersonalInformation, personalInformation }) {
+  const [firstName, setFirstName] = useState(personalInformation?.firstName)
+  const [lastName, setLastName] = useState(personalInformation?.lastName)
+  const [email, setEmail] = useState(personalInformation?.email)
+  const [mobileNumber, setMobileNumber] = useState(personalInformation?.mobileNumber)
+  const [dateOfBirth, setDateOfBirth] = useState(personalInformation?.dateOfBirth)
+  const [nationality, setNationality] = useState(personalInformation?.nationality);
   const [errors, setErrors] = useState(null);
 
   const Validation = () => {
@@ -53,6 +53,14 @@ export default function Welcomeinput({ setStep }) {
     }
     setErrors(err);
     if (err.length <= 0) {
+      setPersonalInformation({
+        firstName,
+        lastName,
+        email,
+        mobileNumber,
+        dateOfBirth,
+        nationality
+      })
       setStep(3)
     } else {
       console.log("")

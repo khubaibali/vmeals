@@ -1,8 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
-export default function CustomizeplanOrderSummary({step, setStep}) {
+export default function CustomizeplanOrderSummary({step, setStep, deliveryInformation,personalInformation,planInformation}) {
   const [openTab, setOpenTab] = React.useState(1);
+  const mapPlanName = (plan) => {
+    if(plan == "ClassicDiet") return "Classic Diet"
+    else return plan
+  }
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 md:my-20">
@@ -18,7 +22,7 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
                 </h1>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Plan Name:{" "}
-                  <span className=" float-right  f-f-r ">Classic Diet</span>{" "}
+                  <span className=" float-right  f-f-r ">{mapPlanName(planInformation?.selectedPlan)}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Diet Type:<span className=" float-right  f-f-r ">N/A</span>{" "}
@@ -26,27 +30,27 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Portion Size:
                   <span className=" float-right  f-f-r ">
-                    2400kCal - 3000kCal | Athlete
+                    {planInformation?.selectedPortion?.caloriesRange + " | " + planInformation?.selectedPortion?.name}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Deliveries per week:
-                  <span className=" float-right  f-f-r ">5 Days</span>{" "}
+                  <span className=" float-right  f-f-r ">{planInformation?.selectedDaysPerWeek?.days} Days</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Off-Day(s):
                   <span className=" float-right  f-f-r ">
-                    Saturday - Sunday
+                  {planInformation?.offDays}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Plan Duration:
-                  <span className=" float-right  f-f-r ">8 weeks</span>{" "}
+                  <span className=" float-right  f-f-r ">{planInformation?.selectedDuration?.name}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Meal Type:
                   <span className=" float-right  f-f-r ">
-                    Breakfast + Lunch + Dinner + Snack + Drink
+                  {planInformation?.mealType?.name}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
@@ -88,24 +92,27 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
                   Personal Information
                 </h1>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
-                  Last Name: <span className=" float-right  f-f-r ">John</span>{" "}
+                  First Name: <span className=" float-right  f-f-r ">{personalInformation?.firstName}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
-                  Diet Type:<span className=" float-right  f-f-r ">Doe</span>{" "}
+                  Last Name: <span className=" float-right  f-f-r ">{personalInformation?.lastName}</span>{" "}
                 </h2>
+                {/* <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                  Diet Type:<span className=" float-right  f-f-r ">Doe</span>{" "}
+                </h2> */}
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Email Address:
                   <span className=" float-right  f-f-r ">
-                    johndoe@gmail.com
+                    {personalInformation?.email}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Mobile Number:
-                  <span className=" float-right  f-f-r ">+971 XX XXX XXXX</span>{" "}
+                  <span className=" float-right  f-f-r ">+971 {personalInformation?.mobileNumber}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Date of Birth:
-                  <span className=" float-right  f-f-r ">01/01/1990</span>{" "}
+                  <span className=" float-right  f-f-r ">{(new Date(personalInformation?.dateOfBirth)).toDateString()}</span>{" "}
                 </h2>
               </div>
 
@@ -164,7 +171,7 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
               <div className="grid grid-cols-12 gap-8  md:mt-10   ">
                 <div className="   col-span-6 xl:col-span-6 ">
                   <div className="text-center">
-                    <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+                    <button onClick={() =>  setStep(3)} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
                       Back
                     </button>
                   </div>
@@ -187,27 +194,27 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
                 </h1>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Starting Date:{" "}
-                  <span className=" float-right  f-f-r ">04/10/2022</span>{" "}
+                  <span className=" float-right  f-f-r ">{(new Date(deliveryInformation?.startingDate)).toDateString()}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
-                  City:<span className=" float-right  f-f-r ">Dubai</span>{" "}
+                  City:<span className=" float-right  f-f-r ">{deliveryInformation?.city}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Address:
                   <span className=" float-right  f-f-r ">
-                    Business Bay, Oxford Tower
+                  {deliveryInformation?.address}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Apartment/Villa Number:
-                  <span className=" float-right  f-f-r ">506</span>{" "}
+                  <span className=" float-right  f-f-r ">{deliveryInformation?.appartmentNumber}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
-                  Access Code:<span className=" float-right  f-f-r ">N/A</span>{" "}
+                  Access Code:<span className=" float-right  f-f-r ">{deliveryInformation?.accessCode || "N/A"}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Delivery Slot:
-                  <span className=" float-right  f-f-r ">12:00am - 4:00am</span>{" "}
+                  <span className=" float-right  f-f-r ">{deliveryInformation?.deliverySlot}</span>{" "}
                 </h2>
 
                 <div className="grid grid-cols-12 mt-6 w-full ">
@@ -218,7 +225,7 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
                   </div>
                   <div className="   col-span-12  xl:col-span-8  ">
                     <h2 className=" text-black text-sm 2xl:text-base  text-right f-f-r ">
-                      https://goo.gl/maps wvkgM2pBi8518zTa9
+                    {deliveryInformation?.googleLink}
                     </h2>
                   </div>
                 </div>
@@ -226,7 +233,7 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Delivery Instructions:
                   <span className=" float-right  f-f-r ">
-                    Please call before delivering!
+                  {deliveryInformation?.deliveryInstructions || "N/A"}
                   </span>{" "}
                 </h2>
               </div>
@@ -314,9 +321,12 @@ export default function CustomizeplanOrderSummary({step, setStep}) {
               <div className="grid grid-cols-12 gap-8  md:mt-10   ">
                 <div className="   col-span-6 xl:col-span-6 ">
                   <div className="text-center">
-                    <button onClick={() => setStep(1)} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+                    {/* <button onClick={() => {
+                      console.log("battttt")
+                      setStep(3)
+                    }} type="button" className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
                       Back
-                    </button>
+                    </button> */}
                   </div>
                 </div>
                 <div className="   col-span-6 xl:col-span-6 ">

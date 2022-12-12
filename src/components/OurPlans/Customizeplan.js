@@ -28,6 +28,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [totalPrice, setTotalPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price - (PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price * 0.05));
   const [addOnFifty, setAddOnFifty] = useState(0);
   const [addOnTwoHundred, setAddOnTwoHundred] = useState(0);
+  const [personalInformation, setPersonalInformation] = useState({});
+  const [deliveryInformation, setDeliveryInformation] = useState({});
+  const [planInformation, setPlanInformation] = useState({});
 
 
   // const [step, setStep] = React.useState(1);
@@ -39,6 +42,20 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     // let res = data.map(a => a.allergy);
     setAllergiesData(data);
   };
+
+  const setPlanInformationData = () => {
+    setPlanInformation({
+      selectedPlan,
+      selectedPortion,
+      selectedDuration,
+      selectedDaysPerWeek,
+      allergies,
+      mealType,
+      offDays
+    })
+  }
+
+  console.log("Personal Information", personalInformation)
 
   const getCustomizeActiveClass = (selected, checked, type) => {
     console.log("SELECTED", selected);
@@ -320,6 +337,22 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           name="vehicle2"
                           value="Car"
                           className=" checkinpu "
+                          checked={
+                            addOnTwoHundred > 0 ? true : false
+                          }
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setAddOnTwoHundred(200);
+                              setPrice(
+                                Number(price) + 200
+                              );
+                            } else {
+                              setAddOnTwoHundred(0);
+                              setPrice(
+                                Number(price) - 200
+                              );
+                            }
+                          }}
                         />
                         <label
                           for="vehicle2"
@@ -348,6 +381,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   <div className="   col-span-6 xl:col-span-6 ">
                     <div className="text-center">
                       <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8" onClick={() => {
+                        setPlanInformationData()
                         setStep(2)
                       }}>
                         Next
@@ -363,13 +397,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         </div>
       }
       {step == 2 &&
-        <CustomizeplanPersonalInformation step={step} setStep={setStep} />
+        <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
       }
       {step == 3 &&
-        <CustomizeplanDeliveryInformation step={step} setStep={setStep} />
+        <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
       }
       {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} />
+        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} />
       }
     </>
   );

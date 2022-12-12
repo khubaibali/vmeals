@@ -6,7 +6,7 @@ import Informationslick from "./Informationslick";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
 
-export default function CustomizeplanPersonalInformation({step, setStep}) {
+export default function CustomizeplanPersonalInformation({step, setStep, setPersonalInformation, personalInformation}) {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
@@ -25,7 +25,7 @@ export default function CustomizeplanPersonalInformation({step, setStep}) {
                 Tell us about yourself...
               </h1>
 
-              <Welcomeinput setStep={setStep} />
+              <Welcomeinput setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
             </div>
           </div>
           <div className="   col-span-12  xl:col-span-6  ">
