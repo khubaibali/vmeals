@@ -51,6 +51,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       selectedDaysPerWeek,
       allergies,
       mealType,
+      price,
       offDays
     })
   }

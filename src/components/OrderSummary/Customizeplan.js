@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
 export default function CustomizeplanOrderSummary({step, setStep, deliveryInformation,personalInformation,planInformation}) {
   const [openTab, setOpenTab] = React.useState(1);
+  const [finalPrice, setFinalPrice] = useState(planInformation?.price)
   const mapPlanName = (plan) => {
     if(plan == "ClassicDiet") return "Classic Diet"
     else return plan
@@ -136,7 +137,7 @@ export default function CustomizeplanOrderSummary({step, setStep, deliveryInform
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED2550.00</span>{" "}
+                    <span className=" f-f-r float-right ">AED{finalPrice}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
