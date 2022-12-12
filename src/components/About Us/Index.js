@@ -10,12 +10,12 @@ const Fotter  = dynamic(()=>import ("../Common/Footer"))
 
 
 
-export default function Index({tradeMarkData,headerData,footerData,sliderBarData,socialMediaIcon,ourCompanyData}) {
+export default function Index({tradeMarkData,headerData,footerData,socialMediaIcon,ourCompanyData}) {
   return (
     <>
       <div className="about-bg">
         <Navbar headerData={headerData} />
-        <Hero sliderBarData={sliderBarData} />
+        <Hero />
       </div>
       <JournyMissionWrapper ourCompanyData={ourCompanyData}/>
       <Review />
