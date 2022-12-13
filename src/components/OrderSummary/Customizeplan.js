@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
-export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation }) {
+export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation, price, applyCoupun, setCouponValue, couponError, checkout }) {
   const [openTab, setOpenTab] = React.useState(1);
   const [finalPrice, setFinalPrice] = useState(planInformation?.price)
   const mapPlanName = (plan) => {
@@ -125,10 +125,12 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <input
                   placeholder="Enter Coupon Code..."
                   class=" input-register 2xl:h-[70px] "
+                  onChange={(e) => setCouponValue(e.target.value)}
                 />
-                <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
+                <button onClick={() => applyCoupun()} class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
                   Apply Code
                 </button>
+                {couponError && <p className="text-red text-center mt-1 text-sm 2xl:text-base ">{couponError}</p>}
               </div>
               {/* input filed ended */}
               <div className="grid grid-cols-12 mt-6 gap-4 ">
@@ -165,7 +167,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED3050.00</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{price - (price * 0.05)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -182,11 +184,11 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </div>
                 <div className="   col-span-6 xl:col-span-6 ">
                   <div className="text-center">
-                    <Link href="/confirmation">
-                      <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+                    {/* <Link href="/confirmation"> */}
+                      <button onClick={() => checkout()}  className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
                         Checkout
                       </button>
-                    </Link>
+                    {/* </Link> */}
                   </div>
                 </div>
               </div>
@@ -275,8 +277,9 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <input
                   placeholder="Enter Coupon Code..."
                   class=" input-register 2xl:h-[70px] "
+                  onChange={(e) => setCouponValue(e.target.value)}
                 />
-                <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
+                <button onClick={() => applyCoupun()} class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
                   Apply Code
                 </button>
               </div>
@@ -315,7 +318,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED3050.00</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{price - (price * 0.05)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -335,11 +338,11 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </div>
                 <div className="   col-span-6 xl:col-span-6 ">
                   <div className="text-center">
-                    <Link href="/confirmation">
-                      <button className="text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+                    {/* <Link href="/confirmation"> */}
+                      <button onClick={() => checkout()} className="text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
                         Checkout
                       </button>
-                    </Link>
+                    {/* </Link> */}
                   </div>
                 </div>
               </div>

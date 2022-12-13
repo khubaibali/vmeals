@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "./Steps";
-import { vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
+import { useCoupon, vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
 import PlanData from '../../lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../helpers";
@@ -10,9 +10,12 @@ import { Multiselect } from "multiselect-react-dropdown";
 import CustomizeplanDeliveryInformation from '../DeliveryInformation/Customizeplan';
 import CustomizeplanPersonalInformation from "../PersonalInformation/Customizeplan";
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
+import axios from "axios";
 
 export default function Customizeplan({ heading, description, selectedPlan, setStep, step = 1 }) {
   console.log("setStepsetStep", setStep)
+  const [isLoading, setLoading] = useState(false);
+
   // const [selectedPlan, setSelectedPlan]
   const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
   const [selectedDuration, setSelectedDuration] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]);
@@ -31,7 +34,12 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [personalInformation, setPersonalInformation] = useState({});
   const [deliveryInformation, setDeliveryInformation] = useState({});
   const [planInformation, setPlanInformation] = useState({});
-
+  const [couponValue, setCouponValue] = useState(null);
+  const [coupunApplied, setCoupunApplied] = useState(false);
+  const [couponError, setCouponError] = useState(null);
+  const [discountPrice, setDiscountPrice] = useState(0);
+  const [discountPercentage, setDiscountPercentage] = useState(null);
+  const [couponAPIResponse, setCouponAPIResponse] = useState(null);
 
   // const [step, setStep] = React.useState(1);
   const [aboutus, setaboutus] = React.useState(false);
@@ -63,7 +71,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       setCouponError(null);
       console.log("useee", couponValue);
       axios
-        .post(useCoupon, { code: couponValue })
+        .post(useCoupon, { code: couponValue, email: personalInformation?.email })
         .then((res) => {
           setCouponAPIResponse(res);
 
@@ -135,30 +143,30 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         {
           name: selectedPlan,
           quantity: 1,
-          linetotal: totalPrice,
+          linetotal: price,
         },
       ],
       customer: {
         id: "123456",
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phone: mobileNumber,
+        firstName: personalInformation?.firstName,
+        lastName: personalInformation?.lastName,
+        email: personalInformation?.email,
+        phone: personalInformation?.mobileNumber,
       },
       billingAddress: {
-        name: firstName + " " + lastName,
-        address1: address,
+        name: personalInformation?.firstName + " " + personalInformation?.lastName,
+        address1: deliveryInformation?.address,
         address2: "",
-        city: city || "Dubai",
+        city: deliveryInformation?.city || "Dubai",
         state: "",
         zip: "",
         country: "AE",
       },
       deliveryAddress: {
-        name: firstName + " " + lastName,
-        address1: address,
+        name: personalInformation?.firstName + " " + personalInformation?.lastName,
+        address1: deliveryInformation?.address,
         address2: "",
-        city: city || "Dubai",
+        city: personalInformation?.city || "Dubai",
         state: "",
         zip: "",
         country: "AE",
@@ -175,9 +183,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
           toast.success(res?.data?.doc?.error);
         }
         if (res?.data?.doc?.success == true) {
-          // createOrder();
+          createOrder();
           console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
-          // window.location = res?.data?.doc?.result?.redirectUrl;
+          window.location = res?.data?.doc?.result?.redirectUrl;
           // setLoading(false)
         }
         console.log("RES", res);
@@ -208,24 +216,24 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         },
       },
       personalInfo: {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        mobileNumber: mobileNumber,
-        nationality: nationality,
-        dateOfBirth: dateOfBirth,
+        firstName: personalInformation?.firstName,
+        lastName: personalInformation?.lastName,
+        email: personalInformation?.email,
+        mobileNumber: personalInformation?.mobileNumber,
+        nationality: personalInformation?.nationality,
+        dateOfBirth: (new Date(personalInformation?.dateOfBirth)).toDateString(),
       },
       deliveryDetails: {
-        startingDate: startingDate,
-        city: city,
-        address: address,
-        apartmentNumber: appartmentNumber,
-        accessCode: accessCode || "N/A",
-        googleMapsLink: googleMapLink,
-        deliveryInstructions: deliveryInstruction || "N/A",
-        deliverySlot: deliverySlot,
+        startingDate: deliveryInformation?.startingDate,
+        city: deliveryInformation?.city,
+        address: deliveryInformation?.address,
+        apartmentNumber: deliveryInformation?.appartmentNumber,
+        accessCode: deliveryInformation?.accessCode || "N/A",
+        googleMapsLink: deliveryInformation?.googleMapLink || "N/A",
+        deliveryInstructions: deliveryInformation?.deliveryInstruction || "N/A",
+        deliverySlot: deliveryInformation?.deliverySlot,
         price: price,
-        totalPrice: totalPrice,
+        totalPrice: totalPrice || price,
         discountPrice: discountPrice || "N/A",
         discountPercentage: discountPercentage || "N/A",
       },
@@ -590,7 +598,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
       }
       {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} />
+        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation}  price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} />
       }
     </>
   );
