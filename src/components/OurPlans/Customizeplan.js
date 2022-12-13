@@ -66,13 +66,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
           {/* code testing ended */}
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
-            <div className="   col-span-12  xl:col-span-6  ">
+            <div className="   col-span-12  lg:col-span-6  ">
               <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  md:leading-[56px] uppercase ">
                 {heading}
               </h1>
               <RTFMapping data={description} />
             </div>
-            <div className="   col-span-12  xl:col-span-6  ">
+            <div className="   col-span-12  lg:col-span-6  ">
               <div className="bg-green-light p-4 md:p-8 rounded-[20px]  ">
                 <ul className="inline-flex w-full ">
                   <li>
