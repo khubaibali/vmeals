@@ -4,15 +4,15 @@ import Hero from "./Hero";
 import Fotter from "../Common/Footer";
 import Category from "./Category";
 
-export default function Index() {
+export default function Index({headerData,socialMediaIcon,tradeMarkData,footerData}) {
   return (
     <>
       <div className="blog-bg">
-        <Navbar />
+      <Navbar headerData={headerData}/>
         <Hero />
       </div>
       <Category />
-      <Fotter />
+      <Fotter socialMediaIcon={socialMediaIcon} tradeMarkData={tradeMarkData} footerData={footerData}/>
     </>
   );
 }
