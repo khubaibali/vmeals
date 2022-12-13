@@ -3,12 +3,16 @@ import Contactuspage from '../src/components/ContactUs/Index'
 import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
 import {getServerSideProps as contactUsProps} from '../src/components/ContactUs/Fitnesour'
+import SEO from '../src/components/Common/SEO'
+import { vmealsPages } from '../src/lib/APICommunications'
 
 export default function Contactus(props) {
   console.log("contactus page",props)
+  const metaDataContent = Object.values(props.metaData.docs).find(c => c.title == "Contact Us")
   return (
     <div>
         <Contactuspage headerData={props?.headerData}  socialMediaIcon={props.socialMediaIcon}  footerData={props?.footerData} tradeMarkData={props?.tradmark} contactUsData={props.contactUsData}/>
+        <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
     </div>
   )
 }
@@ -19,12 +23,15 @@ export async function getServerSideProps() {
     let data = await headerProps()
     let socialMediaIcon = await socialMediaIconsProps()
     let constactUsData =await contactUsProps()
+    let metaData = await (await fetch(vmealsPages)).json()
+
 
     return {
       props: {
         ...data.props,    //navbar  
         ...socialMediaIcon.props,    //all footer data
-        ...constactUsData.props
+        ...constactUsData.props,
+        metaData:{...metaData}
       }, 
     }
   } catch (error) {
