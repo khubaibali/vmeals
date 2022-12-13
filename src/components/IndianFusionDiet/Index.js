@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Common/Navbar";
 import Hero from "./Hero";
 import Review from "../About Us/Review";
@@ -12,6 +12,9 @@ import { vmealsIndianFusionDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Green Diet")
+  const [selectedPlan, setSelectedPlan] = useState("IndianFusionNonVegetarian");
+  const [step, setStep] = useState(1)
+
   const contentDataIndianFusion = Object.values(contentData).find(c => c.VmealsIndianFusionEnableDisables == "Enable")
   
   return (
@@ -21,7 +24,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
         <Navbar headerData={headerData}  />
         <Hero />
       </div>
-      <Customizeplan  heading={contentDataIndianFusion?.VmealsIndianFusionHeading} description={contentDataIndianFusion?.VmealsIndianFusiondescriptionParagraphs} selectedPlan={"IndianFusionNonVegetarian"} />
+      <Customizeplan  heading={contentDataIndianFusion?.VmealsIndianFusionHeading} description={contentDataIndianFusion?.VmealsIndianFusiondescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan}  setStep={setStep} step={step} />
       <Simplemenu />
       <Built builtData={builtData}  />
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">

@@ -11,6 +11,7 @@ import SEO from "../Common/SEO";
 import { vmealsClassicDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData, contentData, metaData }) {
+  const [selectedPlan, setSelectedPlan] = useState("ClassicDiet");
   const metaDataContent = Object.values(metaData).find(c => c.title == "Classic Diet")
   const contentDataClassicDiet = Object.values(contentData).find(c => c.VMealsClassicDietEnableDisables == "Enable")
 
@@ -28,7 +29,8 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
       <Customizeplan  
         heading={contentDataClassicDiet?.VMealsClassicDietHeading} 
         description={contentDataClassicDiet?.VMealsClassicDietdescriptionParagraphs} 
-        selectedPlan={"ClassicDiet"}
+        selectedPlan={selectedPlan}
+        setSelectedPlan={setSelectedPlan}
         setStep={setStep}
         step={step}
       />

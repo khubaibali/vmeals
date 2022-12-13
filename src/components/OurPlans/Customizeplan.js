@@ -12,7 +12,7 @@ import CustomizeplanPersonalInformation from "../PersonalInformation/Customizepl
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 import axios from "axios";
 
-export default function Customizeplan({ heading, description, selectedPlan, setStep, step = 1 }) {
+export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1 }) {
   console.log("setStepsetStep", setStep)
   const [isLoading, setLoading] = useState(false);
 
@@ -308,7 +308,43 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     </button>
                   </li>
                 </ul>
+                {(selectedPlan == "IndianFusionNonVegetarian" ||
+                  selectedPlan == "GreenDietVegan" ||
+                  selectedPlan == "IndianFusionVegetarianDiet" ||
+                  selectedPlan == "GreenDietVegetarian") && (
+                    <>
 
+                      <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                        Choose your type of diet
+                      </h1>
+
+                      <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
+                        <div className="   col-span-6  ">
+                          <button className={`${selectedPlan == "GreenDietVegan" || selectedPlan == "IndianFusionNonVegetarian" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
+                            onClick={() => {
+                              setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
+                            }}
+                          >
+                            <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              {selectedPlan == "IndianFusionNonVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "Non-Vegetarian" : "Vegan"} Diet
+                            </h1>
+                          </button>
+                        </div>
+                        <div className="   col-span-6 ">
+
+                          <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
+                            setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
+                          }}>
+                            <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              Vegetarian Diet
+                            </h1>
+                          </button>
+                        </div>
+
+                      </div>
+
+                    </>
+                  )}
                 <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your portion size
                 </h1>
@@ -598,7 +634,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
       }
       {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation}  price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} />
+        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} />
       }
     </>
   );
