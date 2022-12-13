@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "./Steps";
-import { vmealsCreatePayment, vmealsPages } from "../../lib/APICommunications";
+import { vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
 import PlanData from '../../lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../helpers";
@@ -11,7 +11,7 @@ import CustomizeplanDeliveryInformation from '../DeliveryInformation/Customizepl
 import CustomizeplanPersonalInformation from "../PersonalInformation/Customizeplan";
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 
-export default function Customizeplan({ heading, description, selectedPlan, setStep, step=1 }) {
+export default function Customizeplan({ heading, description, selectedPlan, setStep, step = 1 }) {
   console.log("setStepsetStep", setStep)
   // const [selectedPlan, setSelectedPlan]
   const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
@@ -188,6 +188,59 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         return false;
       });
   };
+
+  const createOrder = () => {
+    let body = {
+      plan: {
+        planName: selectedPlan,
+        typeOfDiet: "vegan",
+        portionSize:
+          selectedPortion.name + " | " + selectedPortion.caloriesRange,
+        deliveriesPerWeek: selectedDaysPerWeek.days,
+        offDays: offDays,
+        planDuration: selectedDuration.name,
+        mealType: mealType?.id?.split("_"),
+        allergies: allergies?.length ? allergies.map((a) => a.allergy) : "N/A",
+        addOns: ["none"],
+        couponCode: {
+          code: couponAPIResponse?.doc?.code,
+          percentageOff: couponAPIResponse?.doc?.discountPercentage || 0 + "%",
+        },
+      },
+      personalInfo: {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        mobileNumber: mobileNumber,
+        nationality: nationality,
+        dateOfBirth: dateOfBirth,
+      },
+      deliveryDetails: {
+        startingDate: startingDate,
+        city: city,
+        address: address,
+        apartmentNumber: appartmentNumber,
+        accessCode: accessCode || "N/A",
+        googleMapsLink: googleMapLink,
+        deliveryInstructions: deliveryInstruction || "N/A",
+        deliverySlot: deliverySlot,
+        price: price,
+        totalPrice: totalPrice,
+        discountPrice: discountPrice || "N/A",
+        discountPercentage: discountPercentage || "N/A",
+      },
+    };
+    axios
+      .post(vmealsOrder, body)
+      .then((res) => {
+        setOrderAPIResponse(res);
+      })
+      .catch((err) => {
+        console.log("ERROR", err);
+        return false;
+      });
+  };
+
 
   console.log("Personal Information", personalInformation)
 
