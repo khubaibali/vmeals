@@ -17,7 +17,7 @@ export default function Fitnesour({ contactUsData = [{}] }) {
           <div className="w-11/12 ml-auto mr-auto md:w-12/12 mt-5 md:mt-10  lg:mt-20  ">
 
             {
-              contactUsData?.[0]?.VMealsContactUsList.map((item, ind) => (
+              contactUsData?.[0]?.VMealsContactUsList?.map((item, ind) => (
                 <div>
                   <ul className={ind == 0 ? "inline-flex" : "inline-flex mt-8 md:mt-14 "}>
                     <li>
