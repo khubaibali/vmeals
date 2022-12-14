@@ -1,8 +1,8 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsGetStarted } from '../../../src/lib/APICommunications';
-export default function Fitness({ homeFitnessData=[{}] }) {
-  
+export default function Fitness({ homeFitnessData = [{}] }) {
+
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto  my-10 md:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
@@ -20,88 +20,31 @@ export default function Fitness({ homeFitnessData=[{}] }) {
             alt=""
             className="w-full h-auto xl:h-[500px] 2xl:h-[707px] lg:hidden "
           />
-          <ul className="inline-flex">
-            <li>
-              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
-                01.
-              </h2>
-            </li>
-            <li className="ml-4">
-              <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                {/* Choose your plan */}
-                {homeFitnessData[0]?.VMealsGetStartedList[0]?.VMealsGetStartedItemTitle}
-              </h2>
-              <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
-                {homeFitnessData[0]?.VMealsGetStartedList[0]?.VMealsGetStartedItemDescription}
-              </h2>
-            </li>
-          </ul>
-          <ul className="inline-flex  ">
-            <li>
-              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
-                02.
-              </h2>
-            </li>
-            <li className="ml-4">
-              <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                {/* Customise your plan */}
-                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemTitle}
-              </h2>
-              <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
-              </h2>
-            </li>
-          </ul>
-          <ul className="inline-flex  ">
-            <li>
-              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
-                03.
-              </h2>
-            </li>
-            <li className="ml-4">
-              <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                {/* Enter your information */}
-                {homeFitnessData[0]?.VMealsGetStartedList[2]?.VMealsGetStartedItemTitle}
-              </h2>
-              <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {homeFitnessData[0]?.VMealsGetStartedList[2]?.VMealsGetStartedItemDescription}
-              </h2>
-            </li>
-          </ul>
-          <ul className="inline-flex  ">
-            <li>
-              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
-                04.
-              </h2>
-            </li>
-            <li className="ml-4">
-              <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                {/* Place your order */}
-                {homeFitnessData[0]?.VMealsGetStartedList[3]?.VMealsGetStartedItemTitle}
-              </h2>
-              <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {homeFitnessData[0]?.VMealsGetStartedList[3]?.VMealsGetStartedItemDescription}
-              </h2>
-            </li>
-          </ul>
-          <ul className="inline-flex  ">
-            <li>
-              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
-                05.
-              </h2>
-            </li>
-            <li className="ml-4">
-              <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
-                {/* Enjoy your meals! */}
-                {homeFitnessData[0]?.VMealsGetStartedList[4]?.VMealsGetStartedItemTitle}
-              </h2>
-              <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {homeFitnessData[0]?.VMealsGetStartedList[4]?.VMealsGetStartedItemDescription}
-              </h2>
-            </li>
-          </ul>
+
+          {
+            homeFitnessData[0]?.VMealsGetStartedList.map((dt,ind) => (
+              <ul className="inline-flex">
+                <li>
+                  <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
+                  0{ind+1}
+                  </h2>
+                </li>
+                <li className="ml-4">
+                  <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
+                    {/* Choose your plan */}
+                    {dt?.VMealsGetStartedItemTitle}
+                  </h2>
+                  <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
+                    {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
+                    {dt?.VMealsGetStartedItemDescription}
+                  </h2>
+                </li>
+              </ul>
+            ))
+          }
+
+
         </div>
         <div className="   col-span-12 lg:col-span-6  ">
           <img
