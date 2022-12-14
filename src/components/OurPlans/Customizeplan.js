@@ -279,9 +279,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
             <div className="   col-span-12  lg:col-span-6  ">
-              <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  md:leading-[56px] uppercase ">
+              <h2 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  md:leading-[56px] uppercase ">
                 {heading}
-              </h1>
+              </h2>
               <RTFMapping data={description} />
             </div>
             <div className="   col-span-12  lg:col-span-6  ">
@@ -314,9 +314,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   selectedPlan == "GreenDietVegetarian") && (
                     <>
 
-                      <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                      <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                         Choose your type of diet
-                      </h1>
+                      </h2>
 
                       <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
                         <div className="   col-span-6  ">
@@ -325,9 +325,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                               setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
                             }}
                           >
-                            <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                            <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                               {selectedPlan == "IndianFusionNonVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "Non-Vegetarian" : "Vegan"} Diet
-                            </h1>
+                            </h2>
                           </button>
                         </div>
                         <div className="   col-span-6 ">
@@ -335,9 +335,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
                             setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
                           }}>
-                            <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                            <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                               Vegetarian Diet
-                            </h1>
+                            </h2>
                           </button>
                         </div>
 
@@ -345,9 +345,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
                     </>
                   )}
-                <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your portion size
-                </h1>
+                </h2>
 
                 <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
                   {PlanData[selectedPlan]?.portions?.map(portion => (
@@ -360,15 +360,15 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         }}>
                         <ul>
                           <li>
-                            <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                            <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                               {" "}
                               {portion?.caloriesRange}
-                            </h1>
+                            </h2>
                           </li>
                           <li>
-                            <h1 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
+                            <h2 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
                               {portion?.name}
-                            </h1>
+                            </h2>
                           </li>
                         </ul>
                       </button>
@@ -376,9 +376,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   ))}
                 </div>
 
-                <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose plan duration
-                </h1>
+                </h2>
                 <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
                   {selectedPortion?.planDuration?.map(duration => (
                     <div className="   col-span-6  ">
@@ -390,10 +390,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           setPrice(duration?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
                         }}
                       >
-                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                        <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                           {" "}
                           {getDurationName(duration?.name)}
-                        </h1>
+                        </h2>
                       </button>
                     </div>
                   ))}
@@ -401,9 +401,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
 
 
-                <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose deliveries per week{" "}
-                </h1>
+                </h2>
                 <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
                   {selectedDuration?.deliveriesPerWeek?.map(dpw => (
                     <div className="   col-span-4  ">
@@ -414,18 +414,18 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           setPrice(dpw?.mealType?.find((m) => m.id == mealType.id)?.price)
                         }}
                       >
-                        <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                        <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                           {dpw.days} days/week
-                        </h1>
+                        </h2>
                       </button>
                     </div>
                   ))}
                 </div>
                 {selectedDaysPerWeek.days != 7 &&
                   <>
-                    <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                    <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                       Choose your off days(s){" "}
-                    </h1>
+                    </h2>
                     <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
                       <div className="   col-span-6  ">
                         <button className={` ${offDays == "Friday" || offDays == "Friday - Saturday" ? "cusntn" : ""}  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
@@ -433,9 +433,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             setOffDays(selectedDaysPerWeek.days == 6 ? "Friday" : "Friday - Saturday");
                           }}
                         >
-                          <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                          <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                             {selectedDaysPerWeek.days == 6 ? "Friday" : "Friday - Saturday"}
-                          </h1>
+                          </h2>
                         </button>
                       </div>
                       <div className="   col-span-6  ">
@@ -444,18 +444,18 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             setOffDays(selectedDaysPerWeek.days == 6 ? "Saturday" : "Saturday - Sunday");
                           }}
                         >
-                          <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                          <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                             {" "}
                             {selectedDaysPerWeek.days == 6 ? "Saturday" : "Saturday - Sunday"}
-                          </h1>
+                          </h2>
                         </button>
                       </div>
                     </div>
                   </>
                 }
-                <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your meal type
-                </h1>
+                </h2>
                 <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
                   {/* new code data started */}
                   <div className="relative" >
@@ -490,9 +490,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   </div>
                   {/* new code data end */}
                 </div>
-                <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Select your allergies (5 maximum)
-                </h1>
+                </h2>
                 {/* nabeel bhai code  */}
                 <div className="relative" >
                   <Multiselect
@@ -524,9 +524,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 {/* nabeel bhai code ended */}
                 {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
               </div> */}
-                <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Add Ons
-                </h1>
+                </h2>
 
                 <div className="my-4">
                   <form action="/action_page.php">

@@ -18,9 +18,9 @@ export default function CustomizeplanDeliveryInformation({ step, setStep, setDel
               <h2 className=" text-green f-f-b text-center md:text-left text-xl  md:text-5xl xl:text-4xl 2xl:text-9xl  ">
                 Delivery Information
               </h2>
-              <h1 className=" text-dark f-f-li text-sm text-center md:text-left md:text-base 2xl:text-4xl ">
+              <h2 className=" text-dark f-f-li text-sm text-center md:text-left md:text-base 2xl:text-4xl ">
                 We bring joy at your doorstep!
-              </h1>
+              </h2>
 
               <Welcomeinput setStep={setStep} step={step} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
             </div>

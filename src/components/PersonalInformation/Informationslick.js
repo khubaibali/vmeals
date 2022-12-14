@@ -25,9 +25,9 @@ export default function Informationslick() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum”
           </p>
-          <h1 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
+          <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
             John Doe
-          </h1>
+          </h2>
           <h2 className=" f-f-it text-white text-sm 2xl:text-base  ">
             Personal Trainer
           </h2>
@@ -43,9 +43,9 @@ export default function Informationslick() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum”
           </p>
-          <h1 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
+          <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
             John Doe
-          </h1>
+          </h2>
           <h2 className=" f-f-it text-white text-sm 2xl:text-base ">
             Personal Trainer
           </h2>
@@ -61,9 +61,9 @@ export default function Informationslick() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum”
           </p>
-          <h1 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
+          <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
             John Doe
-          </h1>
+          </h2>
           <h2 className=" f-f-it text-white text-sm 2xl:text-base ">
             Personal Trainer
           </h2>

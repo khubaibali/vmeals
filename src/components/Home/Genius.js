@@ -11,14 +11,14 @@ export default function Genius({ ourGeniusData=[{}] }) {
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
             <div className="   col-span-12 lg:col-span-6  lg:hidden ">
-              <h1 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10  tracking-[1px] lg:tracking-[0.22em] ">
+              <h2 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10  tracking-[1px] lg:tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
-              </h1>
-              <h1 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  mt-8">
+              </h2>
+              <h2 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  mt-8">
                 {/* A team of nutrition experts at your fingertips! */}
                 {ourGeniusData[0]?.VMealsOurGeniusesTitle}
-              </h1>
+              </h2>
               {/* <h2 className="  text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px] ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -42,14 +42,14 @@ export default function Genius({ ourGeniusData=[{}] }) {
               />
             </div>
             <div className="   col-span-12 lg:col-span-6 hidden lg:block ">
-              <h1 className="  text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-0 tracking-[1px] lg:tracking-[0.22em] ">
+              <h2 className="  text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-0 tracking-[1px] lg:tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
-              </h1>
-              <h1 className="  text-5xl 2xl:text-7xl f-f-b black leading-[50px] 2xl:leading-[75px]  mt-8">
+              </h2>
+              <h2 className="  text-5xl 2xl:text-7xl f-f-b black leading-[50px] 2xl:leading-[75px]  mt-8">
                 {/* A team of nutrition experts at your fingertips! */}
                 {ourGeniusData[0]?.VMealsOurGeniusesTitle}
-              </h1>
+              </h2>
               {/* <h2 className="  text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px] ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

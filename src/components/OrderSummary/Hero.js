@@ -3,9 +3,9 @@ import React from "react";
 export default function Hero() {
   return (
     <>
-      <h1 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">
+      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">
         Order Summary
-      </h1>
+      </h2>
       <div className="text-center mt-5  2xl:mt-16 ">
         <ul className="inline-flex">
           <li>
@@ -28,9 +28,9 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
-            <h1 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+            <h2 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
               Our Plans
-            </h1>
+            </h2>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
@@ -46,9 +46,9 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
-            <h1 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+            <h2 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
               Classic Diet
-            </h1>
+            </h2>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
@@ -64,9 +64,9 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
-            <h1 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
+            <h2 className=" text-sm md:text-lg 2xl:text-2xl text-white f-f-b text-center  ">
               Order Summary
-            </h1>
+            </h2>
           </li>
         </ul>
       </div>

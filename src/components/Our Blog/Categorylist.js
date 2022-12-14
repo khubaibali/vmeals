@@ -82,9 +82,9 @@ export default function Categorylist({ categoriesAll }) {
         </li>
         
       </ul>
-      <h1 class="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li text-green text-center lg:text-left uppercase  tracking-[1px] lg:tracking-[0.22em] mt-10 2xl:mt-24 ">
+      <h2 class="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li text-green text-center lg:text-left uppercase  tracking-[1px] lg:tracking-[0.22em] mt-10 2xl:mt-24 ">
         Recent posts
-      </h1>
+      </h2>
       {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
 
       <div className=" mt-8  ">

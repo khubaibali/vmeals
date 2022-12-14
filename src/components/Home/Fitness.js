@@ -6,14 +6,14 @@ export default function Fitness({ homeFitnessData=[{}] }) {
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto  my-10 md:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 lg:col-span-6  ">
-          <h1 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
             {/* GET STARTED */}
             {homeFitnessData[0]?.VMealsGetStartedHeading}
-          </h1>
-          <h1 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px] mt-4  md:mt-8">
+          </h2>
+          <h2 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px] mt-4  md:mt-8">
             {/* Start your fitness journey with us! */}
             {homeFitnessData[0]?.VMealsGetStartedTitle}
-          </h1>
+          </h2>
           <img
             src="/images/start your finest journey with us-02.png"
             alt=""
@@ -21,9 +21,9 @@ export default function Fitness({ homeFitnessData=[{}] }) {
           />
           <ul className="inline-flex">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
+              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 01.
-              </h1>
+              </h2>
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
@@ -39,9 +39,9 @@ export default function Fitness({ homeFitnessData=[{}] }) {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
+              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 02.
-              </h1>
+              </h2>
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
@@ -55,9 +55,9 @@ export default function Fitness({ homeFitnessData=[{}] }) {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
+              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 03.
-              </h1>
+              </h2>
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
@@ -71,9 +71,9 @@ export default function Fitness({ homeFitnessData=[{}] }) {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
+              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 04.
-              </h1>
+              </h2>
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">
@@ -87,9 +87,9 @@ export default function Fitness({ homeFitnessData=[{}] }) {
           </ul>
           <ul className="inline-flex  ">
             <li>
-              <h1 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
+              <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
                 05.
-              </h1>
+              </h2>
             </li>
             <li className="ml-4">
               <h2 className="  mt-4 md:mt-0 text-base sm:text-xl xl:text-2xl leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black  sm:pt-10 f-f-b  ">

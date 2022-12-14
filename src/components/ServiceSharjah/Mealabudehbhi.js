@@ -4,9 +4,9 @@ export default function Mealabudehbhi() {
   return (
     <div>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
-        <h1 className=" f-f-b text-3xl text-green  text-center ">
+        <h2 className=" f-f-b text-3xl text-green  text-center ">
           Meal Plan Delivery Sharjah
-        </h1>
+        </h2>
         <h2 class="   f-f-r text-black text-tiny  2xl:text-lg mt-2 md:mt-7 leading-[25px] text-center ">
           Everybody understands that meals cooked at home are healthier than
           eating at restaurants because you have absolute control over what

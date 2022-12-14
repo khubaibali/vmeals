@@ -117,9 +117,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
       <div className="w-11/12 sm:w-full ml-auto mr-auto ">
         <div className="grid grid-cols-12 gap-5   2xl:gap-4  ">
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black   mb-1 ">
+            <h2 className=" text-base f-f-b text-black   mb-1 ">
               Starting Date <span className="text-red">* </span>
-            </h1>
+            </h2>
 
             <DatePicker
               //   selected={new Date()}
@@ -144,9 +144,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             <img src="/images/mobilearrow.png" className="absolute right-4" />{" "}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black  mb-1 ">
+            <h2 className=" text-base f-f-b text-black  mb-1 ">
               City <span className="text-red">* </span>
-            </h1>
+            </h2>
 
             <div className="relative" >
               <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " onChange={(e) => {
@@ -184,9 +184,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12 ">
-            <h1 className=" text-base f-f-b text-black   ">
+            <h2 className=" text-base f-f-b text-black   ">
               Address <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               placeholder="Enter your area, street & building name..."
               className=" input-register "
@@ -203,9 +203,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black   ">
+            <h2 className=" text-base f-f-b text-black   ">
               Apartment/Villa Number <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               placeholder="Enter your apartment/villa number..."
               className=" input-register "
@@ -222,9 +222,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black  ">
+            <h2 className=" text-base f-f-b text-black  ">
               Access Code (Optional)
-            </h1>
+            </h2>
             <input
               placeholder="Enter your building’s access code..."
               className=" input-register "
@@ -233,9 +233,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             />
           </div>
           <div className="   col-span-12  ">
-            <h1 className=" text-base f-f-b text-bla  ">
+            <h2 className=" text-base f-f-b text-bla  ">
               Google Maps Link <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               placeholder="Enter the Google maps link..."
               className=" input-register "
@@ -252,9 +252,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12  ">
-            <h1 className=" text-base f-f-b text-bla  ">
+            <h2 className=" text-base f-f-b text-bla  ">
               Delivery Instructions (Optional)
-            </h1>
+            </h2>
             <input
               placeholder="Enter delivery specific instructions..."
               className=" input-register "
@@ -263,9 +263,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             />
           </div>
           <div className="   col-span-12 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black  ">
+            <h2 className=" text-base f-f-b text-black  ">
               Delivery Slot <span className="text-red">* </span>
-            </h1>
+            </h2>
 
             <select id="city" name="city" onChange={(e) =>
               setDeliverySlot(e.target.value)

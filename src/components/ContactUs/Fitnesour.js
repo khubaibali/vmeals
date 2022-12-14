@@ -9,10 +9,10 @@ export default function Fitnesour({ contactUsData = [{}] }) {
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14 mt-10 md:mt-10 lg:my-24  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
-          <h1 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
             {/* Need Assistance? */}
             {contactUsData?.[0]?.VMealsContactUsTitle}
-          </h1>
+          </h2>
           {/* code started */}
           <div className="w-11/12 ml-auto mr-auto md:w-12/12 mt-5 md:mt-10  lg:mt-20  ">
 
@@ -40,10 +40,10 @@ export default function Fitnesour({ contactUsData = [{}] }) {
           </div>
           {/* code ended */}
 
-          <h1 className="f-f-b text-black-dark text-xl md:text-4xl mt-10 2xl:mt-20  text-center md:text-left">
+          <h2 className="f-f-b text-black-dark text-xl md:text-4xl mt-10 2xl:mt-20  text-center md:text-left">
             {/* Connect with us! */}
             {contactUsData?.[0]?.VMealsContactUsText}
-          </h1>
+          </h2>
           <div className="text-center md:text-left">
             
               <a href={contactUsData?.[0]?.VMealsContactUsButtonLinkUrl} target="_blank" >
