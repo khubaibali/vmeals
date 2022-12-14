@@ -134,17 +134,17 @@ function Navbar({ headerData = {} }) {
                     {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
                 </li> */}
-                     <li className=" md:hidden">
-                     <Link
-                       href="/contactus"
-                   className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
-  Need Assistance?
-                    </Link>
-                  
+                <li className=" md:hidden">
+                  <Link
+                    href="/contact-us"
+                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
+                    Need Assistance?
+                  </Link>
+
                 </li>
                 <li className=" md:hidden">
                   <a
-                  
+
                     className="block py-2 sm:py-4   f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded-[100px]   green-gradiant pl-4 sm:px-10  text-white  "
                   >
                     Get Started
@@ -167,13 +167,13 @@ function Navbar({ headerData = {} }) {
                 </li>
                 <li className=" ">
                   <Link
-                    href="/contactus"
+                    href="/contact-us"
                     className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     Need Assistance?
                   </Link>
                 </li>
-  
+
                 <li>
                   <a
                     href="#"
