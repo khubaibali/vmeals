@@ -9,12 +9,16 @@ import {getServerSideProps as ourGeniusDataProps} from '../src/components/Home/G
 import {getServerSideProps as homeFitnessDataProps} from '../src/components/Home/Fitness'
 import {getServerSideProps as ourHomeBlogsDataProps} from '../src/components/Home/Ourblog'
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
+import SEO from '../src/components/Common/SEO'
+import { vmealsPages } from '../src/lib/APICommunications'
 function Home(props) {
   console.log("home",props)
+  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
   return (
 
     <>
       <Homepage headerData={props?.headerData} sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData ={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} />
+      <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
     </>
   )
 }
@@ -27,13 +31,15 @@ export async function getServerSideProps({req,res}) {
   try {
     console.log("calling")
     let resolvedPromises= await Promise.all([headerProps(),sliderBarProps(),builtDataProps(),ourGeniusDataProps(),homeFitnessDataProps(),ourHomeBlogsDataProps(),socialMediaIconsProps()])
+    let metaData = await (await fetch(vmealsPages)).json()
     let final = resolvedPromises.map((itx)=>(itx.props))
     let newObject ={}
     final.forEach((x)=>{newObject={...newObject,...x}})
    console.log("header props",final)
     return {
       props: { 
-        ...newObject
+        ...newObject,
+         metaData:{...metaData}
       }, // will be passed to the page component as props
     }
   } catch (error) {

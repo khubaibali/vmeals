@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "./Steps";
-import { vmealsPages } from "../../lib/APICommunications";
+import { useCoupon, vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
 import PlanData from '../../lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../helpers";
@@ -10,9 +10,12 @@ import { Multiselect } from "multiselect-react-dropdown";
 import CustomizeplanDeliveryInformation from '../DeliveryInformation/Customizeplan';
 import CustomizeplanPersonalInformation from "../PersonalInformation/Customizeplan";
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
+import axios from "axios";
 
-export default function Customizeplan({ heading, description, selectedPlan, setStep, step=1 }) {
+export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1 }) {
   console.log("setStepsetStep", setStep)
+  const [isLoading, setLoading] = useState(false);
+
   // const [selectedPlan, setSelectedPlan]
   const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
   const [selectedDuration, setSelectedDuration] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]);
@@ -28,7 +31,15 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [totalPrice, setTotalPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price - (PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price * 0.05));
   const [addOnFifty, setAddOnFifty] = useState(0);
   const [addOnTwoHundred, setAddOnTwoHundred] = useState(0);
-
+  const [personalInformation, setPersonalInformation] = useState({});
+  const [deliveryInformation, setDeliveryInformation] = useState({});
+  const [planInformation, setPlanInformation] = useState({});
+  const [couponValue, setCouponValue] = useState(null);
+  const [coupunApplied, setCoupunApplied] = useState(false);
+  const [couponError, setCouponError] = useState(null);
+  const [discountPrice, setDiscountPrice] = useState(0);
+  const [discountPercentage, setDiscountPercentage] = useState(null);
+  const [couponAPIResponse, setCouponAPIResponse] = useState(null);
 
   // const [step, setStep] = React.useState(1);
   const [aboutus, setaboutus] = React.useState(false);
@@ -39,6 +50,207 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     // let res = data.map(a => a.allergy);
     setAllergiesData(data);
   };
+
+  const setPlanInformationData = () => {
+    setPlanInformation({
+      selectedPlan,
+      selectedPortion,
+      selectedDuration,
+      selectedDaysPerWeek,
+      allergies,
+      mealType,
+      price,
+      offDays
+    })
+  }
+
+  const applyCoupun = (e) => {
+    if (couponValue == "" || !couponValue) {
+      setCouponError("Please enter code first!");
+    } else {
+      setCouponError(null);
+      console.log("useee", couponValue);
+      axios
+        .post(useCoupon, { code: couponValue, email: personalInformation?.email })
+        .then((res) => {
+          setCouponAPIResponse(res);
+
+          if (res?.data?.message == "Failed") {
+            setCouponError(res?.data?.err);
+            setCoupunApplied(false);
+            setCouponValue("");
+            return false;
+          } else {
+            setCouponError(null);
+            console.log(
+              "yyyyy",
+              Number(price),
+              Number(res?.doc?.discountPercentage),
+              typeof res?.data?.doc?.discountPercentage,
+              res
+            );
+
+            let onlyDiscountPrice =
+              Number(price) *
+              (Number(res?.data?.doc?.discountPercentage) / 100);
+
+            setDiscountPrice(onlyDiscountPrice);
+            setDiscountPercentage(Number(res?.data?.doc?.discountPercentage));
+            console.log(
+              "typeof",
+              typeof onlyDiscountPrice,
+              onlyDiscountPrice,
+              price,
+              totalPrice,
+              typeof price,
+              typeof totalPrice
+            );
+            let priceConverted = Number(price);
+            let totalPriceConverted = Number(totalPrice);
+            let priceFinal = priceConverted - onlyDiscountPrice;
+            let totalPriceFinal = totalPriceConverted - onlyDiscountPrice;
+            console.log(
+              "aaaaaaa",
+              priceFinal,
+              typeof priceFinal,
+              totalPriceFinal,
+              typeof totalPriceFinal
+            );
+            setPrice(Number(priceConverted) - Number(onlyDiscountPrice));
+            setTotalPrice(Number(totalPrice) - Number(onlyDiscountPrice));
+            setCoupunApplied(true);
+            return false;
+          }
+        })
+        .catch((err) => {
+          console.log("ERROR", err);
+          return false;
+        });
+    }
+  };
+
+  const checkout = () => {
+    setLoading(true);
+    let body = {
+      amount: price,
+      totals: {
+        subtotal: price,
+        tax: 0,
+        discount: 0,
+        skipTotalsValidation: true,
+      },
+      items: [
+        {
+          name: selectedPlan,
+          quantity: 1,
+          linetotal: price,
+        },
+      ],
+      customer: {
+        id: "123456",
+        firstName: personalInformation?.firstName,
+        lastName: personalInformation?.lastName,
+        email: personalInformation?.email,
+        phone: personalInformation?.mobileNumber,
+      },
+      billingAddress: {
+        name: personalInformation?.firstName + " " + personalInformation?.lastName,
+        address1: deliveryInformation?.address,
+        address2: "",
+        city: deliveryInformation?.city || "Dubai",
+        state: "",
+        zip: "",
+        country: "AE",
+      },
+      deliveryAddress: {
+        name: personalInformation?.firstName + " " + personalInformation?.lastName,
+        address1: deliveryInformation?.address,
+        address2: "",
+        city: personalInformation?.city || "Dubai",
+        state: "",
+        zip: "",
+        country: "AE",
+      },
+      returnUrl: process.env.NEXT_PUBLIC_PAYMENT_REDIRECT_URL,
+    };
+    axios
+      .post(vmealsCreatePayment, body)
+      .then((res) => {
+        // setPaymentAPIResponse(res);
+
+        console.log("payment api response");
+        if (res?.data?.doc?.success == false) {
+          toast.success(res?.data?.doc?.error);
+        }
+        if (res?.data?.doc?.success == true) {
+          createOrder();
+          console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
+          window.location = res?.data?.doc?.result?.redirectUrl;
+          // setLoading(false)
+        }
+        console.log("RES", res);
+        return false;
+      })
+      .catch((err) => {
+        console.log("ERROR", err);
+        return false;
+      });
+  };
+
+  const createOrder = () => {
+    let body = {
+      plan: {
+        planName: selectedPlan,
+        typeOfDiet: "vegan",
+        portionSize:
+          selectedPortion.name + " | " + selectedPortion.caloriesRange,
+        deliveriesPerWeek: selectedDaysPerWeek.days,
+        offDays: offDays,
+        planDuration: selectedDuration.name,
+        mealType: mealType?.id?.split("_"),
+        allergies: allergies?.length ? allergies.map((a) => a.allergy) : "N/A",
+        addOns: ["none"],
+        couponCode: {
+          code: couponAPIResponse?.doc?.code,
+          percentageOff: couponAPIResponse?.doc?.discountPercentage || 0 + "%",
+        },
+      },
+      personalInfo: {
+        firstName: personalInformation?.firstName,
+        lastName: personalInformation?.lastName,
+        email: personalInformation?.email,
+        mobileNumber: personalInformation?.mobileNumber,
+        nationality: personalInformation?.nationality,
+        dateOfBirth: (new Date(personalInformation?.dateOfBirth)).toDateString(),
+      },
+      deliveryDetails: {
+        startingDate: deliveryInformation?.startingDate,
+        city: deliveryInformation?.city,
+        address: deliveryInformation?.address,
+        apartmentNumber: deliveryInformation?.appartmentNumber,
+        accessCode: deliveryInformation?.accessCode || "N/A",
+        googleMapsLink: deliveryInformation?.googleMapLink || "N/A",
+        deliveryInstructions: deliveryInformation?.deliveryInstruction || "N/A",
+        deliverySlot: deliveryInformation?.deliverySlot,
+        price: price,
+        totalPrice: totalPrice || price,
+        discountPrice: discountPrice || "N/A",
+        discountPercentage: discountPercentage || "N/A",
+      },
+    };
+    axios
+      .post(vmealsOrder, body)
+      .then((res) => {
+        setOrderAPIResponse(res);
+      })
+      .catch((err) => {
+        console.log("ERROR", err);
+        return false;
+      });
+  };
+
+
+  console.log("Personal Information", personalInformation)
 
   const getCustomizeActiveClass = (selected, checked, type) => {
     console.log("SELECTED", selected);
@@ -96,7 +308,43 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     </button>
                   </li>
                 </ul>
+                {(selectedPlan == "IndianFusionNonVegetarian" ||
+                  selectedPlan == "GreenDietVegan" ||
+                  selectedPlan == "IndianFusionVegetarianDiet" ||
+                  selectedPlan == "GreenDietVegetarian") && (
+                    <>
 
+                      <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                        Choose your type of diet
+                      </h1>
+
+                      <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
+                        <div className="   col-span-6  ">
+                          <button className={`${selectedPlan == "GreenDietVegan" || selectedPlan == "IndianFusionNonVegetarian" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
+                            onClick={() => {
+                              setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
+                            }}
+                          >
+                            <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              {selectedPlan == "IndianFusionNonVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "Non-Vegetarian" : "Vegan"} Diet
+                            </h1>
+                          </button>
+                        </div>
+                        <div className="   col-span-6 ">
+
+                          <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
+                            setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
+                          }}>
+                            <h1 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              Vegetarian Diet
+                            </h1>
+                          </button>
+                        </div>
+
+                      </div>
+
+                    </>
+                  )}
                 <h1 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your portion size
                 </h1>
@@ -320,6 +568,22 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           name="vehicle2"
                           value="Car"
                           className=" checkinpu "
+                          checked={
+                            addOnTwoHundred > 0 ? true : false
+                          }
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setAddOnTwoHundred(200);
+                              setPrice(
+                                Number(price) + 200
+                              );
+                            } else {
+                              setAddOnTwoHundred(0);
+                              setPrice(
+                                Number(price) - 200
+                              );
+                            }
+                          }}
                         />
                         <label
                           for="vehicle2"
@@ -348,6 +612,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   <div className="   col-span-6 xl:col-span-6 ">
                     <div className="text-center">
                       <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8" onClick={() => {
+                        setPlanInformationData()
                         setStep(2)
                       }}>
                         Next
@@ -363,13 +628,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         </div>
       }
       {step == 2 &&
-        <CustomizeplanPersonalInformation step={step} setStep={setStep} />
+        <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
       }
       {step == 3 &&
-        <CustomizeplanDeliveryInformation step={step} setStep={setStep} />
+        <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
       }
       {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} />
+        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} />
       }
     </>
   );

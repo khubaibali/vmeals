@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { vmealsContact, vmealsFormContactUs } from "../../lib/APICommunications";
 
 export default function Contactusform() {
+  const [registerForm, setFormData] = useState({})
+  const [isDisabled,setDisable] = useState(false)
+  function formControl(event) {
+    setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
+  }
+  function CallSubmitForm() {
+    setDisable(true)
+    fetch(`${vmealsContact}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        ...registerForm
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      }
+    })
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        setDisable(false)
+      }).catch(error => setDisable(false));
+
+  }
+  console.log("registerform", registerForm)
   return (
     <>
       <div className="w-9/12 sm:w-full ml-auto mr-auto ">
@@ -10,8 +36,10 @@ export default function Contactusform() {
               First Name <span className="text-red">* </span>
             </h1>
             <input
+              name="firstName"
               placeholder="Enter your first name…"
               className=" input-register "
+              onChange={formControl}
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
@@ -19,8 +47,10 @@ export default function Contactusform() {
               Last Name <span className="text-red">* </span>
             </h1>
             <input
+              name="lastName"
               placeholder="Enter your last name…"
               className=" input-register "
+              onChange={formControl}
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
@@ -28,8 +58,10 @@ export default function Contactusform() {
               Email Address <span className="text-red">* </span>
             </h1>
             <input
+              name="email"
               placeholder="Enter your email address…"
               className=" input-register "
+              onChange={formControl}
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
@@ -102,6 +134,8 @@ export default function Contactusform() {
                     id="search-dropdown"
                     className="block  input-register-mob"
                     placeholder="Enter your mobile number…"
+                    name="mobileNumber"
+                    onChange={formControl}
                     required
                   />
                 </div>
@@ -232,11 +266,13 @@ export default function Contactusform() {
               cols="50"
               placeholder="Type your message..."
               className=" message-register "
+              name="message"
+              onChange={formControl}
             ></textarea>
           </div>
         </div>
         <div className="text-center">
-          <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[14px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+          <button disabled={isDisabled} onClick={CallSubmitForm} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[14px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
             Submit
           </button>
         </div>

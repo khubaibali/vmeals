@@ -58,11 +58,11 @@ const Steps = ({ step }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             <div className="relative">
                                 {/* <Link href="/personalInformation" > */}
-                                <button class=" text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
+                                <button class={` ${step == 2 ? 'green-gradiant-2   text-white' : 'text-black  '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
-                                                src="/images/Sign-Up-Login-inactive.png"
+                                                src={`${step == 2 ? "/images/Sign-Up-Login-active 1.png" : "/images/Sign-Up-Login-inactive.png"}`}
                                                 className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                             />
                                         </li>
@@ -81,11 +81,11 @@ const Steps = ({ step }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             <div className="relative">
                                 {/* <Link href="/deliveryInformation" > */}
-                                <button class=" text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
+                                <button class={` ${step == 3 ? 'green-gradiant-2   text-white' : 'text-black  '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
-                                                src="/images/delivery-icon-inactive.png"
+                                                src={`${step == 3 ? "/images/delivery-icon-active 1.png" : "/images/delivery-icon-inactive.png"  }`}
                                                 className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                             />
                                         </li>
@@ -103,11 +103,11 @@ const Steps = ({ step }) => {
                         </div>
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             {/* <Link href="/ordersummary" > */}
-                            <button class=" text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r text-black  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]">
+                            <button class={` ${step == 4 ? 'green-gradiant-2   text-white' : 'text-black  '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                 <ul className="inline-flex">
                                     <li>
                                         <img
-                                            src="/images/summary-inactive.png"
+                                            src={` ${step == 4 ? "/images/summary-active 1.png" : "/images/summary-inactive.png"}`}
                                             className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                         />
                                     </li>
