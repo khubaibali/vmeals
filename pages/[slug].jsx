@@ -19,7 +19,7 @@ export default function ourblogdetails(props) {
 
 
 export async function getServerSideProps({req,res,query}) {
-    console.log('---------------------',query['id'])
+    console.log('---------------------',query['slug'])
     console.log('>>>>>>>>>>>>>>>>>>>>>>')
     res.setHeader(
         'Cache-Control',
@@ -32,8 +32,8 @@ export async function getServerSideProps({req,res,query}) {
       let blogs = await (await fetch(vmealsOurBlogs)).json()
       let final = resolvedPromises.map((itx)=>(itx.props))
       let newObject ={}
-      let blog = blogs?.docs?.find(bl=>bl.id == query['id'])
-      console.log("our company final", final)
+      let blog = blogs?.docs?.find(bl=>bl.VmealsBlogURL == query['slug'])
+     
       final.forEach((x)=>{newObject={...newObject,...x}})
       
       return {

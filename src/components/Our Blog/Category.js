@@ -2,9 +2,10 @@ import React from "react";
 
 import Categorylist from "./Categorylist";
 import Link from "next/link";
+import Pagination from "../Common/Pagination";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 export default function Category({ categoriesAll, blogs }) {
-  console.log("Blogs",blogs)
+
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
@@ -35,7 +36,7 @@ export default function Category({ categoriesAll, blogs }) {
               {
                 blogs?.docs?.map((blog) => (
                   <div className="   col-span-12 md:col-span-6 xl:col-span-6  ">
-                    <Link href={`${encodeURIComponent(blog.id)}`}>
+                    <Link href={`${encodeURIComponent(blog?.VmealsBlogURL)}`}>
                       <div className="cardblog  h-[338px] md:h-[390px] 2xl:h-[500px] w-full 2xl:w-[500px]   ">
                         <div className="relative">
                           <img
@@ -63,29 +64,7 @@ export default function Category({ categoriesAll, blogs }) {
             </div>
 
                 {/* pagination code started */}
-                <div className="text-center mt-10 2xl:mt-20" >
-<nav aria-label="Page navigation example">
-  <ul class="inline-flex items-center -space-x-px">
-
-    <li>
-      <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  ">1</button>
-    </li>
-    <li>
-      <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  ">2</button>
-    </li>
-    <li>
-      <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-white text-green shadow-lg  text-base 2xl:text-xl rounded-[100%] ml-3  ">3</button>
-    </li>
-    <li>
-      <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  ">4</button>
-    </li>
-    <li>
-      <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  ">5</button>
-    </li>
-
-  </ul>
-</nav>
-</div>
+                <Pagination/>
                 {/* pagination code ended */}
 
             {/* inner ended */}
