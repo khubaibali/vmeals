@@ -2,6 +2,7 @@ import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsGetStarted } from '../../../src/lib/APICommunications';
 export default function Fitness({ homeFitnessData=[{}] }) {
+  
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto  my-10 md:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
@@ -33,7 +34,7 @@ export default function Fitness({ homeFitnessData=[{}] }) {
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
-                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
+                {homeFitnessData[0]?.VMealsGetStartedList[0]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -65,7 +66,7 @@ export default function Fitness({ homeFitnessData=[{}] }) {
                 {homeFitnessData[0]?.VMealsGetStartedList[2]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
+                {homeFitnessData[0]?.VMealsGetStartedList[2]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -81,7 +82,7 @@ export default function Fitness({ homeFitnessData=[{}] }) {
                 {homeFitnessData[0]?.VMealsGetStartedList[3]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
+                {homeFitnessData[0]?.VMealsGetStartedList[3]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>
@@ -97,7 +98,7 @@ export default function Fitness({ homeFitnessData=[{}] }) {
                 {homeFitnessData[0]?.VMealsGetStartedList[4]?.VMealsGetStartedItemTitle}
               </h2>
               <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-                {homeFitnessData[0]?.VMealsGetStartedList[1]?.VMealsGetStartedItemDescription}
+                {homeFitnessData[0]?.VMealsGetStartedList[4]?.VMealsGetStartedItemDescription}
               </h2>
             </li>
           </ul>

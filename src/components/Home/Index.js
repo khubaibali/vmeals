@@ -10,6 +10,7 @@ const Fotter=dynamic(() => import( "../Common/Footer"))
 const Review=dynamic(() => import( "../About Us/Review"))
 
 export default function Index({headerData,sliderBarData,builtData,ourGeniusData,homeFitnessData,ourHomeBlogData,socialMediaIcon,footerData,tradeMarkData}) {
+  // console.log("homeFitnessData",homeFitnessData)
   return (
     <>
       <div className="hero-bg  relative">
