@@ -571,14 +571,14 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           onChange={(e) => {
                             if (e.target.checked) {
                               setAddOnFifty(50);
-                              setPrice(
-                                Number(price) + 50
-                              );
+                              // setPrice(
+                              //   Number(price) + 50
+                              // );
                             } else {
                               setAddOnFifty(0);
-                              setPrice(
-                                Number(price) - 50
-                              );
+                              // setPrice(
+                              //   Number(price) - 50
+                              // );
                             }
                           }}
                         />
@@ -603,14 +603,14 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           onChange={(e) => {
                             if (e.target.checked) {
                               setAddOnTwoHundred(200);
-                              setPrice(
-                                Number(price) + 200
-                              );
+                              // setPrice(
+                              //   Number(price) + 200
+                              // );
                             } else {
                               setAddOnTwoHundred(0);
-                              setPrice(
-                                Number(price) - 200
-                              );
+                              // setPrice(
+                              //   Number(price) - 200
+                              // );
                             }
                           }}
                         />
@@ -631,7 +631,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     <ul class=" inline-flex mt-7  ">
                       <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
                       <li class=" ml-4 text-right ">
-                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{Number(price + (price * 0.05)).toFixed(2)}</h2>
+                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + (Number(price) * 0.05) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
                         <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price inclusive of VAT</h3>
                       </li>
                     </ul>

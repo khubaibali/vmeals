@@ -19,7 +19,8 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
 
   const startingPlanDateFormat = () => {
     console.log("planInformation", planInformation)
-    let offDaysArray = planInformation?.offDays?.toLowerCase()?.split(" - ") || [];
+    // if()
+    let offDaysArray = planInformation?.selectedDaysPerWeek?.days != 7 && planInformation?.offDays?.toLowerCase()?.split(" - ") || [];
     // // let offDaysArray = ["wednesday", "tuesday"];
 
     const days = [];
@@ -302,7 +303,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
                   <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
                 </li>
                 <li className=" ml-4 text-right ">
-                  <h2 className=" text-black text-2xl f-f-b   ">AED{price - (price*0.05)}</h2>
+                  <h2 className=" text-black text-2xl f-f-b   ">AED{price + (price*0.05)}</h2>
                   <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                     Price inclusive of VAT
                   </h3>
