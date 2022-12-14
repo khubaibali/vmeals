@@ -67,7 +67,7 @@ function Navbar({ headerData = {} }) {
 
                         {headerItem?.VMealsHeaderMenuItemTitle}
                         <svg
-                          className="w-5 h-5 ml-1"
+                          className="w-5 h-5 mt-1"
                           aria-hidden="true"
                           fill="currentColor"
                           viewBox="0 0 20 20"
@@ -94,7 +94,7 @@ function Navbar({ headerData = {} }) {
                           {headerItem?.VMealsHeaderSubMenuList.map((submenu) => (
                             <Link
                               href={`/${submenu?.VMealsHeaderSubMenuLinkURL ? submenu?.VMealsHeaderSubMenuLinkURL : ""}`}
-                              className="block px-4  xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm  "
+                              className="block px-4 py-2 md:py-1 xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-smtwo md:text-xsone lg:text-sm  "
                             >
                               {/* Our Company */}
                               {submenu?.VMealsHeaderSubMenuTitle}
@@ -134,9 +134,17 @@ function Navbar({ headerData = {} }) {
                     {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
                 </li> */}
+                     <li className=" md:hidden">
+                     <Link
+                       href="/contactus"
+                   className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
+  Need Assistance?
+                    </Link>
+                  
+                </li>
                 <li className=" md:hidden">
                   <a
-                    href="/contactus"
+                  
                     className="block py-2 sm:py-4   f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded-[100px]   green-gradiant pl-4 sm:px-10  text-white  "
                   >
                     Get Started

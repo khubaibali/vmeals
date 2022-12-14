@@ -74,7 +74,7 @@ export default function Category({ categoriesAll, blogs }) {
       <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  ">2</button>
     </li>
     <li>
-      <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  ">3</button>
+      <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-white text-green shadow-lg  text-base 2xl:text-xl rounded-[100%] ml-3  ">3</button>
     </li>
     <li>
       <button href="#" class="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  ">4</button>

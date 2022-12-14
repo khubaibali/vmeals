@@ -12,7 +12,7 @@ export default function Mealabudehbhi() {
           eating at restaurants because you have absolute control over what
           ingredients you use and consume. Once in a while, it is acceptable to
           eat restaurant foods, but they are high in fat, sugar, and sodium –
-          all of which could be tailored to your dietary requirements when
+          all of which couldd be tailored to your dietary requirements when
           prepared at home.
         </h2>
         <h2 class="   f-f-r text-black text-tiny  2xl:text-lg mt-2 md:mt-7 leading-[25px] text-center ">
