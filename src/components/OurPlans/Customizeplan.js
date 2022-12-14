@@ -38,6 +38,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [coupunApplied, setCoupunApplied] = useState(false);
   const [couponError, setCouponError] = useState(null);
   const [discountPrice, setDiscountPrice] = useState(0);
+  const [VAT, setVAT] = useState(0);
   const [discountPercentage, setDiscountPercentage] = useState(null);
   const [couponAPIResponse, setCouponAPIResponse] = useState(null);
 
@@ -50,6 +51,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     // let res = data.map(a => a.allergy);
     setAllergiesData(data);
   };
+
+  const setAllPrices = (plan, portion, duration, dpw, mealType) => {
+
+  }
 
   const setPlanInformationData = () => {
     setPlanInformation({
@@ -656,7 +661,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
       }
       {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} />
+        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} discountPercentage={discountPercentage} discountPrice={discountPrice} />
       }
     </>
   );
