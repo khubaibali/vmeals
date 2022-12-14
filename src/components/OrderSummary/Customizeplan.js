@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
-export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation, price, applyCoupun, setCouponValue, couponError, checkout }) {
+export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation, price, applyCoupun, setCouponValue, couponError, checkout, discountPrice, discountPercentage }) {
   const [openTab, setOpenTab] = React.useState(1);
   const [finalPrice, setFinalPrice] = useState(planInformation?.price)
   const mapPlanName = (plan) => {
@@ -136,24 +136,24 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               <div className="grid grid-cols-12 mt-6 gap-4 ">
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    Discount:<span className=" f-f-r float-right ">15%</span>{" "}
+                    Discount:<span className=" f-f-r float-right ">{discountPercentage || 0}%</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED{finalPrice}</span>{" "}
+                    <span className=" f-f-r float-right ">AED{(Number(discountPrice || 0) + Number(price + price * 0.05)).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Discount Amount:
-                    <span className=" f-f-r float-right ">AED450.00</span>{" "}
+                    <span className=" f-f-r float-right ">AED{Number(discountPrice || 0).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    VAT:<span className=" f-f-r float-right ">AED127.50</span>{" "}
+                    VAT:<span className=" f-f-r float-right ">AED{(price * 0.05).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
               </div>
@@ -167,7 +167,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{price - (price * 0.05)}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{(Number(discountPrice || 0) + Number(price + price * 0.05)).toFixed(2)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -287,24 +287,24 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               <div className="grid grid-cols-12 mt-6 gap-4 ">
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    Discount:<span className=" f-f-r float-right ">15%</span>{" "}
+                    Discount:<span className=" f-f-r float-right ">{discountPercentage}%</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED2550.00</span>{" "}
+                    <span className=" f-f-r float-right ">AED{Number(discountPrice || 0).toFixed(2) + Number(price * 0.05)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Discount Amount:
-                    <span className=" f-f-r float-right ">AED450.00</span>{" "}
+                    <span className=" f-f-r float-right ">AED{Number(discountPrice || 0).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    VAT:<span className=" f-f-r float-right ">AED127.50</span>{" "}
+                    VAT:<span className=" f-f-r float-right ">AED{price * 0.05}</span>{" "}
                   </h2>
                 </div>
               </div>

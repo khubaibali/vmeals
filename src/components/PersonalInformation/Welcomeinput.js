@@ -3,6 +3,7 @@ import NationalityData from "../../lib/data/nationality/data.json";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment/moment";
+import CountryCodeData from "../../lib/data/countryCode/data.json";
 
 export default function Welcomeinput({ setStep, setPersonalInformation, personalInformation }) {
   const [firstName, setFirstName] = useState(personalInformation?.firstName)
@@ -12,6 +13,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
   const [dateOfBirth, setDateOfBirth] = useState(personalInformation?.dateOfBirth)
   const [nationality, setNationality] = useState(personalInformation?.nationality);
   const [errors, setErrors] = useState(null);
+  const [countryDialCode, setCountryDialCode] = useState("+971");
 
   const Validation = () => {
     let err = [];
@@ -141,13 +143,26 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                 >
                   Your Email
                 </label>
-                <button
+                <select className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
+                  {CountryCodeData.countryCodes.map((cc) => (
+                    <option
+                      value={cc.dial_code}
+                      selected={
+                        countryDialCode == cc.dial_code
+                          ? true
+                          : false
+                      }
+                    >
+                      {cc.dial_code}
+                    </option>
+                  ))}
+                </select>
+                {/* <button
                   id="dropdown-button"
                   data-dropdown-toggle="dropdown"
                   className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn "
                   type="button"
-                >
-                  +971{" "}
+                > 
                   <svg
                     aria-hidden="true"
                     className="w-4 h-4 ml-1"
@@ -161,7 +176,8 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                </button>
+                </button> */}
+
                 <div
                   id="dropdown"
                   className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
@@ -317,13 +333,13 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                 ))}
               </select>
               {errors?.length > 0 ? (
-              <p style={{ color: "red" }}>
-                {errors?.find((e) => e.field == "nationality")
-                  ?.msg || ""}
-              </p>
-            ) : (
-              ""
-            )}
+                <p style={{ color: "red" }}>
+                  {errors?.find((e) => e.field == "nationality")
+                    ?.msg || ""}
+                </p>
+              ) : (
+                ""
+              )}
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
