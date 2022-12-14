@@ -2,7 +2,7 @@ import React from 'react'
 import  Ourblogdetailspage from '../src/components/OurBlogDetails/Index'
 import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
-import { vmealsOurBlogs, vmealsPages } from '../src/lib/APICommunications'
+import { vmealsOurBlogs, vmealsPages,vmealsOurBlogsALL } from '../src/lib/APICommunications'
 import SEO from '../src/components/Common/SEO'
 
 
@@ -28,7 +28,7 @@ export async function getServerSideProps({req,res,query}) {
     try {
       let resolvedPromises = await Promise.all([headerProps(),socialMediaIconsProps()])
       let metaData = await (await fetch(vmealsPages)).json()
-      let categoriesAll = await (await fetch(vmealsOurBlogs)).json()
+      let categoriesAll = await (await fetch(vmealsOurBlogsALL)).json()
       let blogs = await (await fetch(vmealsOurBlogs)).json()
       let final = resolvedPromises.map((itx)=>(itx.props))
       let newObject ={}
