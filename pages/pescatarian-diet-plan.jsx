@@ -4,6 +4,7 @@ import { getServerSideProps as headerProps } from '../src/components/Common/Navb
 import { getServerSideProps as builtDataProps } from '../src/components/Home/Built'
 import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
+import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/PescatarianDiet/Index'
 
 export default function pescatarian(props) {
@@ -13,6 +14,7 @@ export default function pescatarian(props) {
         metaData={props?.contentData}
         contentData={props?.contentDataPescatarianDiet}
         headerData={props?.headerData}
+        sampleMenu={props.sampleMenu}
         builtData={props.builtData}
         socialMediaIcon={props.socialMediaIcon}
         footerData={props.footerData}
@@ -26,7 +28,8 @@ export async function getServerSideProps(constext) {
   try {
     console.log("calling class")
     let data = await headerProps()
-    let builtData = await builtDataProps()
+    let builtData = await builtDataProps()    
+    let sampleMenu = await sampleMenuDataProps()
     let contentData = await contentDataProps();
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
@@ -37,6 +40,7 @@ export async function getServerSideProps(constext) {
         ...builtData.props,
         ...contentData.props,
         ...socialMediaIcon.props,
+        ...sampleMenu.props,
         ...contentDataPage.props
       }, // will be passed to the page component as props
     }

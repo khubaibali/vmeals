@@ -13,7 +13,7 @@ import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 import axios from "axios";
 
 export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1 }) {
-  console.log("setStepsetStep", setStep)
+  console.log("setStepsetStep", setStep);
   const [isLoading, setLoading] = useState(false);
 
   // const [selectedPlan, setSelectedPlan]
@@ -21,7 +21,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [selectedDuration, setSelectedDuration] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]);
   const [selectedDaysPerWeek, setSelectedDaysPerWeek] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]);
   const [options, setOptions] = useState(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
-    id: i + 1,
+    id: i,
     name: a
   })));
   const [allergies, setAllergiesData] = useState(null);
@@ -498,14 +498,14 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   <Multiselect
                     placeholder="Select an option"
                     selectionLimit="5"
-                    className=" my-4 border border-green shadow-xl rounded-[20px] bg-white  f-f-b  text-xsone lg:text-sm 2xl:text-tiny   w-full  multiselect-input  relative"
+                    className=" my-4 border border-green shadow-xl rounded-[20px] bg-white  f-f-b  text-black lg:text-sm 2xl:text-tiny   w-full  multiselect-input  relative"
                     options={options}
                     onSelect={(e) => {
                       console.log("eeeeeeeeeeee", e);
                       setAlerg(e);
                     }}
                     displayValue="allergy"
-                    selectedValues={allergies}
+                    // selectedValues={allergies}
                   />
                   <svg
                     width="36"
@@ -602,10 +602,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     <ul class=" inline-flex mt-7  ">
                       <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
                       <li class=" ml-4 text-right ">
-                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{price - (price * 0.05)}</h2>
+                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{Number(price + (price * 0.05)).toFixed(2)}</h2>
                         <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price inclusive of VAT</h3>
-                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{price}</h2>
-                        <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price TESt of VAT</h3>
                       </li>
                     </ul>
                   </div>
