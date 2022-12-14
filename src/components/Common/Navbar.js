@@ -136,7 +136,7 @@ function Navbar({ headerData = {} }) {
                 </li> */}
                      <li className=" md:hidden">
                      <Link
-                       href="/contactus"
+                       href="/contact-us"
                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
   Need Assistance?
                     </Link>
