@@ -10,7 +10,7 @@ export default function Pagination({ onPage, setPage, totalPages }) {
 
 
                         {[...Array(totalPages)].map((x, i) => (
-                            ((onPage - i <=3 ) && ((onPage+i) < (onPage+7))) ?
+                            ((onPage - i <=3 ) && ((i) < (onPage+2))) ?
                                 <li>
                                     <button className={(i + 1) == onPage ? currentPageNumberCss : pageNumberCss} onClick={() => { setPage(i + 1) }} >{i + 1}</button>
                                 </li> : null
