@@ -11,7 +11,7 @@ export default function ourblogdetails(props) {
     const metaDataContent = Object?.values(props?.metaData?.docs).find(c => c.title == "Blog")
   return (
     <div>
-        <Ourblogdetailspage headerData={props?.headerData} socialMediaIcon={props?.socialMediaIcon} tradeMarkData={props?.tradeMarkData} footerData={props?.footerData}  categoriesAll={props?.categoriesAll}  selectedBlog={props?.blog}/>
+        <Ourblogdetailspage headerData={props?.headerData} socialMediaIcon={props?.socialMediaIcon} tradeMarkData={props?.tradmark} footerData={props?.footerData}  categoriesAll={props?.categoriesAll}  selectedBlog={props?.blog}/>
         <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
     </div>
   )
@@ -29,10 +29,10 @@ export async function getServerSideProps({req,res,query}) {
       let resolvedPromises = await Promise.all([headerProps(),socialMediaIconsProps()])
       let metaData = await (await fetch(vmealsPages)).json()
       let categoriesAll = await (await fetch(vmealsOurBlogsALL)).json()
-      let blogs = await (await fetch(vmealsOurBlogs)).json()
+      // let blogs = await (await fetch(vmealsOurBlogs)).json()
       let final = resolvedPromises.map((itx)=>(itx.props))
       let newObject ={}
-      let blog = blogs?.docs?.find(bl=>bl.VmealsBlogURL == query['slug'])
+      let blog = categoriesAll?.docs?.find(bl=>bl.VmealsBlogURL == query['slug'])
      
       final.forEach((x)=>{newObject={...newObject,...x}})
       
