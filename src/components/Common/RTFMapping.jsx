@@ -97,7 +97,7 @@ const RTFMapping = ({ data }) => {
 							src={`${process.env.NEXT_PUBLIC_BASE_URL}${d.value.url}`}
 							width={d.value.width}
 							height={d.value.height}
-							style={{ width: "97%", height: "90%", margin: '2em 0' }}
+							style={{ width: "97%",margin: '2em 0' }}
 						/>
 					);
 				} else if (d.type == "h2") {

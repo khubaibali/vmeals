@@ -496,16 +496,40 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 {/* nabeel bhai code  */}
                 <div className="relative" >
                   <Multiselect
-                    placeholder="Select an option"
+                    placeholder={
+                      !allergies || allergies.length <= 0
+                        ? "Select an option"
+                        : ""
+                    }
                     selectionLimit="5"
-                    className=" my-4 border border-green shadow-xl rounded-[20px] bg-white  f-f-b  text-black lg:text-sm 2xl:text-tiny   w-full  multiselect-input  relative"
-                    options={options}
+                    style={{
+                      chips: {
+                        backgroundColor: "#A4ED9F",
+                        color: "black",
+                        fontSize: "20px",
+                        padding: "2rem",
+                      },
+                      searchBox: {
+                        border: "2px solid #41A53D",
+                        borderRadius: "20px",
+                        minHeight: "60px",
+                        height: "fit-content",
+                        backgroundColor: "white",
+                        display: "flex",
+                        justifyContent: "start",
+                        flexWrap: "wrap",
+                      },
+                      input: {
+                        width: "10px",
+                      },
+                    }}
                     onSelect={(e) => {
                       console.log("eeeeeeeeeeee", e);
                       setAlerg(e);
                     }}
+                    options={options}
+                    selectedValues={allergies}
                     displayValue="allergy"
-                    // selectedValues={allergies}
                   />
                   <svg
                     width="36"
