@@ -18,7 +18,8 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
   const [errors, setErrors] = useState(null);
 
   const startingPlanDateFormat = () => {
-    let offDaysArray = planInformation?.offDays?.toLowerCase()?.split("_") || [];
+    console.log("planInformation", planInformation)
+    let offDaysArray = planInformation?.offDays?.toLowerCase()?.split(" - ") || [];
     // // let offDaysArray = ["wednesday", "tuesday"];
 
     const days = [];
