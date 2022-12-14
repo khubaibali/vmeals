@@ -10,7 +10,6 @@ export default function Hero() {
           <li>
             <img
               alt=""
-
               src="/images/fi-sr-home.png"
               className="w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-2 "
             />
