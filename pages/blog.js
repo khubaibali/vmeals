@@ -27,7 +27,7 @@ export async function getServerSideProps({req,res}) {
     let metaData = await (await fetch(vmealsPages)).json()
     let categoriesAll = await (await fetch(vmealsOurBlogs)).json()
     let blogs = await (await fetch(vmealsOurBlogs)).json()
-    let final = resolvedPromises.map((itx)=>(itx.props))
+    let final = resolvedPromises.map((itx)=>(itx?.props))
     let newObject ={}
     console.log("our company final", final)
     final.forEach((x)=>{newObject={...newObject,...x}})
