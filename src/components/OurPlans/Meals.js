@@ -9,7 +9,7 @@ export default function Meals() {
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
         {/* code testing */}
-        <Steps step={1} />
+        <Steps step={0} />
         {/* code testing ended */}
 
         {/* meal card started */}

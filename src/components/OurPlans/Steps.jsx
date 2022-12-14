@@ -10,11 +10,11 @@ const Steps = ({ step }) => {
                             <div className="relative">
                                 <div className="text-left" >
                                     <Link href="/meal-plans">
-                                        <button class={`  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b  ${step == 6 ? 'green-gradiant-2   text-white' : 'text-black  '} rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                        <button class={`  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b  ${step == 0 ? 'green-gradiant-2   text-white' : 'text-black  '} rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                             <ul className="inline-flex">
                                                 <li>
                                                     <img
-                                                        src={`${step == 6 ? "/images/choose-plan-active 1.png" : "/images/choose-plan-inactive-diet.png" } `}
+                                                        src={`${step == 0 ? "/images/choose-plan-active 1.png" : "/images/choose-plan-inactive-diet.png" } `}
                                                         className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                                     />
                                                 </li>
