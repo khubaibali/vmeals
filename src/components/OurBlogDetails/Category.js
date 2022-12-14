@@ -1,14 +1,15 @@
 import React from "react";
 import Categorylist from "./Categorylist";
 
-export default function Category() {
+export default function Category({selectedBlog}) {
+  console.log("selected --",selectedBlog)
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
         <div className="grid grid-cols-12  gap-8  ">
           <div className="   col-span-12 lg:col-span-8 xl:col-span-8  ">
             <h2 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left">
-              10 Foods to Boost Your Metabolism
+              {selectedBlog?.VmealsBlogTitle}
             </h2>
             <h2 class="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-7 leading-[23px] text-center xl:text-left ">
               Metabolism is the cornerstone for weight watchers around the
