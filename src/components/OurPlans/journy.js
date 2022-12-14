@@ -4,12 +4,12 @@ export default function journy() {
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 xl:col-span-6  ">
-          <h1 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li  mt-10 text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li  mt-10 text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
             ABOUT OUR COMPANY
-          </h1>
-          <h1 className=" text-center xl:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  mt-8">
+          </h2>
+          <h2 className=" text-center xl:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  mt-8">
             Start your fitness journey with us!
-          </h1>
+          </h2>
           <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-7 leading-[23px] text-center xl:text-left ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet

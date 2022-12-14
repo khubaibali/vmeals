@@ -33,9 +33,9 @@ export default function Registerform() {
       <div className="w-9/12 sm:w-full ml-auto mr-auto ">
         <div className="grid grid-cols-12 gap-5  md:gap-8 2xl::gap-14  ">
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
+            <h2 className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
               First Name <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               name="firstName"
               placeholder="Enter your first name…"
@@ -44,9 +44,9 @@ export default function Registerform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black md:mt-10 mb-1 ">
+            <h2 className=" text-base f-f-b text-black md:mt-10 mb-1 ">
               Last Name <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               name="lastName"
               placeholder="Enter your last name…"
@@ -55,9 +55,9 @@ export default function Registerform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-bla  ">
+            <h2 className=" text-base f-f-b text-bla  ">
               Email Address <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               name="email"
               placeholder="Enter your email address…"
@@ -66,9 +66,9 @@ export default function Registerform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black  ">
+            <h2 className=" text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
-            </h1>
+            </h2>
 
             <form>
               <div className="flex">
@@ -144,9 +144,9 @@ export default function Registerform() {
             </form>
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-bla  ">
+            <h2 className=" text-base f-f-b text-bla  ">
               Company Name <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               name="comapnyName"
               placeholder="Enter your company name…"
@@ -155,9 +155,9 @@ export default function Registerform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h1 className=" text-base f-f-b text-black  ">
+            <h2 className=" text-base f-f-b text-black  ">
               Designation <span className="text-red">* </span>
-            </h1>
+            </h2>
             <input
               name="designation"
               placeholder="Enter your designation…"
@@ -166,9 +166,9 @@ export default function Registerform() {
             />
           </div>
           <div className="   col-span-12  ">
-            <h1 className=" text-base f-f-b text-black  ">
+            <h2 className=" text-base f-f-b text-black  ">
               Message <span className="text-red">* </span>
-            </h1>
+            </h2>
 
             <textarea
               name="message"

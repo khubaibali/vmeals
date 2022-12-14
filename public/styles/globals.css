@@ -790,10 +790,13 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 font-size: 18px;
 line-height: 21px;
-font-family: RobotoCondensed-Bold;
+font-family: RobotoCondensed-Regular;
 padding: 17px 0px 17px 19px;
 outline: unset;
 width: 100%;
+}
+.input-register::placeholder{
+  font-family: RobotoCondensed-Bold;
 }
 @media only screen and (max-width: 1540px) {
   .input-register{
@@ -823,10 +826,14 @@ width: 100%;
   border-radius: 20px;
   font-size: 18px;
   line-height: 21px;
-  font-family: RobotoCondensed-Bold;
+  font-family: RobotoCondensed-Regular;
   padding: 16px 0px 12px 25px;
   outline: unset;
   width: 100%;
+}
+.message-register::placeholder {
+  font-family: RobotoCondensed-Bold;
+ 
 }
 .input-register-mob{
   background: #FFFFFF;
@@ -834,13 +841,16 @@ width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 18px;
   line-height: 21px;
-  font-family: RobotoCondensed-Bold;
+  font-family: RobotoCondensed-Regular;
   padding: 17px 28px 17px 19px;
   outline: unset;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   width: 100%;
   
+}
+.input-register-mob::placeholder{
+  font-family: RobotoCondensed-Bold;
 }
 .input-register-mob:focus{
   --tw-ring-shadow:unset ;
@@ -886,11 +896,14 @@ width: 100%;
   border-radius: 20px;
   font-size: 18px;
   line-height: 21px;
-  font-family: RobotoCondensed-Bold;
+  font-family: RobotoCondensed-Regular;
   padding: 17px 144px 17px 19px;
   outline: unset;
   position: relative;
   width: 100%;
+}
+.contact-btn{
+  font-family: RobotoCondensed-Bold;
 }
 @media only screen and (max-width: 1540px) {
   .contact-btn{
@@ -1160,3 +1173,10 @@ textarea:focus, input:focus , select:focus{
   background: linear-gradient(270deg, #41A52D 3.88%, #21941F 56.85%) !important;
 }
 
+
+@media only screen and (max-width: 370px) {
+  .mob-card-res{
+    width: 90px;
+    height: 180px;
+  }
+  }

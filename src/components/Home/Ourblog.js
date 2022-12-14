@@ -8,9 +8,9 @@ export default function Ourblog({ ourHomeBlogData }) {
     <div className="bg-green-light">
       <div className="py-10 2xl:py-20">
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
-          <h1 class="  text-base text-center  sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 class="  text-base text-center  sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
             OUR BLOG
-          </h1>
+          </h2>
           <div className="grid grid-cols-12  gap-8  mt-10 2xl:mt-20 ">
             {/* <div className="   col-span-6 lg:col-span-4  ">
               <div className="relative ">

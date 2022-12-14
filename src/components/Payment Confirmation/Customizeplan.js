@@ -12,14 +12,14 @@ export default function Customizeplan() {
           <div className="   col-span-12  lg:col-span-6  ">
             <div className=" p-6 md:p-16 xl:p-7 2xl:p-[50px]">
               <img src="/images/success.png" className="ml-auto mr-auto w-[126px] md:w-[164px] 2xl:w-[213px] h-auto  mt-5 lg:mt-20  " />
-              <h1 className=" f-f-li text-green text-base md:text-xl 2xl:text-4xl text-center tracking-[0.2em]  mt-8 " >PAYMENT SUCCESSFUL!</h1>
+              <h2 className=" f-f-li text-green text-base md:text-xl 2xl:text-4xl text-center tracking-[0.2em]  mt-8 " >PAYMENT SUCCESSFUL!</h2>
               <h2 className=" text-green 2xl:leading-[70px]  f-f-b text-center  text-xl mt-8 md:text-5xl xl:text-4xl 2xl:text-9xl  ">
               Thank you for making us a 
 part of your fitness journey!
               </h2>
-              <h1 className=" text-dark f-f-r text-sm text-center  mt-8  2xl:text-2xl ">
+              <h2 className=" text-dark f-f-r text-sm text-center  mt-8  2xl:text-2xl ">
               Please check your email for the invoice & starter kit.
-              </h1>     
+              </h2>     
             </div>
           </div>
           <div className="   col-span-12  lg:col-span-6  ">

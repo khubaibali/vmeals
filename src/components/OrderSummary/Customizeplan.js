@@ -21,9 +21,9 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
           <div className="grid grid-cols-12 gap-8 my-10 2xl:my-20    ">
             <div className="   col-span-12 lg:col-span-6   xl:col-span-4  ">
               <div className=" bg-white-light h-[631px] 2xl:h-[759px] rounded-[100px] w-full p-6">
-                <h1 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Plan Information
-                </h1>
+                </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Plan Name:{" "}
                   <span className=" float-right  f-f-r ">{mapPlanName(planInformation?.selectedPlan)}</span>{" "}
@@ -92,9 +92,9 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
 
             <div className="   col-span-12 lg:col-span-6  hidden xl:block xl:col-span-4  ">
               <div className=" bg-white-light h-[400px] 2xl:h-[467px] rounded-[100px] w-full p-6">
-                <h1 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Personal Information
-                </h1>
+                </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   First Name: <span className=" float-right  f-f-r ">{personalInformation?.firstName}</span>{" "}
                 </h2>
@@ -195,9 +195,9 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
             </div>
             <div className="   col-span-12  lg:col-span-6   xl:col-span-4 ">
               <div className=" bg-white-light h-[525px]  md:h-[631px] 2xl:h-[759px] rounded-[100px] w-full p-6">
-                <h1 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Delivery Information
-                </h1>
+                </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Starting Date:{" "}
                   <span className=" float-right  f-f-r ">{(new Date(deliveryInformation?.startingDate)).toDateString()}</span>{" "}
@@ -247,9 +247,9 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
 
             <div className="   col-span-12 lg:col-start-4 lg:col-end-10  xl:hidden xl:col-span-4  ">
               <div className=" bg-white-light h-[400px] 2xl:h-[467px] rounded-[100px] w-full p-6">
-                <h1 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Personal Information
-                </h1>
+                </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Last Name: <span className=" float-right  f-f-r ">John</span>{" "}
                 </h2>

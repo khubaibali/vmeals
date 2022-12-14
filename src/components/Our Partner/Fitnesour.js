@@ -10,10 +10,10 @@ export default function Fitnesour({ourParnersData}) {
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mb-3 mt-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
-          <h1 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
             {/* OUR PARTNERS */}
             {ourParnersData?.[0]?.VMealsOurPartnersTitle}
-          </h1>
+          </h2>
           {<OurSlickWraper data={ourParnersData[0]?.VMealsOurPartnersList} setPartnerListIndex={setPartnerListIndex}/>}
         </div>
         <div className="   col-span-12 lg:col-span-1 xl:col-span-1  "></div>

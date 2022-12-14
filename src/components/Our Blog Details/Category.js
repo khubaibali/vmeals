@@ -7,9 +7,9 @@ export default function Category() {
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
         <div className="grid grid-cols-12  gap-8  ">
           <div className="   col-span-12 lg:col-span-8 xl:col-span-8  ">
-            <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left">
+            <h2 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left">
               10 Foods to Boost Your Metabolism
-            </h1>
+            </h2>
             <h2 class="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-7 leading-[23px] text-center xl:text-left ">
               Metabolism is the cornerstone for weight watchers around the
               world. It is the process by which your body converts food into
@@ -31,9 +31,9 @@ export default function Category() {
               add these foods to your weight-loss meal plan in moderation.
             </h2>
 
-            <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left mt-20 ">
+            <h2 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left mt-20 ">
               10 Foods that speed up your metabolism
-            </h1>
+            </h2>
             <h2 class="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-7 leading-[23px] text-center xl:text-left ">
               There is no magic ingredient or recipe that can ease your
               weight-loss journey. Healthy eating goes a long way in losing
@@ -89,9 +89,9 @@ export default function Category() {
             </h2>
           </div>
           <div className="   col-span-12 lg:col-span-4 xl:col-span-4  ">
-            <h1 class="  text-base  sm:text-2xl xl:text-2xl 2xl:text-4xl f-f-li  uppercase text-green tracking-[1px] lg:tracking-[0.22em] ">
+            <h2 class="  text-base  sm:text-2xl xl:text-2xl 2xl:text-4xl f-f-li  uppercase text-green tracking-[1px] lg:tracking-[0.22em] ">
               Categories
-            </h1>
+            </h2>
             <Categorylist />
           </div>
         </div>

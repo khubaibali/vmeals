@@ -8,10 +8,10 @@ export default function Questions({ faqQuestions=[{}] }) {
   return (
     <div className="relative  ">
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
-        <h1 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center  tracking-[1px] lg:tracking-[0.22em] ">
+        <h2 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center  tracking-[1px] lg:tracking-[0.22em] ">
           {/* FREQUENTLY ASKED QUESTIONS */}
           {faqQuestions[0]?.VMealsFaqsTitle}
-        </h1>
+        </h2>
 
         {/* code testing */}
         <div className="flex flex-wrap mt-5 md:mt-16  ">

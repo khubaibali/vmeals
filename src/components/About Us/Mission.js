@@ -15,9 +15,9 @@ export default function Mission({ourCompanyData}) {
               />
               <div className="absolute top-[30%] w-[95%] right-0 left-0">
                 <div className="text-center w-11/12 ml-auto mr-auto    ">
-                  <h1 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
+                  <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                     {item?.VMealsAboutUsCardTitle}
-                  </h1>
+                  </h2>
                     <RTFMapping data={item?.VMealsAboutUsCardDescription}/>
                 </div>
               </div>

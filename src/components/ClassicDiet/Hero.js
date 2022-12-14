@@ -3,9 +3,9 @@ import React from "react";
 export default function Hero({ step, plan }) {
   return (
     <>
-      <h1 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">
-        {plan}
-      </h1>
+      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">
+        Classic Diet
+      </h2>
       <div className="text-center mt-5  2xl:mt-16 ">
         <ul className="inline-flex">
           <li>
@@ -29,9 +29,9 @@ export default function Hero({ step, plan }) {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
+            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
               Our Plans
-            </h1>
+            </h2>
           </li>
           <li className=" ml-5 2xl:ml-10">
             <svg
@@ -47,9 +47,9 @@ export default function Hero({ step, plan }) {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
-              {plan}
-            </h1>
+            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
+              Classic Diet
+            </h2>
           </li>
           {step != 1 && 
           <>

@@ -41,7 +41,7 @@ function Navbar({ headerData = {} }) {
               >
                 <path
                   fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1z"
                   clip-rule="evenodd"
                 ></path>
               </svg>
@@ -160,7 +160,7 @@ function Navbar({ headerData = {} }) {
                 <li className=" ">
                   <Link
                     href="/contactus"
-                    className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
+                    className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     Need Assistance?
                   </Link>

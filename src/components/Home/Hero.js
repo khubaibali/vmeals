@@ -9,10 +9,10 @@ export default function Hero({sliderBarData=[{}]}) {
         <div className="grid grid-cols-12    ">
           <div className="   col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-4 2xl:col-span-6  ">
             <div className=" mt-[353px] md:mt-[252px] lg:mt-[345px] xl:mt-[335px]  2xl:mt-[569px] 3xl:mt-[861px]    ">
-              <h1 className=" tracking-[1px] lg:tracking-[0.22em] text-center md:text-left text-xl sm:text-lg 2xl:text-3xl text-green f-f-li  ">
+              <h2 className=" tracking-[1px] lg:tracking-[0.22em] text-center md:text-left text-xl sm:text-lg 2xl:text-3xl text-green f-f-li  ">
                 {/* HEALTHY BODY | HEALTHY MIND */}
                 {sliderBarData[0]?.VMealsSilderBarHeading}
-              </h1>
+              </h2>
               <h2 className="text-black f-f-b text-xl text-center md:text-left sm:text-3xl 2xl:text-7xl mt-9  2xl:leading-[64px]">
                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. */}
                 {sliderBarData[0]?.VMealsSilderBarTitle}
