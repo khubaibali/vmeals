@@ -3,7 +3,7 @@ import {getServerSideProps as headerProps} from '../src/components/Common/Navbar
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
 import Ourblogpage from '../src/components/Our Blog/Index'
 import SEO from '../src/components/Common/SEO'
-import { vmealsOurBlogs, vmealsPages } from '../src/lib/APICommunications'
+import { vmealsOurBlogs, vmealsPages ,vmealsOurBlogsALL } from '../src/lib/APICommunications'
 
 export default function ourblog(props) {
   const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Blog")
@@ -17,7 +17,8 @@ export default function ourblog(props) {
 }
 
 
-export async function getServerSideProps({req,res}) {
+export async function getServerSideProps({req,res,query}) {
+  console.log("++++++++++",query?.page)
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59'
@@ -25,8 +26,8 @@ export async function getServerSideProps({req,res}) {
   try {
     let resolvedPromises = await Promise.all([headerProps(),socialMediaIconsProps()])
     let metaData = await (await fetch(vmealsPages)).json()
-    let categoriesAll = await (await fetch(vmealsOurBlogs)).json()
-    let blogs = await (await fetch(vmealsOurBlogs)).json()
+    let categoriesAll = await (await fetch(vmealsOurBlogsALL)).json()
+    // let blogs = await (await fetch(`${vmealsOurBlogs}?page=${query['page']}&limit=${query['limit']}`)).json()
     let final = resolvedPromises.map((itx)=>(itx?.props))
     let newObject ={}
    
@@ -37,7 +38,7 @@ export async function getServerSideProps({req,res}) {
         ...newObject,
         metaData:{...metaData},
         categoriesAll:{...categoriesAll},
-        blogs:{...blogs}
+        blogs:{...categoriesAll}
       }, // will be passed to the page component as props
     }
   } catch (error) {

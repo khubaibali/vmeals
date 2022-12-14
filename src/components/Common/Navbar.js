@@ -118,7 +118,7 @@ function Navbar({ headerData = {} }) {
 
                 <li className=" md:hidden">
                   <Link
-                    href={headerData?.VMealsHeaderBlogTextLinkURL ? headerData?.VMealsHeaderBlogTextLinkURL : ""}
+                    href={headerData?.VMealsHeaderBlogTextLinkURL ? `${headerData?.VMealsHeaderBlogTextLinkURL}` : ""}
                     className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 "
                   >
                     {/* Blog */}
@@ -159,7 +159,7 @@ function Navbar({ headerData = {} }) {
               <ul className="flex flex-col p-4  border border-gray-100    md:flex-row md:space-x-4 lg:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-transparent ">
                 <li>
                   <Link
-                    href={headerData?.VMealsHeaderBlogTextLinkURL ? headerData?.VMealsHeaderBlogTextLinkURL : ""}
+                    href={headerData?.VMealsHeaderBlogTextLinkURL ? `${headerData?.VMealsHeaderBlogTextLinkURL}` : ""}
                     className="block pb-2 py-2 mt-4 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black  md:border-0  md:p-0  "
                   >
                     {headerData?.VMealsHeaderBlogText}
