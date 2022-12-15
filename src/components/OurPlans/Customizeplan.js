@@ -12,8 +12,8 @@ import CustomizeplanPersonalInformation from "../PersonalInformation/Customizepl
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 import axios from "axios";
 
-export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1 }) {
-  console.log("setStepsetStep", setStep);
+export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu }) {
+  console.log("setStepsetStep", weeklyMenu);
   const [isLoading, setLoading] = useState(false);
 
   // const [selectedPlan, setSelectedPlan]
@@ -298,6 +298,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     </h2>
                   </li>
                   <li className="text-right ml-auto ">
+                    <a href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`} target="_blank">
                     <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
                       <ul className="inline-flex">
                         <li>
@@ -311,6 +312,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         </li>
                       </ul>
                     </button>
+                    </a>
                   </li>
                 </ul>
                 {(selectedPlan == "IndianFusionNonVegetarian" ||

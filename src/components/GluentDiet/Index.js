@@ -25,7 +25,10 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
         <Navbar  headerData={headerData} />
         <Hero />
       </div>
-      <Customizeplan heading={contentDataGlutenAndDairyFreeDiet?.VmealsGlutenAndDairyDietHeading} description={contentDataGlutenAndDairyFreeDiet?.VmealsGlutenAndDairyDietdescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setStep={setStep} step={step} />
+      <Customizeplan
+              weeklyMenu={contentDataGlutenAndDairyFreeDiet?.WeeklyMenu}
+
+      heading={contentDataGlutenAndDairyFreeDiet?.VmealsGlutenAndDairyDietHeading} description={contentDataGlutenAndDairyFreeDiet?.VmealsGlutenAndDairyDietdescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setStep={setStep} step={step} />
       <Simplemenu  sampleMenu={sampleMenuContent?.SampleMenu} />
       <Built builtData={builtData} />
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">

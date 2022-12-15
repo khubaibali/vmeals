@@ -17,7 +17,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "ClassicDiet")
   const [step, setStep] = useState(1)
 
-  console.log("headerDara in nnnnn", sampleMenuContent)
+  console.log("headerDara in nnnnn", contentDataClassicDiet)
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
@@ -27,6 +27,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
         <Hero step={step} plan={"Classic Diet"} />
       </div>
       <Customizeplan  
+        weeklyMenu={contentDataClassicDiet?.WeeklyMenu}
         heading={contentDataClassicDiet?.VMealsClassicDietHeading} 
         description={contentDataClassicDiet?.VMealsClassicDietdescriptionParagraphs} 
         selectedPlan={selectedPlan}
