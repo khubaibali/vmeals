@@ -324,10 +324,33 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                       </h2>
 
                       <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
+                        <div className="   col-span-6 ">
+
+                          <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
+                            setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
+                            setSelectedDuration(PlanData[selectedPlan]?.portions[0]?.planDuration[0])
+                            setSelectedDaysPerWeek(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
+                            setPrice(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
+                            setSelectedPortion(PlanData[selectedPlan]?.portions[0])
+                            PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+                              id: i,
+                              name: a
+                            }))
+                          }}>
+                            <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              Vegetarian Diet
+                            </h2>
+                          </button>
+                        </div>
+                       
                         <div className="   col-span-6  ">
                           <button className={`${selectedPlan == "GreenDietVegan" || selectedPlan == "IndianFusionNonVegetarian" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
                             onClick={() => {
-                              setSelectedPlan(selectedPlan == 'GreenDietVegetarian' ? 'GreenDietVegan' : 'IndianFusionNonVegetarian');
+                              setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
+                              setSelectedPortion(PlanData[selectedPlan]?.portions[0])
+                              setSelectedDuration(PlanData[selectedPlan]?.portions[0]?.planDuration[0])
+                              setSelectedDaysPerWeek(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
+                              setPrice(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
                               setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                                 id: i,
                                 name: a
@@ -339,20 +362,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             </h2>
                           </button>
                         </div>
-                        <div className="   col-span-6 ">
-
-                          <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
-                            setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
-                            PlanData[selectedPlan]?.allergies?.map((a, i) => ({
-                              id: i,
-                              name: a
-                            }))
-                          }}>
-                            <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
-                              Vegetarian Diet
-                            </h2>
-                          </button>
-                        </div>
+                       
 
                       </div>
 
@@ -640,8 +650,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     <ul class=" inline-flex mt-7  ">
                       <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
                       <li class=" ml-4 text-right ">
-                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + (Number(price) * 0.05) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
-                        <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price inclusive of VAT</h3>
+                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
+                        <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price exclusive of VAT</h3>
                       </li>
                     </ul>
                   </div>
