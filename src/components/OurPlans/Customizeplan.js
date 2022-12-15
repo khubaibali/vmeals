@@ -188,9 +188,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
           toast.success(res?.data?.doc?.error);
         }
         if (res?.data?.doc?.success == true) {
-          createOrder();
           console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
           window.location = res?.data?.doc?.result?.redirectUrl;
+          createOrder();
           // setLoading(false)
         }
         console.log("RES", res);
