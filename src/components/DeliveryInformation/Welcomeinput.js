@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-export default function Welcomeinput({ step, setStep, setDeliveryInformation, planInformation, price, deliveryInformation }) {
+export default function Welcomeinput({ step, setStep, setDeliveryInformation, planInformation, price, deliveryInformation, addOnTwoHundred, addOnFifty }) {
   const [startingDate, setStartingDate] = useState(deliveryInformation?.startingDate)
   const [city, setCity] = useState(deliveryInformation?.city)
   const [address, setAddress] = useState(deliveryInformation?.address)
@@ -303,7 +303,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
                   <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
                 </li>
                 <li className=" ml-4 text-right ">
-                  <h2 className=" text-black text-2xl f-f-b   ">AED{price + (price*0.05)}</h2>
+                  <h2 className=" text-black text-2xl f-f-b   ">AED{Number(price + (price*0.05) +Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
                   <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                     Price inclusive of VAT
                   </h3>

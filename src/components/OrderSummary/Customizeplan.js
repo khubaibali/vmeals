@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
-export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation, price, applyCoupun, setCouponValue, couponError, checkout, discountPrice, discountPercentage }) {
+export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation, price, applyCoupun, setCouponValue, couponError, checkout, discountPrice, discountPercentage, addOnTwoHundred, addOnFifty }) {
   const [openTab, setOpenTab] = React.useState(1);
   const [finalPrice, setFinalPrice] = useState(planInformation?.price)
   const mapPlanName = (plan) => {
@@ -142,7 +142,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED{(Number(discountPrice || 0) + Number(price + price * 0.05)).toFixed(2)}</span>{" "}
+                    <span className=" f-f-r float-right ">AED{(Number(price + price * 0.05) - Number(discountPrice || 0) + Number(addOnTwoHundred) + Number(addOnFifty) ).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
@@ -167,7 +167,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{(Number(discountPrice || 0) + Number(price + price * 0.05)).toFixed(2)}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{( Number(price + price * 0.05) - Number(discountPrice || 0)  + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -293,7 +293,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED{Number(discountPrice || 0).toFixed(2) + Number(price * 0.05)}</span>{" "}
+                    <span className=" f-f-r float-right ">AED{Number(discountPrice || 0).toFixed(2) + Number(price * 0.05)  + Number(addOnTwoHundred) + Number(addOnFifty)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
@@ -318,7 +318,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{price - (price * 0.05)}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{(Number(discountPrice || 0).toFixed(2) + Number(price * 0.05)  + Number(addOnTwoHundred) + Number(addOnFifty).toFixed(2))}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>

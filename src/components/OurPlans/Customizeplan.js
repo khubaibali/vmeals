@@ -658,10 +658,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
       }
       {step == 3 &&
-        <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} />
+        <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} />
       }
       {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} discountPercentage={discountPercentage} discountPrice={discountPrice} />
+        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} discountPercentage={discountPercentage} discountPrice={discountPrice} addOnTwoHundred={addOnTwoHundred} addOnFifty={addOnFifty} />
       }
     </>
   );
