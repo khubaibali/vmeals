@@ -9,7 +9,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
     else return plan
   }
 
- 
+
 
   return (
     <>
@@ -60,7 +60,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Allergies:
                   <span className=" float-right  f-f-r ">
-                    Seafood, Red Meat, Green Beans, White Potato{" "}
+                    {planInformation?.allergies?.map(alg => alg.name)?.join(",")}{" "}
                   </span>{" "}
                 </h2>
 
@@ -70,22 +70,40 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                       Add On:{" "}
                     </h2>
                   </div>
-                  <div className="   col-span-5  ">
-                    <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
-                      Eco-Friendly Cutlery
-                    </h2>
-                    <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
-                      Thermal Bags (x2)
-                    </h2>
-                  </div>
-                  <div className="   col-span-4  ">
-                    <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
-                      + AED50.00
-                    </h2>
-                    <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
-                      + AED200.00 (Refundable Deposit)
-                    </h2>
-                  </div>
+                  {addOnFifty || addOnTwoHundred > 0 ?
+                    <>
+                      
+                      {addOnFifty > 0 &&
+                        <>
+                          <div className="   col-span-5  ">
+                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
+                              Eco-Friendly Cutlery
+                            </h2>
+                          </div>
+                          <div className="   col-span-4  ">
+                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
+                              + AED50.00
+                            </h2>
+                          </div>
+                        </>
+                      }
+                      {addOnTwoHundred &&
+                        <>
+                          <div className="   col-span-5  ">
+                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
+                              Thermal Bags (x2)
+                            </h2>
+                            <div className="   col-span-4  ">
+                              <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
+                                + AED200.00 (Refundable Deposit)
+                              </h2>
+                            </div>
+                          </div>
+                        </>
+                      }
+                    </> : 
+                    <div className="   col-span-9 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
+                      <span className=" float-right  f-f-r">{"N/A"}</span></div>}
                 </div>
               </div>
             </div>
@@ -142,7 +160,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED{(Number(price + price * 0.05) - Number(discountPrice || 0) + Number(addOnTwoHundred) + Number(addOnFifty) ).toFixed(2)}</span>{" "}
+                    <span className=" f-f-r float-right ">AED{(Number(price + price * 0.05) - Number(discountPrice || 0) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
@@ -167,7 +185,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{( Number(price + price * 0.05) - Number(discountPrice)  + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{(Number(price + price * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -185,9 +203,9 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6 xl:col-span-6 ">
                   <div className="text-center">
                     {/* <Link href="/confirmation"> */}
-                      <button onClick={() => checkout()}  className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8">
-                        Checkout
-                      </button>
+                    <button onClick={() => checkout()} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8">
+                      Checkout
+                    </button>
                     {/* </Link> */}
                   </div>
                 </div>
@@ -293,7 +311,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED{Number(price) - Number(discountPrice || 0).toFixed(2) + Number(price * 0.05)  + Number(addOnTwoHundred) + Number(addOnFifty)}</span>{" "}
+                    <span className=" f-f-r float-right ">AED{Number(price) - Number(discountPrice || 0).toFixed(2) + Number(price * 0.05) + Number(addOnTwoHundred) + Number(addOnFifty)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
@@ -318,7 +336,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{Number(price) - (Number(discountPrice).toFixed(2) + Number(price * 0.05)  + Number(addOnTwoHundred) + Number(addOnFifty).toFixed(2))}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{Number(price) - (Number(discountPrice).toFixed(2) + Number(price * 0.05) + Number(addOnTwoHundred) + Number(addOnFifty).toFixed(2))}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -339,9 +357,9 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6 xl:col-span-6 ">
                   <div className="text-center">
                     {/* <Link href="/confirmation"> */}
-                      <button onClick={() => checkout()} className="text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8">
-                        Checkout
-                      </button>
+                    <button onClick={() => checkout()} className="text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8">
+                      Checkout
+                    </button>
                     {/* </Link> */}
                   </div>
                 </div>
