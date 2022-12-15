@@ -32,7 +32,7 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
             <div className="col-span-3 md:col-span-3 xl:col-span-3   ">
               <img
                 // src="/images/Tablet-Pro-Mockup 1.png"
-                src={footerData?.[0]?.VMealsGuideInputImages?.url}
+                src={`${BaseURL}${footerData?.[0]?.VMealsGuideInputImages?.url}`}
                 className="w-full h-auto mt-4 lg:mt-0 "
                 alt=""
               />
