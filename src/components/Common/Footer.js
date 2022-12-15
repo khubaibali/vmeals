@@ -3,6 +3,7 @@ import React from "react";
 import Whtsapps from '../Common/watsapp'
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsIcon,vmealsguide,vmealsFooter } from '../../lib/APICommunications';
+let images =["/images/facebook.png","/images/instagram.png","/images/whatsapp.png"]
 export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkData=[{}] }) {
   console.log("footer", footerData)
   return (
@@ -12,16 +13,17 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
         <div className=" text-center">
           <ul className=" inline-flex ">
            
-            {socialMediaIcon?.[0]?.VMealsIconList?.map((item)=>{
+            {socialMediaIcon?.[0]?.VMealsIconList?.map((item,inde)=>{
               return <li>
-               <Link
+               <a
                  href={item?.VMealsIconItemLink}
+                 target="_blank"
                >
                  <img
-                   src="/images/facebook.png"
+                   src={images[inde]}
                    className=" h-[34px] w-[34px]  md:h-[50px] md:w-[50px] 2xl:h-[75px] 2xl:w-[75px]"
                  />
-               </Link>
+               </a>
              </li>
             })}
           </ul>
