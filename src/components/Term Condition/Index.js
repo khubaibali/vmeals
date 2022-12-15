@@ -4,16 +4,16 @@ import Hero from "./Hero";
 import Journy from "./journy";
 import Fotter from "../../components/Common/Footer";
 import Whtsapps from '../../components/Common/watsapp'
-export default function Index() {
+export default function Index({headerData, socialMediaIcon,footerData, tradeMarkData}) {
   return (
     <>
       <div className="about-bg">
-        <Navbar />
+        <Navbar headerData={headerData}/>
         <Hero />
       </div>
       <Journy />
 
-      <Fotter />
+      <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}  />
       <Whtsapps/>
     </>
   );
