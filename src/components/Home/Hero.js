@@ -20,16 +20,20 @@ export default function Hero({sliderBarData=[{}]}) {
               <div className=" text-center md:text-left  ">
                 <ul className="inline-flex  2xl:mb-0 md:mt-10  text-center md:text">
                   <li>
+                    <a href="/meal-plans">
                     <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  ">
                       {/* View Plans */}
                       {sliderBarData[0]?.VMealsSilderBarButtonViewPlan}
                     </button>
+                    </a>
                   </li>
                   <li>
+                    <a href="/faq">
                     <button class="border  border-green f-f-b text-sm md:text-base 2xl:text-lg text-black ml-4   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px] 2xl:w-[219px] mt-5 rounded-full  ">
                       {/* Learn More */}
                       {sliderBarData[0]?.VMealsSilderBarUploadButtonLearnMore}
                     </button>
+                    </a>
                   </li>
                 </ul>
                 <div>

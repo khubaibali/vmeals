@@ -144,7 +144,7 @@ function Navbar({ headerData = {} }) {
                 </li>
                 <li className=" md:hidden">
                   <a
-
+                    href="/meal-plans"
                     className="block py-2 sm:py-4   f-f-b  text-smtwo lg:text-base 2xl:text-lg rounded-[100px]   green-gradiant pl-4 sm:px-10  text-white  "
                   >
                     Get Started
