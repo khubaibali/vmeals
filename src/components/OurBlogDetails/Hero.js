@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Hero({title=""}) {
+export default function Hero({title="",cate=""}) {
   return (
     <>
     <div className="absolute w-full top-0  " >
@@ -49,7 +49,8 @@ export default function Hero({title=""}) {
           </li>
           <li className=" ml-5 2xl:ml-10">
             <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2.5  ">
-              Food
+              {/* Food */}
+              {cate}
             </h2>
           </li>
         </ul>

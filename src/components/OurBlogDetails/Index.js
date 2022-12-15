@@ -13,7 +13,7 @@ export default function Index({ headerData, socialMediaIcon, tradeMarkData, foot
       <div className=" relative ">
       <img  src={`${BaseURL}${selectedBlog?.VMealsBlogBreadcrumbImage?.sizes?.feature?.url}`}  className="blog-bg-details " />
         <Navbar headerData={headerData} />
-        <Hero title={selectedBlog?.VmealsBlogTitle} />     
+        <Hero title={selectedBlog?.VmealsBlogTitle} cate={selectedBlog?.VmealsBlogCategory?.VmealsBlogsCategoryName} />     
       </div>
       <Category categoriesAll={categoriesAll}  selectedBlog={selectedBlog}/>
       <Fotter socialMediaIcon={socialMediaIcon} tradeMarkData={tradeMarkData} footerData={footerData} />
