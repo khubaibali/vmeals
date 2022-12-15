@@ -193,7 +193,7 @@ function Navbar({ headerData = {} }) {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/meal-plan"
                     className="block py-4   f-f-b  text-smtwo lg:text-sm xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant-2 px-10  text-white  "
                   >
                     {/* Get Started */}
