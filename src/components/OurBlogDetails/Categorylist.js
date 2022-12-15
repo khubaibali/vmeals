@@ -68,7 +68,7 @@ export default function Categorylist({ categoriesAll }) {
               </button>
 
               <h2 class="   f-f-b text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
-              {blog?.VmealsBlogCategory?.VmealsBlogsCategoryName}
+              {blog?.VmealsBlogTitle}
               </h2>
             </div>
           </div>
