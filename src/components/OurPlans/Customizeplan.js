@@ -327,7 +327,11 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         <div className="   col-span-6  ">
                           <button className={`${selectedPlan == "GreenDietVegan" || selectedPlan == "IndianFusionNonVegetarian" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
                             onClick={() => {
-                              setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
+                              setSelectedPlan(selectedPlan == 'GreenDietVegetarian' ? 'GreenDietVegan' : 'IndianFusionNonVegetarian');
+                              setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+                                id: i,
+                                name: a
+                              })))
                             }}
                           >
                             <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
@@ -339,6 +343,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
                           <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
                             setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
+                            PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+                              id: i,
+                              name: a
+                            }))
                           }}>
                             <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                               Vegetarian Diet
