@@ -512,7 +512,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         backgroundColor: "#A4ED9F",
                         color: "black",
                         fontSize: "20px",
-                        padding: "2rem",
+                        padding: "0.8rem",
                       },
                       searchBox: {
                         border: "2px solid #41A53D",
@@ -534,7 +534,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     }}
                     options={options}
                     selectedValues={allergies}
-                    displayValue="allergy"
+                    displayValue="name"
                   />
                   <svg
                     width="36"
