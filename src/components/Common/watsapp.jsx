@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Whtsapps() {
   const moveup = () => {
     scrollTo(0, 0)
   }
+  const [showBtn , setShowBtn] = useState(false)
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 400) {
