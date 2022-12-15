@@ -121,8 +121,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
               totalPriceFinal,
               typeof totalPriceFinal
             );
-            setPrice(Number(priceConverted) - Number(onlyDiscountPrice));
-            setTotalPrice(Number(totalPrice) - Number(onlyDiscountPrice));
+            // setPrice(Number(priceConverted) - Number(onlyDiscountPrice));
+            // setTotalPrice(Number(totalPrice) - Number(onlyDiscountPrice));
             setCoupunApplied(true);
             return false;
           }
