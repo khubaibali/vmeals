@@ -9,9 +9,10 @@ export default function Index({ headerData, socialMediaIcon, tradeMarkData, foot
   console.log("blog-detail headerData",tradeMarkData)
   return (
     <>
-      <div className="blog-bg-details">
+      <div className=" relative ">
+      <img  src="/images/Blogdetailsbg.png"  className="blog-bg-details " />
         <Navbar headerData={headerData} />
-        <Hero />
+        <Hero />     
       </div>
       <Category categoriesAll={categoriesAll}  selectedBlog={selectedBlog}/>
       <Fotter socialMediaIcon={socialMediaIcon} tradeMarkData={tradeMarkData} footerData={footerData} />

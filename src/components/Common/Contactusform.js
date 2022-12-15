@@ -147,114 +147,54 @@ export default function Contactusform() {
               Inquiry Type <span className="text-red">* </span>
             </h2>
 
-            <button
-              id="dropdown-button"
-              data-dropdown-toggle="dropdown"
-              className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white   green-gradiant-2  text-center  focus:outline-none  contact-btn "
-              type="button"
-            >
-              Select an option...{" "}
-              <img src="/images/mobilearrow.png" className="absolute right-4" />{" "}
-            </button>
-            <div
-              id="dropdown"
-              className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
-            >
-              <ul
-                className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdown-button"
-              >
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Shopping
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Images
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    News
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Finance
-                  </a>
-                </li>
-              </ul>
+                     {/* new code data started */}
+                     <div className="relative" >
+              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " >
+                <option value={""} className="text-black">Select an option...</option>
+                <option className="text-black" >
+                    1
+                  </option>
+                  <option className="text-black" >
+                    1
+                  </option>
+                   <option className="text-black" >
+                    1
+                  </option>
+              </select>
+          
+              <img alt=""
+                src="/images/mobilearrow.png"
+                className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
+              />
             </div>
+            {/* new code data end */}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-base f-f-b text-bla  ">
               How should we contact you?<span className="text-red">* </span>
             </h2>
-
-            <button
-              id="dropdown-button"
-              data-dropdown-toggle="dropdown"
-              className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white   green-gradiant-2  text-center  focus:outline-none  contact-btn "
-              type="button"
-            >
-              Select an option...{" "}
-              <img src="/images/mobilearrow.png" className="absolute right-4" />{" "}
-            </button>
-            <div
-              id="dropdown"
-              className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
-            >
-              <ul
-                className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdown-button"
-              >
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Shopping
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Images
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    News
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Finance
-                  </a>
-                </li>
-              </ul>
+ {/* new code data started */}
+                     <div className="relative" >
+              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  "  >
+                <option value={""} className="text-black">Select an option...</option>
+                <option className="text-black" >
+                    1
+                  </option>
+                  <option className="text-black" >
+                    1
+                  </option>
+                   <option className="text-black" >
+                    1
+                  </option>
+              </select>
+          
+              <img alt=""
+                src="/images/mobilearrow.png"
+                className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
+              />
             </div>
+            {/* new code data end */}
+        
           </div>
           <div className="   col-span-12  ">
             <h2 className=" text-base f-f-b text-black  ">

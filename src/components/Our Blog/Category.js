@@ -24,7 +24,7 @@ export default function Category({ categoriesAll, blogs }) {
                           <div className="relative">
                             <img
                               src={`${BaseURL}${blog?.VMealsBlogBreadcrumbImage?.url}`}
-                              className="w-full  h-[226px] md:h-[274px] 2xl:h-[350px]"
+                              className="w-full  h-[226px] md:h-[274px] 2xl:h-[350px] rounded-[100px] "
                             />
                             <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full px-[38px] sm:px-[29px] py-[11px] sm:py-[14px] 2xl:px-[55px] 2xl:py-[11px] mt-5 2xl:mt-8  absolute top-2 left-8  ">
                               {/* Food */}
