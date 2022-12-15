@@ -28,7 +28,7 @@ export default function CustomizeplanPersonalInformation({step, setStep, setPers
               <Welcomeinput setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
             </div>
           </div>
-          <div className="   col-span-12  xl:col-span-6  ">
+          <div className="   col-span-12 hidden md:block  xl:col-span-6  ">
             <div className=" relative ">
               <img
                 src="/images/personalinformation.png"

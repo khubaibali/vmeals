@@ -5,7 +5,7 @@ export default function Mission({ourCompanyData}) {
   return (
     <div className="relative  ">
       <div className=" z-10 w-11/12 md:w-10/12 lg:w-7/12 xl:w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
-        <div className="grid grid-cols-12 md:gap-8  z-10  "> 
+        <div className="grid grid-cols-12 gap-4 md:gap-8  z-10  "> 
           {ourCompanyData?.[0]?.VMealsAboutUsCardsList.map((item,index)=>(
             <div className=" col-span-12 md:col-span-6 xl:col-span-3 text-center " key={item?.id}>
             <div className="relative ml-auto mr-auto ">

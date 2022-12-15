@@ -25,7 +25,7 @@ export default function CustomizeplanDeliveryInformation({ step, setStep, setDel
               <Welcomeinput setStep={setStep} step={step} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} />
             </div>
           </div>
-          <div className="   col-span-12  xl:col-span-6  ">
+          <div className="   col-span-12 hidden md:block  xl:col-span-6  ">
             <div className=" relative ">
               <img
                 src="/images/Deliverydemale.png"

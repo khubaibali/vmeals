@@ -94,7 +94,7 @@ function Navbar({ headerData = {} }) {
                           {headerItem?.VMealsHeaderSubMenuList.map((submenu) => (
                             <Link
                               href={`/${submenu?.VMealsHeaderSubMenuLinkURL ? submenu?.VMealsHeaderSubMenuLinkURL : ""}`}
-                              className="block px-4 py-2 md:py-1 xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b text-smtwo md:text-xsone lg:text-sm  "
+                              className="block px-4 py-2 md:py-1 xl:py-2 hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-green f-f-b text-smtwo md:text-xsone lg:text-sm  "
                             >
                               {/* Our Company */}
                               {submenu?.VMealsHeaderSubMenuTitle}

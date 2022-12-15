@@ -3,7 +3,7 @@ import RTFMaping from '../Common/RTFMapping.jsx'
 export default function journy({ourCompanyData}) {
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
-      <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
+      <div className="grid grid-cols-12 gap-4 md:gap-8 lg:gap-14  ">
         <div className="   col-span-12 xl:col-span-6  ">
           <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li   lg:mt-10 text-green text-center xl:text-left tracking-[0.22em] ">
             {/* ABOUT OUR COMPANY */}

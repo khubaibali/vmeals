@@ -284,9 +284,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
             <div className="   col-span-12  lg:col-span-6  ">
-              <h2 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  md:leading-[56px] uppercase ">
+              <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  md:leading-[56px] uppercase ">
                 {heading}
-              </h2>
+              </h1>
               <RTFMapping data={description} />
             </div>
             <div className="   col-span-12  lg:col-span-6  ">
@@ -298,7 +298,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     </h2>
                   </li>
                   <li className="text-right ml-auto ">
-                    <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
+                    <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -379,7 +379,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             </h2>
                           </li>
                           <li>
-                            <h2 className=" text-black f-f-b text-smtwo 2xl:text-tiny ">
+                            <h2 className=" text-black f-f-r text-smtwo 2xl:text-tiny ">
                               {portion?.name}
                             </h2>
                           </li>
@@ -509,6 +509,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 {/* nabeel bhai code  */}
                 <div className="relative" >
                   <Multiselect
+                  className="multiselectsetting"
                     placeholder={
                       !allergies || allergies.length <= 0
                         ? "Select an option"
@@ -592,7 +593,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         />
                         <label
                           for="vehicle1"
-                          className="text-black f-f-b text-sm 2xl:text-base ml-4"
+                          className="text-black f-f-b text-sm 2xl:text-base ml-4 relative top-[-8px]   "
                         >
                           {" "}
                           Eco-Friendly Cutlery + AED50.00{" "}
@@ -624,7 +625,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         />
                         <label
                           for="vehicle2"
-                          className="text-black f-f-b text-sm 2xl:text-base ml-4"
+                          className="text-black f-f-b text-sm 2xl:text-base ml-4 relative top-[-8px]"
                         >
                           Thermal Bags (x2) + AED200.00 (Refundable Deposit)
                         </label>

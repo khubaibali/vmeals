@@ -10,10 +10,10 @@ export default function Category({ categoriesAll, blogs }) {
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
-        <div className="grid grid-cols-12  gap-8  ">
+        <div className="grid grid-cols-12 gap-4 md:gap-8  ">
           <div className="   col-span-12 lg:col-span-8 xl:col-span-8  ">
             {/* inner started */}
-            <div className="grid grid-cols-12  gap-8  ">
+            <div className="grid grid-cols-12 gap-4 md:gap-8  ">
 
               {
                 blogs?.docs?.map((blog, index) => (

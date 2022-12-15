@@ -36,7 +36,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
       />
       <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
       <Built builtData={builtData} />
-      <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
+      <div className="bg-green-light  pt-[235px]   -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
         {/* <Question /> */}
       </div>
       <Review />
