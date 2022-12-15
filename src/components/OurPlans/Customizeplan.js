@@ -332,10 +332,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             setSelectedDaysPerWeek(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
                             setPrice(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
                             setSelectedPortion(PlanData[selectedPlan]?.portions[0])
-                            PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+                            setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                               id: i,
                               name: a
-                            }))
+                            })))
                           }}>
                             <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
                               Vegetarian Diet

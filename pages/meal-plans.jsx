@@ -4,6 +4,7 @@ import {getServerSideProps as headerProps} from '../src/components/Common/Navbar
 import {getServerSideProps as sliderBarProps} from '../src/components/Home/Hero'
 import {getServerSideProps as builtDataProps} from '../src/components/Home/Built'
 import {getServerSideProps as ourGeniusDataProps} from '../src/components/Home/Genius'
+import {getServerSideProps as faqQuestionsProps} from '../src/components/Faq/Questions'
 import {getServerSideProps as homeFitnessDataProps} from '../src/components/Home/Fitness'
 import {getServerSideProps as ourHomeBlogsDataProps} from '../src/components/Home/Ourblog'
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
@@ -11,7 +12,7 @@ import {getServerSideProps as socialMediaIconsProps} from '../src/components/Com
 export default function ourplans(props) {
   return (
     <div>
-        <Ourplanspage headerData={props?.headerData} sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData ={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}  />
+        <Ourplanspage headerData={props?.headerData} faqQuestions={props.faqQuestions}  sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData ={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}  />
     </div>
   )
 }
@@ -21,6 +22,7 @@ export async function getServerSideProps() {
     console.log("calling")
     let data = await headerProps()
     let sliderBarData = await sliderBarProps()
+    let faqQuestions = await faqQuestionsProps()
     let builtData = await builtDataProps()
     let ourGeniusData = await ourGeniusDataProps()
     let homeFitnessData = await homeFitnessDataProps()
@@ -33,7 +35,8 @@ export async function getServerSideProps() {
          ...sliderBarData.props,
          ...builtData.props,
          ...ourGeniusData.props,
-         ...homeFitnessData.props,
+        ...faqQuestions.props,
+        ...homeFitnessData.props,
          ...ourHomeBlogData.props,
          ...socialMediaIcon.props
        }, // will be pa
