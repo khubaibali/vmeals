@@ -1,4 +1,4 @@
-import React, { useState ,useRef} from "react";
+import React, { useState, useRef } from "react";
 import { vmealsHeader } from '../../lib/APICommunications';
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import Link from "next/link";
@@ -7,22 +7,22 @@ function Navbar({ headerData = {} }) {
   const ref = useRef()
   const [first, setfirst] = useState(false);
   const [openCloseSubMenu, setOpenClose] = useState({})
-  useOutsideClick(ref,controlSubMenu)
+  useOutsideClick(ref, controlSubMenu)
   function controlSubMenu(subMenu) {
     console.log(openCloseSubMenu, subMenu)
-    if(subMenu === "closeAll"){
-      Object.keys(openCloseSubMenu).forEach((x)=>{
+    if (subMenu === "closeAll") {
+      Object.keys(openCloseSubMenu).forEach((x) => {
         openCloseSubMenu[x] = false
       })
-      setOpenClose({...openCloseSubMenu})
+      setOpenClose({ ...openCloseSubMenu })
     }
     if (!openCloseSubMenu.hasOwnProperty(subMenu)) {
-      Object.keys(openCloseSubMenu).forEach((x)=>{
+      Object.keys(openCloseSubMenu).forEach((x) => {
         openCloseSubMenu[x] = false
       })
       setOpenClose({ ...openCloseSubMenu, [subMenu]: !Boolean(openCloseSubMenu[subMenu]) })
     } else {
-      Object.keys(openCloseSubMenu).forEach((x)=>{
+      Object.keys(openCloseSubMenu).forEach((x) => {
         openCloseSubMenu[x] = false
       })
       setOpenClose({ ...openCloseSubMenu, [subMenu]: !Boolean(openCloseSubMenu[subMenu]) })
@@ -68,18 +68,18 @@ function Navbar({ headerData = {} }) {
                 {headerData?.VMealsHeaderMenuList?.map((headerItem) => (
                   (headerItem.hasOwnProperty('VMealsHeaderSubMenuList') && headerItem?.VMealsHeaderSubMenuList.length > 0)
                     ?
-                    <li  className="relative">
-                      <button
+                    <li className="relative">
+                      <div
                         id="dropdownNavbarLink"
-                        onClick={() => {
-                          controlSubMenu(headerItem?.VMealsHeaderMenuItemTitle)
-                        }}
+
                         data-dropdown-toggle="dropdownNavbar"
                         className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
                       >
-
-                        {headerItem?.VMealsHeaderMenuItemTitle}
+                        <Link href={headerItem?.VMealsHeaderMenuItemLinkURL}>
+                          {headerItem?.VMealsHeaderMenuItemTitle}
+                        </Link>
                         <svg
+                          onClick={() => { controlSubMenu(headerItem?.VMealsHeaderMenuItemTitle) }}
                           className=" h-4 w-5 xl:w-5 xl:h-5 xl:mt-1"
                           aria-hidden="true"
                           fill="currentColor"
@@ -92,7 +92,7 @@ function Navbar({ headerData = {} }) {
                             clip-rule="evenodd"
                           ></path>
                         </svg>
-                      </button>
+                      </div>
                       <div
                         id="dropdownNavbar"
                         className={`${openCloseSubMenu[headerItem?.VMealsHeaderMenuItemTitle] ? "" : "hidden"
@@ -147,13 +147,13 @@ function Navbar({ headerData = {} }) {
                     {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
                 </li> */}
-                     <li className=" md:hidden">
-                     <Link
-                       href="/contact-us"
-                   className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
-  Need Assistance?
-                    </Link>
-                  
+                <li className=" md:hidden">
+                  <Link
+                    href="/contact-us"
+                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
+                    Need Assistance?
+                  </Link>
+
                 </li>
                 <li className=" md:hidden">
                   <Link
