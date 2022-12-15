@@ -14,6 +14,7 @@ export const vmealsFormContactUs = `${BaseURL}api/vmeals-form-contact-us`;
 export const vmealsContact = `${BaseURL}api/contact`;
 export const vmealsRegisterCompany = `${BaseURL}api/registerCompany`;
 export const vmealsFooter = `${BaseURL}api/vmeals-footer`;
+export const Footer = `${BaseURL}api/footer`;
 export const vmealsIconFooter = `${BaseURL}api/vmeals-icon-footer`;
 export const vmealsIcon = `${BaseURL}api/vmeals-icon`;
 export const vmealsOurGeniuses = `${BaseURL}api/vmeals-our-geniuses`;

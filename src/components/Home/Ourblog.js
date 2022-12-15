@@ -80,7 +80,7 @@ export default function Ourblog({ ourHomeBlogData }) {
                 return  <>
                 {index <3 ? <div className="col-span-6 lg:col-span-4  ">
                   <div className="relative ">
-                    <Link href={`${encodeURIComponent(blog?.VmealsBlogURL)}`}>
+                    <Link href={blog?.VmealsBlogURL}>
                     
                     <img
                       //  src="/images/blog1.png"

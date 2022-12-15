@@ -54,7 +54,7 @@ export default function Categorylist({ categoriesAll }) {
         index <10 ?
         <div className="mt-8">
           {/* grid testing */}
-          <Link href={`${encodeURIComponent(blog?.VmealsBlogURL)}`}> 
+          <Link href={blog?.VmealsBlogURL}> 
           <div className="grid grid-cols-12 gap-4 2xl:gap-0    ">
             <div className="   col-span-6 md:col-span-4 lg:col-span-6 xl:col-span-5  ">
               <img
