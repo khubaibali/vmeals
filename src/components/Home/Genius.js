@@ -3,7 +3,7 @@ const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsOurGeniuses } from '../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
 
-export default function Genius({ ourGeniusData=[{}] }) {
+export default function Genius({ ourGeniusData = [{}] }) {
   console.log("ourGeniusData--->", ourGeniusData)
   return (
     <>
@@ -25,13 +25,16 @@ export default function Genius({ ourGeniusData=[{}] }) {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.{" "}
               </h2> */}
-              <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription}  />
+              <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription} />
 
               <div className="text-center">
-                <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  ">
+
+                <a className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  " href='https://wa.me/+971562922081' target={"_blank"}>
                   {/* Book Appointment */}
                   {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
-                </button>
+
+                </a>
+
               </div>
             </div>
             <div className="   col-span-12 lg:col-span-6 relative ">
@@ -56,9 +59,13 @@ export default function Genius({ ourGeniusData=[{}] }) {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.{" "}
               </h2> */}
-              <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription}/>
+              <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription} />
               <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full mb-10 ">
-                {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
+                <a href='https://wa.me/+971562922081' target={"_blank"}>
+                  {/* Book Appointment */}
+                  {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
+
+                </a>
               </button>
             </div>
           </div>

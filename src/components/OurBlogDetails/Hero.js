@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function Hero() {
+export default function Hero({title="",cate=""}) {
   return (
     <>
     <div className="absolute w-full top-0  " >
       <h1 className="  text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] xl:pt-[238px] 2xl:pt-[311px] ">
-        10 Foods to Speed Up Your Metabolism
+        {/* 10 Foods to Speed Up Your Metabolism */}
+        {title}
       </h1>
       <div className="text-center mt-5 2xl:mt-12 ">
         <ul className="inline-flex">
@@ -48,7 +49,8 @@ export default function Hero() {
           </li>
           <li className=" ml-5 2xl:ml-10">
             <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2.5  ">
-              Food
+              {/* Food */}
+              {cate}
             </h2>
           </li>
         </ul>
