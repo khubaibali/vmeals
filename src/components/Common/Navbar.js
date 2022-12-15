@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useState ,useRef} from "react";
 import { vmealsHeader } from '../../lib/APICommunications';
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import Link from "next/link";
+import useOutsideClick from '../../hooks/use-outside-click'
 function Navbar({ headerData = {} }) {
-
+  const ref = useRef()
   const [first, setfirst] = useState(false);
   const [openCloseSubMenu, setOpenClose] = useState({})
-
+  useOutsideClick(ref,controlSubMenu)
   function controlSubMenu(subMenu) {
     console.log(openCloseSubMenu, subMenu)
+    if(subMenu === "closeAll"){
+      Object.keys(openCloseSubMenu).forEach((x)=>{
+        openCloseSubMenu[x] = false
+      })
+      setOpenClose({...openCloseSubMenu})
+    }
     if (!openCloseSubMenu.hasOwnProperty(subMenu)) {
+      Object.keys(openCloseSubMenu).forEach((x)=>{
+        openCloseSubMenu[x] = false
+      })
       setOpenClose({ ...openCloseSubMenu, [subMenu]: !Boolean(openCloseSubMenu[subMenu]) })
     } else {
+      Object.keys(openCloseSubMenu).forEach((x)=>{
+        openCloseSubMenu[x] = false
+      })
       setOpenClose({ ...openCloseSubMenu, [subMenu]: !Boolean(openCloseSubMenu[subMenu]) })
     }
   }
@@ -46,7 +59,7 @@ function Navbar({ headerData = {} }) {
                 ></path>
               </svg>
             </button>
-            <div
+            <div ref={ref}
               className={`${first ? "" : "hidden"
                 } block w-full md:block md:w-auto`}
               id="navbar-default"
@@ -55,7 +68,7 @@ function Navbar({ headerData = {} }) {
                 {headerData?.VMealsHeaderMenuList?.map((headerItem) => (
                   (headerItem.hasOwnProperty('VMealsHeaderSubMenuList') && headerItem?.VMealsHeaderSubMenuList.length > 0)
                     ?
-                    <li className="relative">
+                    <li  className="relative">
                       <button
                         id="dropdownNavbarLink"
                         onClick={() => {
@@ -136,7 +149,7 @@ function Navbar({ headerData = {} }) {
                 </li> */}
                      <li className=" md:hidden">
                      <Link
-                       href="/contactus"
+                       href="/contact-us"
                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
   Need Assistance?
                     </Link>
@@ -193,7 +206,7 @@ function Navbar({ headerData = {} }) {
                 </li>
                 <li>
                   <a
-                    href="/meal-plan"
+                    href="/meal-plans"
                     className="block py-4   f-f-b  text-smtwo lg:text-sm xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant-2 px-10  text-white  "
                   >
                     {/* Get Started */}

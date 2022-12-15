@@ -1,13 +1,15 @@
 const { useEffect } = require("react");
 
-function useOutsideClick(ref, state) {
+function useOutsideClick(ref,callbackFunc) {
+    console.log("use outside is called")
     useEffect(() => {
         /**
          * Alert if clicked on outside of element
          */
         function handleClickOutside(event) {
             if (ref.current && !ref.current.contains(event.target)) {
-                state(false)
+                
+                callbackFunc("closeAll")
                 // alert("You clicked outside of me!");
             }
         }

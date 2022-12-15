@@ -100,7 +100,7 @@ const RTFMapping = ({ data }) => {
 							style={{ width: "97%",margin: '2em 0' }}
 						/>
 					);
-				} else if (d.type == "h2") {
+				} else if (d.type == "h1") {
 					return (
 						<h2 key={i}  className="text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-2 leading-[23px]">
 							{d.children.map((child) => {
