@@ -12,7 +12,7 @@ import { vmealsIndianFusionDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Green Diet")
-  const [selectedPlan, setSelectedPlan] = useState("IndianFusionNonVegetarian");
+  const [selectedPlan, setSelectedPlan] = useState("IndianFusionVegetarianDiet");
   const [step, setStep] = useState(1)
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GlutenAndDairyFreeDiet")
 

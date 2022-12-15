@@ -167,7 +167,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{( Number(price + price * 0.05) - Number(discountPrice || 0)  + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{( Number(price + price * 0.05) - Number(discountPrice)  + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -318,7 +318,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{Number(price) - (Number(discountPrice || 0).toFixed(2) + Number(price * 0.05)  + Number(addOnTwoHundred) + Number(addOnFifty).toFixed(2))}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{Number(price) - (Number(discountPrice).toFixed(2) + Number(price * 0.05)  + Number(addOnTwoHundred) + Number(addOnFifty).toFixed(2))}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
