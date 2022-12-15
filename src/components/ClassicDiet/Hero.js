@@ -67,9 +67,9 @@ export default function Hero({ step, plan }) {
               </svg>
             </li>
             <li className=" ml-5 2xl:ml-10">
-              <h1 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
+              <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
                 {plan}
-              </h1>
+              </h2>
             </li>
           </>
           }

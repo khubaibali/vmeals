@@ -9,7 +9,7 @@ export default function Genius({ ourGeniusData=[{}] }) {
     <>
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px]  ">
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
-          <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
+          <div className="grid grid-cols-12  sm:gap-8 lg:gap-14  ">
             <div className="   col-span-12 lg:col-span-6  lg:hidden ">
               <h2 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10  tracking-[1px] lg:tracking-[0.22em] ">
                 {/* OUR GENIUSES */}

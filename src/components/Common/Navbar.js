@@ -67,7 +67,7 @@ function Navbar({ headerData = {} }) {
 
                         {headerItem?.VMealsHeaderMenuItemTitle}
                         <svg
-                          className="w-5 h-5 mt-1"
+                          className=" h-4 w-5 xl:w-5 xl:h-5 xl:mt-1"
                           aria-hidden="true"
                           fill="currentColor"
                           viewBox="0 0 20 20"
@@ -134,6 +134,14 @@ function Navbar({ headerData = {} }) {
                     {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
                 </li> */}
+                     <li className=" md:hidden">
+                     <Link
+                       href="/contactus"
+                   className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
+  Need Assistance?
+                    </Link>
+                  
+                </li>
                 <li className=" md:hidden">
                   <Link
                     href="/contact-us"

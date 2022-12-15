@@ -11,7 +11,7 @@ export default function Ourblog({ ourHomeBlogData }) {
           <h2 class="  text-base text-center  sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
             OUR BLOG
           </h2>
-          <div className="grid grid-cols-12  gap-8  mt-10 2xl:mt-20 ">
+          <div className="grid grid-cols-12 gap-4 sm:gap-8  mt-10 2xl:mt-20 ">
             {/* <div className="   col-span-6 lg:col-span-4  ">
               <div className="relative ">
                 <img

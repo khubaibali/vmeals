@@ -40,11 +40,11 @@ export default function Fotter({ socialMediaIcon=[{}],footerData=[{}],tradeMarkD
               />
             </div>
             <div className="col-span-8 md:col-span-9  ">
-              <h1 className=" text-black f-f-b  text-smtwo  md:text-xl lg:text-3xl 2xl:text-6xl pt-4 lg:pt-8 2xl:pt-16 uppercase ">
+              <h2 className=" text-black f-f-b  text-smtwo  md:text-xl lg:text-3xl 2xl:text-6xl pt-4 lg:pt-8 2xl:pt-16 uppercase ">
                 Get your free 
                 <span className="text-green"> {footerData?.[0]?.VMealsGuideBoldColorTitle}</span>{" "}
                 guide today!
-              </h1>
+              </h2>
 
               <div className="grid grid-cols-12 ">
                 <div className="col-span-8 md:col-span-7 lg:col-span-7 2xl:col-span-7  ">
