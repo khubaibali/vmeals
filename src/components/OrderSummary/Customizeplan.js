@@ -171,7 +171,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    VAT:<span className=" f-f-r float-right ">AED{(price * 0.05).toFixed(2)}</span>{" "}
+                    VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0) ) * 0.05).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{(Number(price + price * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{(Number(price + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -322,7 +322,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    VAT:<span className=" f-f-r float-right ">AED{price * 0.05}</span>{" "}
+                    VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0) ) * 0.05).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
                   <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{Number(price) - (Number(discountPrice).toFixed(2) + Number(price * 0.05) + Number(addOnTwoHundred) + Number(addOnFifty).toFixed(2))}</h2>
+                    <h2 class=" text-black text-2xl f-f-b ">AED{(Number(price + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
                     <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
