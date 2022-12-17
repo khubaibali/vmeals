@@ -137,9 +137,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const checkout = () => {
     setLoading(true);
     let body = {
-      amount: price,
+      amount: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
       totals: {
-        subtotal: price,
+        subtotal: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
         tax: 0,
         discount: 0,
         skipTotalsValidation: true,
@@ -148,7 +148,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         {
           name: selectedPlan,
           quantity: 1,
-          linetotal: price,
+          linetotal: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
         },
       ],
       customer: {
@@ -272,7 +272,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     setTotalPrice()
   })
 
-  console.log("optionsoptions", options)
+  console.log("optionsoptions",selectedPlan,  PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name))
+  //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 
   return (
     <>
@@ -330,10 +331,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
                           <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
                             setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
-                            setSelectedDuration(PlanData[selectedPlan]?.portions[0]?.planDuration[0])
-                            setSelectedDaysPerWeek(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
-                            setPrice(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
-                            setSelectedPortion(PlanData[selectedPlan]?.portions[0])
+                            let select = selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian"
+                            setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
                             setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                               id: i,
                               name: a
@@ -348,11 +347,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         <div className="   col-span-6  ">
                           <button className={`${selectedPlan == "GreenDietVegan" || selectedPlan == "IndianFusionNonVegetarian" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
                             onClick={() => {
+                              let select = selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian"
                               setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
-                              setSelectedPortion(PlanData[selectedPlan]?.portions[0])
-                              setSelectedDuration(PlanData[selectedPlan]?.portions[0]?.planDuration[0])
-                              setSelectedDaysPerWeek(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
-                              setPrice(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
+                              setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
                               setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                                 id: i,
                                 name: a
