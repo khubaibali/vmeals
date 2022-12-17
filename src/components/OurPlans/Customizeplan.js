@@ -279,7 +279,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     setTotalPrice()
   })
 
-  console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+  console.log("optionsoptions", options, )
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 
   return (
@@ -340,7 +340,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
                             let select = selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet"
                             setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-                            setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+                            setOptions(PlanData[select]?.allergies?.map((a, i) => ({
                               id: i,
                               name: a
                             })))
@@ -357,7 +357,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                               let select = selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian"
                               setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
                               setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-                              setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+                              setOptions(PlanData[select]?.allergies?.map((a, i) => ({
                                 id: i,
                                 name: a
                               })))
