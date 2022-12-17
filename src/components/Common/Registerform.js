@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsRegisterCompany } from "../../../src/lib/APICommunications";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Registerform() {
   const [registerForm, setFormData] = useState({})
   const [isDisabled,setDisable] = useState(false)
@@ -22,6 +24,11 @@ export default function Registerform() {
         return response.json()
       })
       .then(function (data) {
+        if (data?.name === "ValidationError") {
+          toast("Please fill the required field")
+        }else{
+          toast("Form submitted successfully")
+        }
         setDisable(false)
       }).catch(error => setDisable(false));
 

@@ -71,13 +71,14 @@ function Navbar({ headerData = {} }) {
                     <li className="relative">
                       <div
                         id="dropdownNavbarLink"
-
+                        onClick={ () => { controlSubMenu(headerItem?.VMealsHeaderMenuItemTitle) }}
                         data-dropdown-toggle="dropdownNavbar"
                         className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  "
                       >
-                        <Link href={headerItem?.VMealsHeaderMenuItemLinkURL}>
+                        {headerItem?.VMealsHeaderMenuItemLinkURL !== "our-company" && <Link href={headerItem?.VMealsHeaderMenuItemLinkURL}>
                           {headerItem?.VMealsHeaderMenuItemTitle}
-                        </Link>
+                        </Link>}
+                        {headerItem?.VMealsHeaderMenuItemLinkURL == "our-company" && headerItem?.VMealsHeaderMenuItemTitle}
                         <svg
                           onClick={() => { controlSubMenu(headerItem?.VMealsHeaderMenuItemTitle) }}
                           className=" h-4 w-5 xl:w-5 xl:h-5 xl:mt-1"
