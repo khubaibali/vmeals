@@ -665,6 +665,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     <div className="text-center">
                       <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8" onClick={() => {
                         setPlanInformationData()
+                        scrollTo(0, 500);
                         setStep(2)
                       }}>
                         Next

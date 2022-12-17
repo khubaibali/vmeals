@@ -66,6 +66,8 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
         nationality
       })
       setStep(3)
+      scrollTo(0, 500);
+
     } else {
       console.log("")
     }
@@ -145,7 +147,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                 >
                   Your Email
                 </label>
-                <select value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value) } className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
+                <select style={{width: '50px'}} value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value) } className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
                   {CountryCodeData.countryCodes.map((cc) => (
                     <option
                       value={cc.dial_code}
