@@ -11,7 +11,8 @@ import CustomizeplanDeliveryInformation from '../DeliveryInformation/Customizepl
 import CustomizeplanPersonalInformation from "../PersonalInformation/Customizeplan";
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 import axios from "axios";
-
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu }) {
   console.log("setStepsetStep", weeklyMenu);
   const [isLoading, setLoading] = useState(false);
@@ -188,6 +189,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
           toast.success(res?.data?.doc?.error);
         }
         if (res?.data?.doc?.success == true) {
+          cookies.set("paymentSuccess", true)
           console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
           window.location = res?.data?.doc?.result?.redirectUrl;
           createOrder();
@@ -203,6 +205,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   };
 
   const createOrder = () => {
+   
     let body = {
       plan: {
         planName: selectedPlan,
@@ -243,15 +246,19 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         discountPercentage: discountPercentage || "N/A",
       },
     };
-    axios
-      .post(vmealsOrder, body)
-      .then((res) => {
-        setOrderAPIResponse(res);
-      })
-      .catch((err) => {
-        console.log("ERROR", err);
-        return false;
-      });
+    cookies.set(
+      "orderDetail",
+      JSON.stringify(body)
+  );
+    // axios
+    //   .post(vmealsOrder, body)
+    //   .then((res) => {
+    //     setOrderAPIResponse(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("ERROR", err);
+    //     return false;
+    //   });
   };
 
 

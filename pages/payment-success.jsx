@@ -2,10 +2,12 @@ import React from 'react'
 import  Paymentconfirmation from '../src/components/Payment Confirmation/Index'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
+import SEO from '../src/components/Common/SEO'
 
 export default function confirmation(props) {
   return (
     <div>
+        <SEO pageTitle='Payment Successful' metaText={"Vmeal"} />
         <Paymentconfirmation 
            headerData={props?.headerData}
            socialMediaIcon={props.socialMediaIcon}

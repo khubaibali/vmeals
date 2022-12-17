@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Informationslick from "./Informationslick";
 import Link from "next/link";
-
+import Cookies from "universal-cookie";
+import axios from "axios";
+import { vmealsOrder } from "../../lib/APICommunications";
+const cookies = new Cookies();
 export default function Customizeplan() {
   const [openTab, setOpenTab] = React.useState(1);
+
+  const createOrder = (body) => {
+   
+    axios
+      .post(vmealsOrder, body)
+      .then((res) => {
+        // setOrderAPIResponse(res);
+        
+      })
+      .catch((err) => {
+        console.log("ERROR", err);
+        return false;
+      });
+  };
+
+  useEffect(()=> {
+    const success = cookies.get("paymentSuccess")
+    const data = cookies.get("orderDetail")
+    console.log("suuuuuu", success, data)
+    if(success) {
+      createOrder(data)
+      cookies.remove("paymentSuccess")
+      cookies.remove("orderDetail")
+    }
+  },[cookies.get("orderDetail")])
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-5 md:my-10 lg:my-20">
