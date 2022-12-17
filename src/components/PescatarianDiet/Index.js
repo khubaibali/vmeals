@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../Common/Navbar";
-import Hero from "./Hero";
+import Hero from "../OurPlans/Hero";
 import Review from "../About Us/Review";
 import Fotter from "../Common/Footer";
 import Built from "../Home/Built";
@@ -20,9 +20,9 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
-      <div className="indianfusiondietbg">
+      <div className="classicbg" style={{backgroundImage: (step == 1 ? 'url("/images/classicbg.png")' : step == 2 ? 'url("/images/personalinformationbg.png")' : step == 3 ? 'url("/images/DeliveryInformationbg.png")' : step == 4 ? 'url("/images/Ordersummerbg.png")' : 'url("/images/classicbg.png")')}}>
         <Navbar headerData={headerData}  />
-        <Hero />
+        <Hero step={step} plan={"Pescatarian Diet"} />
       </div>
       <Customizeplan 
               weeklyMenu={contentDataPescatarian?.WeeklyMenu}
