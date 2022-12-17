@@ -3,7 +3,7 @@ import { vmealsContact, vmealsFormContactUs } from "../../lib/APICommunications"
 
 export default function Contactusform() {
   const [registerForm, setFormData] = useState({})
-  const [isDisabled,setDisable] = useState(false)
+  const [isDisabled, setDisable] = useState(false)
   function formControl(event) {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
@@ -68,7 +68,7 @@ export default function Contactusform() {
             <h2 className=" text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
             </h2>
-      
+
             <form>
               <div className="flex">
                 <label
@@ -147,21 +147,24 @@ export default function Contactusform() {
               Inquiry Type <span className="text-red">* </span>
             </h2>
 
-                     {/* new code data started */}
-                     <div className="relative" >
-              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " >
+            {/* new code data started */}
+            <div className="relative" >
+              <select onChange={formControl} id="inquiryType" name="inquiryType" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " >
                 <option value={""} className="text-black">Select an option...</option>
-                <option className="text-black" >
-                    1
-                  </option>
-                  <option className="text-black" >
-                    1
-                  </option>
-                   <option className="text-black" >
-                    1
-                  </option>
+                <option value={"shopping"} className="text-black" >
+                  Shopping
+                </option>
+                <option value={"images"} className="text-black" >
+                  Images
+                </option>
+                <option value={"news"} className="text-black" >
+                  News
+                </option>
+                <option value="finance" className="text-black" >
+                  Finanace
+                </option>
               </select>
-          
+
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
@@ -173,28 +176,25 @@ export default function Contactusform() {
             <h2 className=" text-base f-f-b text-bla  ">
               How should we contact you?<span className="text-red">* </span>
             </h2>
- {/* new code data started */}
-                     <div className="relative" >
-              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  "  >
+            {/* new code data started */}
+            <div className="relative" >
+              <select onChange={formControl} id="wayToContact" name="wayToContact" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  "  >
                 <option value={""} className="text-black">Select an option...</option>
-                <option className="text-black" >
-                    1
-                  </option>
-                  <option className="text-black" >
-                    1
-                  </option>
-                   <option className="text-black" >
-                    1
-                  </option>
+                <option value={"email"} className="text-black" >
+                  Email
+                </option>
+                <option value={"Mobile"} className="text-black" >
+                  Mobile
+                </option>
               </select>
-          
+
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
               />
             </div>
             {/* new code data end */}
-        
+
           </div>
           <div className="   col-span-12  ">
             <h2 className=" text-base f-f-b text-black  ">
