@@ -10,6 +10,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
   const [lastName, setLastName] = useState(personalInformation?.lastName)
   const [email, setEmail] = useState(personalInformation?.email)
   const [mobileNumber, setMobileNumber] = useState(personalInformation?.mobileNumber)
+  const [mobileNumberCode, setMobileNumberCode] = useState(personalInformation?.mobileNumberCode)
   const [dateOfBirth, setDateOfBirth] = useState(personalInformation?.dateOfBirth)
   const [nationality, setNationality] = useState(personalInformation?.nationality);
   const [errors, setErrors] = useState(null);
@@ -60,6 +61,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
         lastName,
         email,
         mobileNumber,
+        mobileNumberCode,
         dateOfBirth,
         nationality
       })
@@ -143,7 +145,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                 >
                   Your Email
                 </label>
-                <select className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
+                <select value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value) } className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
                   {CountryCodeData.countryCodes.map((cc) => (
                     <option
                       value={cc.dial_code}
@@ -153,7 +155,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                           : false
                       }
                     >
-                      {cc.dial_code}
+                      {cc.dial_code }&nbsp;&nbsp;{" "}{cc.name}
                     </option>
                   ))}
                 </select>
