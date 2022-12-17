@@ -225,11 +225,11 @@ const RTFMapping = ({ data }) => {
 					);
 				} else if (d.type == "h4") {
 					return (
-						<h4 key={i} style={{ color: "black" }}>
+						<h4 key={i}  className="text-center lg:text-left f-f-r text-black text-tiny 2xl:text-base mt-2 leading-[23px]" >
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (
-										<span>
+										<span className="text-center lg:text-left f-f-it text-black text-tiny 2xl:text-base mt-2 leading-[23px]" >
 											<b>{child.text}</b>
 										</span>
 									);

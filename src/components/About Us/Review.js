@@ -17,28 +17,32 @@ export default function Review() {
     </div>
   );
 }
-export async function getServerSideProps({ req, res }){
+export async function getServerSideProps({ req, res }) {
   try {
     console.log('header fetching')
-    let googleReviews = await fetch("https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJcTFhgEdzXz4RJtANMZv4OJs&fields=reviews&key=AIzaSyD2wruZXxV5EAJlMJLsjGjGpAOlfXdt_Ko")
-    
-    res.setHeader(
-      'Cache-Control',
-      'public, s-maxage=10, stale-while-revalidate=59'
-    )
+    // let data = await fetch("https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJcTFhgEdzXz4RJtANMZv4OJs&fields=reviews&key=AIzaSyD2wruZXxV5EAJlMJLsjGjGpAOlfXdt_Ko", {
+    //   method: "GET",
+    //   mode: 'no-cors',
+    //   redirect: "follow",
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   }
+    // })
+    // data = data.json()
     return {
       props: {
-        googleReviews:{...googleReviews}
+        googleReviews:[]
       }
     }
-    
+
   } catch (error) {
-    return{
+    console.log(error)
+    return {
       props: {
-        googleReviews:{}
+        googleReviews: {}
       }
     }
-    console.log("inside error",error)
+
   }
- 
+
 }

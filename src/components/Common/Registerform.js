@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsRegisterCompany } from "../../../src/lib/APICommunications";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import CountryCodeData from "../../lib/data/countryCode/data.json";
 export default function Registerform() {
   const [registerForm, setFormData] = useState({})
-  const [isDisabled,setDisable] = useState(false)
+  const [isDisabled, setDisable] = useState(false)
+  const [countryDialCode, setCountryDialCode] = useState("+971");
+
   function formControl(event) {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
@@ -22,8 +27,16 @@ export default function Registerform() {
         return response.json()
       })
       .then(function (data) {
+        if (data?.name === "ValidationError") {
+          toast("Please fill the required field")
+        } else {
+          toast("Form submitted successfully")
+        }
         setDisable(false)
-      }).catch(error => setDisable(false));
+      }).catch(error => {
+        setDisable(false)
+        toast(error?.message)
+      });
 
   }
   console.log("registerform", registerForm)
@@ -78,7 +91,7 @@ export default function Registerform() {
                 >
                   Your Email
                 </label>
-                <button
+                {/* <button
                   id="dropdown-button"
                   data-dropdown-toggle="dropdown"
                   className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant-2  text-center  focus:outline-none  mobile-btn "
@@ -86,7 +99,21 @@ export default function Registerform() {
                 >
                   +971{" "}
                   <img src="/images/mobilearrow.png" className=" w-[12px] h-[12px] ml-1" />
-                </button>
+                </button> */}
+                <select style={{ width: '50px' }} name="countryCode" onChange={formControl} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
+                  {CountryCodeData.countryCodes.map((cc) => (
+                    <option
+                      value={cc.dial_code}
+                      selected={
+                        countryDialCode == cc.dial_code
+                          ? true
+                          : false
+                      }
+                    >
+                      {cc.dial_code}&nbsp;&nbsp;{" "}{cc.name}
+                    </option>
+                  ))}
+                </select>
                 <div
                   id="dropdown"
                   className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"

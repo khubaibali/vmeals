@@ -26,7 +26,7 @@ export default function Fitness({ homeFitnessData = [{}] }) {
               <ul className="inline-flex">
                 <li>
                   <h2 className="f-f-b text-green text-6xl sm:text-8xl 2xl:text-10xl mt-16 2xl:mt-8">
-                  0{ind+1}
+                  0{ind+1}.
                   </h2>
                 </li>
                 <li className="ml-4">
