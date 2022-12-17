@@ -232,7 +232,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         dateOfBirth: (new Date(personalInformation?.dateOfBirth)).toDateString(),
       },
       deliveryDetails: {
-        startingDate: deliveryInformation?.startingDate,
+        startingDate: (new Date(deliveryInformation?.startingDate).toDateString()),
         city: deliveryInformation?.city,
         address: deliveryInformation?.address,
         apartmentNumber: deliveryInformation?.appartmentNumber,
@@ -241,9 +241,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         deliveryInstructions: deliveryInformation?.deliveryInstruction || "N/A",
         deliverySlot: deliveryInformation?.deliverySlot,
         price: Number(price),
-        totalPrice: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
-        discountPrice:  Number(discountPrice).toFixed(2),
-        discountPercentage: discountPercentage+"%" || "N/A",
+        totalPrice: Number(((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)),
+        discountPrice:  Number((discountPrice).toFixed(2)),
       },
     };
     cookies.set(
@@ -279,7 +278,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     setTotalPrice()
   })
 
-  console.log("optionsoptions", options, )
+  console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 
   return (
@@ -340,7 +339,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
                             let select = selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet"
                             setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-                            setOptions(PlanData[select]?.allergies?.map((a, i) => ({
+                            setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                               id: i,
                               name: a
                             })))
@@ -357,7 +356,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                               let select = selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian"
                               setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
                               setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-                              setOptions(PlanData[select]?.allergies?.map((a, i) => ({
+                              setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                                 id: i,
                                 name: a
                               })))
