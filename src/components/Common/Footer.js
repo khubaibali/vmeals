@@ -2,12 +2,14 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Whtsapps from '../Common/watsapp'
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
-import { vmealsIcon, vmealsguide, vmealsFooter, Footer ,vmealsSubscribe} from '../../lib/APICommunications';
+import { vmealsIcon, vmealsguide, vmealsFooter, Footer, vmealsSubscribe } from '../../lib/APICommunications';
 let images = ["/images/facebook.png", "/images/instagram.png", "/images/whatsapp.png"]
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], tradeMarkData = [{}] }) {
   console.log("footer")
   const [registerForm, setFormData] = useState({})
-  const [isDisabled,setDisable] = useState(false)
+  const [isDisabled, setDisable] = useState(false)
   function formControl(event) {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
@@ -27,7 +29,14 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
       })
       .then(function (data) {
         setDisable(false)
-      }).catch(error => setDisable(false));
+        if(!data.message){
+          toast("You are subscribed to Vmeals")
+        }
+        toast(data?.message)
+      }).catch(error => {
+        setDisable(false)
+        toast(error?.message)
+      });
 
   }
 
@@ -150,6 +159,20 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
         </div>
       </div>
       <Whtsapps />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      >
+
+      </ToastContainer>
     </>
   );
 }

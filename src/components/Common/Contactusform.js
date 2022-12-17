@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { vmealsContact, vmealsFormContactUs } from "../../lib/APICommunications";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import CountryCodeData from "../../lib/data/countryCode/data.json";
 export default function Contactusform() {
   const [registerForm, setFormData] = useState({})
   const [isDisabled, setDisable] = useState(false)
+  const [countryDialCode, setCountryDialCode] = useState("+971");
   function formControl(event) {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
@@ -22,8 +25,17 @@ export default function Contactusform() {
         return response.json()
       })
       .then(function (data) {
+        if (data?.name === "ValidationError") {
+          toast("Please fill the required field")
+        }else{
+          toast("Form submitted successfully")
+        }
+        
         setDisable(false)
-      }).catch(error => setDisable(false));
+      }).catch(error => {
+        setDisable(false)
+        toast(error?.message)
+      });
 
   }
   console.log("registerform", registerForm)
@@ -77,7 +89,7 @@ export default function Contactusform() {
                 >
                   Your Email
                 </label>
-                <button
+                {/* <button
                   id="dropdown-button"
                   data-dropdown-toggle="dropdown"
                   className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant-2  text-center  focus:outline-none  mobile-btn "
@@ -85,48 +97,26 @@ export default function Contactusform() {
                 >
                   +971{" "}
                   <img src="/images/mobilearrow.png" className=" ml-1 h-[13px] w-[13px] " />
-                </button>
+                </button> */}
+                <select style={{ width: '50px' }} name="countryCode" onChange={formControl} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
+                  {CountryCodeData.countryCodes.map((cc) => (
+                    <option
+                      value={cc.dial_code}
+                      selected={
+                        countryDialCode == cc.dial_code
+                          ? true
+                          : false
+                      }
+                    >
+                      {cc.dial_code}&nbsp;&nbsp;{" "}{cc.name}
+                    </option>
+                  ))}
+                </select>
                 <div
                   id="dropdown"
                   className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
                 >
-                  <ul
-                    className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                    aria-labelledby="dropdown-button"
-                  >
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Shopping
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Images
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        News
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Finance
-                      </a>
-                    </li>
-                  </ul>
+
                 </div>
                 <div className="relative w-full">
                   <input
@@ -136,6 +126,7 @@ export default function Contactusform() {
                     placeholder="Enter your mobile number…"
                     name="mobileNumber"
                     onChange={formControl}
+                    value={registerForm?.mobileNumber}
                     required
                   />
                 </div>
@@ -151,17 +142,14 @@ export default function Contactusform() {
             <div className="relative" >
               <select onChange={formControl} id="inquiryType" name="inquiryType" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " >
                 <option value={""} className="text-black">Select an option...</option>
-                <option value={"shopping"} className="text-black" >
-                  Shopping
+                <option value={"General Inquiry"} className="text-black" >
+                  General Inquiry
                 </option>
-                <option value={"images"} className="text-black" >
-                  Images
+                <option value={"Corporate Inquiry"} className="text-black" >
+                  Corporate Inquiry
                 </option>
-                <option value={"news"} className="text-black" >
-                  News
-                </option>
-                <option value="finance" className="text-black" >
-                  Finanace
+                <option value={"Feedback/Complaint"} className="text-black" >
+                  Feedback/Complaint
                 </option>
               </select>
 
@@ -180,11 +168,14 @@ export default function Contactusform() {
             <div className="relative" >
               <select onChange={formControl} id="wayToContact" name="wayToContact" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  "  >
                 <option value={""} className="text-black">Select an option...</option>
+                <option value={"whatsapp"} className="text-black" >
+                  WhatsApp
+                </option>
+                <option value={"call"} className="text-black" >
+                  Call
+                </option>
                 <option value={"email"} className="text-black" >
                   Email
-                </option>
-                <option value={"Mobile"} className="text-black" >
-                  Mobile
                 </option>
               </select>
 
