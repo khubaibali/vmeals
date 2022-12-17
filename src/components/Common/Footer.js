@@ -1,11 +1,36 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Whtsapps from '../Common/watsapp'
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
-import { vmealsIcon, vmealsguide, vmealsFooter, Footer } from '../../lib/APICommunications';
+import { vmealsIcon, vmealsguide, vmealsFooter, Footer ,vmealsSubscribe} from '../../lib/APICommunications';
 let images = ["/images/facebook.png", "/images/instagram.png", "/images/whatsapp.png"]
 export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], tradeMarkData = [{}] }) {
-  console.log("footer", footerData)
+  console.log("footer")
+  const [registerForm, setFormData] = useState({})
+  const [isDisabled,setDisable] = useState(false)
+  function formControl(event) {
+    setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
+  }
+  function CallSubmitForm() {
+    setDisable(true)
+    fetch(`${vmealsSubscribe}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        ...registerForm
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      }
+    })
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        setDisable(false)
+      }).catch(error => setDisable(false));
+
+  }
+
   return (
     <>
       <div className=" pt-5 md:pt-10 2xl:pt-20">
@@ -37,14 +62,17 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
               guide today!
             </h2>
             <ul className="inline-flex" >
-              <li>  <input
-                type="text"
-                className="  input-footer  mt-1 md:mt-4 lg:mt-4 2xl:mt-4 md:py-3 md:h-[52px] 2xl:h-[85px] w-[147px] md:w-[277px]  lg:w-[320px] 2xl:w-[545px] border-2 border-green h-[25px]  "
-                // placeholder="Please enter your email address..."
-                placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
-              /> </li>
+              <li>
+                <input
+                  onChange={formControl}
+                  name="email"
+                  type="text"
+                  className="  input-footer  mt-1 md:mt-4 lg:mt-4 2xl:mt-4 md:py-3 md:h-[52px] 2xl:h-[85px] w-[147px] md:w-[277px]  lg:w-[320px] 2xl:w-[545px] border-2 border-green h-[25px]  "
+                  // placeholder="Please enter your email address..."
+                  placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
+                /> </li>
               <li className=" ml-1 md:ml-4" >
-                <button class="bg-green  f-f-b text-xsone md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5 2xl:h-[79px] h-[25px] w-[60px] md:h-[52px] md:w-[143px] 2xl:w-[219px] mt-1 rounded-full sub ">
+                <button disabled={isDisabled} onClick={CallSubmitForm} class="bg-green  f-f-b text-xsone md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5 2xl:h-[79px] h-[25px] w-[60px] md:h-[52px] md:w-[143px] 2xl:w-[219px] mt-1 rounded-full sub ">
                   {/* Subscribe */}
                   {footerData?.[0]?.VMealsGuideInputButtonTitle}
                 </button>
@@ -137,7 +165,7 @@ export async function getServerSideProps() {
     let data = await icons.json()
     let fData = await footerData.json()
     let tradmark = await footerTradeMarkSection.json()
-    console.log("slider bar ->>", data)
+
 
     return {
       props: { socialMediaIcon: { ...data?.docs }, footerData: { ...fData?.docs }, tradmark: { ...tradmark?.docs } }, // will be passed to the page component as props
