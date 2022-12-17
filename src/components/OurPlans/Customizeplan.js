@@ -205,7 +205,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   };
 
   const createOrder = () => {
-   
+
     let body = {
       plan: {
         planName: selectedPlan,
@@ -240,16 +240,16 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         googleMapsLink: deliveryInformation?.googleMapLink || "N/A",
         deliveryInstructions: deliveryInformation?.deliveryInstruction || "N/A",
         deliverySlot: deliveryInformation?.deliverySlot,
-        price: price,
-        totalPrice: totalPrice || price,
-        discountPrice: discountPrice || "N/A",
-        discountPercentage: discountPercentage || "N/A",
+        price: Number(price),
+        totalPrice: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
+        discountPrice:  Number(discountPrice).toFixed(2),
+        discountPercentage: discountPercentage+"%" || "N/A",
       },
     };
     cookies.set(
       "orderDetail",
       JSON.stringify(body)
-  );
+    );
     // axios
     //   .post(vmealsOrder, body)
     //   .then((res) => {
@@ -279,16 +279,16 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     setTotalPrice()
   })
 
-  console.log("optionsoptions",price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+  console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 
   return (
     <>
-      {step == 1 &&
-        <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
-          {/* code testing */}
-          <Steps step={step} setStep={setStep} />
-          {/* code testing ended */}
+      <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
+        {/* code testing */}
+        <Steps step={step} setStep={setStep} />
+        {/* code testing ended */}
+        {step == 1 &&
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
             <div className="   col-span-12  lg:col-span-6  ">
@@ -307,19 +307,19 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   </li>
                   <li className="text-right ml-auto ">
                     <a href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`} target="_blank">
-                    <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
-                      <ul className="inline-flex">
-                        <li>
-                          <img
-                            src="/images/menu 1.png"
-                            className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[27px] 2xl:w-[40px] h-auto mt-2 2xl:mt-2  "
-                          />
-                        </li>
-                        <li className="mt-1 md:mt-3 2xl:mt-4 ml-2 lg:ml-4">
-                          Weekly Menu
-                        </li>
-                      </ul>
-                    </button>
+                      <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
+                        <ul className="inline-flex">
+                          <li>
+                            <img
+                              src="/images/menu 1.png"
+                              className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[27px] 2xl:w-[40px] h-auto mt-2 2xl:mt-2  "
+                            />
+                          </li>
+                          <li className="mt-1 md:mt-3 2xl:mt-4 ml-2 lg:ml-4">
+                            Weekly Menu
+                          </li>
+                        </ul>
+                      </button>
                     </a>
                   </li>
                 </ul>
@@ -350,7 +350,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             </h2>
                           </button>
                         </div>
-                       
+
                         <div className="   col-span-6  ">
                           <button className={`${selectedPlan == "GreenDietVegan" || selectedPlan == "IndianFusionNonVegetarian" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
                             onClick={() => {
@@ -368,7 +368,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             </h2>
                           </button>
                         </div>
-                       
+
 
                       </div>
 
@@ -490,7 +490,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   <div className="relative" >
                     <select id="cars" name="carlist" form="carform" className="f-f-b  text-xsone lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
                       onChange={(e) => {
-                        console.log("eeee",selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
+                        console.log("eeee", selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
                         setMealType({
                           id: e.target.value?.split?.("|")?.[0],
                           price: e.target.value?.split?.("|")?.[1]
@@ -528,7 +528,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 {/* nabeel bhai code  */}
                 <div className="relative" >
                   <Multiselect
-                  className="multiselectsetting"
+                    className="multiselectsetting"
                     placeholder={
                       !allergies || allergies.length <= 0
                         ? "Select an option"
@@ -681,8 +681,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
               </div>
             </div>
           </div>
-        </div>
-      }
+        }
+      </div>
       {step == 2 &&
         <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
       }

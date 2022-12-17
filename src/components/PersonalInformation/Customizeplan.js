@@ -12,7 +12,7 @@ export default function CustomizeplanPersonalInformation({step, setStep, setPers
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mb-5 mt-10 md:my-20">
         {/* code testing */}
-        <Steps step={step} />
+        {/* <Steps step={step} /> */}
         {/* code testing ended */}
 
         <div className="grid grid-cols-12 gap-8 mt-10 md:my-10 2xl:my-20   bg-green-light rounded-[100px] ">

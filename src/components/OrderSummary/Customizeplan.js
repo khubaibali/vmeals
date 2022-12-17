@@ -15,7 +15,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 md:my-20">
         {/* code testing */}
-        <Steps step={step} />
+        {/* <Steps step={step} /> */}
         {/* code testing ended */}
         <div className=" md:w-8/12 ml-auto mr-auto lg:w-full ">
           <div className="grid grid-cols-12 gap-8 my-10 2xl:my-20    ">

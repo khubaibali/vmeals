@@ -15,7 +15,7 @@ const Steps = ({ step, setStep }) => {
                                             <ul className="inline-flex">
                                                 <li>
                                                     <img
-                                                        src={`${step == 0 ? "/images/choose-plan-active 1.png" : "/images/choose-plan-inactive-diet.png" } `}
+                                                        src={`${step == 0 ? "/images/choose-plan-active 1.png" : "/images/choose-plan-inactive-diet.png"} `}
                                                         className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                                     />
                                                 </li>
@@ -37,12 +37,12 @@ const Steps = ({ step, setStep }) => {
                             {/* <Link href="/classicdiet" > */}
                             <div className="relative">
                                 <button
-                                    // onClick={() => {
-                                    //     if(step == 2 || step == 3 || step == 4){
-                                    //         setStep(1)
-                                    //     }
-                                    // }}
-                                 class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? 'green-gradiant-2   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                    onClick={() => {
+                                        if (step == 2 || step == 3 || step == 4) {
+                                            setStep(1)
+                                        }
+                                    }}
+                                    class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? 'green-gradiant-2   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
@@ -65,7 +65,13 @@ const Steps = ({ step, setStep }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             <div className="relative">
                                 {/* <Link href="/personalInformation" > */}
-                                <button class={` ${step == 2 ? 'green-gradiant-2   text-white' : 'text-black  '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                <button
+                                    onClick={() => {
+                                        if (step == 3 || step == 4) {
+                                            setStep(2)
+                                        }
+                                    }}
+                                    class={` ${step == 2 ? 'green-gradiant-2   text-white' : 'text-black  '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
@@ -88,11 +94,17 @@ const Steps = ({ step, setStep }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             <div className="relative">
                                 {/* <Link href="/deliveryInformation" > */}
-                                <button class={` ${step == 3 ? 'green-gradiant-2   text-white' : 'text-black  '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                <button
+                                    onClick={() => {
+                                        if (step == 4) {
+                                            setStep(3)
+                                        }
+                                    }}
+                                    class={` ${step == 3 ? 'green-gradiant-2   text-white' : 'text-black  '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
-                                                src={`${step == 3 ? "/images/delivery-icon-active 1.png" : "/images/delivery-icon-inactive.png"  }`}
+                                                src={`${step == 3 ? "/images/delivery-icon-active 1.png" : "/images/delivery-icon-inactive.png"}`}
                                                 className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                             />
                                         </li>
