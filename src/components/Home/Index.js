@@ -7,7 +7,7 @@ const Genius = dynamic(() => import("./Genius"))
 const Fitness = dynamic(() => import("./Fitness"))
 const Ourblog = dynamic(() => import("./Ourblog"))
 const Fotter = dynamic(() => import("../Common/Footer"))
-const Review = dynamic(() => import("../About Us/Review"))
+// const Review = dynamic(() => import("../About Us/Review"))
 
 export default function Index({ headerData, sliderBarData, builtData, ourGeniusData, homeFitnessData, ourHomeBlogData, socialMediaIcon, footerData, tradeMarkData }) {
   // console.log("homeFitnessData",homeFitnessData)
@@ -22,7 +22,7 @@ export default function Index({ headerData, sliderBarData, builtData, ourGeniusD
       </div>
       <Genius ourGeniusData={ourGeniusData} />
       <Fitness homeFitnessData={homeFitnessData} />
-      <Review />
+      {/* <Review /> */}
       <Ourblog ourHomeBlogData={ourHomeBlogData} />
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
