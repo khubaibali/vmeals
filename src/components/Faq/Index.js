@@ -13,7 +13,7 @@ export default function Index({tradeMarkData,headerData,footerData,sliderBarData
         <Hero sliderBarData={sliderBarData}/>
       </div>
       <Questions faqQuestions={faqQuestions} />
-      <div className=" 2xl:mt-[300px]" >
+      <div className=" 2xl:mt-[100px]" >
       <Review />
       </div>
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>

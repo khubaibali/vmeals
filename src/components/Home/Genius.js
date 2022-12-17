@@ -11,7 +11,7 @@ export default function Genius({ ourGeniusData = [{}] }) {
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  sm:gap-8 lg:gap-14  ">
             <div className="   col-span-12 lg:col-span-6  lg:hidden ">
-              <h2 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10  tracking-[1px] lg:tracking-[0.22em] ">
+              <h2 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10 tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
               </h2>
@@ -29,11 +29,11 @@ export default function Genius({ ourGeniusData = [{}] }) {
 
               <div className="text-center">
 
-                <a className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  " href='https://wa.me/+971562922081' target={"_blank"}>
+                <button className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  " href='https://wa.me/+971562922081' target={"_blank"}>
                   {/* Book Appointment */}
                   {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
 
-                </a>
+                </button>
 
               </div>
             </div>
@@ -45,7 +45,7 @@ export default function Genius({ ourGeniusData = [{}] }) {
               />
             </div>
             <div className="   col-span-12 lg:col-span-6 hidden lg:block ">
-              <h2 className="  text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-0 tracking-[1px] lg:tracking-[0.22em] ">
+              <h2 className="  text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-0  tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
               </h2>

@@ -57,12 +57,11 @@ export default function Hero({ sliderBarData = [{}] }) {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-[2%] 2xl:bottom-[10%]  3xl:bottom-[3%] left-[49%] hidden md:block ">
+        <div className="absolute bottom-[2%] md:bottom-[7%] 2xl:bottom-[10%]  h-auto 3xl:bottom-[3%] left-[49%] hidden md:block ">
           {/* <svg
             className=" w-[21px] h-[28px] md:w-[40px] md:h-[52px] "
             viewBox="0 0 40 52"
             fill="none"
-
           >
             <path
               d="M21.5608 51.1407L39.361 30.8338C39.773 30.3642 40 29.7372 40 29.0687C40 28.4001 39.773 27.7732 39.361 27.3035L38.0504 25.808C37.1964 24.8349 35.8085 24.8349 34.9558 25.808L20.0083 42.8602L5.04419 25.7891C4.63216 25.3194 4.08289 25.0601 3.49721 25.0601C2.91087 25.0601 2.3616 25.3194 1.94925 25.7891L0.639017 27.2846C0.226988 27.7546 -9.51526e-07 28.3812 -9.51526e-07 29.0498C-9.51526e-07 29.7183 0.226988 30.3453 0.639017 30.8149L18.4555 51.1407C18.8688 51.6115 19.4207 51.8701 20.0073 51.8686C20.5963 51.8701 21.1478 51.6115 21.5608 51.1407Z"
@@ -75,7 +74,7 @@ export default function Hero({ sliderBarData = [{}] }) {
               <use xlinkHref={`${BaseURL}${sliderBarData[0]?.VMealsArrowsDownUploadImage?.url.replace("/","")}`} />
              
           </svg> */}
-          <img src={`${BaseURL}${sliderBarData[0]?.VMealsArrowsDownUploadImage?.url.replace("/", "")}`} />
+            <img src={`${BaseURL}${sliderBarData[0]?.VMealsArrowsDownUploadImage?.url.replace("/","")}`}  className=" width-[31px] h-auto " />
         </div>
       </div>
     </>

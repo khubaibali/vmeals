@@ -81,6 +81,7 @@ module.exports = {
       '8xl': '65px',
       '9xl': '60px',
       '10xl': '100px',
+      '11xl': '32px',
     },
   },
   plugins: [],

@@ -12,8 +12,11 @@ export default function Questions({ faqQuestions=[{}] }) {
           {/* FREQUENTLY ASKED QUESTIONS */}
           {faqQuestions[0]?.VMealsFaqsTitle}
         </h2>
-
+        </div>
         {/* code testing */}
+        <div className="question-bg-drp" >
+
+        <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 ">
         <div className="flex flex-wrap mt-5 md:mt-16  ">
           <div className="w-full z-10  ">
             <div className="no-scrollbar overflow-x-auto hidescrol">
@@ -69,17 +72,18 @@ export default function Questions({ faqQuestions=[{}] }) {
             </div>
           </div>
         </div>
-
+        </div>
+        </div>
         {/* code testing ended */}
-      </div>
-      <img
+    
+      {/* <img
         src="/images/faqtabbg.png"
         className="2xl:w-[965px]  hidden md:block 2xl:h-[823px] xl:w-[662px]  xl:h-[523px] md:w-[398px] lg:w-[487px]  md:h-[497px] absolute top-[100px] z-[-1px]   "
       />
       <img
         src="/images/FAQ Mobile Shape.png"
         className="w-full md:hidden h-[372px] absolute top-[100px] z-[-1px]  "
-      />
+      /> */}
     </div>
   );
 }

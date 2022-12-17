@@ -292,7 +292,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
             <div className="   col-span-12  lg:col-span-6  ">
-              <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  md:leading-[56px] uppercase ">
+              <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center lg:text-left  md:leading-[56px] uppercase ">
                 {heading}
               </h1>
               <RTFMapping data={description} />
@@ -301,25 +301,25 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
               <div className="bg-green-light p-4 md:p-8 rounded-[20px]  ">
                 <ul className="inline-flex w-full ">
                   <li>
-                    <h2 class=" text-green f-f-b text-center md:text-left text-base mt-3  md:text-3xl 2xl:text-5xl md:mt-5  ">
+                    <h2 class=" text-green f-f-b text-center md:text-left text-base mt-3  md:text-3xl lg:text-lg  2xl:text-5xl md:mt-5  ">
                       Customise your plan
                     </h2>
                   </li>
                   <li className="text-right ml-auto ">
                     <a href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`} target="_blank">
-                      <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
-                        <ul className="inline-flex">
-                          <li>
-                            <img
-                              src="/images/menu 1.png"
-                              className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[27px] 2xl:w-[40px] h-auto mt-2 2xl:mt-2  "
-                            />
-                          </li>
-                          <li className="mt-1 md:mt-3 2xl:mt-4 ml-2 lg:ml-4">
-                            Weekly Menu
-                          </li>
-                        </ul>
-                      </button>
+                    <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
+                      <ul className="inline-flex">
+                        <li>
+                          <img
+                            src="/images/menu 1.png"
+                            className="  w-[16px] md:w-[32px] lg:w-[28px] xl:w-[27px] 2xl:w-[40px] h-auto mt-2 lg:mt-4 xl:mt-3  "
+                          />
+                        </li>
+                        <li className="mt-1 md:mt-3 2xl:mt-4 ml-2 lg:ml-2 xl:ml-4">
+                          Weekly Menu
+                        </li>
+                      </ul>
+                    </button>
                     </a>
                   </li>
                 </ul>

@@ -44,7 +44,7 @@ export default function Contactusform() {
       <div className="w-9/12 sm:w-full ml-auto mr-auto ">
         <div className="grid grid-cols-12 gap-5  md:gap-8 2xl::gap-14  ">
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
+            <h2 className=" text-sm xl:text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
               First Name <span className="text-red">* </span>
             </h2>
             <input
@@ -55,7 +55,7 @@ export default function Contactusform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black md:mt-10 mb-1 ">
+            <h2 className=" text-sm xl:text-base f-f-b text-black md:mt-10 mb-1 ">
               Last Name <span className="text-red">* </span>
             </h2>
             <input
@@ -66,7 +66,7 @@ export default function Contactusform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <h2 className=" text-sm xl:text-base f-f-b text-bla  ">
               Email Address <span className="text-red">* </span>
             </h2>
             <input
@@ -77,7 +77,7 @@ export default function Contactusform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black  ">
+            <h2 className=" text-sm xl:text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
             </h2>
 
@@ -134,7 +134,7 @@ export default function Contactusform() {
             </form>
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <h2 className=" text-sm xl:text-base f-f-b text-black  ">
               Inquiry Type <span className="text-red">* </span>
             </h2>
 
@@ -161,7 +161,7 @@ export default function Contactusform() {
             {/* new code data end */}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <h2 className=" text-sm xl:text-base f-f-b text-bla  ">
               How should we contact you?<span className="text-red">* </span>
             </h2>
             {/* new code data started */}
@@ -185,10 +185,9 @@ export default function Contactusform() {
               />
             </div>
             {/* new code data end */}
-
           </div>
           <div className="   col-span-12  ">
-            <h2 className=" text-base f-f-b text-black  ">
+            <h2 className=" text-sm xl:text-base f-f-b text-black  ">
               Message <span className="text-red">* </span>
             </h2>
 

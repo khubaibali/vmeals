@@ -63,7 +63,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
             </ul>
 
           </div>
-          <div className="bg-white shadow-2xl mb-5 mt-4 md:my-10 py-3 md:py-6 lg:py-8 2xl:py-10 w-10/12 md:w-10/12 lg:w-8/12  2xl:w-9/12 text-center  ml-auto mr-auto rounded-full ">
+          <div className="bg-white shadow-2xl mb-5 mt-4 md:my-10 py-3 md:py-6 lg:py-8 2xl:py-10 w-10/12 md:w-10/12 xl:w-8/12  2xl:w-9/12 text-center  ml-auto mr-auto rounded-full ">
 
             <h2 className=" text-black f-f-b  text-smtwo  md:text-xl lg:text-3xl 2xl:text-6xl  uppercase ">
               Get your free
@@ -94,7 +94,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
         <div className="bg-green-dark py-1 md:py-5 ">
           <div className="w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
             <div className="grid grid-cols-12  gap-2   ">
-              <div className="col-span-4 md:col-span-4 lg:col-span-6 xl:col-span-4 2xl:col-span-5   ">
+              <div className="col-span-4 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3   ">
                 <a
                   href="#"
                   className=" relative top-[-5px] md:top-[0px] lg:top-[12px] text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
@@ -103,7 +103,23 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                   {tradeMarkData?.[0]?.CopyRightText}
                 </a>
               </div>
-              <div className=" col-span-8 md:col-span-8 lg:col-span-6 xl:col-span-8 2xl:col-span-7 text-center   ">
+              <div className="col-span-2 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3   ">
+                      <div className=" text-center" >
+
+                  
+                    <ul className="inline-flex  mt-2" >
+                    <li>
+                    <img src="/images/VIsa-Logo.png" className="    w-[24px] md:w-[40px] lg:w-[60px]  h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
+
+                  </li>
+                  <li>
+                    <img src="/images/Mastercard-Logo.png" className="  w-[24px]  md:w-[40px] lg:w-[60px]  h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
+
+                  </li>
+                    </ul>
+                    </div>
+              </div>
+              <div className=" col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 2xl:col-span-6 text-center   ">
                 <ul className="inline-flex">
                   {/* <li>
                   <a
@@ -126,7 +142,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                     Sitemap
                   </a>
                 </li> */}
-
+  
                   {
                     tradeMarkData?.[0]?.FooterList?.map((footeritem) => (
                       <li>
@@ -144,14 +160,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                       Refund & Cancellation Policy
                     </Link>
                   </li> */}
-                  <li>
-                    <img src="/images/VIsa-Logo.png" className="    w-[24px] md:w-[40px] lg:w-[60px] 2xl:w-[100px] h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
-
-                  </li>
-                  <li>
-                    <img src="/images/Mastercard-Logo.png" className="  w-[24px]  md:w-[40px] lg:w-[60px] 2xl:w-[100px] h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
-
-                  </li>
+            
                 </ul>
               </div>
             </div>

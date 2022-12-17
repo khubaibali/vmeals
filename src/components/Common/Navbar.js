@@ -206,8 +206,8 @@ function Navbar({ headerData = {} }) {
                 </li>
                 <li>
                   <a
-                    href="/meal-plans"
-                    className="block py-4   f-f-b  text-smtwo lg:text-sm xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant-2 px-10  text-white  "
+              href="/meal-plans"
+                    className="block py-4   f-f-b  text-smtwo lg:text-sm xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant-2 px-6 lg:px-10  text-white  "
                   >
                     {/* Get Started */}
                     {headerData?.VMealsHeaderButtonText}
@@ -215,12 +215,12 @@ function Navbar({ headerData = {} }) {
                 </li>
               </ul>
             </div>
-            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[100px] md:w-[100px] lg:h-[140px] lg:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[44%] -top-5 md:top-4 z-0 ">
+            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[44%] -top-5 md:top-[40px] lg:top-4 z-0 ">
               <Link href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
                   src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
                   alt={headerData?.VMealsHeaderLogoImage?.alt}
-                  className=" w-[58px] h-[32px] md:w-[60px] md:h-[40px] lg:w-[100px] lg:h-[60px] 2xl:w-[154px] 2xl:h-[84px] relative top-5 left-2 md:top-14 md:left-4"
+                  className=" w-[58px] h-[32px] md:w-[60px] md:h-auto lg:w-[85px]  2xl:w-[154px] 2xl:h-[84px] relative top-5  md:top-[24px] left-2 lg:top-[39px] xl:top-14 lg:left-4"
                 />
               </Link>
             </div>
