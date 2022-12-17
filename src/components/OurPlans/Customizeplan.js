@@ -287,7 +287,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       {step == 1 &&
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
           {/* code testing */}
-          <Steps step={step} />
+          <Steps step={step} setStep={setStep} />
           {/* code testing ended */}
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">

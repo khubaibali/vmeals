@@ -36,12 +36,12 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
     // // const daysss = [today.format("dddd"), tomorrow.format("dddd"), afterTomorrow.format("dddd")]
 
     // let exludedDates_ = [];
-    for (let day of days) {
-      if (offDaysArray.includes(day.format("dddd").toLowerCase())) {
-        // exludedDates_.push(new Date(day.format("YYYY-MM-DD")));
-        minDate.add(1, "days");
-      }
-    }
+    // for (let day of days) {
+    //   if (offDaysArray.includes(day.format("dddd").toLowerCase())) {
+    //     // exludedDates_.push(new Date(day.format("YYYY-MM-DD")));
+    //     minDate.add(1, "days");
+    //   }
+    // }
     let res = {
       // minDate: new Date(moment().add(3, 'days').format("YYYY-MM-DD")),
       minDate: new Date(minDate.format("YYYY-MM-DD")),

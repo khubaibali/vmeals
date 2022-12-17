@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-const Steps = ({ step }) => {
+const Steps = ({ step, setStep }) => {
+    console.log("setStep(1)", setStep)
     return (
         <>
             <div className="no-scrollbar overflow-x-auto hidescrol">
@@ -35,7 +36,13 @@ const Steps = ({ step }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             {/* <Link href="/classicdiet" > */}
                             <div className="relative">
-                                <button class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? 'green-gradiant-2   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
+                                <button
+                                    // onClick={() => {
+                                    //     if(step == 2 || step == 3 || step == 4){
+                                    //         setStep(1)
+                                    //     }
+                                    // }}
+                                 class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? 'green-gradiant-2   text-white' : 'text-black  '}  rounded-full    px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]`}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
