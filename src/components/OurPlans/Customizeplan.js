@@ -140,9 +140,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     let body = {
       amount: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
       totals: {
-        subtotal: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
+        subtotal: ((Number(price)) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
         tax: 0,
-        discount: 0,
+        discount: Number(discountPrice).toFixed(2),
         skipTotalsValidation: true,
       },
       items: [
@@ -279,7 +279,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     setTotalPrice()
   })
 
-  console.log("optionsoptions",selectedPlan,  PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name))
+  console.log("optionsoptions",price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 
   return (
@@ -338,7 +338,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
                           <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
                             setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
-                            let select = selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian"
+                            let select = selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet"
                             setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
                             setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                               id: i,
@@ -490,10 +490,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   <div className="relative" >
                     <select id="cars" name="carlist" form="carform" className="f-f-b  text-xsone lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
                       onChange={(e) => {
-                        setMealType(
-                          e.target.value?.split?.("|")?.[0]
-                        );
-                        setPrice(e.target.value?.split?.("|")?.[1]);
+                        console.log("eeee",selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
+                        setMealType({
+                          id: e.target.value?.split?.("|")?.[0],
+                          price: e.target.value?.split?.("|")?.[1]
+                        });
+                        setPrice(PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price)
+                        // setPrice(e.target.value?.split?.("|")?.[1]);
                       }}
                     >
                       {selectedDaysPerWeek?.mealType?.map((dpw) => (
