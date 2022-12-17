@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { vmealsContactUs } from "../../lib/APICommunications";
 import Contactusform from "../Common/Contactusform";
-
+const images = ["/images/location.png","/images/smartphone.png","/images/email.png","/images/clock.png"]
 export default function Fitnesour({ contactUsData = [{}] }) {
 
   return (
@@ -23,7 +23,7 @@ export default function Fitnesour({ contactUsData = [{}] }) {
                     <li>
                       {" "}
                       <img
-                        src="/images/clock.png"
+                        src={images[ind]}
                         className=" width-[34px] md:width-[40px] 2xl:width-[50px] h-[34px] md:h-auto "
                       />{" "}
                     </li>
