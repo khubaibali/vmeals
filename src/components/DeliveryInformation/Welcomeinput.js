@@ -107,6 +107,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
         deliverySlot,
         deliverySlotList
       })
+      scrollTo(0, 500);
       setStep(4)
     } else {
       console.log("")
