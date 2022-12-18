@@ -17,7 +17,7 @@ export default function Fitnesour({ ourParnersData }) {
             {/* OUR PARTNERS */}
             {ourParnersData?.[0]?.VMealsOurPartnersTitle}
           </h2>
-          {<OurSlickWraper data={ourParnersData[0]?.VMealsOurPartnersList} setPartnerListIndex={setPartnerListIndex}/>}
+          {<OurSlickWraper description={ourParnersData[0]?.VMealsOurPartnersList[0]?.VMealsOurPartnersDescription} data={ourParnersData[0]?.VMealsOurPartnersList} setPartnerListIndex={setPartnerListIndex}/>}
           </div>
         </div>
         <div className="   col-span-12 lg:col-span-1 xl:col-span-1  "></div>
