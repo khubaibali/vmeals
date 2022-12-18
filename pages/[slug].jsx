@@ -7,7 +7,7 @@ import SEO from '../src/components/Common/SEO'
 
 
 export default function ourblogdetails(props) {
-    //console.log("our blog detail",props)
+    console.log("our blog detail",props)
     const metaDataContent = Object?.values(props?.metaData?.docs).find(c => c.title == "Blog")
   return (
     <div>
@@ -19,8 +19,8 @@ export default function ourblogdetails(props) {
 
 
 export async function getServerSideProps({req,res,query}) {
-    //console.log('---------------------',query['slug'])
-    //console.log('>>>>>>>>>>>>>>>>>>>>>>')
+    console.log('---------------------',query['slug'])
+    console.log('>>>>>>>>>>>>>>>>>>>>>>')
     res.setHeader(
         'Cache-Control',
         'public, s-maxage=10, stale-while-revalidate=59'
@@ -45,7 +45,7 @@ export async function getServerSideProps({req,res,query}) {
         }, // will be passed to the page component as props
       }
     } catch (error) {
-        //console.log("errror",error)
+        console.log("errror",error)
       return {
         props: {
           headerData: {}, sliderBarData: {}, socialMediaIcon: []

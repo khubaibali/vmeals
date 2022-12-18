@@ -9,7 +9,7 @@ import { getServerSideProps as contentDataClassicDietProps } from '../src/compon
 
 
 const mealPlans = (props) => {
-  //console.log("props in meall", props)
+  console.log("props in meall", props)
   return (
     <div>
       <ClassicDietpage
@@ -28,14 +28,14 @@ const mealPlans = (props) => {
 
 export async function getServerSideProps(constext) {
   try {
-    //console.log("calling class")
+    console.log("calling class")
     let data = await headerProps()
     let contentData = await contentDataProps();
     let contentDataClassicDiet = await contentDataClassicDietProps();
     let builtData = await builtDataProps()
     let sampleMenu = await sampleMenuDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
-    //console.log("header props", data)
+    console.log("header props", data)
     return {
       props: {
         ...data.props,

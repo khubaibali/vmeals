@@ -20,10 +20,10 @@ export default function confirmation(props) {
 
 export async function getServerSideProps(constext) {
   try {
-    //console.log("calling class")
+    console.log("calling class")
     let data = await headerProps()
     let socialMediaIcon = await socialMediaIconsProps()
-    //console.log("header props", data)
+    console.log("header props", data)
     return {
       props: {
         ...data.props,

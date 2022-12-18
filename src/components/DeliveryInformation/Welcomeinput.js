@@ -18,7 +18,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
   const [errors, setErrors] = useState(null);
 
   const startingPlanDateFormat = () => {
-    //console.log("planInformation", planInformation)
+    console.log("planInformation", planInformation)
     // if()
     let offDaysArray = planInformation?.selectedDaysPerWeek?.days != 7 && planInformation?.offDays?.toLowerCase()?.split(" - ") || [];
     // // let offDaysArray = ["wednesday", "tuesday"];
@@ -51,7 +51,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
       },
     };
 
-    //console.log("resss >>>>>>>>>>>>>", res);
+    console.log("resss >>>>>>>>>>>>>", res);
     return res;
   };
 
@@ -110,7 +110,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
       scrollTo(0, 500);
       setStep(4)
     } else {
-      //console.log("")
+      console.log("")
     }
   }
 

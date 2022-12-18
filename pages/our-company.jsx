@@ -7,7 +7,7 @@ import { getServerSideProps as ourCompanyDataProps} from '../src/components/Abou
 import SEO from '../src/components/Common/SEO'
 import { vmealsPages } from '../src/lib/APICommunications'
 export default function about(props) {
-  //console.log("our-company props", props)
+  console.log("our-company props", props)
   const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Our Company")
   return (
     <div>
@@ -27,7 +27,7 @@ export async function getServerSideProps({req,res}) {
     let metaData = await (await fetch(vmealsPages)).json()
     let final = resolvedPromises.map((itx)=>(itx.props))
     let newObject ={}
-    //console.log("our company final", final)
+    console.log("our company final", final)
     final.forEach((x)=>{newObject={...newObject,...x}})
     
     return {

@@ -9,7 +9,7 @@ import { getServerSideProps as contentDataPropsPage } from '../src/components/Gl
 
 
 export default function gluent(props) {
-  //console.log("proppspppspspsp", props)
+  console.log("proppspppspspsp", props)
   return (
     <div>
       <Gluentdietpage
@@ -28,14 +28,14 @@ export default function gluent(props) {
 
 export async function getServerSideProps(constext) {
   try {
-    //console.log("calling class")
+    console.log("calling class")
     let data = await headerProps()
     let builtData = await builtDataProps()
     let contentData = await contentDataProps();
     let sampleMenu = await sampleMenuDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
-    //console.log("header props", contentDataPage)
+    console.log("header props", contentDataPage)
     return {
       props: {
         ...data.props,

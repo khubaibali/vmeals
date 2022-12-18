@@ -8,7 +8,7 @@ import { vmealsPages } from '../src/lib/APICommunications'
 import { ToastContainer } from 'react-toastify'
 
 export default function Contactus(props) {
-  //console.log("contactus page", props)
+  console.log("contactus page", props)
   const metaDataContent = Object.values(props.metaData.docs).find(c => c.title == "Contact Us")
   return (
     <div>
@@ -32,7 +32,7 @@ export default function Contactus(props) {
 
 export async function getServerSideProps() {
   try {
-    //console.log("calling")
+    console.log("calling")
     let data = await headerProps()
     let socialMediaIcon = await socialMediaIconsProps()
     let constactUsData = await contactUsProps()
@@ -48,7 +48,7 @@ export async function getServerSideProps() {
       },
     }
   } catch (error) {
-    //console.log("Inside catch", error?.message)
+    console.log("Inside catch", error?.message)
     return {
       props: {
         headerData: {}, sliderBarData: {}, builtData: [], ourGeniusData: [], homeFitnessData: [], ourHomeBlogData: [], socialMediaIcon: []

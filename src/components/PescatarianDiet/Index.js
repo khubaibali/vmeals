@@ -44,7 +44,7 @@ export async function getServerSideProps() {
    
     let contentDataPescatarianDiet = await fetch(vmealsPescatarianDietContent)
     let data = await contentDataPescatarianDiet.json()
-    //console.log("slider bar ->>",data)
+    console.log("slider bar ->>",data)
    
     return {
       props: { contentDataPescatarianDiet: { ...data?.docs } }, // will be passed to the page component as props

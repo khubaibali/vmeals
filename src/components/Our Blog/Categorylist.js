@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 export default function Categorylist({ categoriesAll }) {
-  //console.log("categoriesAll", categoriesAll)
+  console.log("categoriesAll", categoriesAll)
   const groups = categoriesAll?.docs?.reduce((groups, item) => {
     const group = (groups[item.VmealsBlogCategory.VmealsBlogsCategoryName] || []);
     group.push(item);
@@ -10,7 +10,7 @@ export default function Categorylist({ categoriesAll }) {
     return groups;
   }, {});
 
-  //console.log('GROUPS', groups)
+  console.log('GROUPS', groups)
 
   return (
     <div>

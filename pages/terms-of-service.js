@@ -22,13 +22,13 @@ export async function getServerSideProps({ req, res }) {
     'public, s-maxage=10, stale-while-revalidate=59'
   )
   try {
-    //console.log("calling")
+    console.log("calling")
     let resolvedPromises = await Promise.all([headerProps(), socialMediaIconsProps()])
     let metaData = await (await fetch(vmealsPages)).json()
     let final = resolvedPromises.map((itx) => (itx.props))
     let newObject = {}
     final.forEach((x) => { newObject = { ...newObject, ...x } })
-    //console.log("header props", final)
+    console.log("header props", final)
     return {
       props: {
         ...newObject,

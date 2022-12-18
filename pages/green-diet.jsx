@@ -26,14 +26,14 @@ export default function greendiet(props) {
 
 export async function getServerSideProps(constext) {
   try {
-    //console.log("calling class")
+    console.log("calling class")
     let data = await headerProps()
     let builtData = await builtDataProps()
     let sampleMenu = await sampleMenuDataProps()
     let contentData = await contentDataProps();
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
-    //console.log("header props", contentDataPage)
+    console.log("header props", contentDataPage)
     return {
       props: {
         ...data.props,

@@ -7,7 +7,7 @@ let images = ["/images/facebook.png", "/images/instagram.png", "/images/whatsapp
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], tradeMarkData = [{}] }) {
-  //console.log("footer")
+  console.log("footer")
   const [registerForm, setFormData] = useState({})
   const [isDisabled, setDisable] = useState(false)
   function formControl(event) {

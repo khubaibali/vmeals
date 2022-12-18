@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Fitnesour({ ourParnersData }) {
   const [selectPartnerList, setPartnerListIndex] = useState(0)
-  //console.log('our parner data', ourParnersData)
+  console.log('our parner data', ourParnersData)
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mb-3 mt-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">

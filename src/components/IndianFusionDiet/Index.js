@@ -45,7 +45,7 @@ export async function getServerSideProps() {
    
     let contentDataIndianFusion = await fetch(vmealsIndianFusionDietContent)
     let data = await contentDataIndianFusion.json()
-    //console.log("slider bar ->>",data)
+    console.log("slider bar ->>",data)
    
     return {
       props: { contentDataIndianFusion: { ...data?.docs } }, // will be passed to the page component as props

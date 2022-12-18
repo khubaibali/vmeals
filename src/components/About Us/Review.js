@@ -1,9 +1,7 @@
 import React from "react";
-import { getGoogleReviews } from "../../lib/APICommunications";
 
 
-export default function Review({googleReview}) {
-  //console.log("Reviews",googleReview)
+export default function Review() {
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 lg:my-20">
       <img
@@ -21,17 +19,24 @@ export default function Review({googleReview}) {
 }
 export async function getServerSideProps({ req, res }) {
   try {
-    //console.log('header fetching')
-    let data = await fetch(getGoogleReviews)
-    let googleReviewsRes = await data.json()
+    console.log('header fetching')
+    // let data = await fetch("https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJcTFhgEdzXz4RJtANMZv4OJs&fields=reviews&key=AIzaSyD2wruZXxV5EAJlMJLsjGjGpAOlfXdt_Ko", {
+    //   method: "GET",
+    //   mode: 'no-cors',
+    //   redirect: "follow",
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   }
+    // })
+    // data = data.json()
     return {
       props: {
-        googleReviews:{...googleReviewsRes?.docs}
+        googleReviews:[]
       }
     }
 
   } catch (error) {
-    //console.log(error)
+    console.log(error)
     return {
       props: {
         googleReviews: {}

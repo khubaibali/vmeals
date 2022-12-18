@@ -44,7 +44,7 @@ export async function getServerSideProps() {
    
     let contentDataKetoDiet = await fetch(vmealsKetoDietContent)
     let data = await contentDataKetoDiet.json()
-    //console.log("slider bar ->>",data)
+    console.log("slider bar ->>",data)
    
     return {
       props: { contentDataKetoDiet: { ...data?.docs } }, // will be passed to the page component as props

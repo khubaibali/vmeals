@@ -18,7 +18,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "ClassicDiet")
   const [step, setStep] = useState(1)
 
-  //console.log("headerDara in nnnnn", contentDataClassicDiet)
+  console.log("headerDara in nnnnn", contentDataClassicDiet)
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
@@ -52,7 +52,7 @@ export async function getServerSideProps() {
    
     let contentDataClassicDiet = await fetch(vmealsClassicDietContent)
     let data = await contentDataClassicDiet.json()
-    //console.log("slider bar ->>",data)
+    console.log("slider bar ->>",data)
    
     return {
       props: { contentDataClassicDiet: { ...data?.docs } }, // will be passed to the page component as props

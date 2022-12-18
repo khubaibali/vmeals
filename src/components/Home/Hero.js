@@ -2,7 +2,7 @@ import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsSliderBar } from '../../../src/lib/APICommunications';
 export default function Hero({ sliderBarData = [{}] }) {
-  //console.log("slider bar data", sliderBarData)
+  console.log("slider bar data", sliderBarData)
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto ">
@@ -83,10 +83,10 @@ export default function Hero({ sliderBarData = [{}] }) {
 
 export async function getServerSideProps() {
   try {
-    //console.log('Hero here')
+    console.log('Hero here')
     let vmealsSliderBarData = await fetch(vmealsSliderBar)
     let data = await vmealsSliderBarData.json()
-    //console.log("slider bar ->>", data)
+    console.log("slider bar ->>", data)
 
     return {
       props: { sliderBarData: { ...data?.docs } }, // will be passed to the page component as props

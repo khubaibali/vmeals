@@ -3,7 +3,7 @@ import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsOurBlogs } from '../../../src/lib/APICommunications';
 export default function Ourblog({ ourHomeBlogData }) {
-  //console.log("ourHomeData", ourHomeBlogData)
+  console.log("ourHomeData", ourHomeBlogData)
   return (
     <div className="bg-green-light">
       <div className="py-10 2xl:py-20">
@@ -120,7 +120,7 @@ export async function getServerSideProps() {
   try {
     let data = await fetch(vmealsOurBlogs)
     data = await data.json()
-    //console.log("our blog gerserver ->>", data)
+    console.log("our blog gerserver ->>", data)
 
     return {
       props: { ourHomeBlogData: { ...data } }, // will be passed to the page component as props

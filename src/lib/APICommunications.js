@@ -1,6 +1,6 @@
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL  || "https://vmeals.pagekite.me/";
 const BaseURLExternal = process.env.NEXT_PUBLIC_BASE_URL_EXTERNAL;
-// //console.log("BASE", BaseURL)
+// console.log("BASE", BaseURL)
 export const vmealsHeader = `${BaseURL}api/vmeals-header`;
 export const vmealsguide = `${BaseURL}api/vmeals-guide`;
 export const vmealsCustomersChooseUs = `${BaseURL}api/vmeals-customers-choose-us`;
@@ -36,5 +36,4 @@ export const vmealsOurBlogsALL = `${BaseURL}api/vmeals-blogs-data?page=1&limit=1
 export const vmealsPages = `${BaseURL}api/pages?page=1&limit=300`;
 export const vmealsSampleMenu = `${BaseURL}api/vmeals-sample-menu`;
 export const vmealsBlogCategories = `${BaseURL}api/blogcategories`;
-export const getGoogleReviews = `${BaseURL}api/getGoogleReviews`;
 export const useCoupon = `${BaseURLExternal}coupon/useCoupon`;

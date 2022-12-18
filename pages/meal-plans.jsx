@@ -19,7 +19,7 @@ export default function ourplans(props) {
 
 export async function getServerSideProps() {
   try {
-    //console.log("calling")
+    console.log("calling")
     let data = await headerProps()
     let sliderBarData = await sliderBarProps()
     let faqQuestions = await faqQuestionsProps()
@@ -28,7 +28,7 @@ export async function getServerSideProps() {
     let homeFitnessData = await homeFitnessDataProps()
     let ourHomeBlogData = await ourHomeBlogsDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
-    //console.log("header props",sliderBarData)
+    console.log("header props",sliderBarData)
      return {
        props: { 
          ...data.props,

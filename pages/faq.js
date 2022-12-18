@@ -7,7 +7,7 @@ import {getServerSideProps as faqQuestionsProps} from '../src/components/Faq/Que
 import SEO from '../src/components/Common/SEO'
 import { vmealsPages } from '../src/lib/APICommunications'
 export default function Faq(props) {
-  //console.log('faq page',props)
+  console.log('faq page',props)
   const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "FAQs")
   return (
     <div>
@@ -20,13 +20,13 @@ export default function Faq(props) {
 
 export async function getServerSideProps() {
   try {
-    //console.log("calling")
+    console.log("calling")
     let data = await headerProps()
     let sliderBarData = await sliderBarProps()
     let socialMediaIcon = await socialMediaIconsProps()
     let faqQuestions = await faqQuestionsProps()
     let metaData = await (await fetch(vmealsPages)).json()
-    //console.log("header props", faqQuestions)
+    console.log("header props", faqQuestions)
     return {
       props: {
         ...data.props,    //navbar
