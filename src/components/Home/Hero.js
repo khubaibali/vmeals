@@ -2,7 +2,7 @@ import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsSliderBar } from '../../../src/lib/APICommunications';
 export default function Hero({ sliderBarData = [{}] }) {
-  console.log("slider bar data", sliderBarData)
+  //console.log("slider bar data", sliderBarData)
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto ">
@@ -21,7 +21,7 @@ export default function Hero({ sliderBarData = [{}] }) {
                 <ul className="inline-flex  2xl:mb-0 md:mt-10  text-center md:text">
                   <li>
                     <a href="/meal-plans">
-                      <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  ">
+                      <button className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  ">
                         {/* View Plans */}
                         {sliderBarData[0]?.VMealsSilderBarButtonViewPlan}
                       </button>
@@ -29,7 +29,7 @@ export default function Hero({ sliderBarData = [{}] }) {
                   </li>
                   <li>
                     <a href="/faq">
-                      <button class="border buttonstyle border-green f-f-b text-sm md:text-base 2xl:text-lg text-black ml-4   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px] 2xl:w-[219px] mt-5 rounded-full  ">
+                      <button className="border buttonstyle border-green f-f-b text-sm md:text-base 2xl:text-lg text-black ml-4   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px] 2xl:w-[219px] mt-5 rounded-full  ">
                         {/* Learn More */}
                         {sliderBarData[0]?.VMealsSilderBarUploadButtonLearnMore}
                       </button>
@@ -83,10 +83,10 @@ export default function Hero({ sliderBarData = [{}] }) {
 
 export async function getServerSideProps() {
   try {
-    console.log('Hero here')
+    //console.log('Hero here')
     let vmealsSliderBarData = await fetch(vmealsSliderBar)
     let data = await vmealsSliderBarData.json()
-    console.log("slider bar ->>", data)
+    //console.log("slider bar ->>", data)
 
     return {
       props: { sliderBarData: { ...data?.docs } }, // will be passed to the page component as props

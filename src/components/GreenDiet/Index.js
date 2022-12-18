@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Common/Navbar";
 import Hero from "../OurPlans/Hero";
-import Review from "../About Us/Review";
+// import Review from "../About Us/Review";
 import Fotter from "../Common/Footer";
 import Built from "../Home/Built";
 import Question from "../Faq/Questions";
@@ -18,7 +18,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
   const [step, setStep] = useState(1)
 
   useEffect(() => {
-    console.log("")
+    //console.log("")
   },[selectedPlan])
 
   return (
@@ -37,7 +37,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
         {/* <Question /> */}
       </div>
-      <Review />
+      {/* <Review /> */}
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
   );
@@ -48,7 +48,7 @@ export async function getServerSideProps() {
    
     let contentDataGreenDiet = await fetch(vmealsGreenDietContent)
     let data = await contentDataGreenDiet.json()
-    console.log("slider bar ->>",data)
+    //console.log("slider bar ->>",data)
    
     return {
       props: { contentDataGreenDiet: { ...data?.docs } }, // will be passed to the page component as props

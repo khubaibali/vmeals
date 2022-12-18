@@ -37,7 +37,7 @@ export default function Simplemenu() {
   return (
     <div>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-20">
-        <h2 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  leading-[56px] uppercase ">
+        <h2 className="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  leading-[56px] uppercase ">
           SAMPLE MENU
         </h2>
         <Slider {...settings}>
@@ -45,7 +45,7 @@ export default function Simplemenu() {
           <div>
             <div className="relative">
               <img src="/images/breakfast.png" className=" w-full h-[300px] " />
-              <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
+              <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Breakfast
               </button>
             </div>
@@ -58,7 +58,7 @@ export default function Simplemenu() {
           <div>
             <div className="relative">
               <img src="/images/luch.png" className=" w-full h-[300px] " />
-              <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
+              <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Lunch
               </button>
             </div>
@@ -71,7 +71,7 @@ export default function Simplemenu() {
           <div>
             <div className="relative">
               <img src="/images/dinner.png" className=" w-full h-[300px] " />
-              <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
+              <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Dinner
               </button>
             </div>
@@ -84,7 +84,7 @@ export default function Simplemenu() {
           <div>
             <div className="relative">
               <img src="/images/snack.png" className=" w-full h-[300px] " />
-              <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
+              <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Snack
               </button>
             </div>
@@ -97,7 +97,7 @@ export default function Simplemenu() {
           <div>
             <div className="relative">
               <img src="/images/drink.png" className=" w-full h-[300px] " />
-              <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
+              <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
                 Drink
               </button>
             </div>

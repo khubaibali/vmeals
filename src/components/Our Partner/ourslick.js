@@ -22,7 +22,7 @@ export default function Slick({ data }) {
             <div>
               <img
                 src={`${BaseURL}${item?.VMealsOurPartnersImageUpload?.url}` }
-                className="w-[88%] md:w-[74%] xl:w-[70%] 2xl:w-[80%] h-auto 2xl:[130px] ml-auto mr-auto pt-[17%] lg:pt-[25%] "
+                className="w-full h-auto  ml-auto mr-auto  rounded-2xl "
               />
             </div>
           ))

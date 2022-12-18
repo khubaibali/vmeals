@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Steps = ({ step, setStep }) => {
-    console.log("setStep(1)", setStep)
+    //console.log("setStep(1)", setStep)
     return (
         <>
             <div className="no-scrollbar overflow-x-auto hidescrol">
@@ -11,7 +11,7 @@ const Steps = ({ step, setStep }) => {
                             <div className="relative">
                                 <div className="text-left" >
                                     <Link href="/meal-plans">
-                                        <button class={`    ${step == 0 ? ' text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b text-white green-gradiant-2 rounded-full px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]  ' : 'text-black  px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px] '} rounded-full  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  `}>
+                                        <button className={`    ${step == 0 ? ' text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b text-white green-gradiant-2 rounded-full px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px]  ' : 'text-black  px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px] '} rounded-full  text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  `}>
                                             <ul className="inline-flex">
                                                 <li>
                                                     <img
@@ -42,7 +42,7 @@ const Steps = ({ step, setStep }) => {
                                             setStep(1)
                                         }
                                     }}
-                                    class={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? ' text-smtwo md:text-xstwo green-gradiant-2 lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b text-white rounded-full px-[15px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[30px] 2xl:h-[74px] ' : 'px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]  text-black '}  rounded-full    `}>
+                                    className={` text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  ${step == 1 ? ' text-smtwo md:text-xstwo green-gradiant-2 lg:text-xsone xl:text-smtwo 2xl:text-base f-f-b text-white rounded-full px-[15px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[30px] 2xl:h-[74px] ' : 'px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]  text-black '}  rounded-full    `}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
@@ -71,7 +71,7 @@ const Steps = ({ step, setStep }) => {
                                             setStep(2)
                                         }
                                     }}
-                                    class={` ${step == 2 ? 'green-gradiant-2   text-white  f-f-b 2xl:px-[20px]  md:px-[18px]   px-[13px]  addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]' : 'text-black 2xl:px-[49px] md:px-[25px]  px-[32px]  addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]'} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  rounded-full   `}>
+                                    className={` ${step == 2 ? 'green-gradiant-2   text-white  f-f-b 2xl:px-[20px]  md:px-[18px]   px-[13px]  addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]' : 'text-black 2xl:px-[49px] md:px-[25px]  px-[32px]  addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]'} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r  rounded-full   `}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
@@ -100,7 +100,7 @@ const Steps = ({ step, setStep }) => {
                                             setStep(3)
                                         }
                                     }}
-                                    class={` ${step == 3 ? 'green-gradiant-2   text-white f-f-b px-[15px] md:px-[9px] xl:px-[17px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[21px]  lg:ml-[14px] xl:ml-0 2xl:ml-[14px] 2xl:h-[74px] ' : 'text-black px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px] '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full    `}>
+                                    className={` ${step == 3 ? 'green-gradiant-2   text-white f-f-b px-[15px] md:px-[9px] xl:px-[17px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[21px]  lg:ml-[14px] xl:ml-0 2xl:ml-[14px] 2xl:h-[74px] ' : 'text-black px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px] '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full    `}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
@@ -123,7 +123,7 @@ const Steps = ({ step, setStep }) => {
                         <div className="   col-span-2 md:col-span-2 xl:col-span-2  ">
                             {/* <Link href="/ordersummary" > */}
                             <div className={`${step == 4 ? "text-right"  : ""}`} >
-                            <button class={` ${step == 4 ? 'green-gradiant-2   text-white f-f-b  px-[37px] md:px-[29px] lg:px-[47px] xl:px-[38px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[45px] 2xl:h-[74px] ' : 'text-black   px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px] '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full ml-[16px] `}>
+                            <button className={` ${step == 4 ? 'green-gradiant-2   text-white f-f-b  px-[37px] md:px-[29px] lg:px-[47px] xl:px-[38px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[45px] 2xl:h-[74px] ' : 'text-black   px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[49px] 2xl:h-[74px] '} text-smnew md:text-xstwo lg:text-xsone xl:text-smtwo 2xl:text-base f-f-r   rounded-full ml-[16px] `}>
                                 <ul className="inline-flex">
                                     <li>
                                         <img

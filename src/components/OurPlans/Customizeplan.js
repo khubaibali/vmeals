@@ -14,7 +14,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu }) {
-  console.log("setStepsetStep", weeklyMenu);
+  //console.log("setStepsetStep", weeklyMenu);
   const [isLoading, setLoading] = useState(false);
 
   // const [selectedPlan, setSelectedPlan]
@@ -48,7 +48,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [maximum, setmaximum] = React.useState(false);
 
   const setAlerg = (data) => {
-    console.log("hhhhhhhhhhhhhhhh", data);
+    //console.log("hhhhhhhhhhhhhhhh", data);
     // let res = data.map(a => a.allergy);
     setAllergiesData(data);
   };
@@ -75,7 +75,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       setCouponError("Please enter code first!");
     } else {
       setCouponError(null);
-      console.log("useee", couponValue);
+      //console.log("useee", couponValue);
       axios
         .post(useCoupon, { code: couponValue, email: personalInformation?.email })
         .then((res) => {
@@ -88,7 +88,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
             return false;
           } else {
             setCouponError(null);
-            console.log(
+            //console.log(
               "yyyyy",
               Number(price),
               Number(res?.doc?.discountPercentage),
@@ -102,7 +102,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
             setDiscountPrice(onlyDiscountPrice);
             setDiscountPercentage(Number(res?.data?.doc?.discountPercentage));
-            console.log(
+            //console.log(
               "typeof",
               typeof onlyDiscountPrice,
               onlyDiscountPrice,
@@ -115,7 +115,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
             let totalPriceConverted = Number(totalPrice);
             let priceFinal = priceConverted - onlyDiscountPrice;
             let totalPriceFinal = totalPriceConverted - onlyDiscountPrice;
-            console.log(
+            //console.log(
               "aaaaaaa",
               priceFinal,
               typeof priceFinal,
@@ -129,7 +129,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
           }
         })
         .catch((err) => {
-          console.log("ERROR", err);
+          //console.log("ERROR", err);
           return false;
         });
     }
@@ -184,22 +184,22 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       .then((res) => {
         // setPaymentAPIResponse(res);
 
-        console.log("payment api response");
+        //console.log("payment api response");
         if (res?.data?.doc?.success == false) {
           toast.success(res?.data?.doc?.error);
         }
         if (res?.data?.doc?.success == true) {
           cookies.set("paymentSuccess", true)
-          console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
+          //console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
           window.location = res?.data?.doc?.result?.redirectUrl;
           createOrder();
           // setLoading(false)
         }
-        console.log("RES", res);
+        //console.log("RES", res);
         return false;
       })
       .catch((err) => {
-        console.log("ERROR", err);
+        //console.log("ERROR", err);
         return false;
       });
   };
@@ -255,16 +255,16 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     //     setOrderAPIResponse(res);
     //   })
     //   .catch((err) => {
-    //     console.log("ERROR", err);
+    //     //console.log("ERROR", err);
     //     return false;
     //   });
   };
 
 
-  console.log("Personal Information", personalInformation)
+  //console.log("Personal Information", personalInformation)
 
   const getCustomizeActiveClass = (selected, checked, type) => {
-    console.log("SELECTED", selected);
+    //console.log("SELECTED", selected);
     if (type == "days") {
       return selected?.days == checked?.days ? "cusntn" : "";
     } else if (type == "name") {
@@ -278,7 +278,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     setTotalPrice()
   })
 
-  console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+  //console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 
   return (
@@ -291,7 +291,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
             <div className="   col-span-12  lg:col-span-6  ">
-              <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center lg:text-left  md:leading-[56px] uppercase ">
+              <h1 className="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center lg:text-left  md:leading-[56px] uppercase ">
                 {heading}
               </h1>
               <RTFMapping data={description} />
@@ -300,13 +300,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
               <div className="bg-green-light p-4 md:p-8 rounded-[20px]  ">
                 <ul className="inline-flex w-full ">
                   <li>
-                    <h2 class=" text-green f-f-b text-center md:text-left text-base mt-3  md:text-3xl lg:text-lg  2xl:text-5xl md:mt-5  ">
+                    <h2 className=" text-green f-f-b text-center md:text-left text-base mt-3  md:text-3xl lg:text-lg  2xl:text-5xl md:mt-5  ">
                       Customise your plan
                     </h2>
                   </li>
                   <li className="text-right ml-auto ">
                     <a href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`} target="_blank">
-                    <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
+                    <button className="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -489,7 +489,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   <div className="relative" >
                     <select id="cars" name="carlist" form="carform" className="f-f-b  text-xsone lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
                       onChange={(e) => {
-                        console.log("eeee", selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
+                        //console.log("eeee", selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
                         setMealType({
                           id: e.target.value?.split?.("|")?.[0],
                           price: e.target.value?.split?.("|")?.[1]
@@ -556,7 +556,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                       },
                     }}
                     onSelect={(e) => {
-                      console.log("eeeeeeeeeeee", e);
+                      //console.log("eeeeeeeeeeee", e);
                       setAlerg(e);
                     }}
                     options={options}
@@ -655,11 +655,11 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 </div>
                 <div className="grid grid-cols-12 gap-8  md:mt-8   ">
                   <div className="   col-span-6 xl:col-span-6 ">
-                    <ul class=" inline-flex mt-7  ">
-                      <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
-                      <li class=" ml-4 text-right ">
-                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
-                        <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price Exclusive of VAT</h3>
+                    <ul className=" inline-flex mt-7  ">
+                      <li><h2 className=" text-black text-2xl f-f-b ">Total:</h2></li>
+                      <li className=" ml-4 text-right ">
+                        <h2 className=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
+                        <h3 className="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price Exclusive of VAT</h3>
                       </li>
                     </ul>
                   </div>
@@ -700,7 +700,7 @@ export async function getServerSideProps() {
 
     let contentData = await fetch(vmealsPages)
     let data = await contentData.json()
-    console.log("slider bar ->>", data)
+    //console.log("slider bar ->>", data)
 
     return {
       props: { contentData: { ...data?.docs } }, // will be passed to the page component as props

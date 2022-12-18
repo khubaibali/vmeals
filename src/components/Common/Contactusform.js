@@ -38,7 +38,7 @@ export default function Contactusform() {
       });
 
   }
-  console.log("registerform", registerForm)
+  //console.log("registerform", registerForm)
   return (
     <>
       <div className="w-9/12 sm:w-full ml-auto mr-auto ">

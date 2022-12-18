@@ -4,7 +4,7 @@ import { vmealsOurGeniuses } from '../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
 
 export default function Genius({ ourGeniusData = [{}] }) {
-  console.log("ourGeniusData--->", ourGeniusData)
+  //console.log("ourGeniusData--->", ourGeniusData)
   return (
     <>
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px]  ">
@@ -60,7 +60,7 @@ export default function Genius({ ourGeniusData = [{}] }) {
                 nisi ut aliquip ex ea commodo consequat.{" "}
               </h2> */}
               <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription} />
-              <button class="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full mb-10 ">
+              <button className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full mb-10 ">
                 <a href='https://wa.me/+971562922081' target={"_blank"}>
                   {/* Book Appointment */}
                   {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
@@ -81,7 +81,7 @@ export async function getServerSideProps() {
 
     let ourGeniusData = await fetch(vmealsOurGeniuses)
     let data = await ourGeniusData.json()
-    console.log("slider bar ->>", data)
+    //console.log("slider bar ->>", data)
 
     return {
       props: { ourGeniusData: { ...data?.docs } }, // will be passed to the page component as props

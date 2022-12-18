@@ -39,7 +39,7 @@ export default function Registerform() {
       });
 
   }
-  console.log("registerform", registerForm)
+  //console.log("registerform", registerForm)
 
   return (
     <>

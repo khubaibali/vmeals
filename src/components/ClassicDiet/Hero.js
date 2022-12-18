@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export default function Hero({ step, plan }) {
-  // const [bg, setBg] = useState("/images/fi-sr-home.png");
-  // useEffect(() => {
-
-  // },[])
-  //console.log("steeppppppp", step,plan)
   return (
     <>
       <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">
-        {plan}
+        Classic Diet
       </h2>
       <div className="text-center mt-5  2xl:mt-16 ">
         <ul className="inline-flex">
           <li>
             <img
               alt=""
-              src={"/images/fi-sr-home.png"}
-              // src={step == 1 ? "/images/fi-sr-home.png" : step == 2 ? "/images/personalinformationbg.png" : step == 3 ? "/images/DeliveryInformationbg.png" : step == 4 ? "/images/Ordersummerbg.png" : "/images/fi-sr-home.png"}
-              className="w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-2"
+              src={step == 1 ? "/images/fi-sr-home.png" : step == 2 ? "/images/personalinformationbg.png" : step == 3 ? "/images/DeliveryInformationbg.png" : step == 4 ? "/images/Ordersummerbg.png" : "/images/fi-sr-home.png"}
+              className="w-[22px] 2xl:w-[35px] h-auto 2xl:-mt-2 "
             />
           </li>
           <li className=" ml-5 2xl:ml-10">
@@ -35,7 +29,7 @@ export default function Hero({ step, plan }) {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
+            <h2 className="  text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 2xl:-mt-2  ">
               Our Plans
             </h2>
           </li>
@@ -53,8 +47,8 @@ export default function Hero({ step, plan }) {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
-             {plan}
+            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 2xl:-mt-2  ">
+              Classic Diet
             </h2>
           </li>
           {step != 1 && 
@@ -74,7 +68,7 @@ export default function Hero({ step, plan }) {
             </li>
             <li className=" ml-5 2xl:ml-10">
               <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
-                {step == 2 ? "Personal Information" : step == 3 ? "Delivery Information" : step == 4 ? "Order Summary" : ""}
+                {plan}
               </h2>
             </li>
           </>

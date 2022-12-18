@@ -7,7 +7,7 @@ const Fotter=dynamic(() => import( "../Common/Footer"))
 import Category from "./Category";
 
 export default function Index({ headerData, socialMediaIcon, tradeMarkData, footerData, categoriesAll, selectedBlog }) {
-  console.log("blog-detail headerData",tradeMarkData)
+  //console.log("blog-detail headerData",tradeMarkData)
   return (
     <>
       <div className=" relative ">

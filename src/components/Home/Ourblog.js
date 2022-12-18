@@ -3,12 +3,12 @@ import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 import { vmealsOurBlogs } from '../../../src/lib/APICommunications';
 export default function Ourblog({ ourHomeBlogData }) {
-  console.log("ourHomeData", ourHomeBlogData)
+  //console.log("ourHomeData", ourHomeBlogData)
   return (
     <div className="bg-green-light">
       <div className="py-10 2xl:py-20">
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
-          <h2 class="  text-base text-center  sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 className="  text-base text-center  sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
             OUR BLOG
           </h2>
           <div className="grid grid-cols-12 gap-4 sm:gap-8  mt-10 2xl:mt-20 ">
@@ -120,7 +120,7 @@ export async function getServerSideProps() {
   try {
     let data = await fetch(vmealsOurBlogs)
     data = await data.json()
-    console.log("our blog gerserver ->>", data)
+    //console.log("our blog gerserver ->>", data)
 
     return {
       props: { ourHomeBlogData: { ...data } }, // will be passed to the page component as props

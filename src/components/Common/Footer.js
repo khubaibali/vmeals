@@ -7,7 +7,7 @@ let images = ["/images/facebook.png", "/images/instagram.png", "/images/whatsapp
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], tradeMarkData = [{}] }) {
-  console.log("footer")
+  //console.log("footer")
   const [registerForm, setFormData] = useState({})
   const [isDisabled, setDisable] = useState(false)
   function formControl(event) {
@@ -81,7 +81,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                   placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
                 /> </li>
               <li className=" ml-1 md:ml-4" >
-                <button disabled={isDisabled} onClick={CallSubmitForm} class="bg-green  f-f-b text-xsone md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5 2xl:h-[79px] h-[25px] w-[60px] md:h-[52px] md:w-[143px] 2xl:w-[219px] mt-1 rounded-full sub ">
+                <button disabled={isDisabled} onClick={CallSubmitForm} className="bg-green  f-f-b text-xsone md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5 2xl:h-[79px] h-[25px] w-[60px] md:h-[52px] md:w-[143px] 2xl:w-[219px] mt-1 rounded-full sub ">
                   {/* Subscribe */}
                   {footerData?.[0]?.VMealsGuideInputButtonTitle}
                 </button>

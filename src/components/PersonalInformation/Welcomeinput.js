@@ -69,7 +69,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
       scrollTo(0, 500);
 
     } else {
-      console.log("")
+      //console.log("")
     }
   }
   return (
@@ -252,6 +252,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             </h2>
 
             {/* date input */}
+            <div className="relative" >
             <DatePicker
               selected={dateOfBirth || ""}
               onChange={(date) => setDateOfBirth(date)}
@@ -260,11 +261,17 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
               showYearDropdown
               scrollableYearDropdown
               placeholderText={
-                "Please select your date of birth"
+                " Select your date of birth"
               }
               yearDropdownItemNumber={50}
-              className="input-register  pr-10"
+              className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]   "
             />
+            <img alt=""
+                src="/images/mobilearrow.png"
+                className=" absolute top-[16px] 2xl:top-[20px] right-[17px]"
+              />
+
+</div>
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
                 {errors?.find((e) => e.field == "dob")

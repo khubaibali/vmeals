@@ -5,16 +5,16 @@ import Fotter from "../Common/Footer";
 import Abudebhisrv from "./Abudebhisrv";
 import Mealabudehbhi from "./Mealabudehbhi";
 
-export default function Index() {
+export default function Index({headerData, socialMediaIcon,footerData, tradeMarkData}) {
   return (
     <>
       <div className="servicedubaibg2">
-        <Navbar />
+        <Navbar  headerData={headerData}/>
         <Hero />
       </div>
       <Abudebhisrv/>
       <Mealabudehbhi/>
-      <Fotter />
+      <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>
     </>
   );
 }

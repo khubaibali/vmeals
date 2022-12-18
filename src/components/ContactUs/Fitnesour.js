@@ -9,12 +9,12 @@ export default function Fitnesour({ contactUsData = [{}] }) {
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14 mt-10 md:mt-10 lg:my-24  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
-          <h2 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center lg:text-left tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-left tracking-[1px] lg:tracking-[0.22em] ">
             {/* Need Assistance? */}
             {contactUsData?.[0]?.VMealsContactUsTitle}
           </h2>
           {/* code started */}
-          <div className="w-11/12 ml-auto mr-auto md:w-12/12 mt-5 md:mt-10  lg:mt-20 text-center lg:text-left  ">
+          <div className="w-11/12 ml-auto mr-auto md:w-12/12 mt-5 md:mt-10  lg:mt-20 text-left  ">
 
             {
               contactUsData?.[0]?.VMealsContactUsList?.map((item, ind) => (
@@ -40,11 +40,11 @@ export default function Fitnesour({ contactUsData = [{}] }) {
           </div>
           {/* code ended */}
 
-          <h2 className="f-f-b text-black-dark text-xl md:text-4xl mt-10 2xl:mt-20  text-center lg:text-left">
+          <h2 className="f-f-b text-black-dark text-xl md:text-4xl mt-10 2xl:mt-20  text-left">
             {/* Connect with us! */}
             {contactUsData?.[0]?.VMealsContactUsText}
           </h2>
-          <div className="text-center lg:text-left">
+          <div className="text-left">
             
               <a href={contactUsData?.[0]?.VMealsContactUsButtonLinkUrl} target="_blank" >
                 <button className="  text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[219px] xl:h-[79px]   mt-5 2xl:mt-8">
@@ -62,7 +62,7 @@ export default function Fitnesour({ contactUsData = [{}] }) {
               </a>
 
            
-            <button class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full ml-6 md:ml-8 w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[219px] xl:h-[79px]   mt-5 2xl:mt-8">
+            <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full ml-6 md:ml-8 w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[219px] xl:h-[79px]   mt-5 2xl:mt-8">
               <ul className="inline-flex">
                 <li>
                   <img
@@ -92,7 +92,7 @@ export default function Fitnesour({ contactUsData = [{}] }) {
 
 export async function getServerSideProps() {
   try {
-    console.log('header fetching')
+    //console.log('header fetching')
     let data = await fetch(vmealsContactUs)
     let contactus = await data.json()
 

@@ -1,21 +1,16 @@
 import React from 'react'
-import Termcondition from '../src/components/Term Condition/Index'
+import  Srvicsharjah from '../src/components/ServiceSharjah/Index.js'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import SEO from '../src/components/Common/SEO'
 import { vmealsPages } from '../src/lib/APICommunications'
-export default function termcondition(props) {
-  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
-
+export default function servicesharjah(props) {
   return (
     <div>
-      <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
-      <Termcondition headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} />
+        <Srvicsharjah headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}/>
     </div>
   )
 }
-
-
 export async function getServerSideProps({ req, res }) {
   res.setHeader(
     'Cache-Control',

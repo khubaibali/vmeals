@@ -8,7 +8,7 @@ export default function Pagination({ onPage, setPage, totalPages }) {
         <>
             <div className="text-center mt-10 2xl:mt-20" >
                 <nav aria-label="Page navigation example">
-                    <ul class="inline-flex items-center -space-x-px">
+                    <ul className="inline-flex items-center -space-x-px">
 
 
                         {[...Array(totalPages)].map((x, i) => (

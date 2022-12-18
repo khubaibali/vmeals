@@ -19,7 +19,7 @@ export default function Review() {
 }
 export async function getServerSideProps({ req, res }) {
   try {
-    console.log('header fetching')
+    //console.log('header fetching')
     // let data = await fetch("https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJcTFhgEdzXz4RJtANMZv4OJs&fields=reviews&key=AIzaSyD2wruZXxV5EAJlMJLsjGjGpAOlfXdt_Ko", {
     //   method: "GET",
     //   mode: 'no-cors',
@@ -36,7 +36,7 @@ export async function getServerSideProps({ req, res }) {
     }
 
   } catch (error) {
-    console.log(error)
+    //console.log(error)
     return {
       props: {
         googleReviews: {}
