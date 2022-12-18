@@ -9,7 +9,7 @@ function Navbar({ headerData = {} }) {
   const [openCloseSubMenu, setOpenClose] = useState({})
   useOutsideClick(ref, controlSubMenu)
   function controlSubMenu(subMenu) {
-    console.log(openCloseSubMenu, subMenu)
+    //console.log(openCloseSubMenu, subMenu)
     if (subMenu === "closeAll") {
       Object.keys(openCloseSubMenu).forEach((x) => {
         openCloseSubMenu[x] = false
@@ -230,7 +230,7 @@ export default Navbar
 
 export async function getServerSideProps() {
   try {
-    console.log('header fetching')
+    //console.log('header fetching')
     let vmealsHeaderData = await fetch(vmealsHeader)
     let data = await vmealsHeaderData.json()
     data = data?.docs?.find(p => p.VMealsHeaderEnableDisables == "Enable");

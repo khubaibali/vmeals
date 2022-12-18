@@ -18,7 +18,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
   const [step, setStep] = useState(1)
 
   useEffect(() => {
-    console.log("")
+    //console.log("")
   },[selectedPlan])
 
   return (
@@ -48,7 +48,7 @@ export async function getServerSideProps() {
    
     let contentDataGreenDiet = await fetch(vmealsGreenDietContent)
     let data = await contentDataGreenDiet.json()
-    console.log("slider bar ->>",data)
+    //console.log("slider bar ->>",data)
    
     return {
       props: { contentDataGreenDiet: { ...data?.docs } }, // will be passed to the page component as props

@@ -17,7 +17,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
   const contentDataGlutenAndDairyFreeDiet = Object.values(contentData).find(c => c.VmealsGlutenAndDairyDietEnableDisables == "Enable")
   const [step, setStep] = useState(1)
 
-  console.log("contentDataaaaa", contentDataGlutenAndDairyFreeDiet)
+  //console.log("contentDataaaaa", contentDataGlutenAndDairyFreeDiet)
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
@@ -45,7 +45,7 @@ export async function getServerSideProps() {
    
     let contentDataGlutenAndDairyFreeDiet = await fetch(vmealsGlutenAndDairyDietContent)
     let data = await contentDataGlutenAndDairyFreeDiet.json()
-    console.log("slider bar ->>",data)
+    //console.log("slider bar ->>",data)
    
     return {
       props: { contentDataGlutenAndDairyFreeDiet: { ...data?.docs } }, // will be passed to the page component as props

@@ -21,12 +21,12 @@ export default function Index({tradeMarkData,headerData,footerData,sliderBarData
 
 export async function getServerSideProps() {
   try {
-    console.log("calling")
+    //console.log("calling")
     let data = await headerProps()
     let sliderBarData = await sliderBarProps()
     let socialMediaIcon = await socialMediaIconsProps()
     let faqQuestions = await faqQuestionsProps()
-    console.log("header props", faqQuestions)
+    //console.log("header props", faqQuestions)
     return {
       props: {
         ...data.props,    //navbar

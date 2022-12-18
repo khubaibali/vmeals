@@ -1,6 +1,6 @@
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL  || "https://vmeals.pagekite.me/";
 const BaseURLExternal = process.env.NEXT_PUBLIC_BASE_URL_EXTERNAL;
-// console.log("BASE", BaseURL)
+// //console.log("BASE", BaseURL)
 export const vmealsHeader = `${BaseURL}api/vmeals-header`;
 export const vmealsguide = `${BaseURL}api/vmeals-guide`;
 export const vmealsCustomersChooseUs = `${BaseURL}api/vmeals-customers-choose-us`;

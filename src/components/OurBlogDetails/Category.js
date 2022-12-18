@@ -2,7 +2,7 @@ import React from "react";
 import Categorylist from "./Categorylist";
 import RTFMapping from '../Common/RTFMapping'
 export default function Category({selectedBlog,categoriesAll}) {
-  console.log("selected --",selectedBlog)
+  //console.log("selected --",selectedBlog)
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">

@@ -30,14 +30,14 @@ export async function getServerSideProps({ req, res }) {
     'public, s-maxage=10, stale-while-revalidate=59'
   )
   try {
-    console.log("calling")
+    //console.log("calling")
     let resolvedPromises = await Promise.all([headerProps(), sliderBarProps(), builtDataProps(), ourGeniusDataProps(), homeFitnessDataProps(), ourHomeBlogsDataProps(), socialMediaIconsProps()])
     let metaData = await (await fetch(vmealsPages)).json()
-    console.log("*******************************************************",resolvedPromises)
+    //console.log("*******************************************************",resolvedPromises)
     let final = resolvedPromises.map((itx) => (itx?.props))
     let newObject = {}
     final.forEach((x) => { newObject = { ...newObject, ...x } })
-    console.log("header props")
+    //console.log("header props")
     return {
       props: {
         ...newObject,
@@ -45,7 +45,7 @@ export async function getServerSideProps({ req, res }) {
       }, // will be passed to the page component as props
     }
   } catch (error) {
-    console.log("----------------------------------------------------",error)
+    //console.log("----------------------------------------------------",error)
     return {
       props: {
         headerData: {}, sliderBarData: {}, builtData: [], ourGeniusData: [], homeFitnessData: [], ourHomeBlogData: [], socialMediaIcon: []

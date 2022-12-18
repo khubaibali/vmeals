@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Steps = ({ step, setStep }) => {
-    console.log("setStep(1)", setStep)
+    //console.log("setStep(1)", setStep)
     return (
         <>
             <div className="no-scrollbar overflow-x-auto hidescrol">

@@ -92,7 +92,7 @@ export default function Fitnesour({ contactUsData = [{}] }) {
 
 export async function getServerSideProps() {
   try {
-    console.log('header fetching')
+    //console.log('header fetching')
     let data = await fetch(vmealsContactUs)
     let contactus = await data.json()
 
