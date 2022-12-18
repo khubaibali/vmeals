@@ -142,10 +142,10 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               <div className="mt-10 relative ">
                 <input
                   placeholder="Enter Coupon Code..."
-                  class=" input-register 2xl:h-[70px] "
+                  className=" input-register 2xl:h-[70px] "
                   onChange={(e) => setCouponValue(e.target.value)}
                 />
-                <button onClick={() => applyCoupun()} class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
+                <button onClick={() => applyCoupun()} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
                   Apply Code
                 </button>
                 {couponError && <p className="text-red text-center mt-1 text-sm 2xl:text-base ">{couponError}</p>}
@@ -177,16 +177,16 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               </div>
 
               <div
-                class=" ml-auto mr-auto w-8/12  md:w-5/12 lg:w-4/12 xl:w-6/12  "
+                className=" ml-auto mr-auto w-8/12  md:w-5/12 lg:w-4/12 xl:w-6/12  "
                 bis_skin_checked="1"
               >
-                <ul class=" inline-flex mt-7  ">
+                <ul className=" inline-flex mt-7  ">
                   <li>
-                    <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
+                    <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
-                  <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
-                    <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
+                  <li className=" ml-4 text-right ">
+                    <h2 className=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
+                    <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
                   </li>
@@ -294,10 +294,10 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               <div className="mt-10 relative ">
                 <input
                   placeholder="Enter Coupon Code..."
-                  class=" input-register 2xl:h-[70px] "
+                  className=" input-register 2xl:h-[70px] "
                   onChange={(e) => setCouponValue(e.target.value)}
                 />
-                <button onClick={() => applyCoupun()} class=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
+                <button onClick={() => applyCoupun()} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
                   Apply Code
                 </button>
               </div>
@@ -328,16 +328,16 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               </div>
 
               <div
-                class=" ml-auto mr-auto w-8/12  md:w-5/12 lg:w-4/12 xl:w-6/12  "
+                className=" ml-auto mr-auto w-8/12  md:w-5/12 lg:w-4/12 xl:w-6/12  "
                 bis_skin_checked="1"
               >
-                <ul class=" inline-flex mt-7  ">
+                <ul className=" inline-flex mt-7  ">
                   <li>
-                    <h2 class=" text-black text-2xl f-f-b ">Total:</h2>
+                    <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
                   </li>
-                  <li class=" ml-4 text-right ">
-                    <h2 class=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
-                    <h3 class="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
+                  <li className=" ml-4 text-right ">
+                    <h2 className=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
+                    <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
                   </li>

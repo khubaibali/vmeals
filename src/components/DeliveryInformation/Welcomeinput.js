@@ -123,7 +123,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             <h2 className=" text-base f-f-b text-black   mb-1 ">
               Starting Date <span className="text-red">* </span>
             </h2>
-
+                <div className="relative" >
             <DatePicker
               //   selected={new Date()}
               selected={startingDate}
@@ -133,9 +133,14 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
               showYearDropdown
               scrollableYearDropdown
               placeholderText={"Select starting date"}
-              className="contact-btn "
+              className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]   "
               {...startingPlanDateFormat()}
             />
+              <img alt=""
+                src="/images/mobilearrow.png"
+                className=" absolute top-[16px] 2xl:top-[20px] right-[17px]"
+              />
+            </div>
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
                 {errors?.find((e) => e.field == "startingDate")
@@ -174,7 +179,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
               </select>
               <img alt=""
                 src="/images/mobilearrow.png"
-                className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
+                className=" absolute top-[16px] 2xl:top-[20px] right-[17px]"
               />
             </div>
             {errors?.length > 0 ? (
@@ -269,10 +274,11 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             <h2 className=" text-base f-f-b text-black  ">
               Delivery Slot <span className="text-red">* </span>
             </h2>
-
+                <div className="relative" >
+              
             <select id="city" name="city" onChange={(e) =>
               setDeliverySlot(e.target.value)
-            } className="contact-btn"
+            } className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  "
             >
               <option value="" className="text-black">Select an option</option>
               {deliverySlotList &&
@@ -288,6 +294,11 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
                   </option>
                 ))}
             </select>
+            <img alt=""
+                src="/images/mobilearrow.png"
+                className=" absolute top-[16px] 2xl:top-[20px] right-[17px]"
+              />
+                </div>
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
                 {errors?.find((e) => e.field == "deliverySlot")

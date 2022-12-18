@@ -4,7 +4,7 @@ function OurSlickWraper({data}){
     
     return(
         <div className=" rounded-2xl  mt-5 md:mt-20  border border-green fitnessbg ">
-            <div className="w-[100%] h-[221px] md:h-[331px] 2xl:h-[407px] bg-white rounded-2xl">
+            <div className="w-[100%]   rounded-2xl">
               <Ourslick data={data} />
             </div>
             <div className="  p-5 px-8 sm:p-6 2xl:p-12  ">

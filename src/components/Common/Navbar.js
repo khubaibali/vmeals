@@ -53,9 +53,9 @@ function Navbar({ headerData = {} }) {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </button>
@@ -88,9 +88,9 @@ function Navbar({ headerData = {} }) {
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>
                       </div>
@@ -148,14 +148,7 @@ function Navbar({ headerData = {} }) {
                     {headerData?.VMealsLanguagesList?.[0]?.VMealsLanguagesItemTitle} / {headerData?.VMealsLanguagesList?.[1]?.VMealsLanguagesItemTitle}
                   </a>
                 </li> */}
-                <li className=" md:hidden">
-                  <Link
-                    href="/contact-us"
-                    className="block py-2 pl-3 pr-4 text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green  hover:text-white md:hover:text-black  md:border-0  md:p-0 ">
-                    Need Assistance?
-                  </Link>
 
-                </li>
                 <li className=" md:hidden">
                   <Link
                     href="/contact-us"
@@ -216,7 +209,7 @@ function Navbar({ headerData = {} }) {
                 </li>
               </ul>
             </div>
-            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[44%] -top-5 md:top-[40px] lg:top-4 z-0 ">
+            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[41%] md:left-[44%] top-[-9px] md:top-[40px] lg:top-4 z-0 ">
               <Link href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
                   src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}

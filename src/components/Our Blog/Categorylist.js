@@ -35,7 +35,7 @@ export default function Categorylist({ categoriesAll }) {
                 </svg>
               </li>
               <li>
-                <h2 class="f-f-li text-black-dark ml-4  text-sm md:text-tiny 2xl:text-lg   ">
+                <h2 className="f-f-li text-black-dark ml-4  text-sm md:text-tiny 2xl:text-lg   ">
                   {cat} ({groups[cat].length})
                 </h2>
               </li>
@@ -46,7 +46,7 @@ export default function Categorylist({ categoriesAll }) {
      
 
       </ul>
-      <h2 class="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li text-green text-center lg:text-left uppercase  tracking-[1px] lg:tracking-[0.22em] mt-10 2xl:mt-24 ">
+      <h2 className="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li text-green text-center lg:text-left uppercase  tracking-[1px] lg:tracking-[0.22em] mt-10 2xl:mt-24 ">
         Recent posts
       </h2>
       {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
@@ -64,11 +64,11 @@ export default function Categorylist({ categoriesAll }) {
               />
             </div>
             <div className="   col-span-6 md:col-span-4 lg:col-span-6 xl:col-span-6  ">
-              <button class=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]   ">
+              <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]   ">
               {blog?.VmealsBlogCategory?.VmealsBlogsCategoryName}
               </button>
 
-              <h2 class="   f-f-b text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
+              <h2 className="   f-f-b text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
               {blog?.VmealsBlogTitle}
               </h2>
             </div>

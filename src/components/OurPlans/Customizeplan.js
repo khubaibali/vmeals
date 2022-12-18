@@ -291,7 +291,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
             <div className="   col-span-12  lg:col-span-6  ">
-              <h1 class="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center lg:text-left  md:leading-[56px] uppercase ">
+              <h1 className="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center lg:text-left  md:leading-[56px] uppercase ">
                 {heading}
               </h1>
               <RTFMapping data={description} />
@@ -300,13 +300,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
               <div className="bg-green-light p-4 md:p-8 rounded-[20px]  ">
                 <ul className="inline-flex w-full ">
                   <li>
-                    <h2 class=" text-green f-f-b text-center md:text-left text-base mt-3  md:text-3xl lg:text-lg  2xl:text-5xl md:mt-5  ">
+                    <h2 className=" text-green f-f-b text-center md:text-left text-base mt-3  md:text-3xl lg:text-lg  2xl:text-5xl md:mt-5  ">
                       Customise your plan
                     </h2>
                   </li>
                   <li className="text-right ml-auto ">
                     <a href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`} target="_blank">
-                    <button class="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
+                    <button className="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
                       <ul className="inline-flex">
                         <li>
                           <img
@@ -655,11 +655,11 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 </div>
                 <div className="grid grid-cols-12 gap-8  md:mt-8   ">
                   <div className="   col-span-6 xl:col-span-6 ">
-                    <ul class=" inline-flex mt-7  ">
-                      <li><h2 class=" text-black text-2xl f-f-b ">Total:</h2></li>
-                      <li class=" ml-4 text-right ">
-                        <h2 class=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
-                        <h3 class="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price Exclusive of VAT</h3>
+                    <ul className=" inline-flex mt-7  ">
+                      <li><h2 className=" text-black text-2xl f-f-b ">Total:</h2></li>
+                      <li className=" ml-4 text-right ">
+                        <h2 className=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
+                        <h3 className="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price Exclusive of VAT</h3>
                       </li>
                     </ul>
                   </div>

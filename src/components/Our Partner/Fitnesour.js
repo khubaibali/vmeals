@@ -13,7 +13,7 @@ export default function Fitnesour({ ourParnersData }) {
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
           <div className=" md:w-10/12 lg:w-full ml-auto mr-auto" >
-          <h2 class="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
+          <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] ">
             {/* OUR PARTNERS */}
             {ourParnersData?.[0]?.VMealsOurPartnersTitle}
           </h2>
