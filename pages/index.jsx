@@ -14,11 +14,11 @@ import SEO from '../src/components/Common/SEO'
 import { vmealsPages } from '../src/lib/APICommunications'
 function Home(props) {
   
-  //  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
+   const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
   return (
 
     <>
-      {/* <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/> */}
+      <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
       <Homepage headerData={props?.headerData} sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} />
     </>
   )
