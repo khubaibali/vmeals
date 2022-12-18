@@ -5,7 +5,7 @@ export default function Hero({ step, plan }) {
   // useEffect(() => {
 
   // },[])
-  console.log("steeppppppp", step,plan)
+  //console.log("steeppppppp", step,plan)
   return (
     <>
       <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">

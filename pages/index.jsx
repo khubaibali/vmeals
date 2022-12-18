@@ -9,17 +9,17 @@ import { getServerSideProps as ourGeniusDataProps } from '../src/components/Home
 import { getServerSideProps as homeFitnessDataProps } from '../src/components/Home/Fitness'
 import { getServerSideProps as ourHomeBlogsDataProps } from '../src/components/Home/Ourblog'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
-import { getServerSideProps as googleReviewsProps } from "../src/components/About Us/Review"
+
 import SEO from '../src/components/Common/SEO'
-import { vmealsPages } from '../src/lib/APICommunications'
+import { getGoogleReviews, vmealsPages } from '../src/lib/APICommunications'
 function Home(props) {
-  
-  //  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
+  //console.log("Index props",props)
+   const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
   return (
 
     <>
-      {/* <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/> */}
-      <Homepage headerData={props?.headerData} sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} />
+      <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
+      <Homepage headerData={props?.headerData} sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} googleReview={props.ggreviews} />
     </>
   )
 }
@@ -30,22 +30,24 @@ export async function getServerSideProps({ req, res }) {
     'public, s-maxage=10, stale-while-revalidate=59'
   )
   try {
-    console.log("calling")
+    //console.log("calling")
     let resolvedPromises = await Promise.all([headerProps(), sliderBarProps(), builtDataProps(), ourGeniusDataProps(), homeFitnessDataProps(), ourHomeBlogsDataProps(), socialMediaIconsProps()])
     let metaData = await (await fetch(vmealsPages)).json()
-    console.log("*******************************************************",resolvedPromises)
+    let ggreviews = await (await fetch(getGoogleReviews)).json()
+    //console.log("*******************************************************",resolvedPromises)
     let final = resolvedPromises.map((itx) => (itx?.props))
     let newObject = {}
     final.forEach((x) => { newObject = { ...newObject, ...x } })
-    console.log("header props")
+    //console.log("header props")
     return {
       props: {
         ...newObject,
-        metaData: { ...metaData }
+        metaData: { ...metaData },
+        ggreviews:{...ggreviews?.doc?.result}
       }, // will be passed to the page component as props
     }
   } catch (error) {
-    console.log("----------------------------------------------------",error)
+    //console.log("----------------------------------------------------",error)
     return {
       props: {
         headerData: {}, sliderBarData: {}, builtData: [], ourGeniusData: [], homeFitnessData: [], ourHomeBlogData: [], socialMediaIcon: []

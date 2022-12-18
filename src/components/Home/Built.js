@@ -78,7 +78,7 @@ export async function getServerSideProps() {
    
     let builtData = await fetch(vmealsCustomersChooseUs)
     let data = await builtData.json()
-    console.log("slider bar ->>",data)
+    //console.log("slider bar ->>",data)
    
     return {
       props: { builtData: { ...data?.docs } }, // will be passed to the page component as props

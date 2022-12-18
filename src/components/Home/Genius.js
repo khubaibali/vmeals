@@ -4,7 +4,7 @@ import { vmealsOurGeniuses } from '../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
 
 export default function Genius({ ourGeniusData = [{}] }) {
-  console.log("ourGeniusData--->", ourGeniusData)
+  //console.log("ourGeniusData--->", ourGeniusData)
   return (
     <>
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px]  ">
@@ -81,7 +81,7 @@ export async function getServerSideProps() {
 
     let ourGeniusData = await fetch(vmealsOurGeniuses)
     let data = await ourGeniusData.json()
-    console.log("slider bar ->>", data)
+    //console.log("slider bar ->>", data)
 
     return {
       props: { ourGeniusData: { ...data?.docs } }, // will be passed to the page component as props

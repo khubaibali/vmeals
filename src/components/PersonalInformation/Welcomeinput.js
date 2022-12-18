@@ -69,7 +69,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
       scrollTo(0, 500);
 
     } else {
-      console.log("")
+      //console.log("")
     }
   }
   return (

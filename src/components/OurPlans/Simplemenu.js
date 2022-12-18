@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { vmealsSampleMenu } from "../../lib/APICommunications";
 
 export default function Simplemenu({ sampleMenu }) {
-  console.log("sample menu in menu", sampleMenu)
+  //console.log("sample menu in menu", sampleMenu)
   const settings = {
     dots: false,
     infinite: true,
@@ -68,7 +68,7 @@ export async function getServerSideProps() {
    
     let sampleMenu = await fetch(vmealsSampleMenu)
     let data = await sampleMenu.json()
-    console.log("slider bar ->>",data)
+    //console.log("slider bar ->>",data)
    
     return {
       props: { sampleMenu: { ...data?.docs } }, // will be passed to the page component as props

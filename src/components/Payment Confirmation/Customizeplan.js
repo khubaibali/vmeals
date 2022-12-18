@@ -17,7 +17,7 @@ export default function Customizeplan() {
         
       })
       .catch((err) => {
-        console.log("ERROR", err);
+        //console.log("ERROR", err);
         return false;
       });
   };
@@ -25,7 +25,7 @@ export default function Customizeplan() {
   useEffect(()=> {
     const success = cookies.get("paymentSuccess")
     const data = cookies.get("orderDetail")
-    console.log("suuuuuu", success, data)
+    //console.log("suuuuuu", success, data)
     if(success) {
       createOrder(data)
       cookies.remove("paymentSuccess")

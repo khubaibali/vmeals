@@ -18,7 +18,7 @@ export default function ourblog(props) {
 
 
 export async function getServerSideProps({req,res,query}) {
-  console.log("++++++++++",query?.page)
+  //console.log("++++++++++",query?.page)
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59'
