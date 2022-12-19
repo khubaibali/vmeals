@@ -31,6 +31,15 @@ export default function Customizeplan() {
     let final = await checkSuccess?.json();
     if (final?.message == "Failed") {
       setSuccess(false)
+    }else {
+      const successCookie = cookies.get("paymentSuccess")
+      const data = cookies.get("orderDetail")
+      //console.log("suuuuuu", success, data)
+      if (successCookie) {
+        createOrder(data)
+        cookies.remove("paymentSuccess")
+        cookies.remove("orderDetail")
+      }
     }
     // console.log("finall", final)
     return final;
@@ -38,14 +47,7 @@ export default function Customizeplan() {
 
   useEffect(() => {
     checkSuccussPayment()
-    const successCookie = cookies.get("paymentSuccess")
-    const data = cookies.get("orderDetail")
-    //console.log("suuuuuu", success, data)
-    if (successCookie) {
-      createOrder(data)
-      cookies.remove("paymentSuccess")
-      cookies.remove("orderDetail")
-    }
+   
   }, [cookies.get("orderDetail")])
   return (
     <>
