@@ -26,6 +26,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     name: a
   })));
   const [allergies, setAllergiesData] = useState(null);
+  const [addOnsArray, setAddOnsArray] = useState([]);
   const [mealType, setMealType] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]);
   const [offDays, setOffDays] = useState("Friday - Saturday");
   const [price, setPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price);
@@ -204,20 +205,21 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       });
   };
 
+  // console.log("allergies", allergies?.map((a) => a.name)?.join(", "))
   const createOrder = () => {
-
+// console.log("deliveryInformation", deliveryInformation)
     let body = {
       plan: {
         planName: selectedPlan,
-        typeOfDiet: "vegan",
+        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" || selectedPlan == "GreenDietVegan" ? "Vegan" : "Non-Vegetarian",
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
         deliveriesPerWeek: selectedDaysPerWeek.days,
         offDays: offDays,
         planDuration: selectedDuration.name,
         mealType: mealType?.id?.split("_"),
-        allergies: allergies?.length ? allergies.map((a) => a.allergy) : "N/A",
-        addOns: ["none"],
+        allergies: allergies?.length ? allergies?.map((a) => a.name)?.join(", ") : "N/A",
+        addOns: addOnsArray,
         couponCode: {
           code: couponAPIResponse?.doc?.code,
           percentageOff: couponAPIResponse?.doc?.discountPercentage || 0 + "%",
@@ -237,8 +239,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         address: deliveryInformation?.address,
         apartmentNumber: deliveryInformation?.appartmentNumber,
         accessCode: deliveryInformation?.accessCode || "N/A",
-        googleMapsLink: deliveryInformation?.googleMapLink || "N/A",
-        deliveryInstructions: deliveryInformation?.deliveryInstruction || "N/A",
+        googleMapsLink: deliveryInformation?.googleLink || "N/A",
+        deliveryInstructions: deliveryInformation?.deliveryInstructions || "N/A",
         deliverySlot: deliveryInformation?.deliverySlot,
         price: Number(price),
         totalPrice: Number(((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)),
@@ -598,11 +600,16 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           onChange={(e) => {
                             if (e.target.checked) {
                               setAddOnFifty(50);
+                              setAddOnsArray([...addOnsArray, "Eco-Friendly Cutlery"])
                               // setPrice(
                               //   Number(price) + 50
                               // );
                             } else {
                               setAddOnFifty(0);
+                              let index = array.indexOf("Eco-Friendly Cutlery");
+                              if (index > -1) { 
+                                array.splice(index, 1); 
+                              }
                               // setPrice(
                               //   Number(price) - 50
                               // );
@@ -630,11 +637,16 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           onChange={(e) => {
                             if (e.target.checked) {
                               setAddOnTwoHundred(200);
+                              setAddOnsArray([...addOnsArray, "Thermal Bags (x2)"])
                               // setPrice(
                               //   Number(price) + 200
                               // );
                             } else {
                               setAddOnTwoHundred(0);
+                              let index = array.indexOf("Thermal Bags (x2)");
+                              if (index > -1) { 
+                                array.splice(index, 1); 
+                              }
                               // setPrice(
                               //   Number(price) - 200
                               // );
