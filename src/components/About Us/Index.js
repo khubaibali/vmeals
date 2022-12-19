@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import JournyMissionWrapper from "./JournyMissionWrapper";
 const Navbar = dynamic(() => import( "../Common/Navbar"))
 const Hero=  dynamic(() => import( "./Hero"))
-// const Review  = dynamic(()=>import ("./Review"))
+import Review from '../Common/Review';
 const Fotter  = dynamic(()=>import ("../Common/Footer"))
 
 
@@ -18,7 +18,7 @@ export default function Index({tradeMarkData,headerData,footerData,socialMediaIc
         <Hero />
       </div>
       <JournyMissionWrapper ourCompanyData={ourCompanyData}/>
-      {/* <Review /> */}
+      <Review />
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>
     </>
   );

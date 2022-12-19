@@ -66,7 +66,7 @@ export default function Customizeplan() {
               }
             </div>
           </div>
-          <div className="   col-span-12  lg:col-span-6  ">
+          <div className="   col-span-12  lg:col-span-6 hidden md:block  ">
             <div className=" relative ">
               <img
                 src="/images/paymentmeal.png"

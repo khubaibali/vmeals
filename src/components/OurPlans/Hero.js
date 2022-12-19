@@ -39,7 +39,7 @@ export default function Hero({ step, plan }) {
               Our Plans
             </h2>
           </li>
-          <li className=" ml-5 2xl:ml-10">
+          {/* <li className=" ml-5 2xl:ml-10">
             <svg
               className=" w-22px 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
               viewBox="0 0 14 26"
@@ -56,8 +56,8 @@ export default function Hero({ step, plan }) {
             <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
              {plan}
             </h2>
-          </li>
-          {step != 1 && 
+          </li> */}
+          {/* {step != 1 && 
           <>
             <li className=" ml-5 2xl:ml-10">
               <svg
@@ -78,7 +78,7 @@ export default function Hero({ step, plan }) {
               </h2>
             </li>
           </>
-          }
+          } */}
         </ul>
       </div>
 
