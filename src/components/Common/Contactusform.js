@@ -130,7 +130,7 @@ export default function Contactusform() {
                 </div>
                 <div className="relative w-full">
                   <input
-                    type="search"
+                    type="number"
                     id="search-dropdown"
                     className="block  input-register-mob"
                     placeholder="Enter your mobile number…"

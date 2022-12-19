@@ -4,7 +4,7 @@ import { vmealsContactUs } from "../../lib/APICommunications";
 import Contactusform from "../Common/Contactusform";
 const images = ["/images/location.png","/images/smartphone.png","/images/email.png","/images/clock.png"]
 export default function Fitnesour({ contactUsData = [{}] }) {
-
+console.log("contactUsData",contactUsData)
   return (
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14 mt-10 md:mt-10 lg:my-24  ">
@@ -20,6 +20,7 @@ export default function Fitnesour({ contactUsData = [{}] }) {
               contactUsData?.[0]?.VMealsContactUsList?.map((item, ind) => (
                 <div>
                   <ul className={ind == 0 ? "inline-flex" : "inline-flex mt-8 md:mt-14 "}>
+                    
                     <li>
                       {" "}
                       <img
@@ -27,12 +28,14 @@ export default function Fitnesour({ contactUsData = [{}] }) {
                         className=" width-[34px] md:width-[40px] 2xl:width-[50px] h-[34px] md:h-auto "
                       />{" "}
                     </li>
-                    <li className="ml-3 md:ml-7 mt-1 md:mt-3">
-                      {" "}
-                      <h2 className="f-f-b text-black-dark  text-sm md:text-tiny 2xl:text-lg   ">
-                        {item?.VMealsContactUsListTitle}
-                      </h2>{" "}
-                    </li>
+                    <Link href={item?.VMealsContactUsLinkUrl} target={"_blank"}>
+                      <li className="ml-3 md:ml-7 mt-1 md:mt-3">
+                        {" "}
+                        <h2 className="f-f-b text-black-dark  text-sm md:text-tiny 2xl:text-lg   ">
+                          {item?.VMealsContactUsListTitle}
+                        </h2>{" "}
+                      </li>
+                    </Link>
                   </ul>
                 </div>
               ))
