@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Common/Navbar";
 import Hero from "./Hero";
-// import Review from "./Review";
+import Review from '../Common/Review';
 import Fotter from "../Common/Footer";
 import Questions from "./Questions";
 

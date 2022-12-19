@@ -33,6 +33,7 @@ module.exports = {
         },
         grey:{
           DEFAULT: '#F3F3F3',
+          light:"#6E757C",
           // light:" rgba(20, 38, 100, 0.35)",
         },
         sky:{
