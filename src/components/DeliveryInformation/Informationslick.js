@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { testimonials } from "../../lib/APICommunications";
 
 export default function Informationslick() {
   const settings = {

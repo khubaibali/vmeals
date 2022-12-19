@@ -7,12 +7,14 @@ import { getServerSideProps as socialMediaIconsProps } from '../src/components/C
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/PescatarianDiet/Index'
 import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
+import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
 
 export default function pescatarian(props) {
   return (
     <div>
       <Pescatarianpage
         faqQuestions={props.faqQuestions}
+        testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
         contentData={props?.contentDataPescatarianDiet}
         headerData={props?.headerData}
@@ -34,6 +36,7 @@ export async function getServerSideProps(constext) {
     let sampleMenu = await sampleMenuDataProps()
     let faqQuestions = await faqQuestionsProps()
     let contentData = await contentDataProps();
+    let informationslick = await informationslickProps()
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
     //console.log("header props", contentDataPage)
@@ -45,6 +48,7 @@ export async function getServerSideProps(constext) {
         ...socialMediaIcon.props,
         ...sampleMenu.props,
         ...faqQuestions.props,
+        ...informationslick.props,
         ...contentDataPage.props
       }, // will be passed to the page component as props
     }

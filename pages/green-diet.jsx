@@ -5,6 +5,7 @@ import { getServerSideProps as builtDataProps } from '../src/components/Home/Bui
 import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
+import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/GreenDiet/Index'
 import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
 
@@ -12,6 +13,7 @@ export default function greendiet(props) {
   return (
     <div>
       <GreenDietpage
+        testimonialsData={props?.testimonialsData}
         faqQuestions={props.faqQuestions}
         metaData={props?.contentData}
         contentData={props?.contentDataGreenDiet}
@@ -33,6 +35,7 @@ export async function getServerSideProps(constext) {
     let builtData = await builtDataProps()
     let faqQuestions = await faqQuestionsProps()
     let sampleMenu = await sampleMenuDataProps()
+    let informationslick = await informationslickProps()
     let contentData = await contentDataProps();
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
@@ -41,6 +44,7 @@ export async function getServerSideProps(constext) {
       props: {
         ...data.props,
         ...builtData.props,
+        ...informationslick.props,
         ...contentData.props,
         ...socialMediaIcon.props,
         ...faqQuestions.props,

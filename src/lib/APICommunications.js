@@ -38,3 +38,4 @@ export const vmealsSampleMenu = `${BaseURL}api/vmeals-sample-menu`;
 export const vmealsBlogCategories = `${BaseURL}api/blogcategories`;
 export const useCoupon = `${BaseURLExternal}coupon/useCoupon`;
 export const vmealsCheckPaymentStatus = `${BaseURL}api/checkPaymentStatus`;
+export const testimonials = `${BaseURL}api/testimonials`;

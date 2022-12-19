@@ -10,7 +10,7 @@ import Simplemenu from "../OurPlans/Simplemenu";
 import { vmealsGlutenAndDairyDietContent } from "../../lib/APICommunications";
 import SEO from "../Common/SEO";
 
-export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData,contentData, metaData, sampleMenu, faqQuestions }) {
+export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData,contentData, metaData, sampleMenu, faqQuestions,testimonialsData }) {
   const [selectedPlan, setSelectedPlan] = useState("GlutenAndDairyFreeDiet");
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GlutenAndDairyFreeDiet")
   const metaDataContent = Object.values(metaData).find(c => c.title == "Gluten & Dairy Free")
@@ -26,6 +26,8 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
         <Hero step={step} plan={"Gluten & Dairy Free Diet"}  />
       </div>
       <Customizeplan
+              testimonialsData={testimonialsData?.docs[0]?.testimonials}
+
               weeklyMenu={contentDataGlutenAndDairyFreeDiet?.WeeklyMenu}
 
       heading={contentDataGlutenAndDairyFreeDiet?.VmealsGlutenAndDairyDietHeading} description={contentDataGlutenAndDairyFreeDiet?.VmealsGlutenAndDairyDietdescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setStep={setStep} step={step} />

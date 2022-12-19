@@ -10,7 +10,7 @@ import Simplemenu from "../OurPlans/Simplemenu";
 import SEO from "../Common/SEO";
 import { vmealsPescatarianDietContent } from "../../lib/APICommunications";
 
-export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu,faqQuestions }) {
+export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu,faqQuestions, testimonialsData }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Pescatarian Diet")
   const [selectedPlan, setSelectedPlan] = useState("PescatarianDiet");
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "PescatarianDiet")
@@ -25,6 +25,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
         <Hero step={step} plan={"Pescatarian Diet"} />
       </div>
       <Customizeplan 
+              testimonialsData={testimonialsData?.docs[0]?.testimonials}
               weeklyMenu={contentDataPescatarian?.WeeklyMenu}
 
       heading={contentDataPescatarian?.VmealsPescatarianDietHeading} description={contentDataPescatarian?.VmealsPescatarianDietdescriptionParagraphs}  selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan}  setStep={setStep} step={step} />

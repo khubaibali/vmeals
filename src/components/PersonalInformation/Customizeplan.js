@@ -2,11 +2,13 @@ import React from "react";
 
 import Welcomeinput from "./Welcomeinput";
 
-import Informationslick from "./Informationslick";
+import Informationslick from "../OurPlans/Informationslick";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
+import { testimonials } from "../../lib/APICommunications";
 
-export default function CustomizeplanPersonalInformation({step, setStep, setPersonalInformation, personalInformation}) {
+export default function CustomizeplanPersonalInformation({step, setStep, setPersonalInformation, personalInformation, testimonialsData}) {
+  
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
@@ -35,7 +37,7 @@ export default function CustomizeplanPersonalInformation({step, setStep, setPers
                 className="w-full h-[588px] md:h-[891px] xl:h-[680px]  2xl:h-[796px] rounded-[100px]  "
               />
               <div className=" 2xl:w-[518px] w-[356px] h-[319px] md:w-[441px] md:h-[272px] 2xl:h-[318px] personscrd p-6 md:p-8 left-[4%] md:left-[19%] lg:left-[32%] xl:left-[19%] bottom-[49px] md:bottom-[110px] xl:bottom-[49px] absolute">
-                <Informationslick />
+                <Informationslick testimonialsData={testimonialsData} />
               </div>
             </div>
           </div>
@@ -43,4 +45,21 @@ export default function CustomizeplanPersonalInformation({step, setStep, setPers
       </div>
     </>
   );
+}
+
+
+export async function getServerSideProps() {
+  try {
+    //console.log('header fetching')
+    let testimonialData = await fetch(testimonials)
+    let data = await testimonialData.json()
+    return {
+      props: { testimonialsData: { ...data } }, // will be passed to the page component as props
+    }
+  } catch (error) {
+    return {
+      props: { testimonialsData: {} }
+    }
+  }
+
 }

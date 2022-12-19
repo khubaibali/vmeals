@@ -13,7 +13,9 @@ import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
-export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu }) {
+export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu, testimonialsData }) {
+  // console.log("testimonialsData>>>>",testimonialsData)
+  
   //console.log("setStepsetStep", weeklyMenu);
   const [isLoading, setLoading] = useState(false);
 
@@ -695,10 +697,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         }
       </div>
       {step == 2 &&
-        <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
+        <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} testimonialsData={testimonialsData} />
       }
       {step == 3 &&
-        <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} />
+        <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} testimonialsData={testimonialsData} />
       }
       {step == 4 &&
         <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} discountPercentage={discountPercentage} discountPrice={discountPrice} addOnTwoHundred={addOnTwoHundred} addOnFifty={addOnFifty} />

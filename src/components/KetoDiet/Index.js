@@ -10,7 +10,7 @@ import Simplemenu from "../OurPlans/Simplemenu";
 import { vmealsKetoDietContent } from "../../lib/APICommunications";
 import SEO from "../Common/SEO";
 
-export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions }) {
+export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Keto Diet");
   const [selectedPlan, setSelectedPlan] = useState("KetoDiet");
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "KetoDiet")
@@ -25,6 +25,8 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
         <Hero  step={step} plan={"Keto Diet"} />
       </div>
       <Customizeplan
+              testimonialsData={testimonialsData?.docs[0]?.testimonials}
+
                 weeklyMenu={contentDataKetoDiet?.WeeklyMenu}
 
       heading={contentDataKetoDiet?.VmealsKetoDietHeading} description={contentDataKetoDiet?.VmealsKetoDietdescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setStep={setStep} step={step}/>

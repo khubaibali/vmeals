@@ -10,7 +10,7 @@ import Simplemenu from "../OurPlans/Simplemenu";
 import SEO from "../Common/SEO";
 import { vmealsIndianFusionDietContent } from "../../lib/APICommunications";
 
-export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions }) {
+export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Green Diet")
   const [selectedPlan, setSelectedPlan] = useState("IndianFusionVegetarianDiet");
   const [step, setStep] = useState(1)
@@ -26,6 +26,8 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
         <Hero step={step} plan={"Indian Fusion"} />
       </div>
       <Customizeplan 
+              testimonialsData={testimonialsData?.docs[0]?.testimonials}
+
               weeklyMenu={contentDataIndianFusion?.WeeklyMenu}
 
       heading={contentDataIndianFusion?.VmealsIndianFusionHeading} description={contentDataIndianFusion?.VmealsIndianFusiondescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan}  setStep={setStep} step={step} />

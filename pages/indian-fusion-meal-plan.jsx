@@ -6,7 +6,9 @@ import { getServerSideProps as contentDataProps } from '../src/components/OurPla
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/IndianFusionDiet/Index'
-import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
+import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions';
+import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
+
 
 export default function indianfusion(props) {
   return (
@@ -16,6 +18,7 @@ export default function indianfusion(props) {
         metaData={props?.contentData}
         contentData={props?.contentDataIndianFusion}
         headerData={props?.headerData}
+        testimonialsData={props?.testimonialsData}
         sampleMenu={props.sampleMenu}
         builtData={props.builtData}
         socialMediaIcon={props.socialMediaIcon}
@@ -32,6 +35,7 @@ export async function getServerSideProps(constext) {
     let data = await headerProps()
     let faqQuestions = await faqQuestionsProps()
     let builtData = await builtDataProps()
+    let informationslick = await informationslickProps()
     let sampleMenu = await sampleMenuDataProps()
     let contentData = await contentDataProps();
     let socialMediaIcon = await socialMediaIconsProps()
@@ -43,6 +47,7 @@ export async function getServerSideProps(constext) {
         ...builtData.props,
         ...faqQuestions.props,
         ...contentData.props,
+        ...informationslick.props,
         ...sampleMenu.props,
         ...socialMediaIcon.props,
         ...contentDataPage.props

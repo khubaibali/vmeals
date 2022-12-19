@@ -8,12 +8,14 @@ import { getServerSideProps as sampleMenuDataProps } from '../src/components/Our
 import { getServerSideProps as contentDataPropsPage } from '../src/components/KetoDiet/Index'
 import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
 
+import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
 
 export default function ketodiet(props) {
   return (
     <div>
       <Ketopage
         faqQuestions={props.faqQuestions}
+        testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
         contentData={props?.contentDataKetoDiet}
         headerData={props?.headerData}
@@ -36,6 +38,8 @@ export async function getServerSideProps(constext) {
     let builtData = await builtDataProps()
     let sampleMenu = await sampleMenuDataProps()
     let contentData = await contentDataProps();
+    let informationslick = await informationslickProps()
+
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
     //console.log("header props", contentDataPage)
@@ -47,6 +51,7 @@ export async function getServerSideProps(constext) {
         ...faqQuestions.props,
         ...socialMediaIcon.props,
         ...sampleMenu.props,
+        ...informationslick.props,
         ...contentDataPage.props
       }, // will be passed to the page component as props
     }

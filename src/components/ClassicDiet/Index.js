@@ -11,13 +11,13 @@ import SEO from "../Common/SEO";
 import { vmealsClassicDietContent } from "../../lib/APICommunications";
 // import { url } from "inspector";
 
-export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData, faqQuestions, contentData, metaData, sampleMenu }) {
+export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData, faqQuestions, contentData, metaData, sampleMenu,testimonialsData }) {
   const [selectedPlan, setSelectedPlan] = useState("ClassicDiet");
   const metaDataContent = Object.values(metaData).find(c => c.title == "Classic Diet")
   const contentDataClassicDiet = Object.values(contentData).find(c => c.VMealsClassicDietEnableDisables == "Enable")
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "ClassicDiet")
   const [step, setStep] = useState(1)
-
+  
   //console.log("headerDara in nnnnn", contentDataClassicDiet)
   return (
     <>
@@ -28,6 +28,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
         <Hero step={step} plan={"Classic Diet"} />
       </div>
       <Customizeplan  
+        testimonialsData={testimonialsData?.docs[0]?.testimonials}
         weeklyMenu={contentDataClassicDiet?.WeeklyMenu}
         heading={contentDataClassicDiet?.VMealsClassicDietHeading} 
         description={contentDataClassicDiet?.VMealsClassicDietdescriptionParagraphs} 

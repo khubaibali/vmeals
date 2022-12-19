@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Informationslick from "./Informationslick";
+import Informationslick from "../OurPlans/Informationslick";
 import Link from "next/link";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { vmealsCheckPaymentStatus, vmealsOrder } from "../../lib/APICommunications";
 const cookies = new Cookies();
-export default function Customizeplan() {
+export default function Customizeplan({testimonialsData}) {
+  console.log("testimonialsDatatestimonialsData",testimonialsData)
   const [openTab, setOpenTab] = useState(1);
   const [success, setSuccess] = useState(true);
   const [message, setMessage] = useState(null);
@@ -75,7 +76,7 @@ export default function Customizeplan() {
                 className="w-full h-[588px] md:h-[891px] xl:h-[680px]  2xl:h-[796px] rounded-[100px]  "
               />
               <div className=" 2xl:w-[518px] w-[356px] h-[319px] md:w-[441px] md:h-[272px] 2xl:h-[318px] personscrd p-6 md:p-8 left-[4%] md:left-[19%] lg:left-[13%] xl:left-[19%] bottom-[49px] md:bottom-[110px] xl:bottom-[49px] absolute">
-                <Informationslick />
+                <Informationslick testimonialsData={testimonialsData} />
               </div>
             </div>
           </div>

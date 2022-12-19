@@ -5,15 +5,17 @@ import { getServerSideProps as builtDataProps } from '../src/components/Home/Bui
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
+import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
 import { getServerSideProps as contentDataClassicDietProps } from '../src/components/ClassicDiet/Index'
-import {getServerSideProps as faqQuestionsProps} from '../src/components/Faq/Questions'
+import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
 
 
 const mealPlans = (props) => {
-  //console.log("props in meall", props)
+  console.log("props in meall", props)
   return (
     <div>
       <ClassicDietpage
+        testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
         faqQuestions={props.faqQuestions}
         contentData={props?.contentDataClassicDiet}
@@ -35,6 +37,7 @@ export async function getServerSideProps(constext) {
     let contentData = await contentDataProps();
     let contentDataClassicDiet = await contentDataClassicDietProps();
     let builtData = await builtDataProps()
+    let informationslick = await informationslickProps()
     let faqQuestions = await faqQuestionsProps()
     let sampleMenu = await sampleMenuDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
@@ -47,6 +50,7 @@ export async function getServerSideProps(constext) {
         ...socialMediaIcon.props,
         ...contentData.props,
         ...contentDataClassicDiet.props,
+        ...informationslick.props,
         ...sampleMenu.props,
         // contentData
       }, // will be passed to the page component as props
