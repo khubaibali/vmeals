@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "./Steps";
-import { useCoupon, vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
+import { mealPlansFaqs, useCoupon, vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
 import PlanData from '../../lib/data/meal-plans/data.json'
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../helpers";
@@ -713,11 +713,14 @@ export async function getServerSideProps() {
   try {
 
     let contentData = await fetch(vmealsPages)
-    let data = await contentData.json()
+    let data = await contentData.json();
+
+    let mealPlansFaqsData = await fetch(mealPlansFaqs)
+    let faqData = await mealPlansFaqsData.json()
     //console.log("slider bar ->>", data)
 
     return {
-      props: { contentData: { ...data?.docs } }, // will be passed to the page component as props
+      props: { contentData: { ...data?.docs }, mealPlansFaqsData: { ...faqData?.docs} }, // will be passed to the page component as props
     }
   } catch (error) {
     return {

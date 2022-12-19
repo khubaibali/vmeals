@@ -6,6 +6,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
   const [finalPrice, setFinalPrice] = useState(planInformation?.price)
   const mapPlanName = (plan) => {
     if (plan == "ClassicDiet") return "Classic Diet"
+    if (plan == "GreenDietVegetarian") return "Green Diet"
     else return plan
   }
 

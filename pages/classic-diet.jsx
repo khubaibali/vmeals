@@ -15,6 +15,7 @@ const mealPlans = (props) => {
   return (
     <div>
       <ClassicDietpage
+        mealPlansFaqsData={props?.mealPlansFaqsData}
         testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
         faqQuestions={props.faqQuestions}
