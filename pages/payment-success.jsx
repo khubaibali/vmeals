@@ -2,9 +2,11 @@ import React from 'react'
 import  Paymentconfirmation from '../src/components/Payment Confirmation/Index'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
+import { getServerSideProps as paymentSuccessProps } from '../src/components/Payment Confirmation/Customizeplan'
 import SEO from '../src/components/Common/SEO'
 
 export default function confirmation(props) {
+  // console.log("paymentSuccessProps", props)
   return (
     <div>
         <SEO pageTitle='Payment Successful' metaText={"Vmeal"} />
@@ -23,11 +25,13 @@ export async function getServerSideProps(constext) {
     //console.log("calling class")
     let data = await headerProps()
     let socialMediaIcon = await socialMediaIconsProps()
+    let paymentSuccess = await paymentSuccessProps()
     //console.log("header props", data)
     return {
       props: {
         ...data.props,
         ...socialMediaIcon.props,
+        ...paymentSuccess.props
         // contentData
       }, // will be passed to the page component as props
     }
