@@ -109,11 +109,11 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                   
                     <ul className="inline-flex  mt-2" >
                     <li>
-                    <img src="/images/VIsa-Logo.png" className="    w-[24px] md:w-[40px] lg:w-[60px]  h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
+                    <img style={{backgroundColor:"white"}} src="https://firebasestorage.googleapis.com/v0/b/joiingmandarin.appspot.com/o/VMeals-Visa-Card-Logo.svg?alt=media&token=c691e55d-a7a0-47b1-b9f0-41574a65b3c3" className="    w-[24px] md:w-[40px] lg:w-[60px]  h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
 
                   </li>
                   <li>
-                    <img src="/images/Mastercard-Logo.png" className="  w-[24px]  md:w-[40px] lg:w-[60px]  h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
+                    <img style={{backgroundColor:"white"}} src="https://firebasestorage.googleapis.com/v0/b/joiingmandarin.appspot.com/o/VMeals-Mastercard-Logo.svg?alt=media&token=bff9e677-682c-4583-91da-d2f7e6496524" className="  w-[24px]  md:w-[40px] lg:w-[60px]  h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
 
                   </li>
                     </ul>
