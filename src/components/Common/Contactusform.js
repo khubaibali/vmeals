@@ -3,14 +3,23 @@ import { vmealsContact, vmealsFormContactUs } from "../../lib/APICommunications"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CountryCodeData from "../../lib/data/countryCode/data.json";
+import { validateEmail } from "../../helpers";
 export default function Contactusform() {
   const [registerForm, setFormData] = useState({})
+  const [validateEmailError, setValidateEmailError] = useState(null)
   const [isDisabled, setDisable] = useState(false)
   const [countryDialCode, setCountryDialCode] = useState("+971");
   function formControl(event) {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
-  function CallSubmitForm() {
+  const CallSubmitForm = async () => {
+    let validate = await validateEmail(registerForm.email)
+    console.log("here", validate)
+    if (validate == "Invalid Email Address!") {
+      console.log("here 1")
+      setValidateEmailError(validate)
+      return false
+    }
     setDisable(true)
     fetch(`${vmealsContact}`, {
       method: 'POST',
@@ -75,6 +84,7 @@ export default function Contactusform() {
               className=" input-register "
               onChange={formControl}
             />
+            {validateEmailError && <h2 className="text-red">{validateEmailError}</h2>}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-sm xl:text-base f-f-b text-black  ">

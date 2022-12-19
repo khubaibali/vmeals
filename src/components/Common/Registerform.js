@@ -4,15 +4,29 @@ import { vmealsRegisterCompany } from "../../../src/lib/APICommunications";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CountryCodeData from "../../lib/data/countryCode/data.json";
+import { validateEmail } from "../../helpers";
 export default function Registerform() {
   const [registerForm, setFormData] = useState({})
   const [isDisabled, setDisable] = useState(false)
+  const [validateEmailError, setValidateEmailError] = useState(null)
   const [countryDialCode, setCountryDialCode] = useState("+971");
 
   function formControl(event) {
+    // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", { [event.target.name]: event.target.value })
+
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
-  function CallSubmitForm() {
+  const CallSubmitForm = async () => {
+    // if(registerForm.email){
+    let validate = await validateEmail(registerForm.email)
+    // console.log("here", validate)
+    if (validate == "Invalid Email Address!") {
+      // console.log("here 1")
+      setValidateEmailError(validate)
+      return false
+    }
+    // }
+    // console.log("registerForm", registerForm); return
     setDisable(true)
     fetch(`${vmealsRegisterCompany}`, {
       method: 'POST',
@@ -77,6 +91,7 @@ export default function Registerform() {
               className=" input-register "
               onChange={formControl}
             />
+            {validateEmailError && <h2 className="text-red">{validateEmailError}</h2>}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-base f-f-b text-black  ">
