@@ -6,12 +6,14 @@ import { getServerSideProps as contentDataProps } from '../src/components/OurPla
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/KetoDiet/Index'
+import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
 
 
 export default function ketodiet(props) {
   return (
     <div>
       <Ketopage
+        faqQuestions={props.faqQuestions}
         metaData={props?.contentData}
         contentData={props?.contentDataKetoDiet}
         headerData={props?.headerData}
@@ -30,6 +32,7 @@ export async function getServerSideProps(constext) {
   try {
     //console.log("calling class")
     let data = await headerProps()
+    let faqQuestions = await faqQuestionsProps()
     let builtData = await builtDataProps()
     let sampleMenu = await sampleMenuDataProps()
     let contentData = await contentDataProps();
@@ -41,6 +44,7 @@ export async function getServerSideProps(constext) {
         ...data.props,
         ...builtData.props,
         ...contentData.props,
+        ...faqQuestions.props,
         ...socialMediaIcon.props,
         ...sampleMenu.props,
         ...contentDataPage.props

@@ -88,13 +88,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
             return false;
           } else {
             setCouponError(null);
-            //console.log(
-              "yyyyy",
-              Number(price),
-              Number(res?.doc?.discountPercentage),
-              typeof res?.data?.doc?.discountPercentage,
-              res
-            );
+            // console.log(
+            //   "yyyyy",
+            //   Number(price),
+            //   Number(res?.doc?.discountPercentage),
+            //   typeof res?.data?.doc?.discountPercentage,
+            //   res
+            // );
 
             let onlyDiscountPrice =
               Number(price) *
@@ -102,26 +102,26 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
             setDiscountPrice(onlyDiscountPrice);
             setDiscountPercentage(Number(res?.data?.doc?.discountPercentage));
-            //console.log(
-              "typeof",
-              typeof onlyDiscountPrice,
-              onlyDiscountPrice,
-              price,
-              totalPrice,
-              typeof price,
-              typeof totalPrice
-            );
+            // console.log(
+            //   "typeof",
+            //   typeof onlyDiscountPrice,
+            //   onlyDiscountPrice,
+            //   price,
+            //   totalPrice,
+            //   typeof price,
+            //   typeof totalPrice
+            // );
             let priceConverted = Number(price);
             let totalPriceConverted = Number(totalPrice);
             let priceFinal = priceConverted - onlyDiscountPrice;
             let totalPriceFinal = totalPriceConverted - onlyDiscountPrice;
-            //console.log(
-              "aaaaaaa",
-              priceFinal,
-              typeof priceFinal,
-              totalPriceFinal,
-              typeof totalPriceFinal
-            );
+            // console.log(
+            //   "aaaaaaa",
+            //   priceFinal,
+            //   typeof priceFinal,
+            //   totalPriceFinal,
+            //   typeof totalPriceFinal
+            // );
             // setPrice(Number(priceConverted) - Number(onlyDiscountPrice));
             // setTotalPrice(Number(totalPrice) - Number(onlyDiscountPrice));
             setCoupunApplied(true);

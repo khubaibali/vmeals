@@ -6,11 +6,13 @@ import { getServerSideProps as contentDataProps } from '../src/components/OurPla
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/GreenDiet/Index'
+import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
 
 export default function greendiet(props) {
   return (
     <div>
       <GreenDietpage
+        faqQuestions={props.faqQuestions}
         metaData={props?.contentData}
         contentData={props?.contentDataGreenDiet}
         headerData={props?.headerData}
@@ -29,6 +31,7 @@ export async function getServerSideProps(constext) {
     //console.log("calling class")
     let data = await headerProps()
     let builtData = await builtDataProps()
+    let faqQuestions = await faqQuestionsProps()
     let sampleMenu = await sampleMenuDataProps()
     let contentData = await contentDataProps();
     let socialMediaIcon = await socialMediaIconsProps()
@@ -40,6 +43,7 @@ export async function getServerSideProps(constext) {
         ...builtData.props,
         ...contentData.props,
         ...socialMediaIcon.props,
+        ...faqQuestions.props,
         ...sampleMenu.props,
         ...contentDataPage.props
       }, // will be passed to the page component as props

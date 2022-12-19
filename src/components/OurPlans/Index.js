@@ -7,10 +7,14 @@ import Fotter from "../Common/Footer";
 import Fitness from "../Home/Fitness";
 import Built from "../Home/Built";
 import Question from "../Faq/Questions";
+import SEO from "../Common/SEO";
 
-export default function Index({headerData,sliderBarData,builtData,homeFitnessData,socialMediaIcon,footerData,tradeMarkData,faqQuestions}) {
+export default function Index({headerData,sliderBarData,builtData,homeFitnessData,socialMediaIcon,footerData,tradeMarkData,faqQuestions, metaData}) {
+  const metaDataContent = Object.values(metaData).find(c => c.title == "Our Plans");
+
   return (
     <>
+    <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
       <div className="ourplansbg">
         <Navbar headerData={headerData} />
         <Hero sliderBarData={sliderBarData} />
@@ -25,4 +29,23 @@ export default function Index({headerData,sliderBarData,builtData,homeFitnessDat
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
   );
+}
+
+
+export async function getServerSideProps() {
+  try {
+   
+    let mealPlanData = await fetch(vmealsKetoDietContent)
+    let data = await mealPlanData.json()
+    //console.log("slider bar ->>",data)
+   
+    return {
+      props: { mealPlanData: { ...data?.docs } }, // will be passed to the page component as props
+    }
+  } catch (error) {
+    return {
+      props: { mealPlanData: [] }
+    }
+  }
+
 }

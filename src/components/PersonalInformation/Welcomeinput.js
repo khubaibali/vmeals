@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment/moment";
 import CountryCodeData from "../../lib/data/countryCode/data.json";
+import { validateEmail } from "../../helpers";
 
 export default function Welcomeinput({ setStep, setPersonalInformation, personalInformation }) {
   const [firstName, setFirstName] = useState(personalInformation?.firstName)
@@ -16,8 +17,15 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
   const [errors, setErrors] = useState(null);
   const [countryDialCode, setCountryDialCode] = useState("+971");
 
-  const Validation = () => {
+  const Validation = async () => {
     let err = [];
+    let checkEmail = await validateEmail(email);
+    if(checkEmail == "Invalid Email Address!"){
+      err.push({
+        field: "email",
+        msg: checkEmail,
+      });
+    }
     if (!firstName) {
       err.push({
         field: "firstName",

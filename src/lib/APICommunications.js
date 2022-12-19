@@ -37,4 +37,4 @@ export const vmealsPages = `${BaseURL}api/pages?page=1&limit=300`;
 export const vmealsSampleMenu = `${BaseURL}api/vmeals-sample-menu`;
 export const vmealsBlogCategories = `${BaseURL}api/blogcategories`;
 export const useCoupon = `${BaseURLExternal}coupon/useCoupon`;
-export const checkPaymentStatus = `${BaseURL}api/checkPaymentStatus`;
+export const vmealsCheckPaymentStatus = `${BaseURL}api/checkPaymentStatus`;

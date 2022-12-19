@@ -6,6 +6,7 @@ import { getServerSideProps as contentDataProps } from '../src/components/OurPla
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/GluentDiet/Index'
+import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
 
 
 export default function gluent(props) {
@@ -13,6 +14,7 @@ export default function gluent(props) {
   return (
     <div>
       <Gluentdietpage
+        faqQuestions={props.faqQuestions}
         metaData={props?.contentData}
         contentData={props?.contentDataGlutenAndDairyFreeDiet}
         headerData={props?.headerData}
@@ -31,6 +33,7 @@ export async function getServerSideProps(constext) {
     //console.log("calling class")
     let data = await headerProps()
     let builtData = await builtDataProps()
+    let faqQuestions = await faqQuestionsProps()
     let contentData = await contentDataProps();
     let sampleMenu = await sampleMenuDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
@@ -42,6 +45,7 @@ export async function getServerSideProps(constext) {
         ...builtData.props,
         ...contentData.props,
         ...socialMediaIcon.props,
+        ...faqQuestions.props,
         ...sampleMenu.props,
         ...contentDataPage.props
       }, // will be passed to the page component as props

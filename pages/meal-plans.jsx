@@ -8,11 +8,12 @@ import {getServerSideProps as faqQuestionsProps} from '../src/components/Faq/Que
 import {getServerSideProps as homeFitnessDataProps} from '../src/components/Home/Fitness'
 import {getServerSideProps as ourHomeBlogsDataProps} from '../src/components/Home/Ourblog'
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
+import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
 
 export default function ourplans(props) {
   return (
     <div>
-        <Ourplanspage headerData={props?.headerData} faqQuestions={props.faqQuestions}  sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData ={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}  />
+        <Ourplanspage metaData={props?.contentData} headerData={props?.headerData} faqQuestions={props.faqQuestions}  sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData ={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}  />
     </div>
   )
 }
@@ -24,6 +25,7 @@ export async function getServerSideProps() {
     let sliderBarData = await sliderBarProps()
     let faqQuestions = await faqQuestionsProps()
     let builtData = await builtDataProps()
+    let contentData = await contentDataProps();
     let ourGeniusData = await ourGeniusDataProps()
     let homeFitnessData = await homeFitnessDataProps()
     let ourHomeBlogData = await ourHomeBlogsDataProps()
@@ -33,7 +35,8 @@ export async function getServerSideProps() {
        props: { 
          ...data.props,
          ...sliderBarData.props,
-         ...builtData.props,
+        ...contentData.props,
+        ...builtData.props,
          ...ourGeniusData.props,
         ...faqQuestions.props,
         ...homeFitnessData.props,

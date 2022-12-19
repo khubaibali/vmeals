@@ -6,6 +6,7 @@ import { getServerSideProps as socialMediaIconsProps } from '../src/components/C
 import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as contentDataClassicDietProps } from '../src/components/ClassicDiet/Index'
+import {getServerSideProps as faqQuestionsProps} from '../src/components/Faq/Questions'
 
 
 const mealPlans = (props) => {
@@ -14,6 +15,7 @@ const mealPlans = (props) => {
     <div>
       <ClassicDietpage
         metaData={props?.contentData}
+        faqQuestions={props.faqQuestions}
         contentData={props?.contentDataClassicDiet}
         headerData={props?.headerData}
         builtData={props.builtData}
@@ -33,12 +35,14 @@ export async function getServerSideProps(constext) {
     let contentData = await contentDataProps();
     let contentDataClassicDiet = await contentDataClassicDietProps();
     let builtData = await builtDataProps()
+    let faqQuestions = await faqQuestionsProps()
     let sampleMenu = await sampleMenuDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
     //console.log("header props", data)
     return {
       props: {
         ...data.props,
+        ...faqQuestions.props,
         ...builtData.props,
         ...socialMediaIcon.props,
         ...contentData.props,

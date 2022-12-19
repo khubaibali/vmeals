@@ -10,7 +10,7 @@ import Simplemenu from "../OurPlans/Simplemenu";
 import { vmealsGlutenAndDairyDietContent } from "../../lib/APICommunications";
 import SEO from "../Common/SEO";
 
-export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData,contentData, metaData, sampleMenu }) {
+export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData,contentData, metaData, sampleMenu, faqQuestions }) {
   const [selectedPlan, setSelectedPlan] = useState("GlutenAndDairyFreeDiet");
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GlutenAndDairyFreeDiet")
   const metaDataContent = Object.values(metaData).find(c => c.title == "Gluten & Dairy Free")
@@ -32,7 +32,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
       <Simplemenu  sampleMenu={sampleMenuContent?.SampleMenu} />
       <Built builtData={builtData} />
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-        {/* <Question /> */}
+        <Question faqQuestions={faqQuestions} />
       </div>
       {/* <Review /> */}
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
