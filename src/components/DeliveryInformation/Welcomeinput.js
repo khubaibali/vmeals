@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import citiesData from "../../lib/data/city-with-slots/data.json";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { validateGoogleMapURL } from "../../helpers";
 
 
 export default function Welcomeinput({ step, setStep, setDeliveryInformation, planInformation, price, deliveryInformation, addOnTwoHundred, addOnFifty }) {
@@ -56,8 +57,15 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
   };
 
 
-  const Validation = () => {
+  const Validation = async () => {
     let err = [];
+    let checkGoggleLink = await validateGoogleMapURL(googleLink);
+    if(checkGoggleLink == "Invalid Google Link!"){
+      err.push({
+        field: "googleLink",
+        msg: checkGoggleLink,
+      });
+    }
     if (!startingDate) {
       err.push({
         field: "startingDate",
@@ -248,7 +256,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
               placeholder="Enter the Google maps link..."
               className=" input-register "
               value={googleLink}
-              onChange={(e) => setGoogleLink(e.target.value)}
+              onChange={(e) => {
+                setGoogleLink(e.target.value)
+              }}
             />
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
