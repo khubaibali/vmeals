@@ -4,6 +4,7 @@ import { getServerSideProps as headerProps } from '../src/components/Common/Navb
 import { getServerSideProps as sliderBarProps } from '../src/components/Home/Hero'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import { getServerSideProps as ourCompanyDataProps} from '../src/components/About Us/JournyMissionWrapper'
+import { getServerSideProps as googleReviewsProps } from "../src/components/Common/Review"
 import SEO from '../src/components/Common/SEO'
 import { vmealsPages } from '../src/lib/APICommunications'
 export default function about(props) {
@@ -11,7 +12,7 @@ export default function about(props) {
   const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Our Company")
   return (
     <div>
-      <Aboutpage headerData={props?.headerData} sliderBarData={props?.sliderBarData} footerData={props?.footerData} tradeMarkData={props?.tradmark} socialMediaIcon={props?.socialMediaIcon} ourCompanyData={props?.ourCompanyData} />
+      <Aboutpage headerData={props?.headerData} sliderBarData={props?.sliderBarData} footerData={props?.footerData} tradeMarkData={props?.tradmark} socialMediaIcon={props?.socialMediaIcon} ourCompanyData={props?.ourCompanyData} googleReviews={props.googleReviews}/>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
     </div>
   )
@@ -23,7 +24,7 @@ export async function getServerSideProps({req,res}) {
     'public, s-maxage=10, stale-while-revalidate=59'
   )
   try {
-    let resolvedPromises = await Promise.all([headerProps(),sliderBarProps(),socialMediaIconsProps(),ourCompanyDataProps()])
+    let resolvedPromises = await Promise.all([headerProps(),sliderBarProps(),socialMediaIconsProps(),ourCompanyDataProps(),googleReviewsProps()])
     let metaData = await (await fetch(vmealsPages)).json()
     let final = resolvedPromises.map((itx)=>(itx.props))
     let newObject ={}

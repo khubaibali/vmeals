@@ -31,6 +31,7 @@ export const vmealsIndianFusionDietContent = `${BaseURL}api/vmeals-indian-fusion
 export const vmealsPescatarianDietContent = `${BaseURL}api/vmeals-pescatarian-diet`;
 export const vmealsKetoDietContent = `${BaseURL}api/vmeals-keto-diet`;
 export const vmealsSubscribe = `${BaseURL}api/subscribe`;
+export const getGoogleReviews = `${BaseURL}api/getGoogleReviews`;
 export const vmealsOurBlogs = `${BaseURL}api/vmeals-blogs-data`;
 export const vmealsOurBlogsALL = `${BaseURL}api/vmeals-blogs-data?page=1&limit=1000`;
 export const vmealsPages = `${BaseURL}api/pages?page=1&limit=300`;

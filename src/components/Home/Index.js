@@ -10,7 +10,7 @@ const Fotter = dynamic(() => import("../Common/Footer"))
 import Review from '../Common/Review';
 
 
-export default function Index({ headerData, sliderBarData, builtData, ourGeniusData, homeFitnessData, ourHomeBlogData, socialMediaIcon, footerData, tradeMarkData }) {
+export default function Index({ headerData, sliderBarData, builtData, ourGeniusData, homeFitnessData, ourHomeBlogData, socialMediaIcon, footerData, tradeMarkData,googleReviews }) {
   // //console.log("homeFitnessData",homeFitnessData)
   return (
     <>
@@ -23,7 +23,7 @@ export default function Index({ headerData, sliderBarData, builtData, ourGeniusD
       </div>
       <Genius ourGeniusData={ourGeniusData} />
       <Fitness homeFitnessData={homeFitnessData} />
-      <Review />
+      <Review googleReviews={googleReviews}/>
       <Ourblog ourHomeBlogData={ourHomeBlogData} />
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>

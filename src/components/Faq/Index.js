@@ -5,7 +5,7 @@ import Review from '../Common/Review';
 import Fotter from "../Common/Footer";
 import Questions from "./Questions";
 
-export default function Index({tradeMarkData,headerData,footerData,sliderBarData,socialMediaIcon,faqQuestions}) {
+export default function Index({tradeMarkData,headerData,footerData,sliderBarData,socialMediaIcon,faqQuestions,googleReviews}) {
   return (
     <>
       <div className="faq-bg">
@@ -14,7 +14,7 @@ export default function Index({tradeMarkData,headerData,footerData,sliderBarData
       </div>
       <Questions faqQuestions={faqQuestions} />
       <div className=" 2xl:mt-[100px]" >
-      <Review />
+      <Review googleReviews={googleReviews}/>
       </div>
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>
     </>
