@@ -1,13 +1,17 @@
 import React from 'react'
-import  Srvicdubai from '../src/components/ServiceAbuDehbi/Index.js'
+import Srvicdubai from '../src/components/ServiceAbuDehbi/Index.js'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
-import SEO from '../src/components/Common/SEO'
+import SEO from '../src/components/Common/SEO.jsx'
 import { vmealsPages } from '../src/lib/APICommunications'
 export default function servicedubai(props) {
+  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Abu Dhabi")
+  console.log("metaContent",metaDataContent)
+  console.log("metaContent",metaDataContent?.meta?.title)
   return (
     <div>
-    <Srvicdubai headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}/>
+      <Srvicdubai headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} />
+      <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
     </div>
   )
 }

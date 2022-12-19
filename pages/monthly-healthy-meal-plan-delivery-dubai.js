@@ -1,21 +1,20 @@
 import React from 'react'
-import  Srvicdubai from '../src/components/ServiceDubai/Index.js'
+import Srvicdubai from '../src/components/ServiceDubai/Index.js'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
 import SEO from '../src/components/Common/SEO'
 import { vmealsPages } from '../src/lib/APICommunications'
 export default function servicedubai(props) {
+  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Dubai")
   return (
     <div>
-            <Srvicdubai headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}/>
+      <Srvicdubai headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} />
+      <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
     </div>
   )
 }
 export async function getServerSideProps({ req, res }) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
+
   try {
     //console.log("calling")
     let resolvedPromises = await Promise.all([headerProps(), socialMediaIconsProps()])
