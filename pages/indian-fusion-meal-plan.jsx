@@ -8,6 +8,7 @@ import { getServerSideProps as socialMediaIconsProps } from '../src/components/C
 import { getServerSideProps as contentDataPropsPage } from '../src/components/IndianFusionDiet/Index'
 import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions';
 import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
+import { getServerSideProps as googleReviewsProps } from "../src/components/Common/Review"
 
 
 export default function indianfusion(props) {
@@ -24,6 +25,7 @@ export default function indianfusion(props) {
         socialMediaIcon={props.socialMediaIcon}
         footerData={props.footerData}
         tradeMarkData={props.tradmark}
+        googleReviews={props.googleReviews}
       />
     </div>
   )
@@ -40,6 +42,7 @@ export async function getServerSideProps(constext) {
     let contentData = await contentDataProps();
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
+    let googleReviews = await googleReviewsProps()
     //console.log("header props", contentDataPage)
     return {
       props: {
@@ -50,7 +53,8 @@ export async function getServerSideProps(constext) {
         ...informationslick.props,
         ...sampleMenu.props,
         ...socialMediaIcon.props,
-        ...contentDataPage.props
+        ...contentDataPage.props,
+        ...googleReviews.props
       }, // will be passed to the page component as props
     }
   } catch (error) {
