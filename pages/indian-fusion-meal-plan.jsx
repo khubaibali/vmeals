@@ -12,6 +12,7 @@ import { getServerSideProps as googleReviewsProps } from "../src/components/Comm
 
 
 export default function indianfusion(props) {
+  console.log("google reviews indian ",props.googleReviews)
   return (
     <div>
       <Indiandietpage
@@ -20,12 +21,12 @@ export default function indianfusion(props) {
         contentData={props?.contentDataIndianFusion}
         headerData={props?.headerData}
         testimonialsData={props?.testimonialsData}
-        sampleMenu={props.sampleMenu}
-        builtData={props.builtData}
-        socialMediaIcon={props.socialMediaIcon}
-        footerData={props.footerData}
-        tradeMarkData={props.tradmark}
-        googleReviews={props.googleReviews}
+        sampleMenu={props?.sampleMenu}
+        builtData={props?.builtData}
+        socialMediaIcon={props?.socialMediaIcon}
+        footerData={props?.footerData}
+        tradeMarkData={props?.tradmark}
+        googleReviews={props?.googleReviews}
       />
     </div>
   )
