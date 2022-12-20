@@ -15,7 +15,7 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu, testimonialsData }) {
   // console.log("testimonialsData>>>>",testimonialsData)
-  
+
   //console.log("setStepsetStep", weeklyMenu);
   const [isLoading, setLoading] = useState(false);
 
@@ -209,7 +209,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
   // console.log("allergies", allergies?.map((a) => a.name)?.join(", "))
   const createOrder = () => {
-// console.log("deliveryInformation", deliveryInformation)
+    // console.log("deliveryInformation", deliveryInformation)
     let body = {
       plan: {
         planName: selectedPlan,
@@ -246,7 +246,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         deliverySlot: deliveryInformation?.deliverySlot,
         price: Number(price),
         totalPrice: Number(((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)),
-        discountPrice:  Number((discountPrice).toFixed(2)),
+        discountPrice: Number((discountPrice).toFixed(2)),
       },
     };
     cookies.set(
@@ -281,7 +281,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   useEffect(() => {
     setTotalPrice()
   })
-
+  console.log("aaaaaaaaaaaaa", PlanData["GreenDietVegan"]?.portions[0]?.planDuration[0]?.deliveriesPerWeek)
   //console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 
@@ -310,19 +310,19 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   </li>
                   <li className="text-right ml-auto ">
                     <a href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`} target="_blank">
-                    <button className="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
-                      <ul className="inline-flex">
-                        <li>
-                          <img
-                            src="/images/menu 1.png"
-                            className="  w-[16px] md:w-[32px] lg:w-[28px] xl:w-[27px] 2xl:w-[40px] h-auto mt-2 lg:mt-4 xl:mt-3  "
-                          />
-                        </li>
-                        <li className="mt-1 md:mt-3 2xl:mt-4 ml-2 lg:ml-2 xl:ml-4">
-                          Weekly Menu
-                        </li>
-                      </ul>
-                    </button>
+                      <button className="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
+                        <ul className="inline-flex">
+                          <li>
+                            <img
+                              src="/images/menu 1.png"
+                              className="  w-[16px] md:w-[32px] lg:w-[28px] xl:w-[27px] 2xl:w-[40px] h-auto mt-2 lg:mt-4 xl:mt-3  "
+                            />
+                          </li>
+                          <li className="mt-1 md:mt-3 2xl:mt-4 ml-2 lg:ml-2 xl:ml-4">
+                            Weekly Menu
+                          </li>
+                        </ul>
+                      </button>
                     </a>
                   </li>
                 </ul>
@@ -342,7 +342,12 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
                             setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
                             let select = selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet"
-                            setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                            // setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                            setSelectedPortion(PlanData[select]?.portions[0])
+                            setSelectedDuration(PlanData[select]?.portions[0]?.planDuration[0])
+                            setSelectedDaysPerWeek(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
+                            setMealType(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0])
+                            setPrice(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
                             setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                               id: i,
                               name: a
@@ -359,7 +364,12 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             onClick={() => {
                               let select = selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian"
                               setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
-                              setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                              // setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                              setSelectedPortion(PlanData[select]?.portions[0])
+                              setSelectedDuration(PlanData[select]?.portions[0]?.planDuration[0])
+                              setSelectedDaysPerWeek(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
+                              setMealType(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0])
+                              setPrice(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
                               setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                                 id: i,
                                 name: a
@@ -443,7 +453,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         className={`${getCustomizeActiveClass(selectedDaysPerWeek, dpw, "days")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                         onClick={() => {
                           setSelectedDaysPerWeek(dpw)
-                          setPrice(dpw?.mealType?.find((m) => m.id == mealType.id)?.price)
+                          setPrice(PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == dpw.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                          // setPrice(dpw?.mealType?.find((m) => m.id == mealType.id)?.price)
                         }}
                       >
                         <h2 className=" text-black f-f-b text-sm 2xl:text-base ">
@@ -504,7 +515,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     >
                       {selectedDaysPerWeek?.mealType?.map((dpw) => (
                         <option className=" text-center hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
-                          value={`${dpw.id}|${dpw.price}`} selected={mealType == dpw.id ? true : dpw.id == "Breakfast_Lunch_Dinner_Snack_Drink" ? true : false}
+                          value={`${dpw.id}|${dpw.price}`} selected={mealType.id == dpw.id ? true : dpw.id == "Breakfast_Lunch_Dinner_Snack_Drink" ? true : false}
                         >{dpw.name}</option>
 
                       ))};
@@ -609,8 +620,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             } else {
                               setAddOnFifty(0);
                               let index = addOnsArray?.indexOf("Eco-Friendly Cutlery");
-                              if (index > -1) { 
-                                addOnsArray.splice(index, 1); 
+                              if (index > -1) {
+                                addOnsArray.splice(index, 1);
                               }
                               // setPrice(
                               //   Number(price) - 50
@@ -646,8 +657,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             } else {
                               setAddOnTwoHundred(0);
                               let index = addOnsArray.indexOf("Thermal Bags (x2)");
-                              if (index > -1) { 
-                                addOnsArray.splice(index, 1); 
+                              if (index > -1) {
+                                addOnsArray.splice(index, 1);
                               }
                               // setPrice(
                               //   Number(price) - 200
@@ -720,7 +731,7 @@ export async function getServerSideProps() {
     //console.log("slider bar ->>", data)
 
     return {
-      props: { contentData: { ...data?.docs }, mealPlansFaqsData: { ...faqData?.docs} }, // will be passed to the page component as props
+      props: { contentData: { ...data?.docs }, mealPlansFaqsData: { ...faqData?.docs } }, // will be passed to the page component as props
     }
   } catch (error) {
     return {
