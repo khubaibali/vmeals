@@ -38,12 +38,17 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
         setStep={setStep}
         step={step}
       />
-      <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
-      <Built builtData={builtData} />
-      <div className="bg-green-light  pt-[235px]   -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-        {/* <Question faqQuestions={{"0":mealPlansFaqsData?.["0"]}} /> */}
-      </div>
-      <Review  googleReviews={googleReviews}/>
+      {step == 1 &&
+        <>
+          <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
+          <Built builtData={builtData} />
+          <div className="bg-green-light  pt-[235px]   -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
+            <Question faqQuestions={faqQuestions} />
+          </div>
+          <Review />
+
+        </>
+      }
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
   );
