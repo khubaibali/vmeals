@@ -213,7 +213,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     let body = {
       plan: {
         planName: selectedPlan,
-        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" || selectedPlan == "GreenDietVegan" ? "Vegan" : "Non-Vegetarian",
+        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ?  "Vegetarian" : "N/A",
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
         deliveriesPerWeek: selectedDaysPerWeek.days,
