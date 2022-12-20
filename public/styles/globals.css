@@ -1059,7 +1059,7 @@ background-size: cover;
   background-size: cover;
 }
 .Pescatarian{
-  /* background-image: url("/images/percian.png"); */
+  background-image: url("/images/percian.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1254,4 +1254,32 @@ color: white;
     background-image: unset;
     background-color: #E0EFDF;
   }
+}
+.size-steps{
+  font-size: 20px;
+}
+@media only screen and (max-width: 1735px) {
+  .size-steps{
+      font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1582px) {
+  .size-steps{
+    font-size: 12px;
+}
+}
+@media only screen and (max-width: 1282px) {
+  .size-steps{
+    font-size: 9px;
+}
+}
+@media only screen and (max-width: 1024px) {
+  .size-steps{
+    font-size: 7px;
+}
+}
+@media only screen and (max-width: 768px) {
+  .size-steps{
+    font-size: 13px;
+}
 }

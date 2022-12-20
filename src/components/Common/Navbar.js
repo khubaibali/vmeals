@@ -40,24 +40,11 @@ function Navbar({ headerData = {} }) {
               }}
               data-collapse-toggle="navbar-default"
               type="button"
-              className="inline-flex items-center bg-green p-2 ml-3 text-sm text-gray-500 rounded-full md:hidden  focus:outline-none shadow-2xl  "
+              className="inline-flex items-center  md:hidden  focus:outline-none shadow-2xl  "
               aria-controls="navbar-default"
               aria-expanded="false"
             >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-6 h-6"
-                aria-hidden="true"
-                fill="#FFFFFF"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
+              <img src="/images/Nav-Bar-menu.png" className=" w-[36px] h-[36px] "  />
             </button>
             <div ref={ref}
               className={`${first ? "" : "hidden"
@@ -209,12 +196,12 @@ function Navbar({ headerData = {} }) {
                 </li>
               </ul>
             </div>
-            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[40%] md:left-[40%] 2xl:left-[44%] top-[-9px] md:top-[40px] lg:top-4 z-0 ">
+            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[40%] md:left-[44%] top-[-9px] md:top-[40px] lg:top-4 z-0 ">
               <Link href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
                   src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
                   alt={headerData?.VMealsHeaderLogoImage?.alt}
-                  className=" w-[58px] h-[32px] md:w-[60px] md:h-auto lg:w-[85px]  2xl:w-[154px] 2xl:h-[84px] relative top-5  md:top-[24px] left-2 lg:top-[39px] xl:top-[50px] 2xl:top-14 lg:left-4"
+                  className=" w-[58px] h-[32px] md:w-[60px] md:h-auto lg:w-[85px]  2xl:w-[154px] 2xl:h-[84px] relative top-[17px]  md:top-[24px] left-2 lg:top-[39px] xl:top-[50px] 2xl:top-14 lg:left-4"
                 />
               </Link>
             </div>

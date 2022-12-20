@@ -79,7 +79,7 @@ export default function Review({ googleReviews = [] }) {
           {
             googleReviews?.map((gr) => (
               <div>
-                <div className='bg-green-light p-5 relative  rounded-[20px] w-[350px]  h-[280px] md:h-[398px] 2xl:h-[350px] ml-auto mr-auto   ' >
+                <div className='bg-green-light p-5 relative  rounded-[20px] w-[350px]  h-[280px] md:h-[380px] 2xl:h-[330px] ml-auto mr-auto   ' >
                   <div className="grid grid-cols-12    ">
                     <div className=" col-span-4  ">
                       <img src={gr?.profile_photo_url} className=' h-[84px] w-[84px] ' />
@@ -95,7 +95,7 @@ export default function Review({ googleReviews = [] }) {
                       <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >1 month ago</h2>
                     </div>
                     <div className=" col-span-3  ">
-                      <div className='text-right' >
+                      <div className='text-center' >
                         <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >Posted On</h2>
 
                         <img src='/images/Google-Short-Logo 1.png' className=' w-[55px] h-[56px] mt-1 ml-auto mr-auto ' />
@@ -107,7 +107,7 @@ export default function Review({ googleReviews = [] }) {
                   <p className='text-xs md:text-sm f-f-r text-grey-light mt-3 2xl:leading-[17px] ' >
                     {gr?.text}
                   </p>
-                  <button className=' text-xs md:text-sm f-f-b text-green mt-3  absolute bottom-[20px]  ' >Read More</button>
+                
                 </div>
               </div>
             ))
