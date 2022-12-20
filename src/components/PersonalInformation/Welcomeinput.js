@@ -19,16 +19,16 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
 
   const Validation = async () => {
     let err = [];
-    if(email?.length > 0) {
+    if (email?.length > 0) {
       let checkEmail = await validateEmail(email);
-      if(checkEmail == "Invalid Email Address!"){
+      if (checkEmail == "Invalid Email Address!") {
         err.push({
           field: "email",
           msg: checkEmail,
         });
       }
     }
-    
+
     if (!firstName) {
       err.push({
         field: "firstName",
@@ -159,27 +159,27 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                   Your Email
                 </label>
                 <div className="relative" >
-                <select style={{ width: '70px', height:"100%" }} value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value) } className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn" >
-                  {CountryCodeData.countryCodes.map((cc) => (
-                    <option
-                      value={cc.dial_code}
-                      selected={
-                        countryDialCode == cc.dial_code
-                          ? true
-                          : false
-                      }
-                      className="text-black"
-                    >
-                      &nbsp;&nbsp;{cc.dial_code }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
-                    </option>
-                  ))}
-                </select>
+                  <select style={{ width: '70px', height: "100%" }} value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value)} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn cursor-pointer" >
+                    {CountryCodeData.countryCodes.map((cc) => (
+                      <option
+                        value={cc.dial_code}
+                        selected={
+                          countryDialCode == cc.dial_code
+                            ? true
+                            : false
+                        }
+                        className="text-black"
+                      >
+                        &nbsp;&nbsp;{cc.dial_code}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
+                      </option>
+                    ))}
+                  </select>
 
-                <img alt=""
-                src="/images/mobilearrow.png"
-                className=" absolute top-[16px] 2xl:top-[22px] right-[3px] h-[12px] w-[12px] "
-              />
-            </div>
+                  <img alt=""
+                    src="/images/mobilearrow.png"
+                    className=" absolute top-[16px] 2xl:top-[22px] right-[3px] h-[12px] w-[12px] "
+                  />
+                </div>
 
                 {/* <button
                   id="dropdown-button"
@@ -273,25 +273,25 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
 
             {/* date input */}
             <div className="relative" >
-            <DatePicker
-              selected={dateOfBirth || ""}
-              onChange={(date) => setDateOfBirth(date)}
-              dateFormat="dd/MM/yyyy"
-              maxDate={moment().subtract(18, "years")._d}
-              showYearDropdown
-              scrollableYearDropdown
-              placeholderText={
-                " Select your date of birth"
-              }
-              yearDropdownItemNumber={50}
-              className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]   "
-            />
-            <img alt=""
+              <DatePicker
+                selected={dateOfBirth || ""}
+                onChange={(date) => setDateOfBirth(date)}
+                dateFormat="dd/MM/yyyy"
+                maxDate={moment().subtract(18, "years")._d}
+                showYearDropdown
+                scrollableYearDropdown
+                placeholderText={
+                  " Select your date of birth"
+                }
+                yearDropdownItemNumber={50}
+                className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer "
+              />
+              <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[20px] right-[17px]"
               />
 
-</div>
+            </div>
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
                 {errors?.find((e) => e.field == "dob")
@@ -355,8 +355,8 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
 
             {/* new code data started */}
             <div className="relative" >
-              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " onChange={(e) => setNationality(e.target.value)} >
-                <option value={""}>Select Nationality</option>
+              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
+                <option value={""} className="text-black">Select Nationality</option>
                 {NationalityData.nationality.map((n) => (
                   <option className="text-black" value={n.nationality} selected={n.nationality == nationality ? true : false}>
                     {n.nationality}

@@ -116,7 +116,7 @@ export default function Registerform() {
                   <img src="/images/mobilearrow.png" className=" w-[12px] h-[12px] ml-1" />
                 </button> */}
                  <div className="relative" >
-                <select style={{ width: '70px', height:"100%" }} name="countryCode" onChange={formControl} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn" >
+                <select style={{ width: '70px', height:"100%" }} name="countryCode" onChange={formControl} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn cursor-pointer" >
                   {CountryCodeData.countryCodes.map((cc) => (
                     <option
                       value={cc.dial_code}
@@ -127,7 +127,7 @@ export default function Registerform() {
                       }
                       className="text-black"
                     >
-                      {cc.dial_code}&nbsp;&nbsp;{" "}
+                       &nbsp;&nbsp;{cc.dial_code}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
                     </option>
                   ))}
                 </select>
@@ -183,7 +183,7 @@ export default function Registerform() {
                 <div className="relative w-full">
                   <input
                     name="mobileNumber"
-                    type="search"
+                    type="number"
                     id="search-dropdown"
                     className="block  input-register-mob"
                     placeholder="Enter your mobile number…"

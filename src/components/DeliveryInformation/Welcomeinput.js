@@ -145,7 +145,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
               showYearDropdown
               scrollableYearDropdown
               placeholderText={"Select starting date"}
-              className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]   "
+              className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer "
               {...startingPlanDateFormat()}
             />
               <img alt=""
@@ -169,7 +169,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             </h2>
 
             <div className="relative" >
-              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  " onChange={(e) => {
+              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px] cursor-pointer " onChange={(e) => {
                 setDeliverySlotList(
                   citiesData?.cities.find(
                     (c) => c.name === e.target.value
@@ -292,7 +292,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
               
             <select id="city" name="city" onChange={(e) =>
               setDeliverySlot(e.target.value)
-            } className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  "
+            } className=" items-center text-sm f-f-b text-white optinbg contact-btn lg:text-sm pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px] cursor-pointer "
             >
               <option value="" className="text-black">Select an option</option>
               {deliverySlotList &&
