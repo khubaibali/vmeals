@@ -45,7 +45,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
           <div className="bg-green-light  pt-[235px]   -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
             <Question faqQuestions={faqQuestions} />
           </div>
-          <Review />
+          <Review googleReviews={googleReviews} />
 
         </>
       }
