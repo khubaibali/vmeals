@@ -82,46 +82,46 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     </h2>
                   </div>
                   <div className="   col-span-8  ">
-                    <div className="grid grid-cols-12  ">
-                      {addOnFifty || addOnTwoHundred > 0 ?
+                  <div className="grid grid-cols-12  ">
+                  {addOnFifty || addOnTwoHundred > 0 ?
+                    <>
+                      
+                      {addOnFifty > 0 &&
                         <>
+                          <div className="   col-span-7  ">
+                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
+                              Eco-Friendly Cutlery
+                            </h2>
+                          </div>
+                          <div className="   col-span-5  ">
+                            <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
+                              + AED50.00
+                            </h2>
+                          </div>
+                        </>
+                      }
+                      {addOnTwoHundred &&
+                        <>
+                          <div className="   col-span-6  ">
+                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
+                              Thermal Bags (x2)
+                            </h2>
+                            </div>
+                            <div className="   col-span-6  ">
+                              <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
+                                + AED200.00 (Refundable Deposit)
+                              </h2>
+                            </div>
+                         
+                        </>
+                      }
+                    </> : 
+                    <div className="   col-span-9 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
+                      <span className=" float-right  f-f-r">{"N/A"}</span></div>}
 
-                          {addOnFifty > 0 &&
-                            <>
-                              <div className="   col-span-7  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
-                                  Eco-Friendly Cutlery
-                                </h2>
-                              </div>
-                              <div className="   col-span-5  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
-                                  + AED50.00
-                                </h2>
-                              </div>
-                            </>
-                          }
-                          {addOnTwoHundred > 0 &&
-                            <>
-                              <div className="   col-span-6  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
-                                  Thermal Bags (x2)
-                                </h2>
-                              </div>
-                              <div className="   col-span-6  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
-                                  + AED200.00 (Refundable Deposit)
-                                </h2>
-                              </div>
-
-                            </>
-                          }
-                        </> :
-                        <div className="   col-span-9 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
-                          <span className=" float-right  f-f-r">{"N/A"}</span></div>}
-
-                    </div>
                   </div>
-
+                  </div>
+           
                 </div>
               </div>
             </div>
@@ -313,8 +313,8 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </h2>
               </div>
               <div className="bg-white-light my-2 rounded-[100px]  " >
-                <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
-              </div>
+                    <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
+                  </div>
               {/* input filed  */}
               <div className=" relative ">
                 <input

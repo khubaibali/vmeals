@@ -209,7 +209,7 @@ function Navbar({ headerData = {} }) {
                 </li>
               </ul>
             </div>
-            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[41%] md:left-[40%] 2xl:left-[44%] top-[-9px] md:top-[40px] lg:top-4 z-0 ">
+            <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[40%] md:left-[40%] 2xl:left-[44%] top-[-9px] md:top-[40px] lg:top-4 z-0 ">
               <Link href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
                   src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
