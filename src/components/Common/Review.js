@@ -79,7 +79,7 @@ export default function Review({ googleReviews = [] }) {
           {
             googleReviews?.map((gr) => (
               <div>
-                <div className='bg-green-light p-5 rounded-[20px] w-[350px]  h-[227px] md:h-[284px] 2xl:h-[261px] ml-auto mr-auto   ' >
+                <div className='bg-green-light p-5 rounded-[20px] w-[350px]  h-[280px] md:h-[398px] 2xl:h-[350px] ml-auto mr-auto   ' >
                   <div className="grid grid-cols-12    ">
                     <div className=" col-span-4  ">
                       <img src={gr?.profile_photo_url} className=' h-[84px] w-[84px] ' />

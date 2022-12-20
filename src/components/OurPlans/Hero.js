@@ -8,7 +8,7 @@ export default function Hero({ step, plan }) {
   //console.log("steeppppppp", step,plan)
   return (
     <>
-      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">
+        <h2 className="  text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px]  ">
         {plan}
       </h2>
       <div className="text-center mt-5  2xl:mt-16 ">
@@ -18,12 +18,12 @@ export default function Hero({ step, plan }) {
               alt=""
               src={"/images/fi-sr-home.png"}
               // src={step == 1 ? "/images/fi-sr-home.png" : step == 2 ? "/images/personalinformationbg.png" : step == 3 ? "/images/DeliveryInformationbg.png" : step == 4 ? "/images/Ordersummerbg.png" : "/images/fi-sr-home.png"}
-              className="w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-2"
+              className=" w-[15px] md:w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-2 "
             />
           </li>
-          <li className=" ml-5 2xl:ml-10">
+             <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
-              className=" w-22px 2xl:w-[14px] h-[24px] 2xl:h-[26px] "
+              className=" w-[14px] md:w-22px 2xl:w-[14px] h-[15px] md:h-[24px] 2xl:h-[26px] "
               viewBox="0 0 14 26"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -34,8 +34,8 @@ export default function Hero({ step, plan }) {
               />
             </svg>
           </li>
-          <li className=" ml-5 2xl:ml-10">
-            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 ">
+             <li className=" ml-3 md:ml-5 2xl:ml-10">
+            <h2 className="  text-smtwo md:text-lg 2xl:text-2xl text-white f-f-b text-center md:-mt-1 2xl:-mt-2  ">
               Our Plans
             </h2>
           </li>

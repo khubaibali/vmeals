@@ -155,7 +155,8 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                 >
                   Your Email
                 </label>
-                <select style={{width: '50px'}} value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value) } className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-1 green-gradiant  text-center  focus:outline-none  mobile-btn" >
+                <div className="relative" >
+                <select style={{ width: '70px', height:"100%" }} value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value) } className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn" >
                   {CountryCodeData.countryCodes.map((cc) => (
                     <option
                       value={cc.dial_code}
@@ -164,11 +165,19 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                           ? true
                           : false
                       }
+                      className="text-black"
                     >
-                      {cc.dial_code }&nbsp;&nbsp;{" "}{cc.name}
+                      {cc.dial_code }&nbsp;&nbsp;{" "}
                     </option>
                   ))}
                 </select>
+
+                <img alt=""
+                src="/images/mobilearrow.png"
+                className=" absolute top-[16px] 2xl:top-[22px] right-[3px] h-[12px] w-[12px] "
+              />
+            </div>
+
                 {/* <button
                   id="dropdown-button"
                   data-dropdown-toggle="dropdown"

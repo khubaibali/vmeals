@@ -491,7 +491,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
                   {/* new code data started */}
                   <div className="relative" >
-                    <select id="cars" name="carlist" form="carform" className="f-f-b  text-xsone lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
+                    <select id="cars" name="carlist" form="carform" className="text-black f-f-b text-sm 2xl:text-base   pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
                       onChange={(e) => {
                         //console.log("eeee", selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
                         setMealType({

@@ -66,23 +66,25 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </h2>
 
                 <div className="grid grid-cols-12 mt-6 ">
-                  <div className="   col-span-3  ">
+                  <div className="   col-span-4  ">
                     <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                       Add On:{" "}
                     </h2>
                   </div>
+                  <div className="   col-span-8  ">
+                  <div className="grid grid-cols-12  ">
                   {addOnFifty || addOnTwoHundred > 0 ?
                     <>
                       
                       {addOnFifty > 0 &&
                         <>
-                          <div className="   col-span-5  ">
+                          <div className="   col-span-7  ">
                             <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
                               Eco-Friendly Cutlery
                             </h2>
                           </div>
-                          <div className="   col-span-4  ">
-                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
+                          <div className="   col-span-5  ">
+                            <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
                               + AED50.00
                             </h2>
                           </div>
@@ -90,21 +92,26 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                       }
                       {addOnTwoHundred &&
                         <>
-                          <div className="   col-span-5  ">
+                          <div className="   col-span-6  ">
                             <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
                               Thermal Bags (x2)
                             </h2>
-                            <div className="   col-span-4  ">
-                              <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
+                            </div>
+                            <div className="   col-span-6  ">
+                              <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
                                 + AED200.00 (Refundable Deposit)
                               </h2>
                             </div>
-                          </div>
+                         
                         </>
                       }
                     </> : 
                     <div className="   col-span-9 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
                       <span className=" float-right  f-f-r">{"N/A"}</span></div>}
+
+                  </div>
+                  </div>
+           
                 </div>
               </div>
             </div>
@@ -139,14 +146,18 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </h2>
               </div>
 
+                  <div className="bg-white-light my-2 rounded-[100px]  " >
+                    <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
+                  </div>
               {/* input filed  */}
-              <div className="mt-10 relative ">
+              <div className=" relative ">
+
                 <input
                   placeholder="Enter Coupon Code..."
                   className=" input-register 2xl:h-[70px] "
                   onChange={(e) => setCouponValue(e.target.value)}
                 />
-                <button onClick={() => applyCoupun()} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
+                <button onClick={() => applyCoupun()} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
                   Apply Code
                 </button>
                 {couponError && <p className="text-red text-center mt-1 text-sm 2xl:text-base ">{couponError}</p>}
@@ -290,9 +301,11 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                   <span className=" float-right  f-f-r ">01/01/1990</span>{" "}
                 </h2>
               </div>
-
+              <div className="bg-white-light my-2 rounded-[100px]  " >
+                    <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
+                  </div>
               {/* input filed  */}
-              <div className="mt-10 relative ">
+              <div className=" relative ">
                 <input
                   placeholder="Enter Coupon Code..."
                   className=" input-register 2xl:h-[70px] "

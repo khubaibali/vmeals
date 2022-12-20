@@ -1,9 +1,12 @@
 import React from "react";
 import { vmealsFAQ } from '../../../src/lib/APICommunications';
 import DropDown from "../Common/DropDown";
+import { useRouter } from 'next/router';
 export default function Questions({ faqQuestions=[{}] }) {
   console.log('question component', faqQuestions)
   const [openTab, setOpenTab] = React.useState(0);
+  const { asPath, pathname } = useRouter();
+  
 
   return (
     <div className="relative  ">
@@ -11,10 +14,11 @@ export default function Questions({ faqQuestions=[{}] }) {
         <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center  tracking-[1px] lg:tracking-[0.22em] ">
           {/* FREQUENTLY ASKED QUESTIONS */}
           {faqQuestions[0]?.VMealsFaqsTitle}
+       
         </h2>
         </div>
         {/* code testing */}
-        <div className="question-bg-drp" >
+        <div className={`${pathname=="/faq" ? "question-bg-drp" : ""   } `} >
 
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 ">
         <div className="flex flex-wrap mt-5 md:mt-16  ">
