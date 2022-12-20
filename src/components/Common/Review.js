@@ -44,7 +44,7 @@ export default function Review({ googleReviews = [] }) {
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 mb-5 md:my-20">
       <div className='  bg-green-light p-5 rounded-[20px]  ' >
         <div className="grid grid-cols-12    ">
-          <div className=" col-span-8  ">
+          <div className=" col-span-12  ">
             <img src='/images/Google-Logo 1.png' className='  width-[54px] h-auto md:width-[85px]  md:h-[36px]' />
             <ul className='inline-flex ' >
               <li>
@@ -64,12 +64,12 @@ export default function Review({ googleReviews = [] }) {
               </li>
             </ul>
           </div>
-          <div className=" col-span-4  ">
+          {/* <div className=" col-span-4  ">
             <div className='text-right ' >
               <button class="green-gradiant  mt-4 md:mt-0 shadow-lg text-white f-f-b text-smtwo md:text-tiny w-[113px] h-[38px]  md:w-[150px] md:h-[54px] rounded-[100px] text-center ">
                 Write a Review</button>
             </div>
-          </div>
+          </div> */}
         </div>
 
       </div>
@@ -79,7 +79,7 @@ export default function Review({ googleReviews = [] }) {
           {
             googleReviews?.map((gr) => (
               <div>
-                <div className='bg-green-light p-5 rounded-[20px] w-[350px]  h-[280px] md:h-[398px] 2xl:h-[350px] ml-auto mr-auto   ' >
+                <div className='bg-green-light p-5 relative  rounded-[20px] w-[350px]  h-[280px] md:h-[398px] 2xl:h-[350px] ml-auto mr-auto   ' >
                   <div className="grid grid-cols-12    ">
                     <div className=" col-span-4  ">
                       <img src={gr?.profile_photo_url} className=' h-[84px] w-[84px] ' />
@@ -96,8 +96,9 @@ export default function Review({ googleReviews = [] }) {
                     </div>
                     <div className=" col-span-3  ">
                       <div className='text-right' >
-                        <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >200 reviews</h2>
-                        <img src='/images/Google-Short-Logo 1.png' className=' w-[55px] h-[56px] mt-1 ' />
+                        <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >Posted On</h2>
+
+                        <img src='/images/Google-Short-Logo 1.png' className=' w-[55px] h-[56px] mt-1 ml-auto mr-auto ' />
 
                       </div>
 
@@ -106,7 +107,7 @@ export default function Review({ googleReviews = [] }) {
                   <p className='text-xs md:text-sm f-f-r text-grey-light mt-3 2xl:leading-[17px] ' >
                     {gr?.text}
                   </p>
-                  <button className=' text-xs md:text-sm f-f-r text-green mt-3 ' >Read More</button>
+                  <button className=' text-xs md:text-sm f-f-b text-green mt-3  absolute bottom-[20px]  ' >Read More</button>
                 </div>
               </div>
             ))

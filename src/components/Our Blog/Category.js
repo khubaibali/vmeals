@@ -3,10 +3,23 @@ import React, { useState } from "react";
 import Categorylist from "./Categorylist";
 import Link from "next/link";
 import Pagination from "../Common/Pagination";
+import DisplayBlogs from "./DisplayBlogs";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 export default function Category({ categoriesAll, blogs }) {
   let totalPages = categoriesAll?.docs?.length
-  const [onPage, setPage] = useState(0)
+  const [onPage, setPageNo] = useState(0)
+  let itemsPerPage =10
+  let itemOffset=0
+  const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const currentItems = blogs.docs.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(blogs.docs.length / itemsPerPage);
+  function setPage(event) {
+    console.log("Hit!!")
+    const newOffset = (event.selected * itemsPerPage) % blogs.docs.length;
+    console.log("new of set",newOffset)
+    setPageNo(newOffset)
+  }
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
@@ -17,7 +30,7 @@ export default function Category({ categoriesAll, blogs }) {
 
               {
                 blogs?.docs?.map((blog, index) => (
-                  (((index ) >= onPage*10) && ((index - 9) <= (onPage*10))) ?
+                  (((index ) >= onPage) && ((index - 9) <= (onPage))) ?
                     < div className="   col-span-12 md:col-span-6 xl:col-span-6  " >
                       <Link href={blog?.VmealsBlogURL}>
                         <div className="cardblog  h-[338px] md:h-[390px] 2xl:h-[500px] w-full 2xl:w-[500px]   ">

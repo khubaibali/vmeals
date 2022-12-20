@@ -9,11 +9,12 @@ import {getServerSideProps as homeFitnessDataProps} from '../src/components/Home
 import {getServerSideProps as ourHomeBlogsDataProps} from '../src/components/Home/Ourblog'
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
 import { getServerSideProps as contentDataProps } from '../src/components/OurPlans/Customizeplan'
+import { getServerSideProps as googleReviewsProps } from "../src/components/Common/Review"
 
 export default function ourplans(props) {
   return (
     <div>
-        <Ourplanspage metaData={props?.contentData} headerData={props?.headerData} faqQuestions={props.faqQuestions}  sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData ={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}  />
+        <Ourplanspage metaData={props?.contentData} headerData={props?.headerData} faqQuestions={props.faqQuestions}  sliderBarData={props.sliderBarData} builtData={props.builtData} ourGeniusData={props.ourGeniusData} homeFitnessData={props.homeFitnessData} ourHomeBlogData ={props.ourHomeBlogData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} googleReviews={props?.googleReviews}  />
     </div>
   )
 }
@@ -30,6 +31,7 @@ export async function getServerSideProps() {
     let homeFitnessData = await homeFitnessDataProps()
     let ourHomeBlogData = await ourHomeBlogsDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
+    let googleReviews = await googleReviewsProps()
     //console.log("header props",sliderBarData)
      return {
        props: { 
@@ -41,7 +43,8 @@ export async function getServerSideProps() {
         ...faqQuestions.props,
         ...homeFitnessData.props,
          ...ourHomeBlogData.props,
-         ...socialMediaIcon.props
+         ...socialMediaIcon.props,
+         ...googleReviews.props
        }, // will be pa
       }
   } catch (error) {

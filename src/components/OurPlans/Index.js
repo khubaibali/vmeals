@@ -9,7 +9,7 @@ import Built from "../Home/Built";
 import Question from "../Faq/Questions";
 import SEO from "../Common/SEO";
 
-export default function Index({headerData,sliderBarData,builtData,homeFitnessData,socialMediaIcon,footerData,tradeMarkData,faqQuestions, metaData}) {
+export default function Index({headerData,sliderBarData,builtData,homeFitnessData,socialMediaIcon,footerData,tradeMarkData,faqQuestions, metaData,googleReviews}) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Our Plans");
 
   return (
@@ -25,7 +25,7 @@ export default function Index({headerData,sliderBarData,builtData,homeFitnessDat
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
         <Question faqQuestions={faqQuestions} />
       </div>
-      <Review />
+      <Review googleReviews={googleReviews}/>
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
   );

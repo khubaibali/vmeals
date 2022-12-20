@@ -48,7 +48,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
             <ul className=" inline-flex ">
 
               {socialMediaIcon?.[0]?.VMealsIconList?.map((item, inde) => {
-                return <li>
+                return <li className=" ml-3" >
                   <a
                     href={item?.VMealsIconItemLink}
                     target="_blank"
@@ -145,7 +145,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
   
                   {
                     tradeMarkData?.[0]?.FooterList?.map((footeritem) => (
-                      <li>
+                      <li  >
                         <Link
                           href={`${footeritem?.ItemLink}`}
                           className="text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b ml-2 md:ml-4 xl:ml-8  text-center relative top-[-5px] md:top-[0px] lg:top-[12px]"
