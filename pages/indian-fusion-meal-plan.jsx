@@ -12,7 +12,7 @@ import { getServerSideProps as googleReviewsProps } from "../src/components/Comm
 
 
 export default function indianfusion(props) {
-  console.log("google reviews indian ",props.googleReviews)
+  // console.log("google reviews indian ",props.googleReviews)
   return (
     <div>
       <Indiandietpage

@@ -3,7 +3,7 @@ import { vmealsFAQ } from '../../../src/lib/APICommunications';
 import DropDown from "../Common/DropDown";
 import { useRouter } from 'next/router';
 export default function Questions({ faqQuestions=[{}] }) {
-  console.log('question component', faqQuestions)
+  // console.log('question component', faqQuestions)
   const [openTab, setOpenTab] = React.useState(0);
   const { asPath, pathname } = useRouter();
   

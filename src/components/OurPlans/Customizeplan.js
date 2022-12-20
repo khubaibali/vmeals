@@ -281,7 +281,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   useEffect(() => {
     setTotalPrice()
   })
-  console.log("aaaaaaaaaaaaa", PlanData["GreenDietVegan"]?.portions[0]?.planDuration[0]?.deliveriesPerWeek)
+  // console.log("aaaaaaaaaaaaa", PlanData["GreenDietVegan"]?.portions[0]?.planDuration[0]?.deliveriesPerWeek)
   //console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
 

@@ -4,7 +4,7 @@ import { testimonials } from "../../lib/APICommunications";
 import RTFMappingTestimonials from "../Common/RTFMappingTestimonials";
 
 export default function Informationslick({ testimonialsData }) {
-  console.log("testimonialsData>>>>",testimonialsData)
+  // console.log("testimonialsData>>>>",testimonialsData)
   const settings = {
     dots: false,
     infinite: true,

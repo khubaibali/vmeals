@@ -15,7 +15,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
   const [googleLink, setGoogleLink] = useState(deliveryInformation?.googleLink)
   const [deliveryInstructions, setDeliveryInstructions] = useState(deliveryInformation?.deliveryInstructions)
   const [deliverySlot, setDeliverySlot] = useState(deliveryInformation?.deliverySlot);
-  const [deliverySlotList, setDeliverySlotList] = useState(null);
+  const [deliverySlotList, setDeliverySlotList] = useState(citiesData?.cities.find(
+    (c) => c.name === deliveryInformation?.city
+  ));
   const [errors, setErrors] = useState(null);
 
   const startingPlanDateFormat = () => {
@@ -123,7 +125,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
       //console.log("")
     }
   }
-
+  // console.log("deliverySlotList",deliverySlotList,deliverySlot)
   return (
     <div>
       {" "}

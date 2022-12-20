@@ -5,7 +5,7 @@ import { getGoogleReviews } from '../../lib/APICommunications';
 
 export default function Review({ googleReviews = [] }) {
 
-  console.log("!!reivews", googleReviews)
+  // console.log("!!reivews", googleReviews)
   const settings = {
     dots: false,
     arrows: false,

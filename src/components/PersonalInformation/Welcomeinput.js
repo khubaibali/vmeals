@@ -170,7 +170,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                       }
                       className="text-black"
                     >
-                      {cc.dial_code }&nbsp;&nbsp;{" "}
+                      &nbsp;&nbsp;{cc.dial_code }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
                     </option>
                   ))}
                 </select>
