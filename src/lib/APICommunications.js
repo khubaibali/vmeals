@@ -21,6 +21,7 @@ export const vmealsOurGeniuses = `${BaseURL}api/vmeals-our-geniuses`;
 export const vmealsOurPartners = `${BaseURL}api/vmeals-our-partners`;
 export const vmealsFormOurPartners = `${BaseURL}api/vmeals-form-our-partners`;
 export const vmealsSEO = `${BaseURL}api/vmeals-seo`;
+export const seoPages = `${BaseURL}api/seo-pages`;
 export const vmealsSliderBar = `${BaseURL}api/vmeals-silder-bar`;
 export const vmealsOrder = `${BaseURL}api/order`;
 export const vmealsCreatePayment = `${BaseURLExternal}vmeals/createPayment`;
