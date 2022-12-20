@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Categorylist from "./Categorylist";
 import Link from "next/link";
 import Pagination from "../Common/Pagination";
-import DisplayBlogs from "./DisplayBlogs";
+
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 export default function Category({ categoriesAll, blogs }) {
   let totalPages = categoriesAll?.docs?.length
