@@ -18,21 +18,21 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
   const mealPlansFaqsDataContent = Object.values(mealPlansFaqsData).find(c => c.EnableDisables == "Enable")
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "ClassicDiet")
   const [step, setStep] = useState(1)
-  
+
   console.log("headerDara in nnnnn", mealPlansFaqsData?.["0"])
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
 
-      <div className={"classicbg"} style={{backgroundImage: (step == 1 ? 'url("/images/classicbg.png")' : step == 2 ? 'url("/images/personalinformationbg.png")' : step == 3 ? 'url("/images/DeliveryInformationbg.png")' : step == 4 ? 'url("/images/Ordersummerbg.png")' : 'url("/images/classicbg.png")')}}>
+      <div className={"classicbg"} style={{ backgroundImage: (step == 1 ? 'url("/images/classicbg.png")' : step == 2 ? 'url("/images/personalinformationbg.png")' : step == 3 ? 'url("/images/DeliveryInformationbg.png")' : step == 4 ? 'url("/images/Ordersummerbg.png")' : 'url("/images/classicbg.png")') }}>
         <Navbar headerData={headerData} />
         <Hero step={step} plan={"Classic Diet"} />
       </div>
-      <Customizeplan  
+      <Customizeplan
         testimonialsData={testimonialsData?.docs[0]?.testimonials}
         weeklyMenu={contentDataClassicDiet?.WeeklyMenu}
-        heading={contentDataClassicDiet?.VMealsClassicDietHeading} 
-        description={contentDataClassicDiet?.VMealsClassicDietdescriptionParagraphs} 
+        heading={contentDataClassicDiet?.VMealsClassicDietHeading}
+        description={contentDataClassicDiet?.VMealsClassicDietdescriptionParagraphs}
         selectedPlan={selectedPlan}
         setSelectedPlan={setSelectedPlan}
         setStep={setStep}
@@ -51,11 +51,11 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
 
 export async function getServerSideProps() {
   try {
-   
+
     let contentDataClassicDiet = await fetch(vmealsClassicDietContent)
     let data = await contentDataClassicDiet.json()
     //console.log("slider bar ->>",data)
-   
+
     return {
       props: { contentDataClassicDiet: { ...data?.docs } }, // will be passed to the page component as props
     }

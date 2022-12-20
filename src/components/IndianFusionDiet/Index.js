@@ -17,18 +17,18 @@ export default function Index({headerData, builtData, socialMediaIcon, footerDat
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GlutenAndDairyFreeDiet")
 
   const contentDataIndianFusion = Object.values(contentData).find(c => c.VmealsIndianFusionEnableDisables == "Enable")
-  
+
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
-      <div className="classicbg" style={{backgroundImage: (step == 1 ? 'url("/images/classicbg.png")' : step == 2 ? 'url("/images/personalinformationbg.png")' : step == 3 ? 'url("/images/DeliveryInformationbg.png")' : step == 4 ? 'url("/images/Ordersummerbg.png")' : 'url("/images/classicbg.png")')}}>
-        <Navbar headerData={headerData}  />
+      <div className="classicbg" style={{ backgroundImage: (step == 1 ? 'url("/images/classicbg.png")' : step == 2 ? 'url("/images/personalinformationbg.png")' : step == 3 ? 'url("/images/DeliveryInformationbg.png")' : step == 4 ? 'url("/images/Ordersummerbg.png")' : 'url("/images/classicbg.png")') }}>
+        <Navbar headerData={headerData} />
         <Hero step={step} plan={"Indian Fusion"} />
       </div>
-      <Customizeplan 
-              testimonialsData={testimonialsData?.docs[0]?.testimonials}
+      <Customizeplan
+        testimonialsData={testimonialsData?.docs[0]?.testimonials}
 
-              weeklyMenu={contentDataIndianFusion?.WeeklyMenu}
+        weeklyMenu={contentDataIndianFusion?.WeeklyMenu}
 
       heading={contentDataIndianFusion?.VmealsIndianFusionHeading} description={contentDataIndianFusion?.VmealsIndianFusiondescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan}  setStep={setStep} step={step} />
       <Simplemenu  sampleMenu={sampleMenuContent?.SampleMenu} />
@@ -44,11 +44,11 @@ export default function Index({headerData, builtData, socialMediaIcon, footerDat
 
 export async function getServerSideProps() {
   try {
-   
+
     let contentDataIndianFusion = await fetch(vmealsIndianFusionDietContent)
     let data = await contentDataIndianFusion.json()
     //console.log("slider bar ->>",data)
-   
+
     return {
       props: { contentDataIndianFusion: { ...data?.docs } }, // will be passed to the page component as props
     }
