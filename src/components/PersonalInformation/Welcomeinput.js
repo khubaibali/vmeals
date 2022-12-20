@@ -422,7 +422,10 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
           </div>
           <div className="   col-span-6 xl:col-span-6 ">
             <div className="text-center">
-              <button className=" buttonstyle text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8" onClick={() => setStep(1)}>
+              <button className=" buttonstyle text-sm sm:text-tiny 2xl:text-lg f-f-b text-green shadow-lg border border-green bg-white rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8" onClick={() => {
+                scrollTo(0, 500);
+                setStep(1)
+              }}>
                 Back
               </button>
             </div>

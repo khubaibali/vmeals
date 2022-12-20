@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { testimonials } from "../../lib/APICommunications";
-import RTFMapping from "../Common/RTFMapping";
+import RTFMappingTestimonials from "../Common/RTFMappingTestimonials";
 
 export default function Informationslick({ testimonialsData }) {
   console.log("testimonialsData>>>>",testimonialsData)
@@ -22,7 +22,7 @@ export default function Informationslick({ testimonialsData }) {
             <div className=" text-white f-f-li text-sm 2xl:text-tiny text-center  ">
               {" "}
               <div>
-                 <RTFMapping data={t.description} />
+                 <RTFMappingTestimonials data={t.description} />
 
               </div>
             </div>
