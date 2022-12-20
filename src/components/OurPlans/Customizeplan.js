@@ -608,9 +608,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                               // );
                             } else {
                               setAddOnFifty(0);
-                              let index = array.indexOf("Eco-Friendly Cutlery");
+                              let index = addOnsArray?.indexOf("Eco-Friendly Cutlery");
                               if (index > -1) { 
-                                array.splice(index, 1); 
+                                addOnsArray.splice(index, 1); 
                               }
                               // setPrice(
                               //   Number(price) - 50
@@ -645,9 +645,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                               // );
                             } else {
                               setAddOnTwoHundred(0);
-                              let index = array.indexOf("Thermal Bags (x2)");
+                              let index = addOnsArray.indexOf("Thermal Bags (x2)");
                               if (index > -1) { 
-                                array.splice(index, 1); 
+                                addOnsArray.splice(index, 1); 
                               }
                               // setPrice(
                               //   Number(price) - 200
