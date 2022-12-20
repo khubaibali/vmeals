@@ -19,13 +19,16 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
 
   const Validation = async () => {
     let err = [];
-    let checkEmail = await validateEmail(email);
-    if(checkEmail == "Invalid Email Address!"){
-      err.push({
-        field: "email",
-        msg: checkEmail,
-      });
+    if(email?.length > 0) {
+      let checkEmail = await validateEmail(email);
+      if(checkEmail == "Invalid Email Address!"){
+        err.push({
+          field: "email",
+          msg: checkEmail,
+        });
+      }
     }
+    
     if (!firstName) {
       err.push({
         field: "firstName",

@@ -59,12 +59,14 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
 
   const Validation = async () => {
     let err = [];
-    let checkGoggleLink = await validateGoogleMapURL(googleLink);
-    if(checkGoggleLink == "Invalid Google Link!"){
-      err.push({
-        field: "googleLink",
-        msg: checkGoggleLink,
-      });
+    if(googleLink?.length > 0) {
+      let checkGoggleLink = await validateGoogleMapURL(googleLink);
+      if(checkGoggleLink == "Invalid Google Link!"){
+        err.push({
+          field: "googleLink",
+          msg: checkGoggleLink,
+        });
+      }
     }
     if (!startingDate) {
       err.push({

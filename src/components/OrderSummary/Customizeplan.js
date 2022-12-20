@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Steps from "../OurPlans/Steps";
-export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation, price, applyCoupun, setCouponValue, couponError, checkout, discountPrice, discountPercentage, addOnTwoHundred, addOnFifty }) {
+export default function CustomizeplanOrderSummary({ step, setStep, deliveryInformation, personalInformation, planInformation, price, applyCoupun, setCouponValue, couponError, checkout, discountPrice, discountPercentage, addOnTwoHundred, addOnFifty, coupunApplied }) {
   const [openTab, setOpenTab] = React.useState(1);
   const [finalPrice, setFinalPrice] = useState(planInformation?.price)
   const mapPlanName = (plan) => {
     if (plan == "ClassicDiet") return "Classic Diet"
+    if (plan == "IndianFusionVegetarianDiet") return "Indian Fusion"
+    if (plan == "GreenDietVegan") return "Green Diet"
     if (plan == "GreenDietVegetarian") return "Green Diet"
+    if (plan == "IndianFusionNonVegetarian") return "Indian Fusion"
+    else return plan
+  }
+  const mapPlanNameType = (plan) => {
+    if (plan == "IndianFusionVegetarianDiet") return "Vegetarian Diet"
+    if (plan == "GreenDietVegan") return "Vegan Diet"
+    if (plan == "GreenDietVegetarian") return "Vegetarian Diet"
+    if (plan == "IndianFusionNonVegetarian") return "Non Vegetarian Diet"
     else return plan
   }
 
@@ -30,7 +40,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                   <span className=" float-right  f-f-r ">{mapPlanName(planInformation?.selectedPlan)}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
-                  Diet Type:<span className=" float-right  f-f-r ">N/A</span>{" "}
+                  Diet Type:<span className=" float-right  f-f-r ">{planInformation?.selectedPlan == "IndianFusionVegetarianDiet" || planInformation?.selectedPlan == "IndianFusionNonVegetarian" || planInformation?.selectedPlan == "IndianFusionVegetarianDiet" || planInformation?.selectedPlan == "GreenDietVegan" || planInformation?.selectedPlan == "GreenDietVegetarian" ? mapPlanNameType(planInformation?.selectedPlan) : "N/A"}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Portion Size:
@@ -72,46 +82,46 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     </h2>
                   </div>
                   <div className="   col-span-8  ">
-                  <div className="grid grid-cols-12  ">
-                  {addOnFifty || addOnTwoHundred > 0 ?
-                    <>
-                      
-                      {addOnFifty > 0 &&
+                    <div className="grid grid-cols-12  ">
+                      {addOnFifty || addOnTwoHundred > 0 ?
                         <>
-                          <div className="   col-span-7  ">
-                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
-                              Eco-Friendly Cutlery
-                            </h2>
-                          </div>
-                          <div className="   col-span-5  ">
-                            <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
-                              + AED50.00
-                            </h2>
-                          </div>
-                        </>
-                      }
-                      {addOnTwoHundred &&
-                        <>
-                          <div className="   col-span-6  ">
-                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
-                              Thermal Bags (x2)
-                            </h2>
-                            </div>
-                            <div className="   col-span-6  ">
-                              <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
-                                + AED200.00 (Refundable Deposit)
-                              </h2>
-                            </div>
-                         
-                        </>
-                      }
-                    </> : 
-                    <div className="   col-span-9 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
-                      <span className=" float-right  f-f-r">{"N/A"}</span></div>}
 
+                          {addOnFifty > 0 &&
+                            <>
+                              <div className="   col-span-7  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
+                                  Eco-Friendly Cutlery
+                                </h2>
+                              </div>
+                              <div className="   col-span-5  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
+                                  + AED50.00
+                                </h2>
+                              </div>
+                            </>
+                          }
+                          {addOnTwoHundred > 0 &&
+                            <>
+                              <div className="   col-span-6  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
+                                  Thermal Bags (x2)
+                                </h2>
+                              </div>
+                              <div className="   col-span-6  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
+                                  + AED200.00 (Refundable Deposit)
+                                </h2>
+                              </div>
+
+                            </>
+                          }
+                        </> :
+                        <div className="   col-span-9 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
+                          <span className=" float-right  f-f-r">{"N/A"}</span></div>}
+
+                    </div>
                   </div>
-                  </div>
-           
+
                 </div>
               </div>
             </div>
@@ -146,9 +156,10 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </h2>
               </div>
 
-                  <div className="bg-white-light my-2 rounded-[100px]  " >
-                    <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
-                  </div>
+              <div className="bg-white-light my-2 rounded-[100px]  " >
+                {couponError && <h2 className="text-red text-center f-f-b text-sm 2xl:text-base ">{couponError}</h2>}
+                {coupunApplied && <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >{discountPercentage}% discount applied!</h2>}
+              </div>
               {/* input filed  */}
               <div className=" relative ">
 
@@ -160,7 +171,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <button onClick={() => applyCoupun()} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2  px-[47px] sm:px-[50px] py-[13px] sm:py-[11px]  2xl:w-[219px]  lg:py-[11px] xl:h-[49px] 2xl:h-[70px] mt-5 2xl:mt-8  absolute right-[-11px] top-[-20px] 2xl:top-[-32px] rounded-[100px] ">
                   Apply Code
                 </button>
-                {couponError && <p className="text-red text-center mt-1 text-sm 2xl:text-base ">{couponError}</p>}
+
               </div>
               {/* input filed ended */}
               <div className="grid grid-cols-12 mt-6 gap-4 ">
@@ -172,7 +183,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED{(Number(price)  - Number(discountPrice || 0)).toFixed(2)}</span>{" "}
+                    <span className=" f-f-r float-right ">AED{(Number(price) - Number(discountPrice || 0)).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
@@ -183,7 +194,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0) ) * 0.05).toFixed(2)}</span>{" "}
+                    VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0)) * 0.05).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
               </div>
@@ -302,8 +313,8 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </h2>
               </div>
               <div className="bg-white-light my-2 rounded-[100px]  " >
-                    <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
-                  </div>
+                <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
+              </div>
               {/* input filed  */}
               <div className=" relative ">
                 <input
@@ -325,7 +336,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
-                    <span className=" f-f-r float-right ">AED{(Number(price)  - Number(discountPrice || 0)).toFixed(2)}</span>{" "}
+                    <span className=" f-f-r float-right ">AED{(Number(price) - Number(discountPrice || 0)).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">
@@ -336,7 +347,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </div>
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0) ) * 0.05).toFixed(2)}</span>{" "}
+                    VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0)) * 0.05).toFixed(2)}</span>{" "}
                   </h2>
                 </div>
               </div>

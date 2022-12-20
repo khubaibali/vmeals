@@ -703,7 +703,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} testimonialsData={testimonialsData} />
       }
       {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} discountPercentage={discountPercentage} discountPrice={discountPrice} addOnTwoHundred={addOnTwoHundred} addOnFifty={addOnFifty} />
+        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} discountPercentage={discountPercentage} discountPrice={discountPrice} addOnTwoHundred={addOnTwoHundred} addOnFifty={addOnFifty} coupunApplied={coupunApplied} />
       }
     </>
   );
