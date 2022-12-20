@@ -92,7 +92,7 @@ export default function Review({ googleReviews = [] }) {
                         ))}
 
                       </div>
-                      <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >200 reviews</h2>
+                      <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >1 month ago</h2>
                     </div>
                     <div className=" col-span-3  ">
                       <div className='text-right' >

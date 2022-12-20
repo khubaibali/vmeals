@@ -66,9 +66,9 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
           <div className="bg-white shadow-2xl mb-5 mt-4 md:my-10 py-3 md:py-6 lg:py-8 2xl:py-10 w-10/12 md:w-10/12 xl:w-8/12  2xl:w-9/12 text-center  ml-auto mr-auto rounded-full ">
 
             <h2 className=" text-black f-f-b  text-smtwo  md:text-xl lg:text-3xl 2xl:text-6xl  uppercase ">
-              Get your free
-              <span className="text-green"> {footerData?.[0]?.VMealsGuideBoldColorTitle}</span>{" "}
-              guide today!
+            Subscribe to our 
+              {/* <span className="text-green"> {footerData?.[0]?.VMealsGuideBoldColorTitle}</span>{" "} */}
+              <span className="text-green"> Newsletter!</span>
             </h2>
             <ul className="inline-flex" >
               <li>
