@@ -11,7 +11,7 @@ import SEO from "../Common/SEO";
 import { vmealsClassicDietContent } from "../../lib/APICommunications";
 // import { url } from "inspector";
 
-export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, faqQuestions, contentData, metaData, sampleMenu, testimonialsData, mealPlansFaqsData }) {
+export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData, faqQuestions, contentData, metaData, sampleMenu,testimonialsData, mealPlansFaqsData,googleReviews }) {
   const [selectedPlan, setSelectedPlan] = useState("ClassicDiet");
   const metaDataContent = Object.values(metaData).find(c => c.title == "Classic Diet")
   const contentDataClassicDiet = Object.values(contentData).find(c => c.VMealsClassicDietEnableDisables == "Enable")

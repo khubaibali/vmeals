@@ -10,7 +10,7 @@ import Simplemenu from "../OurPlans/Simplemenu";
 import { vmealsKetoDietContent } from "../../lib/APICommunications";
 import SEO from "../Common/SEO";
 
-export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData }) {
+export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData,googleReviews }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Keto Diet");
   const [selectedPlan, setSelectedPlan] = useState("KetoDiet");
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "KetoDiet")
@@ -29,17 +29,13 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
 
         weeklyMenu={contentDataKetoDiet?.WeeklyMenu}
 
-        heading={contentDataKetoDiet?.VmealsKetoDietHeading} description={contentDataKetoDiet?.VmealsKetoDietdescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setStep={setStep} step={step} />
-      {step == 1 &&
-        <>
-          <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
-          <Built builtData={builtData} />
-          <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-            <Question faqQuestions={faqQuestions} />
-          </div>
-          <Review />
-        </>
-      }
+      heading={contentDataKetoDiet?.VmealsKetoDietHeading} description={contentDataKetoDiet?.VmealsKetoDietdescriptionParagraphs} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setStep={setStep} step={step}/>
+      <Simplemenu  sampleMenu={sampleMenuContent?.SampleMenu} />
+      <Built builtData={builtData}  />
+      <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
+        <Question faqQuestions={faqQuestions} />
+      </div>
+      <Review googleReviews={googleReviews}/>
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
     </>
   );

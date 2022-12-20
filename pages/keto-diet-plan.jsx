@@ -7,7 +7,7 @@ import { getServerSideProps as socialMediaIconsProps } from '../src/components/C
 import { getServerSideProps as sampleMenuDataProps } from '../src/components/OurPlans/Simplemenu'
 import { getServerSideProps as contentDataPropsPage } from '../src/components/KetoDiet/Index'
 import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
-
+import { getServerSideProps as googleReviewsProps } from "../src/components/Common/Review"
 import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
 
 export default function ketodiet(props) {
@@ -24,6 +24,7 @@ export default function ketodiet(props) {
         socialMediaIcon={props.socialMediaIcon}
         footerData={props.footerData}
         tradeMarkData={props.tradmark}
+        googleReviews={props.googleReviews}
       />
     </div>
   )
@@ -39,7 +40,7 @@ export async function getServerSideProps(constext) {
     let sampleMenu = await sampleMenuDataProps()
     let contentData = await contentDataProps();
     let informationslick = await informationslickProps()
-
+    let googleReviews = await googleReviewsProps()
     let socialMediaIcon = await socialMediaIconsProps()
     let contentDataPage = await contentDataPropsPage()
     //console.log("header props", contentDataPage)
@@ -52,7 +53,8 @@ export async function getServerSideProps(constext) {
         ...socialMediaIcon.props,
         ...sampleMenu.props,
         ...informationslick.props,
-        ...contentDataPage.props
+        ...contentDataPage.props,
+        ...googleReviews.props
       }, // will be passed to the page component as props
     }
   } catch (error) {

@@ -8,6 +8,7 @@ import { getServerSideProps as sampleMenuDataProps } from '../src/components/Our
 import { getServerSideProps as informationslickProps } from '../src/components/OurPlans/Informationslick'
 import { getServerSideProps as contentDataClassicDietProps } from '../src/components/ClassicDiet/Index'
 import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
+import { getServerSideProps as googleReviewsProps } from "../src/components/Common/Review"
 
 
 const mealPlans = (props) => {
@@ -26,6 +27,7 @@ const mealPlans = (props) => {
         socialMediaIcon={props.socialMediaIcon}
         footerData={props.footerData}
         tradeMarkData={props.tradmark}
+        googleReviews={props.googleReviews}
       />
     </div>
   )
@@ -42,6 +44,7 @@ export async function getServerSideProps(constext) {
     let faqQuestions = await faqQuestionsProps()
     let sampleMenu = await sampleMenuDataProps()
     let socialMediaIcon = await socialMediaIconsProps()
+    let googleReviews = await googleReviewsProps()
     //console.log("header props", data)
     return {
       props: {
@@ -53,6 +56,7 @@ export async function getServerSideProps(constext) {
         ...contentDataClassicDiet.props,
         ...informationslick.props,
         ...sampleMenu.props,
+        ...googleReviews.props
         // contentData
       }, // will be passed to the page component as props
     }
