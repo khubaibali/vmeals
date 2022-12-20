@@ -1241,3 +1241,17 @@ color: white;
     height: 372px;
   }
 }
+
+.our-blog-home-bg{
+  background-image: url("/images/Our-Blog-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 1580px) {
+  .our-blog-home-bg{
+    background-image: unset;
+    background-color: #E0EFDF;
+  }
+}

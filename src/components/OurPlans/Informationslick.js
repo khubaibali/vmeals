@@ -18,7 +18,7 @@ export default function Informationslick({ testimonialsData }) {
     <div>
       <Slider {...settings} className="personalslick">
         {testimonialsData?.map(t => (
-          <div>
+          <div className=" h-[305px] relative  " >
             <div className=" text-white f-f-li text-sm 2xl:text-tiny text-center  ">
               {" "}
               <div>
@@ -26,12 +26,14 @@ export default function Informationslick({ testimonialsData }) {
 
               </div>
             </div>
-            <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
+            <div className="absolute bottom-0" >
+            <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4   ">
               {t.Name}
             </h2>
             <h2 className=" f-f-it text-white text-sm 2xl:text-base  ">
               {t.designation}
             </h2>
+            </div>
           </div>
         ))}
       </Slider>

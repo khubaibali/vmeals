@@ -5,7 +5,7 @@ import { vmealsOurBlogs } from '../../../src/lib/APICommunications';
 export default function Ourblog({ ourHomeBlogData }) {
   //console.log("ourHomeData", ourHomeBlogData)
   return (
-    <div className="bg-green-light">
+    <div className="our-blog-home-bg">
       <div className="py-10 2xl:py-20">
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <h2 className="  text-base text-center  sm:text-3xl 2xl:text-4xl f-f-li  md:mt-10 text-green tracking-[1px] lg:tracking-[0.22em] ">
