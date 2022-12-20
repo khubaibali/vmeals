@@ -7,11 +7,12 @@ import Pagination from "../Common/Pagination";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 export default function Category({ categoriesAll, blogs }) {
   let totalPages = categoriesAll?.docs?.length
+  totalPages = Math.ceil(categoriesAll?.docs?.length / 10);
   const [onPage, setPageNo] = useState(0)
   let itemsPerPage =10
   let itemOffset=0
-  const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const endOffset = onPage + itemsPerPage;
+  console.log(`Loading items from ${onPage} to ${endOffset}`);
   const currentItems = blogs.docs.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(blogs.docs.length / itemsPerPage);
   function setPage(event) {
