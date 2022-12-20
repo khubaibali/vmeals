@@ -9,17 +9,18 @@ export default function Category({ categoriesAll, blogs }) {
   let totalPages = categoriesAll?.docs?.length
   totalPages = Math.ceil(categoriesAll?.docs?.length / 10);
   const [onPage, setPageNo] = useState(0)
-  let itemsPerPage =10
-  let itemOffset=0
-  const endOffset = onPage + itemsPerPage;
-  console.log(`Loading items from ${onPage} to ${endOffset}`);
-  const currentItems = blogs.docs.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(blogs.docs.length / itemsPerPage);
+  // let itemsPerPage =10
+  // let itemOffset=0
+  // const endOffset = onPage + itemsPerPage;
+  // console.log(`Loading items from ${onPage} to ${endOffset}`);
+  // const currentItems = blogs.docs.slice(itemOffset, endOffset);
+  // const pageCount = Math.ceil(blogs.docs.length / itemsPerPage);
   function setPage(event) {
     console.log("Hit!!")
-    const newOffset = (event.selected * itemsPerPage) % blogs.docs.length;
-    console.log("new of set",newOffset)
-    setPageNo(newOffset)
+    // const newOffset = (event.selected * itemsPerPage) % blogs.docs.length;
+    console.log("new of set",event.selected)
+
+    setPageNo(event.selected)
   }
   return (
     <>
@@ -63,7 +64,7 @@ export default function Category({ categoriesAll, blogs }) {
             </div>
 
             {/* pagination code started */}
-            <Pagination onPage={onPage} setPage={setPage} totalPages={totalPages} />
+            <Pagination onPage={onPage} setPageNo={setPageNo} totalPages={totalPages} />
             {/* pagination code ended */}
 
             {/* inner ended */}

@@ -1,6 +1,10 @@
 import ReactPaginate from 'react-paginate';
-export default function Pagination({ onPage, setPage, totalPages }) {
-    
+import Pagination, {
+    bootstrap5PaginationPreset,
+  } from "react-responsive-pagination";
+  
+export default function PaginationCom({ onPage, setPageNo, totalPages }) {
+
     let currentPageNumberCss = "h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-white text-green shadow-lg  text-base 2xl:text-xl rounded-[100%] ml-3"
     let pageNumberCss = "h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3  "
 
@@ -24,7 +28,7 @@ export default function Pagination({ onPage, setPage, totalPages }) {
                 </nav>
             </div>
             <div className="text-center mt-10 2xl:mt-20" >
-                <ReactPaginate
+                {/* <ReactPaginate
                     activeClassName="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-white text-green shadow-lg  text-base 2xl:text-xl rounded-[100%] ml-3"
                     containerClassName="inline-flex items-center -space-x-px"
                     pageClassName="h-[40px] w-[40px]  2xl:h-[50px] 2xl:w-[50px]  bg-green text-white  text-base 2xl:text-xl rounded-[100%] ml-3 "
@@ -35,6 +39,16 @@ export default function Pagination({ onPage, setPage, totalPages }) {
                     pageCount={totalPages}
                     previousLabel="Previous"
                     renderOnZeroPageCount={null}
+                /> */}
+                <Pagination
+                    {...bootstrap5PaginationPreset}
+                    current={onPage}
+                    total={totalPages}
+                    pageItemClassName={pageNumberCss}
+                    // activeItemClassName={currentPageNumberCss}
+                    className={"inline-flex items-center -space-x-px"}
+                    onPageChange={(e)=>{setPageNo(e)}}
+                    maxWidth={"500px"}
                 />
             </div>
         </>
