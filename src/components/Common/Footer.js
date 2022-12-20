@@ -75,7 +75,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                 <input
                   onChange={formControl}
                   name="email"
-                  type="text"
+                  type="email"
                   className="  input-footer  mt-1 md:mt-4 lg:mt-4 2xl:mt-4 md:py-3 md:h-[52px] 2xl:h-[85px] w-[147px] md:w-[277px]  lg:w-[320px] 2xl:w-[545px] border-2 border-green h-[25px]  "
                   // placeholder="Please enter your email address..."
                   placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
