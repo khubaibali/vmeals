@@ -6,7 +6,7 @@ const SEO = ({ pageTitle, metaText }) => (
         <title>{pageTitle || "Nutristien"}</title>
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="description" content={metaText || "Nutristien"} />
-        <meta name="robots" content="noindex, follow" />
+        <meta name="robots" content="all"/>
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
