@@ -15,7 +15,7 @@ export default function Simplemenu({ sampleMenu }) {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1280,
+        breakpoint: 1700,
         settings: {
           slidesToShow: 3,
         },
@@ -27,7 +27,7 @@ export default function Simplemenu({ sampleMenu }) {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 760,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -41,13 +41,13 @@ export default function Simplemenu({ sampleMenu }) {
         <h2 className="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center xl:text-left  leading-[56px] uppercase ">
           SAMPLE MENU
         </h2>
-        <Slider {...settings}>
+        <Slider {...settings} className="mt-6" >
           {/* one start */}
           {sampleMenu?.map(menu => (
-            <div>
+            <div className="  " >
               <div className="relative">
-                <img src={`${process.env.NEXT_PUBLIC_BASE_URL}${menu?.SampleMenuItemImage?.url}` || "/images/breakfast.png"} className=" w-full h-[300px] " />
-                <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[20px]  ">
+                <img src={`${process.env.NEXT_PUBLIC_BASE_URL}${menu?.SampleMenuItemImage?.url}` || "/images/breakfast.png"} className=" w-[93%] h-[300px] rounded-[20px] ml-auto mr-auto 2xl:mr-0  " />
+                <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[52px]  ">
                   {menu?.MealType}
                 </button>
               </div>

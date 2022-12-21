@@ -3,7 +3,7 @@ import React from "react";
 export default function Hero() {
   return (
     <>
-      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] xl:pt-[238px] 2xl:pt-[311px] ">
+      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[184px] lg:pt-[136px] xl:pt-[238px] 2xl:pt-[311px] ">
       Meal Plans Service in Abu Dhabi
       </h2>
       <div className="text-center mt-5 2xl:mt-12">
@@ -11,7 +11,7 @@ export default function Hero() {
           <li>
             <img alt="" 
               src="/images/fi-sr-home.png"
-              className="w-[22px]  2xl:w-[35px] h-auto"
+              className="w-[22px]  2xl:w-[35px] h-auto 2xl:-mt-1 "
             />
           </li>
           <li className=" ml-5 2xl:ml-10">

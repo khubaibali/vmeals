@@ -8,8 +8,8 @@ export default function Hero({ step, plan }) {
   //console.log("steeppppppp", step,plan)
   return (
     <>
-        <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px]  ">
-        {plan || "Our Plans"}
+        <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[170px] md:pt-[136px] lg:pt-[233px] xl:pt-[244px] 2xl:pt-[330px]  ">
+        {plan}
       </h2>
       <div className="text-center mt-5  2xl:mt-16 ">
         <ul className="inline-flex">

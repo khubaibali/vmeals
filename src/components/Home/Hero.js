@@ -57,7 +57,7 @@ export default function Hero({ sliderBarData = [{}] }) {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-[2%] md:bottom-[11%] 2xl:bottom-[10%]  h-auto 3xl:bottom-[3%] left-[45%] 2xl:left-[49%] hidden md:block ">
+        <div className="absolute bottom-[2%] md:bottom-[11%] 2xl:bottom-[10%]  h-auto 3xl:bottom-[3%] left-[45%] xl:left-[49%] hidden md:block ">
           {/* <svg
             className=" w-[21px] h-[28px] md:w-[40px] md:h-[52px] "
             viewBox="0 0 40 52"
