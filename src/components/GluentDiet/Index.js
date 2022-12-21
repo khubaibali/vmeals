@@ -21,7 +21,7 @@ export default function Index({ googleReviews, headerData, builtData, socialMedi
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
-      <div className="classicbg" style={{ backgroundImage: (step == 1 ? 'url("/images/Gluten-&-Dairy-Free-Diet-Header.jpg")' : step == 2 ? 'url("/images/personalinformationbg.png")' : step == 3 ? 'url("/images/DeliveryInformationbg.png")' : step == 4 ? 'url("/images/Ordersummerbg.png")' : 'url("/images/classicbg.png")') }}>
+      <div className="classicbg" style={{ backgroundImage: (step == 1 ? 'url("/images/Gluten-&-Dairy-Free-Diet-Header.jpg")' : step == 2 ? 'url("/images/personalinformationbg.png")' : step == 3 ? 'url("/images/DeliveryInformationbg.png")' : step == 4 ? 'url("/images/Ordersummerbg.png")' : 'url("/images/Gluten-&-Dairy-Free-Diet-Header.jpg")') }}>
         <Navbar headerData={headerData} />
         <Hero step={step} plan={"Gluten & Dairy Free Diet"} />
       </div>
