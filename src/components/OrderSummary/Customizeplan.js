@@ -71,7 +71,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Allergies:
                   <span className=" float-right  f-f-r ">
-                    {planInformation?.allergies?.map(alg => alg.name)?.join(",")}{" "}
+                    {planInformation?.allergies?.length > 0 ? planInformation?.allergies?.map(alg => alg.name)?.join(",") : "N/A" }{" "}
                   </span>{" "}
                 </h2>
 

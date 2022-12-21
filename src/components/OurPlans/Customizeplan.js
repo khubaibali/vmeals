@@ -220,7 +220,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         offDays: offDays,
         planDuration: selectedDuration.name,
         mealType: mealType?.id?.split("_"),
-        allergies: allergies?.length ? allergies?.map((a) => a.name)?.join(", ") : "N/A",
+        allergies: allergies?.length > 0 ? allergies?.map((a) => a.name)?.join(", ") : "N/A",
         addOns: addOnsArray,
         couponCode: {
           code: couponAPIResponse?.doc?.code,
