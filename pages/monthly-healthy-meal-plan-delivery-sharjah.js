@@ -5,7 +5,7 @@ import { getServerSideProps as socialMediaIconsProps } from '../src/components/C
 import SEO from '../src/components/Common/SEO'
 import { seoPages, vmealsPages, vmealsSEO } from '../src/lib/APICommunications'
 export default function servicesharjah(props) {
-  const metaDataContent = Object.values(props?.metaData?.docs[0].VMealsCategoriesSeoList).find(c => c.VMealsSeoCategoriesTitle == "Meal Plans Service in Dubai")
+  const metaDataContent = Object.values(props?.metaData?.docs[0].VMealsCategoriesSeoList).find(c => c.VMealsSeoCategoriesTitle == "Meal Plans Service in Sharjah")
   const seoPagesData = props?.seoPages?.docs?.find(f => f.PageTitle =="Meal Plans Service in Sharjah") 
   return (
     <div>

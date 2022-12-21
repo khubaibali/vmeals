@@ -10,33 +10,40 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
   //console.log("footer")
   const [registerForm, setFormData] = useState({})
   const [isDisabled, setDisable] = useState(false)
+  const [isWrongEmail, setWrongEmailError] = useState(false)
   function formControl(event) {
+    setWrongEmailError(false)
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
   function CallSubmitForm() {
-    setDisable(true)
-    fetch(`${vmealsSubscribe}`, {
-      method: 'POST',
-      body: JSON.stringify({
-        ...registerForm
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      }
-    })
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        setDisable(false)
-        if(!data.message){
-          toast("You are subscribed to Vmeals")
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(registerForm.email)) {
+      setDisable(true)
+      fetch(`${vmealsSubscribe}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          ...registerForm
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
         }
-        toast(data?.message)
-      }).catch(error => {
-        setDisable(false)
-        toast(error?.message)
-      });
+      })
+        .then(function (response) {
+          return response.json()
+        })
+        .then(function (data) {
+          setDisable(false)
+          if (!data.message) {
+            toast("You are subscribed to Vmeals")
+          }
+          toast(data?.message)
+        }).catch(error => {
+          setDisable(false)
+          toast(error?.message)
+        });
+    } else {
+      setWrongEmailError(true)
+    }
+
 
   }
 
@@ -66,7 +73,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
           <div className="bg-white shadow-2xl mb-5 mt-4 md:my-10 py-3 md:py-6 lg:py-8 2xl:py-10 w-10/12 sm:w-6/12 md:w-10/12 xl:w-8/12  2xl:w-9/12 text-center  ml-auto mr-auto rounded-full ">
 
             <h2 className=" text-black f-f-b  text-smtwo  md:text-xl lg:text-3xl 2xl:text-6xl  uppercase ">
-            Subscribe to our 
+              Subscribe to our
               {/* <span className="text-green"> {footerData?.[0]?.VMealsGuideBoldColorTitle}</span>{" "} */}
               <span className="text-green"> Newsletter!</span>
             </h2>
@@ -79,7 +86,10 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                   className="  input-footer  mt-1 md:mt-4 lg:mt-4 2xl:mt-4 md:py-3 md:h-[52px] 2xl:h-[85px] w-[147px] md:w-[277px]  lg:w-[320px] 2xl:w-[545px] border-2 border-green h-[25px]  "
                   // placeholder="Please enter your email address..."
                   placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
-                /> </li>
+                />
+
+
+              </li>
               <li className=" ml-1 md:ml-4" >
                 <button disabled={isDisabled} onClick={CallSubmitForm} className="bg-green  f-f-b text-xsone md:text-base 2xl:text-lg  md:mt-4 text-white lg:mt-4   2xl:mt-5 2xl:h-[79px] h-[25px] w-[60px] md:h-[52px] md:w-[143px] 2xl:w-[219px] mt-1 rounded-full sub ">
                   {/* Subscribe */}
@@ -87,6 +97,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                 </button>
               </li>
             </ul>
+            {isWrongEmail && "Invalid Email address"}
 
           </div>
         </div>
@@ -104,20 +115,20 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                 </a>
               </div>
               <div className="col-span-2 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3   ">
-                      <div className=" text-center" >
+                <div className=" text-center" >
 
-                  
-                    <ul className="inline-flex  mt-2" >
+
+                  <ul className="inline-flex  mt-2" >
                     <li>
-                    <img  src="https://firebasestorage.googleapis.com/v0/b/joiingmandarin.appspot.com/o/VMeals-Visa-Card-Logo.svg?alt=media&token=c691e55d-a7a0-47b1-b9f0-41574a65b3c3" className="    bg-white  rounded-[7px] w-[24px] md:w-[40px] lg:w-[60px]  h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
+                      <img src="https://firebasestorage.googleapis.com/v0/b/joiingmandarin.appspot.com/o/VMeals-Visa-Card-Logo.svg?alt=media&token=c691e55d-a7a0-47b1-b9f0-41574a65b3c3" className="    bg-white  rounded-[7px] w-[24px] md:w-[40px] lg:w-[60px]  h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
 
-                  </li>
-                  <li>
-                    <img  src="https://firebasestorage.googleapis.com/v0/b/joiingmandarin.appspot.com/o/VMeals-Mastercard-Logo.svg?alt=media&token=bff9e677-682c-4583-91da-d2f7e6496524" className="  bg-white  rounded-[7px] w-[24px]  md:w-[40px] lg:w-[60px]  h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
+                    </li>
+                    <li>
+                      <img src="https://firebasestorage.googleapis.com/v0/b/joiingmandarin.appspot.com/o/VMeals-Mastercard-Logo.svg?alt=media&token=bff9e677-682c-4583-91da-d2f7e6496524" className="  bg-white  rounded-[7px] w-[24px]  md:w-[40px] lg:w-[60px]  h-auto  ml-2 md:ml-4 xl:ml-8 cursor-pointer " />
 
-                  </li>
-                    </ul>
-                    </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className=" col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 2xl:col-span-6 text-center   ">
                 <ul className="inline-flex">
@@ -142,7 +153,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                     Sitemap
                   </a>
                 </li> */}
-  
+
                   {
                     tradeMarkData?.[0]?.FooterList?.map((footeritem) => (
                       <li  >
@@ -160,7 +171,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                       Refund & Cancellation Policy
                     </Link>
                   </li> */}
-            
+
                 </ul>
               </div>
             </div>
