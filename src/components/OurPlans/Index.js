@@ -15,7 +15,7 @@ export default function Index({headerData,sliderBarData,builtData,homeFitnessDat
   return (
     <>
     <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
-      <div className="ourplansbg">
+      <div className="ourplansbg  rounded-b-[30px]">
         <Navbar headerData={headerData} />
         <Hero sliderBarData={sliderBarData} step={0} />
       </div>

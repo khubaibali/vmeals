@@ -19,7 +19,7 @@ const Steps = ({ step, setStep }) => {
                                                         className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                                     />
                                                 </li>
-                                                <li className="mt-2 md:mt-2.5 xl:mt-3 ml-2 lg:ml-4">
+                                                <li className="mt-2 md:mt-2 xl:mt-3 ml-2 lg:ml-4">
                                                     Select Plan
                                                 </li>
                                             </ul>
@@ -42,7 +42,7 @@ const Steps = ({ step, setStep }) => {
                                             setStep(1)
                                         }
                                     }}
-                                    className={`  size-steps f-f-r  ${step == 1 ? ' text-smtwo md:text-xstwo green-gradiant-2 lg:text-smtwo 2xl:text-base f-f-b text-white rounded-full px-[15px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[30px] 2xl:h-[74px] ' : 'px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]  text-black '}  rounded-full    `}>
+                                    className={`  size-steps f-f-r  ${step == 1 ? '  green-gradiant-2 size-steps f-f-b text-white rounded-full px-[15px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px] 2xl:px-[30px] 2xl:h-[74px] ' : 'px-[32px] md:px-[25px] addwidth py-[10px] md:py-[3px] lg:py-[6px]  2xl:h-[74px]  text-black '}  rounded-full    `}>
                                     <ul className="inline-flex">
                                         <li>
                                             <img
@@ -50,7 +50,7 @@ const Steps = ({ step, setStep }) => {
                                                 className= {`w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3`}  
                                             />
                                         </li>
-                                        <li className="mt-2 md:mt-2.5 xl:mt-3 ml-2 lg:ml-4">
+                                        <li className="mt-2 md:mt-2 xl:mt-3 ml-2 lg:ml-4">
                                             Customise Plan
                                         </li>
                                     </ul>
@@ -79,7 +79,7 @@ const Steps = ({ step, setStep }) => {
                                                 className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                             />
                                         </li>
-                                        <li className="mt-2 md:mt-2.5 xl:mt-3 ml-2 lg:ml-4">
+                                        <li className="mt-2 md:mt-2 xl:mt-3 ml-2 lg:ml-4">
                                             Personal Information
                                         </li>
                                     </ul>
@@ -108,7 +108,7 @@ const Steps = ({ step, setStep }) => {
                                                 className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                             />
                                         </li>
-                                        <li className="mt-2 md:mt-2.5 xl:mt-3 ml-2 lg:ml-4">
+                                        <li className="mt-2 md:mt-2 xl:mt-3 ml-2 lg:ml-4">
                                             Delivery Information
                                         </li>
                                     </ul>
@@ -131,7 +131,7 @@ const Steps = ({ step, setStep }) => {
                                             className="  w-[16px] md:w-[14px] lg:w-[16px] xl:w-[25px] h-auto mt-2 2xl:mt-3  "
                                         />
                                     </li>
-                                    <li className="mt-2 md:mt-2.5 xl:mt-3 ml-2 lg:ml-4">Order Summary</li>
+                                    <li className="mt-2 md:mt-2 xl:mt-3 ml-2 lg:ml-4">Order Summary</li>
                                 </ul>
                             </button>
                             </div>

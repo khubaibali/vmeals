@@ -46,7 +46,7 @@ export default function Simplemenu({ sampleMenu }) {
           {sampleMenu?.map(menu => (
             <div className="  " >
               <div className="relative">
-                <img src={`${process.env.NEXT_PUBLIC_BASE_URL}${menu?.SampleMenuItemImage?.url}` || "/images/breakfast.png"} className=" w-[93%] h-[300px] rounded-[20px] ml-auto mr-auto 2xl:mr-0  " />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_URL}${menu?.SampleMenuItemImage?.url}` || "/images/breakfast.png"} className=" w-[93%]  rounded-[20px] ml-auto mr-auto 2xl:mr-0  " />
                 <button className=" text-sm sm:text-tiny 2xl:text-tiny f-f-b text-white sub rounded-full w-[145px] h-[41px]  absolute top-[20px] left-[52px]  ">
                   {menu?.MealType}
                 </button>

@@ -63,7 +63,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
             </ul>
 
           </div>
-          <div className="bg-white shadow-2xl mb-5 mt-4 md:my-10 py-3 md:py-6 lg:py-8 2xl:py-10 w-10/12 md:w-10/12 xl:w-8/12  2xl:w-9/12 text-center  ml-auto mr-auto rounded-full ">
+          <div className="bg-white shadow-2xl mb-5 mt-4 md:my-10 py-3 md:py-6 lg:py-8 2xl:py-10 w-10/12 sm:w-6/12 md:w-10/12 xl:w-8/12  2xl:w-9/12 text-center  ml-auto mr-auto rounded-full ">
 
             <h2 className=" text-black f-f-b  text-smtwo  md:text-xl lg:text-3xl 2xl:text-6xl  uppercase ">
             Subscribe to our 

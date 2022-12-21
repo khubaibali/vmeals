@@ -26,7 +26,7 @@ export default function Informationslick({ testimonialsData }) {
 
               </div>
             </div>
-            <div className="absolute bottom-0" >
+            <div className="absolute bottom-[33px]" >
             <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4   ">
               {t.Name}
             </h2>

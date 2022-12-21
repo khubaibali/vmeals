@@ -31,7 +31,7 @@ export default function CustomizeplanDeliveryInformation({ step, setStep, setDel
                 src="/images/Deliverydemale.png"
                 className="w-full h-[588px] md:h-[891px] xl:h-[680px]  2xl:h-[1000px] rounded-[100px] object-cover  "
               />
-              <div className=" 2xl:w-[518px] w-[356px] h-[319px] md:w-[441px] md:h-[371px] 2xl:h-[371px] personscrd p-6 md:p-8 left-[4%] md:left-[19%] lg:left-[32%] xl:left-[19%] bottom-[49px] md:bottom-[110px] xl:bottom-[76px] 2xl:bottom-[198px] absolute">
+              <div className=" 2xl:w-[518px] w-[356px] h-[319px] md:w-[441px] md:h-[321px] 2xl:h-[318px] personscrd p-6 md:p-8 left-[4%] md:left-[24%] lg:left-[30%] xl:left-[19%] bottom-[49px] md:bottom-[110px] xl:bottom-[76px] 2xl:bottom-[198px] absolute">
                 <Informationslick testimonialsData={testimonialsData} />
               </div>
             </div>
