@@ -3,6 +3,7 @@ import RTFMapping from "../Common/RTFMapping";
 
 export default function Mission({ourCompanyData}) {
   return (
+    <div className="about-goal-bg  " >
     <div className="relative  ">
       <div className=" z-10 w-11/12 md:w-10/12 lg:w-7/12 xl:w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
         <div className="grid grid-cols-12 gap-4 md:gap-8  z-10  "> 
@@ -52,6 +53,7 @@ export default function Mission({ourCompanyData}) {
         src="/images/faqtabbg.png"
         className="2xl:w-[965px]  2xl:h-[823px] xl:w-[662px]  xl:h-[523px] md:w-[100%] lg:w-[50%]  md:h-[631px] absolute top-[30%] xl:top-0 -z-10  "
       />
+    </div>
     </div>
   );
 }

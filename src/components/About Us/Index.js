@@ -18,7 +18,9 @@ export default function Index({tradeMarkData,headerData,footerData,socialMediaIc
         <Hero />
       </div>
       <JournyMissionWrapper ourCompanyData={ourCompanyData}/>
+      <div className="  " >
       <Review googleReviews={googleReviews} />
+      </div>
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData}/>
     </>
   );
