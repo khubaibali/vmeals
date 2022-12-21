@@ -595,7 +595,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 {/* nabeel bhai code ended */}
                 {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
               </div> */}
-                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                {/* <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Add Ons
                 </h2>
 
@@ -677,7 +677,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
                     <ul></ul>
                   </form>
-                </div>
+                </div> */}
                 <div className="grid grid-cols-12 gap-8  md:mt-8   ">
                   <div className="   col-span-6 xl:col-span-6 ">
                     <ul className=" inline-flex mt-7  ">
