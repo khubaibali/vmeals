@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 const SEO = ({ pageTitle, metaText }) => (
     <Head>
-        <title>{pageTitle || "Nutristien"}</title>
+        <title>{pageTitle || "Vmeals"}</title>
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="description" content={metaText || "Nutristien"} />
+        <meta name="description" content={metaText || "Vmeals"} />
         <meta name="robots" content="all"/>
         <meta
             name="viewport"
