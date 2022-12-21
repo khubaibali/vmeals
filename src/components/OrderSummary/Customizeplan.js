@@ -116,7 +116,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                         </>
                       }
                     </> : 
-                    <div className="   col-span-9 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
+                    <div className="   col-span-12 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
                       <span className=" float-right  f-f-r">{"N/A"}</span></div>}
 
                   </div>

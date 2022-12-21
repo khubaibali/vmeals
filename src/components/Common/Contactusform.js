@@ -122,7 +122,7 @@ export default function Contactusform() {
                       }
                       className="text-black"
                     >
-                      {cc.dial_code}&nbsp;&nbsp;{" "} 
+                      &nbsp;&nbsp;{cc.dial_code}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
                     </option>
                   ))}
                  
