@@ -100,7 +100,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                           </div>
                         </>
                       }
-                      {addOnTwoHundred &&
+                      {addOnTwoHundred > 0 &&
                         <>
                           <div className="   col-span-6  ">
                             <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
