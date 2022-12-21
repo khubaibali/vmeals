@@ -11,7 +11,7 @@ import Review from '../Common/Review';
 import Script from 'next/script'
 
 
-export default function Index({ headerData, sliderBarData, builtData, ourGeniusData, homeFitnessData, ourHomeBlogData, socialMediaIcon, footerData, tradeMarkData,googleReviews }) {
+export default function Index({ headerData, sliderBarData, builtData, ourGeniusData, homeFitnessData, ourHomeBlogData, socialMediaIcon, footerData, tradeMarkData, googleReviews }) {
   // //console.log("homeFitnessData",homeFitnessData)
   return (
     <>
@@ -24,7 +24,7 @@ export default function Index({ headerData, sliderBarData, builtData, ourGeniusD
       </div>
       <Genius ourGeniusData={ourGeniusData} />
       <Fitness homeFitnessData={homeFitnessData} />
-      <Review googleReviews={googleReviews}/>
+      <Review googleReviews={googleReviews} />
       <Ourblog ourHomeBlogData={ourHomeBlogData} />
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
       <Script id="chatwidget">
