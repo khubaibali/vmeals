@@ -133,7 +133,7 @@
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 481.46000000000004
+                                        "price": 481.46
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
@@ -153,7 +153,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 660.25
+                                        "price": 660.54
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
@@ -163,7 +163,7 @@
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 544.35
+                                        "price": 543.97
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
@@ -183,22 +183,22 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 745.75
+                                        "price": 745.32
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 701.1
+                                        "price": 701.44
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 613.7
+                                        "price": 613.80
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 745.75
+                                        "price": 745.32
                                     }
                                 ]
                             }
@@ -218,7 +218,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 1865.8
+                                        "price": 1865.33
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
@@ -233,7 +233,7 @@
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 1865.8
+                                        "price": 1865.33
                                     }
                                 ]
                             },
@@ -248,7 +248,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 2119.45
+                                        "price": 2119.69
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
@@ -258,12 +258,12 @@
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 1746.1
+                                        "price": 1745.61
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 2119.45
+                                        "price": 2119.69
                                     }
                                 ]
                             },
@@ -505,37 +505,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 687.8
-                                    },
-                                    {
-                                        "id": "Breakfast_Lunch_Dinner",
-                                        "name": "Breakfast + Lunch + Dinner",
-                                        "price": 584.63
-                                    },
-                                    {
-                                        "id": "Breakfast_Lunch_Snack_Drink",
-                                        "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 550.05
-                                    },
-                                    {
-                                        "id": "Lunch_Dinner",
-                                        "name": "Lunch + Dinner",
-                                        "price": 481.46000000000004
-                                    },
-                                    {
-                                        "id": "Lunch_Dinner_Snack_Drink",
-                                        "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 584.63
-                                    }
-                                ]
-                            },
-                            {
-                                "days": 6,
-                                "mealType": [
-                                    {
-                                        "id": "Breakfast_Lunch_Dinner_Snack_Drink",
-                                        "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 777.1
+                                        "price": 777.10
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
@@ -545,7 +515,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 621.3
+                                        "price": 621.30
                                     },
                                     {
                                         "id": "Lunch_Dinner",
@@ -560,32 +530,62 @@
                                 ]
                             },
                             {
+                                "days": 6,
+                                "mealType": [
+                                    {
+                                        "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                                        "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                                        "price": 887.1
+                                    },
+                                    {
+                                        "id": "Breakfast_Lunch_Dinner",
+                                        "name": "Breakfast + Lunch + Dinner",
+                                        "price": 754.3
+                                    },
+                                    {
+                                        "id": "Breakfast_Lunch_Snack_Drink",
+                                        "name": "Breakfast + Lunch + Snack + Drink",
+                                        "price": 709.65
+                                    },
+                                    {
+                                        "id": "Lunch_Dinner",
+                                        "name": "Lunch + Dinner",
+                                        "price": 621.30
+                                    },
+                                    {
+                                        "id": "Lunch_Dinner_Snack_Drink",
+                                        "name": "Lunch + Dinner + Snack + Drink",
+                                        "price": 754.30
+                                    }
+                                ]
+                            },
+                            {
                                 "days": 7,
                                 "mealType": [
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 876.85
+                                        "price": 996.55
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 745.75
+                                        "price": 847.40
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 701.1
+                                        "price": 797.05
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 613.7
+                                        "price": 697.30
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 745.75
+                                        "price": 847.4
                                     }
                                 ]
                             }
@@ -600,27 +600,27 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 2194.5
+                                        "price": 2492.80
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 1865.8
+                                        "price": 2118.88
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 1755.6
+                                        "price": 1994.05
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 1536.15
+                                        "price": 1744.96
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 1865.8
+                                        "price": 2118.88
                                     }
                                 ]
                             },
@@ -630,27 +630,27 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 2493.75
+                                        "price": 2842.40
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 2119.45
+                                        "price": 2416.05
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 1995
+                                        "price": 2273.35
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 1746.1
+                                        "price": 1989.68
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 2119.45
+                                        "price": 2416.04
                                     }
                                 ]
                             },
@@ -660,27 +660,27 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 2793
+                                        "price": 3241.40
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 2374.05
+                                        "price":3094.34
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 2234.4
+                                        "price": 2911.75
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 1955.1
+                                        "price": 2548.28
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 2374.05
+                                        "price": 3094.34
                                     }
                                 ]
                             }
@@ -695,27 +695,27 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 3730.65
+                                        "price": 4237.76
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 3171.1
+                                        "price": 3602.10
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 2984.9
+                                        "price": 3389.89
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 2611.55
+                                        "price":2966.43
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 3171.1
+                                        "price": 3602.10
                                     }
                                 ]
                             },
@@ -725,27 +725,27 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 4239.85
+                                        "price": 54832
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 3603.35
+                                        "price": 4107.27
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 3391.5
+                                        "price": 3864.70
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 2967.8
+                                        "price": 3382.46
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 3603.35
+                                        "price": 4107.27
                                     }
                                 ]
                             },
@@ -755,27 +755,27 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 4748.1
+                                        "price": 5424.8
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 4035.6
+                                        "price": 4611.70
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 3798.1
+                                        "price": 4339.76
                                     },
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 3324.05
+                                        "price": 3797.35
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 4035.6
+                                        "price": 4611.07
                                     }
                                 ]
                             }
@@ -855,7 +855,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 5698.1
+                                        "price": 5697.1
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
@@ -957,7 +957,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 966.15
+                                        "price": 965.75
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
@@ -972,7 +972,7 @@
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 966.15
+                                        "price": 965.15
                                     }
                                 ]
                             }
@@ -992,7 +992,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 2415.85
+                                        "price": 2416.85
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
@@ -1007,7 +1007,7 @@
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 2415.85
+                                        "price": 2416.85
                                     }
                                 ]
                             },
@@ -1037,7 +1037,7 @@
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 2755
+                                        "price": 2755.19
                                     }
                                 ]
                             },
@@ -1062,12 +1062,12 @@
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 2547.9
+                                        "price": 2548.9
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 3094.15
+                                        "price": 3094.34
                                     }
                                 ]
                             }
@@ -1082,12 +1082,12 @@
                                     {
                                         "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                                         "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                                        "price": 4831.7
+                                        "price": 4832.7
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Dinner",
                                         "name": "Breakfast + Lunch + Dinner",
-                                        "price": 4106.85
+                                        "price": 4107.85
                                     },
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
@@ -1097,12 +1097,12 @@
                                     {
                                         "id": "Lunch_Dinner",
                                         "name": "Lunch + Dinner",
-                                        "price": 3382
+                                        "price": 3382.46
                                     },
                                     {
                                         "id": "Lunch_Dinner_Snack_Drink",
                                         "name": "Lunch + Dinner + Snack + Drink",
-                                        "price": 4106.85
+                                        "price": 4107.25
                                     }
                                 ]
                             },
@@ -1152,7 +1152,7 @@
                                     {
                                         "id": "Breakfast_Lunch_Snack_Drink",
                                         "name": "Breakfast + Lunch + Snack + Drink",
-                                        "price": 4950.45
+                                        "price": 4949.45
                                     },
                                     {
                                         "id": "Lunch_Dinner",
