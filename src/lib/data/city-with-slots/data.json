@@ -14,11 +14,11 @@
         },
         {
             "name": "Sharjah",
-            "timeSlots": ["2:00am – 6:00am"]
+            "timeSlots": ["2:00am – 6:00am", "4:00am - 8:00am", "6:00am - 10:00am"]
         },
         {
             "name": "Ajman",
-            "timeSlots": ["2:00am – 6:00am"]
+            "timeSlots": ["2:00am – 6:00am", "4:00am - 8:00am", "6:00am - 10:00am"]
         },
         {
             "name": "Ras Al Khaimah",
