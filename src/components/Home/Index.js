@@ -19,7 +19,7 @@ export default function Index({ headerData, sliderBarData, builtData, ourGeniusD
         <Navbar headerData={headerData} />
         <Hero sliderBarData={sliderBarData} />
       </div>
-      <div className="mt-[344px] md:mt-32 lg:mt-0 sm:mt-40">
+      <div className=" bltop  md:mt-32 lg:mt-20 xl:mt-3 sm:mt-60">
         <Built builtData={builtData} />
       </div>
       <Genius ourGeniusData={ourGeniusData} />

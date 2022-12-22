@@ -10,12 +10,12 @@ export default function Genius({ ourGeniusData = [{}] }) {
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px]  ">
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  sm:gap-8 lg:gap-14  ">
-            <div className="   col-span-12 lg:col-span-6  lg:hidden ">
+            <div className="   col-span-12 xl:col-span-6  xl:hidden ">
               <h2 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10 tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
               </h2>
-              <h2 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  mt-8">
+              <h2 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  xl:mt-8">
                 {/* A team of nutrition experts at your fingertips! */}
                 {ourGeniusData[0]?.VMealsOurGeniusesTitle}
               </h2>
@@ -37,14 +37,14 @@ export default function Genius({ ourGeniusData = [{}] }) {
 
               </div>
             </div>
-            <div className="   col-span-12 lg:col-span-6 relative ">
+            <div className="   col-span-12 xl:col-span-6 relative ">
               <img
                 src="/images/Gunjan-Photo 1.png"
                 alt=""
-                className="w-full h-auto lg:absolute lg:bottom-0 "
+                className="w-full h-auto xl:absolute xl:bottom-0 "
               />
             </div>
-            <div className="   col-span-12 lg:col-span-6 hidden lg:block ">
+            <div className="   col-span-12 lg:col-span-6 hidden xl:block ">
               <h2 className="  text-3xl 2xl:text-4xl f-f-li text-green mt-10 lg:mt-0  tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}

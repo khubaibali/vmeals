@@ -91,14 +91,16 @@ export default function Ourblog({ ourHomeBlogData }) {
                     <button className="bg-green f-f-b text-xs md:text-base 2xl:text-xl text-white py-2 px-3 md:px-9 md:py-4 rounded-full absolute top-2 md:top-10 left-2 md:left-5  ">
                       {blog?.VmealsBlogCategory?.VmealsBlogsCategoryName}
                     </button>
-                    <div className="blog-liner p-2 md:py-5 md:p-5  absolute bottom-0 orcrd w-full ">
+                    <div className="blog-liner p-3 sm:p-5  absolute bottom-0 orcrd w-full ">
                       <h2 className=" text-white f-f-r text-xs md:text-base 2xl:text-xl md:py-4 2xl:py-8 ">
                         28th September, 2022
                       </h2>
+                      <div className=" blg-ttile-hidden " >
                       <p className=" f-f-b text-sm md:text-lg 2xl:text-2xl text-white md:pb-7 ">
                         {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit */}
                         {blog.VmealsBlogTitle}
                       </p>
+                      </div>
                     </div>
                     </Link>
                   </div>

@@ -15,7 +15,7 @@ export default function Built({builtData=[{}]}) {
                   {/* BUILT FOR YOU */}
                   {builtData[0]?.VMealsCustomersChooseUsTitle}
                 </h2>
-                <h2 className=" f-f-b text-center text-base md:text-2xl leading-[23px] md:leading-[31px] 2xl:leading-[46px] 2xl:text-6xl text-white pt-5 2xl:pt-10 ">
+                <h2 className=" f-f-b text-center text-base sm:text-2xl  md:text-2xl xl:text-3xl leading-[23px] sm:leading-[31px] xl:leading-[46px] 2xl:text-6xl text-white pt-5 2xl:pt-10 ">
                   {/* Why do customers choose us?{" "} */}
                   {builtData[0]?.VMealsCustomersChooseUsDescription}
                 </h2>
@@ -32,7 +32,7 @@ export default function Built({builtData=[{}]}) {
                       src={`${BaseURL}${builtData[0]?.VMealsCustomersChooseUsList[0]?.VMealsCustomersChooseUsItemImageIcon?.url.replace("/","")}`}
                       className="  w-[59px] h-[59px] sm:w-[100px] 2xl:w-[177px] md:h-auto 2xl:h-[176px] ml-auto mr-auto"
                     />
-                    <h2 className="  text-sm sm:text-11xl lg:text-2xl leading-[20px] sm:leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black pt-5 sm:pt-10 f-f-b text-center ">
+                    <h2 className="  text-sm sm:text-xl md:text-12xl lg:text-12xl xl:text-3xl leading-[20px] sm:leading-[31px] xl:leading-[46px] 2xl:text-4xl text-black pt-5 sm:pt-10 f-f-b text-center ">
                       {/* Free Nutritionist Consultation */}
                       {builtData[0]?.VMealsCustomersChooseUsList[0]?.VMealsCustomersChooseUsItemTitle}
                     </h2>
@@ -45,7 +45,7 @@ export default function Built({builtData=[{}]}) {
                       src={`${BaseURL}${builtData[0]?.VMealsCustomersChooseUsList[1]?.VMealsCustomersChooseUsItemImageIcon?.url.replace("/","")}`}
                       className="  w-[59px] h-[59px] sm:w-[100px] 2xl:w-[176px] md:h-auto 2xl:h-[176px] ml-auto mr-auto"
                     />
-                    <h2 className=" text-sm sm:text-11xl lg:text-2xl  leading-[20px] sm:leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black pt-5 sm:pt-10 f-f-b text-center ">
+                    <h2 className=" text-sm sm:text-xl md:text-12xl lg:text-12xl xl:text-3xl  leading-[20px] sm:leading-[31px] xl:leading-[46px] 2xl:text-4xl text-black pt-5 sm:pt-10 f-f-b text-center ">
                       {/* Allergies & Intolerances */}
                       {builtData[0]?.VMealsCustomersChooseUsList[1]?.VMealsCustomersChooseUsItemTitle}
                     </h2>
@@ -59,7 +59,7 @@ export default function Built({builtData=[{}]}) {
                       src="/images/image 2-home.png"
                       className="  w-[59px] h-[59px] sm:w-[100px] 2xl:w-[176px] md:h-auto 2xl:h-[176px] ml-auto mr-auto"
                     />
-                    <h2 className=" text-sm sm:text-11xl lg:text-2xl  leading-[20px] sm:leading-[31px] 2xl:leading-[46px] 2xl:text-4xl text-black pt-5 sm:pt-10 f-f-b text-center ">
+                    <h2 className=" text-sm sm:text-xl md:text-12xl lg:text-12xl xl:text-3xl  leading-[20px] sm:leading-[31px] xl:leading-[46px] 2xl:text-4xl text-black pt-5 sm:pt-10 f-f-b text-center ">
                     {builtData[0]?.VMealsCustomersChooseUsList[2]?.VMealsCustomersChooseUsItemTitle}
                     </h2>
                   </div>

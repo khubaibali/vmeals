@@ -79,6 +79,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
             </h2>
             <ul className="inline-flex" >
               <li>
+                
                 <input
                   onChange={formControl}
                   name="email"
@@ -87,6 +88,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                   // placeholder="Please enter your email address..."
                   placeholder={footerData?.[0]?.VMealsGuideInputPlaceholderText}
                 />
+                <h2 className="text-red text-left ml-3 text-xs md:text-sm " >  {isWrongEmail && "Invalid email address"}</h2>
 
 
               </li>
@@ -97,7 +99,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                 </button>
               </li>
             </ul>
-            {isWrongEmail && "Invalid Email address"}
+          
 
           </div>
         </div>

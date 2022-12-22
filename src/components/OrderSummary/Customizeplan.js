@@ -235,7 +235,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               </div>
             </div>
             <div className="   col-span-12  lg:col-span-6   xl:col-span-4 ">
-              <div className=" bg-white-light h-[525px]  md:h-[631px] 2xl:h-[759px] rounded-[100px] w-full p-6">
+              <div className=" bg-white-light h-[525px] overflow-hidden md:h-[631px] 2xl:h-[759px] rounded-[100px] w-full p-6">
                 <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Delivery Information
                 </h2>
