@@ -50,7 +50,7 @@ console.log("contactUsData",contactUsData)
           <div className="text-left">
             
               <a href={contactUsData?.[0]?.VMealsContactUsButtonLinkUrl} target="_blank" >
-                <button className="  text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[219px] xl:h-[79px]   mt-5 2xl:mt-8">
+                <button className="  text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[208px] xl:h-[79px]   mt-5 2xl:mt-8">
                  <ul className="inline-flex">
                   <li>
                     <img
@@ -65,7 +65,7 @@ console.log("contactUsData",contactUsData)
               </a>
 
            
-            <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full ml-6 md:ml-8 w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[219px] xl:h-[79px]   mt-5 2xl:mt-8">
+            <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full ml-6 md:ml-8 w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[208px] xl:h-[79px]   mt-5 2xl:mt-8">
               <ul className="inline-flex">
                 <li>
                   <img
