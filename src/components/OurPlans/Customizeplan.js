@@ -4,6 +4,7 @@ import Link from "next/link";
 import Steps from "./Steps";
 import { mealPlansFaqs, useCoupon, vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
 import PlanData from '../../lib/data/meal-plans/data.json'
+import CutleryData from '../../lib/data/meal-plans/cutlery.json'
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../helpers";
 import { Multiselect } from "multiselect-react-dropdown";
@@ -33,6 +34,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [offDays, setOffDays] = useState("Friday - Saturday");
   const [price, setPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price);
   const [totalPrice, setTotalPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price - (PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price * 0.05));
+  const [cutlery, setCutlery] = useState(CutleryData[selectedDuration.name])
   const [addOnFifty, setAddOnFifty] = useState(0);
   const [addOnTwoHundred, setAddOnTwoHundred] = useState(0);
   const [personalInformation, setPersonalInformation] = useState({});
@@ -213,7 +215,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     let body = {
       plan: {
         planName: selectedPlan,
-        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ?  "Vegetarian" : "N/A",
+        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ? "Vegetarian" : "N/A",
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
         deliveriesPerWeek: selectedDaysPerWeek.days,
@@ -284,7 +286,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   // console.log("aaaaaaaaaaaaa", PlanData["GreenDietVegan"]?.portions[0]?.planDuration[0]?.deliveriesPerWeek)
   //console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-
+  console.log("cutlery", cutlery)
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
@@ -348,6 +350,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                             setSelectedDaysPerWeek(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
                             setMealType(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0])
                             setPrice(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
+                            setCutlery(CutleryData[selectedDuration.name])
                             setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
                               id: i,
                               name: a
@@ -368,6 +371,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                               setSelectedPortion(PlanData[select]?.portions[0])
                               setSelectedDuration(PlanData[select]?.portions[0]?.planDuration[0])
                               setSelectedDaysPerWeek(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
+                              setCutlery(CutleryData[PlanData[select]?.portions[0]?.planDuration[0]?.name])
                               setMealType(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0])
                               setPrice(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
                               setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
@@ -429,6 +433,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         className={` ${getCustomizeActiveClass(selectedDuration, duration, "name")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                         onClick={() => {
                           setSelectedDuration(duration)
+                          setCutlery(CutleryData[duration?.name])
+
                           setPrice(duration?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
                         }}
                       >
@@ -595,7 +601,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 {/* nabeel bhai code ended */}
                 {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
               </div> */}
-                {/* <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Add Ons
                 </h2>
 
@@ -612,7 +618,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           checked={addOnFifty > 0 ? true : false}
                           onChange={(e) => {
                             if (e.target.checked) {
-                              setAddOnFifty(50);
+                              setAddOnFifty(cutlery);
                               setAddOnsArray([...addOnsArray, "Eco-Friendly Cutlery"])
                               // setPrice(
                               //   Number(price) + 50
@@ -634,7 +640,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           className="text-black f-f-b text-sm 2xl:text-base ml-4 relative top-[-8px]   "
                         >
                           {" "}
-                          Eco-Friendly Cutlery + AED50.00{" "}
+                          Eco-Friendly Cutlery + AED{cutlery.toFixed(2)}{" "}
                         </label>
                       </li>
                       <li className=" mt-4">
@@ -677,7 +683,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
                     <ul></ul>
                   </form>
-                </div> */}
+                </div>
                 <div className="grid grid-cols-12 gap-8  md:mt-8   ">
                   <div className="   col-span-6 xl:col-span-6 ">
                     <ul className=" inline-flex mt-7  ">
