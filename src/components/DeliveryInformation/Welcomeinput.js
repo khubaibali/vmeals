@@ -26,16 +26,23 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
     let offDaysArray = planInformation?.selectedDaysPerWeek?.days != 7 && planInformation?.offDays?.toLowerCase()?.split(" - ") || [];
     // // let offDaysArray = ["wednesday", "tuesday"];
 
+    
+
     const days = [];
 
-    for (let i = 0; i < 3; i++) {
-      days.push(moment().add(i, "days"));
-    }
+    // let fast = 2;
 
-    // // let today = moment();
-    // // let tomorrow = moment().add(1, 'days');
-    let minDate = moment().add(3, "days");
-
+    // for (let i = 0; i < fast; i++) {
+      //   days.push(moment().add(i, "days"));
+      // }
+      
+      // // let tomorrow = moment().add(1, 'days');
+      // console.log("moment().format();",moment().format(), moment().format(""))
+    
+    let today = moment();
+    // let dddee = today.hour();
+    let minDate = moment().add(today.hour() >= 20 ? 3 : 2, "days");
+    console.log("today-----", today.hour())
     // // const daysss = [today.format("dddd"), tomorrow.format("dddd"), afterTomorrow.format("dddd")]
 
     // let exludedDates_ = [];
