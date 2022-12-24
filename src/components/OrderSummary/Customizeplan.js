@@ -71,7 +71,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Allergies:
                   <span className=" float-right  f-f-r ">
-                    {planInformation?.allergies?.length > 0 ? planInformation?.allergies?.map(alg => alg.name)?.join(",") : "N/A" }{" "}
+                    {planInformation?.allergies?.length > 0 ? planInformation?.allergies?.map(alg => alg.name)?.join(",") : "N/A"}{" "}
                   </span>{" "}
                 </h2>
 
@@ -82,46 +82,46 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                     </h2>
                   </div>
                   <div className="   col-span-8  ">
-                  <div className="grid grid-cols-12  ">
-                  {addOnFifty || addOnTwoHundred > 0 ?
-                    <>
-                      
-                      {addOnFifty > 0 &&
+                    <div className="grid grid-cols-12  ">
+                      {addOnFifty || addOnTwoHundred > 0 ?
                         <>
-                          <div className="   col-span-7  ">
-                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
-                              Eco-Friendly Cutlery
-                            </h2>
-                          </div>
-                          <div className="   col-span-5  ">
-                            <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
-                              + AED50.00
-                            </h2>
-                          </div>
-                        </>
-                      }
-                      {addOnTwoHundred > 0 &&
-                        <>
-                          <div className="   col-span-6  ">
-                            <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
-                              Thermal Bags (x2)
-                            </h2>
-                            </div>
-                            <div className="   col-span-6  ">
-                              <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
-                                + AED200.00 (Refundable Deposit)
-                              </h2>
-                            </div>
-                         
-                        </>
-                      }
-                    </> : 
-                    <div className="   col-span-12 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
-                      <span className=" float-right  f-f-r">{"N/A"}</span></div>}
 
+                          {addOnFifty > 0 &&
+                            <>
+                              <div className="   col-span-7  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
+                                  Eco-Friendly Cutlery
+                                </h2>
+                              </div>
+                              <div className="   col-span-5  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
+                                  + AED50.00
+                                </h2>
+                              </div>
+                            </>
+                          }
+                          {addOnTwoHundred > 0 &&
+                            <>
+                              <div className="   col-span-6  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
+                                  Thermal Bags (x2)
+                                </h2>
+                              </div>
+                              <div className="   col-span-6  ">
+                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
+                                  + AED200.00 (Refundable Deposit)
+                                </h2>
+                              </div>
+
+                            </>
+                          }
+                        </> :
+                        <div className="   col-span-12 text-black-dark  text-sm 2xl:text-base f-f-b  text-right">
+                          <span className=" float-right  f-f-r">{"N/A"}</span></div>}
+
+                    </div>
                   </div>
-                  </div>
-           
+
                 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Mobile Number:
-                  <span className=" float-right  f-f-r ">+971 {personalInformation?.mobileNumber}</span>{" "}
+                  <span className=" float-right  f-f-r ">{personalInformation?.mobileNumberCode} {personalInformation?.mobileNumber}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Date of Birth:
@@ -292,29 +292,30 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                   Personal Information
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
-                  Last Name: <span className=" float-right  f-f-r ">John</span>{" "}
+                  Last Name: <span className=" float-right  f-f-r ">{personalInformation?.firstName}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
-                  Diet Type:<span className=" float-right  f-f-r ">Doe</span>{" "}
+                  Diet Type:<span className=" float-right  f-f-r ">{personalInformation?.lastName}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Email Address:
                   <span className=" float-right  f-f-r ">
-                    johndoe@gmail.com
+                    {personalInformation?.email}
                   </span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Mobile Number:
-                  <span className=" float-right  f-f-r ">+971 XX XXX XXXX</span>{" "}
+                  <span className=" float-right  f-f-r ">{personalInformation?.mobileNumberCode} {personalInformation?.mobileNumber}</span>{" "}
                 </h2>
                 <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Date of Birth:
-                  <span className=" float-right  f-f-r ">01/01/1990</span>{" "}
+                  <span className=" float-right  f-f-r ">{(new Date(personalInformation?.dateOfBirth)).toDateString()}</span>{" "}
                 </h2>
               </div>
               <div className="bg-white-light my-2 rounded-[100px]  " >
-                    <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >15% discount applied!</h2>
-                  </div>
+                {couponError && <h2 className="text-red text-center f-f-b text-sm 2xl:text-base ">{couponError}</h2>}
+                {coupunApplied && <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >{discountPercentage}% discount applied!</h2>}
+              </div>
               {/* input filed  */}
               <div className=" relative ">
                 <input
@@ -330,7 +331,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               <div className="grid grid-cols-12 mt-6 gap-4 ">
                 <div className="   col-span-6  ">
                   <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
-                    Discount:<span className=" f-f-r float-right ">{discountPercentage}%</span>{" "}
+                    Discount:<span className=" f-f-r float-right ">{discountPercentage || 0}%</span>{" "}
                   </h2>
                 </div>
                 <div className="   col-span-6  ">

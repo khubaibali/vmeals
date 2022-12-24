@@ -2,6 +2,7 @@ import React from "react";
 import RTFMapping from "../Common/RTFMapping";
 
 export default function Mission({ourCompanyData}) {
+  console.log("OUR COMPANY DSAT", ourCompanyData)
   return (
     <div className="about-goal-bg  " >
     <div className="relative  ">
