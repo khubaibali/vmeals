@@ -159,7 +159,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                   Your Email
                 </label>
                 <div className="relative" >
-                  <select style={{ width: '70px', height: "100%" }} value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value)} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn cursor-pointer" >
+                  <select style={{ width: '70px', height: "100%" }} value={mobileNumberCode} onChange={(e) => setMobileNumberCode(e.target.value)} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2    focus:outline-none  mobile-btn cursor-pointer" >
                     {CountryCodeData.countryCodes.map((cc) => (
                       <option
                         value={cc.dial_code}
@@ -170,7 +170,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                         }
                         className="text-black"
                       >
-                        &nbsp;&nbsp;{cc.dial_code}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
+                        &nbsp;&nbsp;<span className="text-left" style={{width: '20px'}}>{cc.dial_code}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-right" style={{ float: 'right' }}>{cc.name}</span>
                       </option>
                     ))}
                   </select>
