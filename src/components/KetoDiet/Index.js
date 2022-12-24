@@ -7,7 +7,7 @@ import Built from "../Home/Built";
 import Question from "../Faq/Questions";
 import Customizeplan from "../OurPlans/Customizeplan";
 import Simplemenu from "../OurPlans/Simplemenu";
-import { vmealsKetoDietContent } from "../../lib/APICommunications";
+import { mealPlansFaqs, vmealsKetoDietContent } from "../../lib/APICommunications";
 import SEO from "../Common/SEO";
 
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData, googleReviews }) {
@@ -15,6 +15,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
   const [selectedPlan, setSelectedPlan] = useState("KetoDiet");
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "KetoDiet")
   const contentDataKetoDiet = Object.values(contentData).find(c => c.VmealsKetoDietEnableDisables == "Enable")
+  const faqPescatarianDiet = Object.values(faqQuestions).find(c => c.EnableDisables == "Enable" && c.PlanName == "KetoDiet")
   const [step, setStep] = useState(1)
 
   return (
@@ -35,7 +36,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
           <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
           <Built builtData={builtData} />
           <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-            <Question faqQuestions={faqQuestions} />
+            <Question faqQuestions={{0: faqPescatarianDiet}} />
           </div>
           <Review googleReviews={googleReviews} />
         </>
@@ -50,10 +51,12 @@ export async function getServerSideProps() {
 
     let contentDataKetoDiet = await fetch(vmealsKetoDietContent)
     let data = await contentDataKetoDiet.json()
+    let faqKetoDiet = await fetch(mealPlansFaqs)
+    let faqKetoDietData = await faqKetoDiet.json()
     //console.log("slider bar ->>",data)
 
     return {
-      props: { contentDataKetoDiet: { ...data?.docs } }, // will be passed to the page component as props
+      props: { contentDataKetoDiet: { ...data?.docs }, faqKetoDiet: { ...faqKetoDietData?.docs} }, // will be passed to the page component as props
     }
   } catch (error) {
     return {

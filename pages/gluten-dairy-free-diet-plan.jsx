@@ -15,7 +15,7 @@ export default function gluent(props) {
   return (
     <div>
       <Gluentdietpage
-        faqQuestions={props.faqQuestions} 
+        faqQuestions={props.faqGlutenDiet} 
         testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
         contentData={props?.contentDataGlutenAndDairyFreeDiet}

@@ -8,15 +8,16 @@ import Question from "../Faq/Questions";
 import Customizeplan from "../OurPlans/Customizeplan";
 import Simplemenu from "../OurPlans/Simplemenu";
 import SEO from "../Common/SEO";
-import { vmealsGreenDietContent } from "../../lib/APICommunications";
+import { mealPlansFaqs, vmealsGreenDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData, googleReviews }) {
   const [selectedPlan, setSelectedPlan] = useState("GreenDietVegetarian");
   const metaDataContent = Object.values(metaData).find(c => c.title == "Green Diet")
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GreenDiet")
   const contentDataGreenDiet = Object.values(contentData).find(c => c.VmealsGreenDietEnableDisables == "Enable")
+  const faqDataGreenDiet = Object.values(faqQuestions).find(c => c.EnableDisables == "Enable" && c.PlanName == "GreenDiet")
   const [step, setStep] = useState(1)
-
+  console.log("faqDataGreenDietfaqDataGreenDietfaqDataGreenDiet",faqDataGreenDiet)
   useEffect(() => {
     //console.log("")
   }, [selectedPlan])
@@ -38,7 +39,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
           <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
           <Built builtData={builtData} />
           <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-            <Question faqQuestions={faqQuestions} />
+            <Question faqQuestions={{0: faqDataGreenDiet}} />
           </div>
           <Review googleReviews={googleReviews} />
         </>
@@ -53,10 +54,12 @@ export async function getServerSideProps() {
 
     let contentDataGreenDiet = await fetch(vmealsGreenDietContent)
     let data = await contentDataGreenDiet.json()
-    //console.log("slider bar ->>",data)
+    let faqGreenDiet = await fetch(mealPlansFaqs)
+    let faqGreenDietData = await faqGreenDiet.json()
+    console.log("slider bar ->>",data)
 
     return {
-      props: { contentDataGreenDiet: { ...data?.docs } }, // will be passed to the page component as props
+      props: { contentDataGreenDiet: { ...data?.docs }, faqGreenDiet: { ...faqGreenDietData?.docs } }, // will be passed to the page component as props
     }
   } catch (error) {
     return {

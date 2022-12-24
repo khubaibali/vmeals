@@ -6,6 +6,7 @@ import Fotter from "../Common/Footer";
 import Questions from "./Questions";
 
 export default function Index({tradeMarkData,headerData,footerData,sliderBarData,socialMediaIcon,faqQuestions,googleReviews}) {
+  console.log("VMealsFaqsList", faqQuestions)
   return (
     <>
       <div className="faq-bg">

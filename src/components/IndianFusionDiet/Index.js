@@ -8,13 +8,14 @@ import Question from "../Faq/Questions";
 import Customizeplan from "../OurPlans/Customizeplan";
 import Simplemenu from "../OurPlans/Simplemenu";
 import SEO from "../Common/SEO";
-import { vmealsIndianFusionDietContent } from "../../lib/APICommunications";
+import { mealPlansFaqs, vmealsIndianFusionDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData, googleReviews }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Green Diet")
   const [selectedPlan, setSelectedPlan] = useState("IndianFusionVegetarianDiet");
   const [step, setStep] = useState(1)
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GlutenAndDairyFreeDiet")
+  const faqDataGlutenDiet = Object.values(faqQuestions).find(c => c.EnableDisables == "Enable" && c.PlanName == "IndianFusionDiet")
 
   const contentDataIndianFusion = Object.values(contentData).find(c => c.VmealsIndianFusionEnableDisables == "Enable")
 
@@ -36,7 +37,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
           <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
           <Built builtData={builtData} />
           <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-            <Question faqQuestions={faqQuestions} />
+            <Question faqQuestions={{0: faqDataGlutenDiet}} />
           </div>
           <Review googleReviews={googleReviews} />
         </>
@@ -51,10 +52,12 @@ export async function getServerSideProps() {
 
     let contentDataIndianFusion = await fetch(vmealsIndianFusionDietContent)
     let data = await contentDataIndianFusion.json()
+    let faqIndianDiet = await fetch(mealPlansFaqs)
+    let faqGlutenDietData = await faqIndianDiet.json()
     //console.log("slider bar ->>",data)
 
     return {
-      props: { contentDataIndianFusion: { ...data?.docs } }, // will be passed to the page component as props
+      props: { contentDataIndianFusion: { ...data?.docs }, faqIndianDiet: { ...faqGlutenDietData?.docs } }, // will be passed to the page component as props
     }
   } catch (error) {
     return {

@@ -19,7 +19,7 @@ const mealPlans = (props) => {
         mealPlansFaqsData={props?.mealPlansFaqsData}
         testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
-        faqQuestions={props.faqQuestions}
+        faqQuestions={props.faqClassicDiet}
         contentData={props?.contentDataClassicDiet}
         headerData={props?.headerData}
         builtData={props.builtData}

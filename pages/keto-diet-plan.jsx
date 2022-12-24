@@ -14,7 +14,7 @@ export default function ketodiet(props) {
   return (
     <div>
       <Ketopage
-        faqQuestions={props.faqQuestions}
+        faqQuestions={props.faqKetoDiet}
         testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
         contentData={props?.contentDataKetoDiet}

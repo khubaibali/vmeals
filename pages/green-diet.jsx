@@ -10,11 +10,12 @@ import { getServerSideProps as contentDataPropsPage } from '../src/components/Gr
 import { getServerSideProps as faqQuestionsProps } from '../src/components/Faq/Questions'
 import { getServerSideProps as googleReviewsProps } from "../src/components/Common/Review"
 export default function greendiet(props) {
+  console.log("propsss", props)
   return (
     <div>
       <GreenDietpage
         testimonialsData={props?.testimonialsData}
-        faqQuestions={props.faqQuestions}
+        faqQuestions={props.faqGreenDiet}
         metaData={props?.contentData}
         contentData={props?.contentDataGreenDiet}
         headerData={props?.headerData}

@@ -7,17 +7,18 @@ import Built from "../Home/Built";
 import Question from "../Faq/Questions";
 import Customizeplan from "../OurPlans/Customizeplan";
 import Simplemenu from "../OurPlans/Simplemenu";
-import { vmealsGlutenAndDairyDietContent } from "../../lib/APICommunications";
+import { mealPlansFaqs, vmealsGlutenAndDairyDietContent } from "../../lib/APICommunications";
 import SEO from "../Common/SEO";
 
 export default function Index({ googleReviews, headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData }) {
   const [selectedPlan, setSelectedPlan] = useState("GlutenAndDairyFreeDiet");
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GlutenAndDairyFreeDiet")
+  const faqDataGlutenDiet = Object.values(faqQuestions).find(c => c.EnableDisables == "Enable" && c.PlanName == "GlutenDairyFreeDiet")
   const metaDataContent = Object.values(metaData).find(c => c.title == "Gluten & Dairy Free")
   const contentDataGlutenAndDairyFreeDiet = Object.values(contentData).find(c => c.VmealsGlutenAndDairyDietEnableDisables == "Enable")
   const [step, setStep] = useState(1)
 
-  //console.log("contentDataaaaa", contentDataGlutenAndDairyFreeDiet)
+  console.log("contentDataaaaa", faqDataGlutenDiet)
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
@@ -36,7 +37,7 @@ export default function Index({ googleReviews, headerData, builtData, socialMedi
           <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
           <Built builtData={builtData} />
           <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-            <Question faqQuestions={faqQuestions} />
+            <Question faqQuestions={{0: faqDataGlutenDiet}} />
           </div>
           <Review googleReviews={googleReviews} />
         </>
@@ -51,10 +52,12 @@ export async function getServerSideProps() {
 
     let contentDataGlutenAndDairyFreeDiet = await fetch(vmealsGlutenAndDairyDietContent)
     let data = await contentDataGlutenAndDairyFreeDiet.json()
+    let faqGlutenDiet = await fetch(mealPlansFaqs)
+    let faqGlutenDietData = await faqGlutenDiet.json()
     //console.log("slider bar ->>",data)
 
     return {
-      props: { contentDataGlutenAndDairyFreeDiet: { ...data?.docs } }, // will be passed to the page component as props
+      props: { contentDataGlutenAndDairyFreeDiet: { ...data?.docs }, faqGlutenDiet: { ...faqGlutenDietData?.docs } }, // will be passed to the page component as props
     }
   } catch (error) {
     return {

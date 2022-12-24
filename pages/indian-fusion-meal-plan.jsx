@@ -16,7 +16,7 @@ export default function indianfusion(props) {
   return (
     <div>
       <Indiandietpage
-        faqQuestions={props.faqQuestions}
+        faqQuestions={props.faqIndianDiet}
         metaData={props?.contentData}
         contentData={props?.contentDataIndianFusion}
         headerData={props?.headerData}

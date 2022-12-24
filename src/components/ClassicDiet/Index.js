@@ -8,7 +8,7 @@ import Question from "../Faq/Questions";
 import Customizeplan from "../OurPlans/Customizeplan";
 import Simplemenu from "../OurPlans/Simplemenu";
 import SEO from "../Common/SEO";
-import { vmealsClassicDietContent } from "../../lib/APICommunications";
+import { mealPlansFaqs, vmealsClassicDietContent } from "../../lib/APICommunications";
 // import { url } from "inspector";
 
 export default function Index({ headerData, builtData, socialMediaIcon,footerData,tradeMarkData, faqQuestions, contentData, metaData, sampleMenu,testimonialsData, mealPlansFaqsData,googleReviews }) {
@@ -16,10 +16,11 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
   const metaDataContent = Object.values(metaData).find(c => c.title == "Classic Diet")
   const contentDataClassicDiet = Object.values(contentData).find(c => c.VMealsClassicDietEnableDisables == "Enable")
   const mealPlansFaqsDataContent = Object.values(mealPlansFaqsData).find(c => c.EnableDisables == "Enable")
+  const faqDataClassicDiet = Object.values(faqQuestions).find(c => c.EnableDisables == "Enable" && c.PlanName == "ClassicDiet")
   const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "ClassicDiet")
   const [step, setStep] = useState(1)
 
-  console.log("headerDara in nnnnn", mealPlansFaqsData?.["0"])
+  console.log("headerDara in nnnnn", faqDataClassicDiet)
   return (
     <>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
@@ -43,7 +44,7 @@ export default function Index({ headerData, builtData, socialMediaIcon,footerDat
           <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
           <Built builtData={builtData} />
           <div className="bg-green-light  pt-[235px]   -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-            <Question faqQuestions={faqQuestions} />
+            <Question faqQuestions={{0: faqDataClassicDiet}} />
           </div>
           <Review googleReviews={googleReviews} />
 
@@ -59,10 +60,12 @@ export async function getServerSideProps() {
 
     let contentDataClassicDiet = await fetch(vmealsClassicDietContent)
     let data = await contentDataClassicDiet.json()
+    let faqClassicDiet = await fetch(mealPlansFaqs)
+    let faqClassicDietData = await faqClassicDiet.json()
     //console.log("slider bar ->>",data)
 
     return {
-      props: { contentDataClassicDiet: { ...data?.docs } }, // will be passed to the page component as props
+      props: { contentDataClassicDiet: { ...data?.docs }, faqClassicDiet: { ...faqClassicDietData?.docs } }, // will be passed to the page component as props
     }
   } catch (error) {
     return {

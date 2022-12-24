@@ -14,7 +14,7 @@ export default function pescatarian(props) {
   return (
     <div>
       <Pescatarianpage
-        faqQuestions={props.faqQuestions}
+        faqQuestions={props.faqPescatarianDiet}
         testimonialsData={props?.testimonialsData}
         metaData={props?.contentData}
         contentData={props?.contentDataPescatarianDiet}

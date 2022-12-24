@@ -8,12 +8,14 @@ import Question from "../Faq/Questions";
 import Customizeplan from "../OurPlans/Customizeplan";
 import Simplemenu from "../OurPlans/Simplemenu";
 import SEO from "../Common/SEO";
-import { vmealsPescatarianDietContent } from "../../lib/APICommunications";
+import { mealPlansFaqs, vmealsPescatarianDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData, googleReviews }) {
   const metaDataContent = Object.values(metaData).find(c => c.title == "Pescatarian Diet")
   const [selectedPlan, setSelectedPlan] = useState("PescatarianDiet");
-  const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "PescatarianDiet")
+  const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "PescatarianDiet")  
+  const faqPescatarianDiet = Object.values(faqQuestions).find(c => c.EnableDisables == "Enable" && c.PlanName == "PescatarianDiet")
+
   const contentDataPescatarian = Object.values(contentData).find(c => c.VmealsPescatarianDietEnableDisables == "Enable")
   const [step, setStep] = useState(1)
 
@@ -34,7 +36,7 @@ export default function Index({ headerData, builtData, socialMediaIcon, footerDa
           <Simplemenu sampleMenu={sampleMenuContent?.SampleMenu} />
           <Built builtData={builtData} />
           <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px] ">
-            <Question faqQuestions={faqQuestions} />
+            <Question faqQuestions={{0: faqPescatarianDiet}} />
           </div>
           <Review googleReviews={googleReviews} />
         </>
@@ -49,10 +51,12 @@ export async function getServerSideProps() {
 
     let contentDataPescatarianDiet = await fetch(vmealsPescatarianDietContent)
     let data = await contentDataPescatarianDiet.json()
+    let faqPescatarianDiet = await fetch(mealPlansFaqs)
+    let faqPescatarianDietData = await faqPescatarianDiet.json()
     //console.log("slider bar ->>",data)
 
     return {
-      props: { contentDataPescatarianDiet: { ...data?.docs } }, // will be passed to the page component as props
+      props: { contentDataPescatarianDiet: { ...data?.docs }, faqPescatarianDiet: { ...faqPescatarianDietData?.docs} }, // will be passed to the page component as props
     }
   } catch (error) {
     return {
