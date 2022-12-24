@@ -87,7 +87,7 @@ const Steps = ({ step, setStep }) => {
                                 {/* </Link> */}
                                 <img
                                     src="/images/arrowplans.png"
-                                    className=  {`${step == 2 ? " w-[36px] xl:w-[60px] absolute top-[50%] right-0 md:right-[-10px]  lg:-right-4 2xl:-right-6" : "w-[36px] xl:w-[60px] absolute top-[50%] right-0  lg:-right-4 2xl:-right-6"} `} 
+                                    className=  {`${step == 2 ? " w-[36px] xl:w-[60px] absolute top-[50%] right-0 md:right-[-10px]  lg:-right-4 2xl:-right-6" : "w-[36px] xl:w-[50px] absolute top-[50%] right-0  lg:-right-4 2xl:-right-6"} `} 
                                 />
                             </div>
                         </div>

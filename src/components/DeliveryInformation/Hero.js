@@ -3,7 +3,7 @@ import React from "react";
 export default function Hero() {
   return (
     <>
-      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[272px] 2xl:pt-[330px] ">
+      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[240px] 2xl:pt-[330px] ">
       Delivery Information
       </h2>
       <div className="text-center mt-5  2xl:mt-16 ">
