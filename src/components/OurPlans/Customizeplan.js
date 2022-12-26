@@ -656,14 +656,14 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 {/* nabeel bhai code ended */}
                 {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
               </div> */}
-                {/* <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                 <h2 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Add Ons
                 </h2>
 
                 <div className="my-4">
                   <form action="/action_page.php">
                     <ul>
-                      <li>
+                      {/* <li>
                         <input
                           type="checkbox"
                           id="vehicle1"
@@ -697,7 +697,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           {" "}
                           Eco-Friendly Cutlery + AED{cutlery.toFixed(2)}{" "}
                         </label>
-                      </li>
+                      </li> */}
                       <li className=" mt-4">
                         <input
                           type="checkbox"
@@ -738,7 +738,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
 
                     <ul></ul>
                   </form>
-                </div> */}
+                </div>
                 <div className="grid grid-cols-12 gap-8  md:mt-8   ">
                   <div className="   col-span-6 xl:col-span-6 ">
                     <ul className=" inline-flex mt-7  ">
