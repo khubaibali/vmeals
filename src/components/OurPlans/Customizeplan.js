@@ -164,7 +164,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         firstName: personalInformation?.firstName,
         lastName: personalInformation?.lastName,
         email: personalInformation?.email,
-        phone: personalInformation?.mobileNumber,
+        phone: personalInformation?.mobileNumberCode + personalInformation?.mobileNumber,
       },
       billingAddress: {
         name: personalInformation?.firstName + " " + personalInformation?.lastName,
@@ -236,7 +236,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         firstName: personalInformation?.firstName,
         lastName: personalInformation?.lastName,
         email: personalInformation?.email,
-        mobileNumber: personalInformation?.mobileNumber,
+        mobileNumber: personalInformation?.mobileNumberCode + personalInformation?.mobileNumber,
         nationality: personalInformation?.nationality,
         dateOfBirth: (new Date(personalInformation?.dateOfBirth)).toDateString(),
       },

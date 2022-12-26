@@ -81,7 +81,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
         saveInfo({firstName,
           lastName,
           email,
-          mobileNumber,
+          mobileNumber: mobileNumberCode + mobileNumber,
           mobileNumberCode,
           dateOfBirth: (new Date(dateOfBirth)).toDateString(),
           nationality})
