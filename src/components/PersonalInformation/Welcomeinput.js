@@ -11,7 +11,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
   const [lastName, setLastName] = useState(personalInformation?.lastName)
   const [email, setEmail] = useState(personalInformation?.email)
   const [mobileNumber, setMobileNumber] = useState(personalInformation?.mobileNumber)
-  const [mobileNumberCode, setMobileNumberCode] = useState(personalInformation?.mobileNumberCode)
+  const [mobileNumberCode, setMobileNumberCode] = useState(personalInformation?.mobileNumberCode || "+971")
   const [dateOfBirth, setDateOfBirth] = useState(personalInformation?.dateOfBirth)
   const [nationality, setNationality] = useState(personalInformation?.nationality);
   const [errors, setErrors] = useState(null);
@@ -81,7 +81,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
         saveInfo({firstName,
           lastName,
           email,
-          mobileNumber: mobileNumberCode + mobileNumber,
+          mobileNumber: mobileNumberCode + Number(mobileNumber),
           mobileNumberCode,
           dateOfBirth: (new Date(dateOfBirth)).toDateString(),
           nationality})
