@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "./Steps";
-import { mealPlansFaqs, useCoupon, vmealsCreatePayment, vmealsOrder, vmealsPages } from "../../lib/APICommunications";
+import { mealPlansFaqs, useCoupon, vmealsCreatePayment, vmealsOrder, vmealsOrderForm, vmealsPages } from "../../lib/APICommunications";
 import PlanData from '../../lib/data/meal-plans/data.json'
 import CutleryData from '../../lib/data/meal-plans/cutlery.json'
 import RTFMapping from "../Common/RTFMapping";
@@ -13,6 +13,7 @@ import CustomizeplanPersonalInformation from "../PersonalInformation/Customizepl
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { v4 as uuid } from 'uuid';
 const cookies = new Cookies();
 export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu, testimonialsData }) {
   // console.log("testimonialsData>>>>",testimonialsData)
@@ -47,7 +48,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const [VAT, setVAT] = useState(0);
   const [discountPercentage, setDiscountPercentage] = useState(null);
   const [couponAPIResponse, setCouponAPIResponse] = useState(null);
-
+  const [clientID, setClientID] = useState(null);
+  const [sentInfo, setSentInfo] = useState(false);
   // const [step, setStep] = React.useState(1);
   const [aboutus, setaboutus] = React.useState(false);
   const [maximum, setmaximum] = React.useState(false);
@@ -59,7 +61,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   };
 
   const setAllPrices = (plan, portion, duration, dpw, mealType) => {
-
+    
   }
 
   const setPlanInformationData = () => {
@@ -213,6 +215,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   const createOrder = () => {
     // console.log("deliveryInformation", deliveryInformation)
     let body = {
+      clientID: clientID,
       plan: {
         planName: selectedPlan,
         typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ? "Vegetarian" : "N/A",
@@ -266,7 +269,43 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     //   });
   };
 
-
+  const saveInfo = (data) => {
+    let client_id = uuid()
+    setClientID(client_id)
+    // console.log("personalInformation", personalInformation);
+    setSentInfo(true)
+    let body = {
+      clientID: client_id,
+      plan: {
+        planName: selectedPlan,
+        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ? "Vegetarian" : "N/A",
+        portionSize:
+          selectedPortion.name + " | " + selectedPortion.caloriesRange,
+        deliveriesPerWeek: selectedDaysPerWeek.days,
+        offDays: offDays,
+        planDuration: selectedDuration.name,
+        mealType: mealType?.id?.split("_"),
+        allergies: allergies?.length > 0 ? allergies?.map((a) => a.name)?.join(", ") : "N/A",
+        addOns: addOnsArray,
+        couponCode: {
+          code: couponAPIResponse?.doc?.code,
+          percentageOff: couponAPIResponse?.doc?.discountPercentage || 0 + "%",
+        },
+      },
+      personalInfo: data
+    }
+    axios
+    .post(vmealsOrderForm, body)
+    .then((res) => {
+      // setOrderAPIResponse(res);
+      return;
+    })
+    .catch((err) => {
+      //console.log("ERROR", err);
+      return false;
+    });
+    console.log("client_id", client_id)
+  }
   //console.log("Personal Information", personalInformation)
 
   const getCustomizeActiveClass = (selected, checked, type) => {
@@ -714,7 +753,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         }
       </div>
       {step == 2 &&
-        <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} testimonialsData={testimonialsData} />
+        <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} testimonialsData={testimonialsData} saveInfo={saveInfo} sentInfo={sentInfo} />
       }
       {step == 3 &&
         <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} testimonialsData={testimonialsData} />

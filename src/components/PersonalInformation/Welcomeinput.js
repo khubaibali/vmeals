@@ -6,7 +6,7 @@ import moment from "moment/moment";
 import CountryCodeData from "../../lib/data/countryCode/data.json";
 import { validateEmail } from "../../helpers";
 
-export default function Welcomeinput({ setStep, setPersonalInformation, personalInformation }) {
+export default function Welcomeinput({ setStep, setPersonalInformation, personalInformation, saveInfo,sentInfo }) {
   const [firstName, setFirstName] = useState(personalInformation?.firstName)
   const [lastName, setLastName] = useState(personalInformation?.lastName)
   const [email, setEmail] = useState(personalInformation?.email)
@@ -76,6 +76,16 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
         dateOfBirth,
         nationality
       })
+      console.log("here")
+      if(!sentInfo){
+        saveInfo({firstName,
+          lastName,
+          email,
+          mobileNumber,
+          mobileNumberCode,
+          dateOfBirth: (new Date(dateOfBirth)).toDateString(),
+          nationality})
+      }
       setStep(3)
       scrollTo(0, 500);
 

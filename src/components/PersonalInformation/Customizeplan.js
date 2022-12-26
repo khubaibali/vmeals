@@ -7,7 +7,7 @@ import Link from "next/link";
 import Steps from "../OurPlans/Steps";
 import { testimonials } from "../../lib/APICommunications";
 
-export default function CustomizeplanPersonalInformation({step, setStep, setPersonalInformation, personalInformation, testimonialsData}) {
+export default function CustomizeplanPersonalInformation({step, setStep, setPersonalInformation, personalInformation, testimonialsData, saveInfo, sentInfo}) {
   
   const [openTab, setOpenTab] = React.useState(1);
   return (
@@ -27,7 +27,7 @@ export default function CustomizeplanPersonalInformation({step, setStep, setPers
                 Tell us about yourself...
               </h2>
 
-              <Welcomeinput setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
+              <Welcomeinput sentInfo={sentInfo} saveInfo={saveInfo} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} />
             </div>
           </div>
           <div className="   col-span-12 hidden md:block  xl:col-span-6  ">

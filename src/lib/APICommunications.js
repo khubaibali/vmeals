@@ -24,6 +24,7 @@ export const vmealsSEO = `${BaseURL}api/vmeals-seo`;
 export const seoPages = `${BaseURL}api/seo-pages`;
 export const vmealsSliderBar = `${BaseURL}api/vmeals-silder-bar`;
 export const vmealsOrder = `${BaseURL}api/order`;
+export const vmealsOrderForm = `${BaseURL}api/order-form`;
 export const vmealsCreatePayment = `${BaseURLExternal}vmeals/createPayment`;
 export const vmealsClassicDietContent = `${BaseURL}api/vmeals-classic-diet`;
 export const vmealsGreenDietContent = `${BaseURL}api/vmeals-green-diet`;
