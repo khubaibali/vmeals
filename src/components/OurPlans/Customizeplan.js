@@ -18,6 +18,22 @@ const cookies = new Cookies();
 export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu, testimonialsData }) {
   // console.log("testimonialsData>>>>",testimonialsData)
 
+  const mapPlanName = (plan) => {
+    if (plan == "ClassicDiet") return "Classic Diet"
+    if (plan == "IndianFusionVegetarianDiet") return "Indian Fusion"
+    if (plan == "GreenDietVegan") return "Green Diet"
+    if (plan == "GreenDietVegetarian") return "Green Diet"
+    if (plan == "IndianFusionNonVegetarian") return "Indian Fusion"
+    else return plan
+  }
+  const mapPlanNameType = (plan) => {
+    if (plan == "IndianFusionVegetarianDiet") return "Vegetarian Diet"
+    if (plan == "GreenDietVegan") return "Vegan Diet"
+    if (plan == "GreenDietVegetarian") return "Vegetarian Diet"
+    if (plan == "IndianFusionNonVegetarian") return "Non Vegetarian Diet"
+    else return plan
+  }
+
   //console.log("setStepsetStep", weeklyMenu);
   const [isLoading, setLoading] = useState(false);
 
@@ -217,7 +233,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     let body = {
       clientID: clientID,
       plan: {
-        planName: selectedPlan,
+        planName: mapPlanName(selectedPlan),
         typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ? "Vegetarian" : "N/A",
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
@@ -277,7 +293,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     let body = {
       clientID: client_id,
       plan: {
-        planName: selectedPlan,
+        planName: mapPlanName(selectedPlan),
         typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ? "Vegetarian" : "N/A",
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
