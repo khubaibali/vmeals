@@ -59,6 +59,7 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
                   <a
                     href={item?.VMealsIconItemLink}
                     target="_blank"
+                    rel="nofollow"
                   >
                     <img
                       src={images[inde]}

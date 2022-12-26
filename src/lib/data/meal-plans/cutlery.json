@@ -1,6 +1,384 @@
 {
-    "Weekly": 70,
-    "Monthly": 20,
-    "EightWeek": 50,
-    "TwelveWeek": 25
+    "Cutlery": [
+        {
+            "name": "Weekly",
+            "deliveriesPerWeek": [
+                {
+                    "days": 5,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 6,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 7,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Monthly",
+            "deliveriesPerWeek": [
+                {
+                    "days": 5,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 6,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 7,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "EightWeek",
+            "deliveriesPerWeek": [
+                {
+                    "days": 5,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 6,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 7,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "TwelveWeek",
+            "deliveriesPerWeek": [
+                {
+                    "days": 5,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 6,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                },
+                {
+                    "days": 7,
+                    "mealType": [
+                        {
+                            "id": "Breakfast_Lunch_Dinner_Snack_Drink",
+                            "name": "Breakfast + Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Dinner",
+                            "name": "Breakfast + Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Breakfast_Lunch_Snack_Drink",
+                            "name": "Breakfast + Lunch + Snack + Drink",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner",
+                            "name": "Lunch + Dinner",
+                            "price": 50
+                        },
+                        {
+                            "id": "Lunch_Dinner_Snack_Drink",
+                            "name": "Lunch + Dinner + Snack + Drink",
+                            "price": 50
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

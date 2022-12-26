@@ -11,10 +11,10 @@ import SEO from "../Common/SEO";
 import { mealPlansFaqs, vmealsIndianFusionDietContent } from "../../lib/APICommunications";
 
 export default function Index({ headerData, builtData, socialMediaIcon, footerData, tradeMarkData, contentData, metaData, sampleMenu, faqQuestions, testimonialsData, googleReviews }) {
-  const metaDataContent = Object.values(metaData).find(c => c.title == "Green Diet")
+  const metaDataContent = Object.values(metaData).find(c => c.title == "Indian Fusion")
   const [selectedPlan, setSelectedPlan] = useState("IndianFusionVegetarianDiet");
   const [step, setStep] = useState(1)
-  const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "GlutenAndDairyFreeDiet")
+  const sampleMenuContent = Object.values(sampleMenu).find(c => c.VmealsMealPlan == "IndianFusionDiet")
   const faqDataGlutenDiet = Object.values(faqQuestions).find(c => c.EnableDisables == "Enable" && c.PlanName == "IndianFusionDiet")
 
   const contentDataIndianFusion = Object.values(contentData).find(c => c.VmealsIndianFusionEnableDisables == "Enable")

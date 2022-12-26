@@ -44,7 +44,7 @@ function Navbar({ headerData = {} }) {
               aria-controls="navbar-default"
               aria-expanded="false"
             >
-              <img src="/images/Nav-Bar-menu.png" className=" w-[36px] h-[36px] "  />
+              <img src="/images/Nav-Bar-menu.png" className=" w-[36px] h-[36px] " />
             </button>
             <div ref={ref}
               className={`${first ? "" : "hidden"
@@ -58,7 +58,7 @@ function Navbar({ headerData = {} }) {
                     <li className="relative">
                       <div
                         id="dropdownNavbarLink"
-                        onClick={ () => { controlSubMenu(headerItem?.VMealsHeaderMenuItemTitle) }}
+                        onClick={() => { controlSubMenu(headerItem?.VMealsHeaderMenuItemTitle) }}
                         data-dropdown-toggle="dropdownNavbar"
                         className="flex items-center  justify-between w-full py-2 pl-3 pr-4 font-medium text-black f-f-b  text-smtwo xl:text-base 2xl:text-lg rounded hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black md:border-0  md:p-0 md:w-auto  cursor-pointer  "
                       >
@@ -187,7 +187,7 @@ function Navbar({ headerData = {} }) {
                 </li>
                 <li>
                   <a
-              href="/meal-plans"
+                    href="/meal-plans"
                     className="block py-4   f-f-b  text-smtwo lg:text-sm xl:text-base 2xl:text-lg rounded-[100px]   green-gradiant-2 px-6 lg:px-10  text-white  "
                   >
                     {/* Get Started */}
@@ -197,7 +197,7 @@ function Navbar({ headerData = {} }) {
               </ul>
             </div>
             <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[40%] md:left-[44%] top-[-9px] md:top-[40px] lg:top-4 z-0 ">
-              <Link href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
+              <Link rel="canonical" href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
                   src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
                   alt={headerData?.VMealsHeaderLogoImage?.alt}

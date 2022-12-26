@@ -1,15 +1,16 @@
 import React from 'react'
-import  Privacypolicy from '../src/components/Privacy Policy/Index'
+import Termcondition from '../src/components/Term Condition/Index'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
-import { vmealsPages } from '../src/lib/APICommunications'
 import SEO from '../src/components/Common/SEO'
-export default function privacypolicy(props) {
-  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
+import { vmealsPages } from '../src/lib/APICommunications'
+export default function termcondition(props) {
+  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Terms Of Service")
+
   return (
     <div>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
-        <Privacypolicy headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark}/>
+      <Termcondition headerData={props?.headerData} socialMediaIcon={props.socialMediaIcon} footerData={props.footerData} tradeMarkData={props.tradmark} />
     </div>
   )
 }
