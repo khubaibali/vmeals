@@ -25,6 +25,9 @@ export default function Index({ headerData, sliderBarData, builtData, ourGeniusD
       <Genius ourGeniusData={ourGeniusData} />
       <Fitness homeFitnessData={homeFitnessData} />
       <Review googleReviews={googleReviews} />
+      {/* <Script src="https://apps.elfsight.com/p/platform.js" defer>
+      </Script>
+      <div style={{ marginLeft: '10%', marginRight: "10%" }} class="elfsight-app-f1b3db76-bc1f-4f1e-af31-b7c91559f36c"></div> */}
       <Ourblog ourHomeBlogData={ourHomeBlogData} />
       <Fotter socialMediaIcon={socialMediaIcon} footerData={footerData} tradeMarkData={tradeMarkData} />
       <Script id="chatwidget">
