@@ -108,14 +108,15 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
         <div className="bg-green-dark py-1 md:py-5 ">
           <div className="w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
             <div className="grid grid-cols-12  gap-2   ">
-              <div className="col-span-4 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3   ">
-                <a
-                  href="#"
+              <div className="col-span-4 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3  flex ">
+                <a href="/" className=" relative top-[-5px] md:top-[0px] lg:top-[12px] text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b " >{"VMeals - "}</a>
+                <div
+                 
                   className=" relative top-[-5px] md:top-[0px] lg:top-[12px] text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
                 >
                   {/* VMeals - © All Rights Reserved - 2022 */}
-                  {tradeMarkData?.[0]?.CopyRightText}
-                </a>
+                  {" "}{tradeMarkData?.[0]?.CopyRightText}
+                </div>
               </div>
               <div className="col-span-2 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3   ">
                 <div className=" text-center" >

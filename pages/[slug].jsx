@@ -7,12 +7,12 @@ import SEO from '../src/components/Common/SEO'
 
 
 export default function ourblogdetails(props) {
-    //console.log("our blog detail",props)
+    console.log("our blog detail",props?.blog)
     const metaDataContent = Object?.values(props?.metaData?.docs).find(c => c.title == "Blog")
   return (
     <div>
         <Ourblogdetailspage headerData={props?.headerData} socialMediaIcon={props?.socialMediaIcon} tradeMarkData={props?.tradmark} footerData={props?.footerData}  categoriesAll={props?.categoriesAll}  selectedBlog={props?.blog}/>
-        <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description}/>
+        <SEO pageTitle={props?.blog?.meta?.title} metaText={props?.blog?.meta?.description}/>
     </div>
   )
 }

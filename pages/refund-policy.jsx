@@ -7,7 +7,7 @@ import SEO from '../src/components/Common/SEO'
 
 
 export default function returnpolicy(props) {
-  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Home")
+  const metaDataContent = Object.values(props?.metaData?.docs).find(c => c.title == "Refund & Cancellation Policy")
   return (
     <div>
       <SEO pageTitle={metaDataContent?.meta?.title} metaText={metaDataContent?.meta?.description} />
