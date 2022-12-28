@@ -1,8 +1,6 @@
 {
     "ClassicDiet": {
         "allergies": [
-            "Gluten",
-            "Dairy",
             "Cheese",
             "Vegan Cheese",
             "Milk",
@@ -3304,8 +3302,6 @@
     },
     "IndianFusionNonVegetarian": {
         "allergies": [
-            "Gluten",
-            "Dairy",
             "Cheese",
             "Vegan Cheese",
             "Milk",
@@ -4961,8 +4957,6 @@
     },
     "IndianFusionVegetarianDiet": {
         "allergies": [
-            "Gluten",
-            "Dairy",
             "Cheese",
             "Vegan Cheese",
             "Milk",
@@ -8234,8 +8228,6 @@
     },
     "GreenDietVegetarian": {
         "allergies": [
-            "Gluten",
-            "Dairy",
             "Cheese",
             "Vegan Cheese",
             "Milk",
@@ -10737,8 +10729,6 @@
     },
     "PescatarianDiet": {
         "allergies": [
-            "Gluten",
-            "Dairy",
             "Cheese",
             "Vegan Cheese",
             "Milk",
