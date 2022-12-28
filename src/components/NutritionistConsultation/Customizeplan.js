@@ -9,6 +9,7 @@ import { testimonials, vmealsConsultationForm } from "../../lib/APICommunication
 import Dietryinput from './Dietryinputs'
 import { validateEmail } from "../../helpers";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function CustomizeplanPersonalInformation({ }) {
 
@@ -143,8 +144,8 @@ export default function CustomizeplanPersonalInformation({ }) {
       "dietaryInformation": {
         "dietaryRestrictions": dietryInformation?.restriction,
         "allergies": dietryInformation?.allergies,
-        "activityLevel": dietryInformation?.acitivityLevel,
-        "acitivityType": dietryInformation?.acitivityType,
+        "activityLevel": dietryInformation?.activityLevel,
+        "acitivityType": dietryInformation?.activityType,
         "fitnessGoal": dietryInformation?.goal,
         "wayToContact": dietryInformation?.contact,
         "additionalComments": dietryInformation?.comment
@@ -153,6 +154,11 @@ export default function CustomizeplanPersonalInformation({ }) {
     axios
       .post(vmealsConsultationForm, body)
       .then((res) => {
+        // if(res?.message == "Success"){
+          toast("Form Submitted Successfuly!")
+        // } else {
+          // toast("Some Error Occured!")
+        // }
         console.log("form Submitted")
       });
   }
@@ -185,6 +191,18 @@ export default function CustomizeplanPersonalInformation({ }) {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+      ></ToastContainer>
     </>
   );
 }
