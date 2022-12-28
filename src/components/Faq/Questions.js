@@ -33,7 +33,7 @@ export default function Questions({ faqQuestions=[{}] }) {
                     <li key={Item?.key} className="  flex-auto text-center">
                       <a
                         className={
-                          "f-f-b  text-sm md:text-smtwo text-center lg:text-base 2xl:text-2xl  px-[22px] py-[19px] md:py-4 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
+                          "f-f-b  text-sm md:text-smtwo text-center lg:text-base 2xl:text-2xl  px-[22px] py-[25px] md:py-7 2xl:px-5 2xl:py-7  block leading-normal rounded-[30px] " +
                           (openTab === index
                             ? "text-white bg-green rounded-[30px]"
                             : "text- bg-white rounded-[30px] ")

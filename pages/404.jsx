@@ -1,11 +1,10 @@
 import React from 'react'
 
-const index = () => {
+export default function Fourzerofour() {
   return (
-    <div>
-        404
+    <div className=' fourzerofou-img ' >
+
+       <img src='/images/404-error-with-a-cute-animal-cartoon-illustrations-png.png'  />
     </div>
   )
 }
-
-export default index

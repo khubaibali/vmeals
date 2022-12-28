@@ -184,7 +184,7 @@ const RTFMapping = ({ data }) => {
 					);
 				} else if (d.type == "h3") {
 					return (
-						<h3 key={i} style={{ color: "black" }}>
+						<h3 key={i}  className="text-center lg:text-left f-f-it text-black text-tiny 2xl:text-base mt-2 leading-[23px]" >
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (

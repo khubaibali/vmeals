@@ -104,7 +104,7 @@ body {
     height: 505px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .hero-bg{
     background-image: url("/images/header Mobile .png");
     height: 583px;
@@ -1347,7 +1347,7 @@ color: white;
 
 @media only screen and (min-width: 433px) {
   .helthy-top{
-  margin-top: 537px;
+  margin-top: 602px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1373,6 +1373,21 @@ color: white;
 @media only screen and (min-width: 2550px) {
   .helthy-top{
   margin-top: 861px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .bltop{
+  margin-top: -19px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .bltop{
+  margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .bltop{
+  margin-top: 239px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -1421,3 +1436,8 @@ top: 3px;
     font-size: 13px;
 }
 } */
+.fourzerofou-img{
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+}

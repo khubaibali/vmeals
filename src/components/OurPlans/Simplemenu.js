@@ -11,7 +11,7 @@ export default function Simplemenu({ sampleMenu }) {
     arrows: false,
     autoplay: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -51,7 +51,7 @@ export default function Simplemenu({ sampleMenu }) {
                   {menu?.MealType}
                 </button>
               </div>
-              <h3 className="text-black f-f-b text-sm 2xl:text-base text-center">
+              <h3 className="text-black f-f-b text-sm 2xl:text-base text-center mt-3 ">
                 {menu?.ItemName}
               </h3>
             </div>

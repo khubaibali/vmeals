@@ -38,7 +38,7 @@ export default function Hero({ sliderBarData = [{}] }) {
                     </a>
                   </li>
                 </ul>
-                <div>
+                {/* <div>
                   <svg
                     className=" w-[21px] h-[28px] md:w-[40px] md:h-[52px] ml-auto mr-auto  my-10 md:hidden "
                     viewBox="0 0 40 52"
@@ -54,7 +54,7 @@ export default function Hero({ sliderBarData = [{}] }) {
                       fill="#41A53D"
                     />
                   </svg>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function Hero({ sliderBarData = [{}] }) {
               <use xlinkHref={`${BaseURL}${sliderBarData[0]?.VMealsArrowsDownUploadImage?.url.replace("/","")}`} />
              
           </svg> */}
-            <img src={`${BaseURL}${sliderBarData[0]?.VMealsArrowsDownUploadImage?.url.replace("/","")}`}  className=" width-[31px] h-auto " />
+            {/* <img src={`${BaseURL}${sliderBarData[0]?.VMealsArrowsDownUploadImage?.url.replace("/","")}`}  className=" width-[31px] h-auto " /> */}
         </div>
       </div>
     </>
