@@ -27,12 +27,12 @@ export default function Informationslick({ testimonialsData }) {
               </div>
             </div>
             <div className="absolute bottom-[33px]" >
-            <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4   ">
+            <h3 className=" f-f-b text-white text-base 2xl:text-xl mt-4   ">
               {t.Name}
-            </h2>
-            <h2 className=" f-f-it text-white text-sm 2xl:text-base  ">
+            </h3>
+            <h3 className=" f-f-it text-white text-sm 2xl:text-base  ">
               {t.designation}
-            </h2>
+            </h3>
             </div>
           </div>
         ))}

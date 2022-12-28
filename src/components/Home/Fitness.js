@@ -1,5 +1,7 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 import { vmealsGetStarted } from '../../../src/lib/APICommunications';
 export default function Fitness({ homeFitnessData = [{}] }) {
 
@@ -50,7 +52,7 @@ export default function Fitness({ homeFitnessData = [{}] }) {
           <img
             alt=""
             // src="/images/start your finest journey with us-02.png"
-            src={`${BaseURL}${homeFitnessData[0]?.VMealsGetStartedImage?.url}`}
+            src={`${ImageBaseURL}${homeFitnessData[0]?.VMealsGetStartedImage?.url}`}
             className="w-full h-auto xl:h-[500px] 2xl:h-[707px] mt-96 hidden lg:block "
           />
         </div>

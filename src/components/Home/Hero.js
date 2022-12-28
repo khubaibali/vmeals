@@ -1,5 +1,7 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 import { vmealsSliderBar } from '../../../src/lib/APICommunications';
 export default function Hero({ sliderBarData = [{}] }) {
   //console.log("slider bar data", sliderBarData)

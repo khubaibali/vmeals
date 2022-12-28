@@ -1,5 +1,7 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL 
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 import { vmealsCustomersChooseUs } from '../../../src/lib/APICommunications';
 
 
@@ -55,8 +57,8 @@ export default function Built({builtData=[{}]}) {
                   <div className="  mob-card-res shadow-lg bg-white w-[119px] h-[150px] sm:w-full md:h-auto sm:h-[302px] 2xl:h-[445px] pt-5 md:pt-10 sm:py-14  sm:mt-14 rounded-[20px]">
                     <img
                       alt=""
-                      // src={`${BaseURL}${builtData[0]?.VMealsCustomersChooseUsList[1]?.VMealsCustomersChooseUsItemImageIcon?.url.replace("/","")}`}
-                      src="/images/image 2-home.png"
+                      src={`${BaseURL}${builtData[0]?.VMealsCustomersChooseUsList[2]?.VMealsCustomersChooseUsItemImageIcon?.url.replace("/","")}`}
+                      // src="/images/image 2-home.png"
                       className="  w-[59px] h-[59px] sm:w-[100px] 2xl:w-[176px] md:h-auto 2xl:h-[176px] ml-auto mr-auto"
                     />
                     <h2 className=" text-sm sm:text-xl md:text-12xl lg:text-12xl xl:text-3xl  leading-[20px] sm:leading-[31px] xl:leading-[46px] 2xl:text-4xl text-black pt-5 sm:pt-10 f-f-b text-center ">

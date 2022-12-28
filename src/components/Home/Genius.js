@@ -1,5 +1,7 @@
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 import { vmealsOurGeniuses } from '../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
 

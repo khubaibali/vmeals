@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 
 export default function Slick({ data }) {
   const settings = {
@@ -21,7 +23,7 @@ export default function Slick({ data }) {
           data?.map((item) => (
             <div>
               <img
-                src={`${BaseURL}${item?.VMealsOurPartnersImageUpload?.url}` }
+                src={`${ImageBaseURL}${item?.VMealsOurPartnersImageUpload?.url}` }
                 className="w-full h-auto  ml-auto mr-auto  rounded-2xl "
               />
             </div>

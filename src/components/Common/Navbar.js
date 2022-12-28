@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { vmealsHeader } from '../../lib/APICommunications';
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
 import Link from "next/link";
 import useOutsideClick from '../../hooks/use-outside-click'
 function Navbar({ headerData = {} }) {
@@ -199,7 +200,7 @@ function Navbar({ headerData = {} }) {
             <div className="bg-white  shadow-lg w-[70px] h-[70px] md:h-[74px] md:w-[74px]  lg:h-[120px] lg:w-[120px] xl:h-[140px] xl:w-[140px] 2xl:h-[183px] 2xl:w-[183px] rounded-full absolute left-[40%] md:left-[44%] top-[-9px] md:top-[40px] lg:top-4 z-0 ">
               <Link rel="canonical" href={headerData?.VMealsHeaderLogoImageLinkURL ? headerData?.VMealsHeaderLogoImageLinkURL : ""}>
                 <img
-                  src={`${BaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
+                  src={`${ImageBaseURL}${headerData?.VMealsHeaderLogoImage?.url}`}
                   alt={headerData?.VMealsHeaderLogoImage?.alt}
                   className=" w-[58px] h-[32px] md:w-[60px] md:h-auto lg:w-[85px]  2xl:w-[154px] 2xl:h-[84px] relative top-[17px]  md:top-[24px] left-2 lg:top-[39px] xl:top-[50px] 2xl:top-14 lg:left-4"
                 />
