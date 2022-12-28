@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import  Ourblogdetailspage from '../src/components/OurBlogDetails/Index'
 import {getServerSideProps as headerProps} from '../src/components/Common/Navbar'
 import {getServerSideProps as socialMediaIconsProps} from '../src/components/Common/Footer'
 import { vmealsOurBlogs, vmealsPages,vmealsOurBlogsALL } from '../src/lib/APICommunications'
 import SEO from '../src/components/Common/SEO'
+import { useRouter } from "next/router";
 
 
 export default function ourblogdetails(props) {
     console.log("our blog detail",props?.blog)
+    const router = useRouter();
+    useEffect(() => {
+      if(!Object.keys(props?.blog)?.length > 0){
+        router.push("/404")
+      }
+    },[router])
+
     const metaDataContent = Object?.values(props?.metaData?.docs).find(c => c.title == "Blog")
   return (
     <div>
@@ -20,6 +28,8 @@ export default function ourblogdetails(props) {
 
 export async function getServerSideProps({req,res,query}) {
     //console.log('---------------------',query['slug'])
+  
+
     //console.log('>>>>>>>>>>>>>>>>>>>>>>')
     res.setHeader(
         'Cache-Control',
@@ -33,7 +43,7 @@ export async function getServerSideProps({req,res,query}) {
       let final = resolvedPromises.map((itx)=>(itx.props))
       let newObject ={}
       let blog = categoriesAll?.docs?.find(bl=>bl.VmealsBlogURL == query['slug'])
-     
+      
       final.forEach((x)=>{newObject={...newObject,...x}})
       
       return {
