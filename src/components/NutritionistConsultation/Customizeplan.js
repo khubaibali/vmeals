@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Welcomeinput from "./Welcomeinput";
 
@@ -10,6 +10,25 @@ import Dietryinput from './Dietryinputs'
 
 export default function CustomizeplanPersonalInformation({}) {
   
+  const [firstName, setFirstName] = useState(null)
+  const [lastName, setLastName] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [mobileNumber, setMobileNumber] = useState(null)
+  const [mobileNumberCode, setMobileNumberCode] = useState(null)
+  const [dob, setDOB] = useState(null)
+  const [nationality, setNationality] = useState(null)
+  const [gender, setGender] = useState(null)
+  const [height, setHeight] = useState(null)
+  const [currentWeight, setCurrentWeight] = useState(null)
+  const [desiredWeight, setDesiredWeight] = useState(null)
+  const [dietaryRestrictions, setDietaryRestrictions] = useState(null)
+  const [allergies, setAllergies] = useState(null)
+  const [activityLevel, setActivityLevel] = useState(null)
+  const [activityType, setActivityType] = useState(null)
+  const [fitnessGoal, setFitnessGoal] = useState(null)
+  const [contactType, setContactType] = useState(null)
+  const [comment, setComment] = useState(null)
+
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
