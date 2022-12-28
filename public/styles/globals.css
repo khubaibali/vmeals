@@ -400,6 +400,35 @@ body {
   }
 
 }
+.NutritionistConsultationbg{
+  background-image: url("/images/NutritionistConsultationbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 558px;
+}
+@media only screen and (max-width: 1540px) {
+  .NutritionistConsultationbg{
+    height: 440px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .NutritionistConsultationbg{
+    height: 369px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .NutritionistConsultationbg{
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .NutritionistConsultationbg{
+    background-image: url("/images/NutritionistConsultationbg.png");
+    height: 291px;
+  }
+
+}
 .DeliveryInformationbg{
   background-image: url("/images/DeliveryInformationbg.png");
   background-repeat: no-repeat;
