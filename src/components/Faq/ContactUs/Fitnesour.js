@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { vmealsContactUs } from "../../lib/APICommunications";
-import Contactusform from "../Common/Contactusform";
+import { vmealsContactUs } from "../../../lib/APICommunications";
+import Contactusform from "../../Common/Contactusform";
 const images = ["/images/location.png", "/images/smartphone.png", "/images/email.png", "/images/clock.png"]
 export default function Fitnesour({ contactUsData = [{}] }) {
   console.log("contactUsData", contactUsData)

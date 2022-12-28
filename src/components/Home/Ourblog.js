@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 import { vmealsOurBlogs } from '../../../src/lib/APICommunications';
 export default function Ourblog({ ourHomeBlogData }) {
   //console.log("ourHomeData", ourHomeBlogData)
@@ -84,7 +86,7 @@ export default function Ourblog({ ourHomeBlogData }) {
                     
                     <img
                       //  src="/images/blog1.png"
-                      src={`${BaseURL}${blog?.VMealsBlogBreadcrumbImage?.url}`}
+                      src={`${ImageBaseURL}${blog?.VMealsBlogBreadcrumbImage?.url}`}
                       className="w-full h-[206px] md:h-[453px] 2xl:h-[512px] rounded-[30px] "
                       alt=""
                     />

@@ -1,5 +1,7 @@
 import RTFMapping from "../Common/RTFMapping"
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 const SeoPages = ({ seoPagesData = [] }) => {
     console.log("seo component ", seoPagesData)
     let alternate = false
@@ -19,7 +21,7 @@ const SeoPages = ({ seoPagesData = [] }) => {
                             {alternate &&
                                 <div className="   col-span-12 xl:col-span-6  ">
                                     <img alt=""
-                                        src={`${BaseURL}${dt?.Image?.url}`}
+                                        src={`${ImageBaseURL}${dt?.Image?.url}`}
                                         className="w-full h-auto ml-auto mr-auto mt-5 md:mt-10 xl:mt-40 2xl:mt-20 "
                                     />
                                     <div class="text-center" bis_skin_checked="1">
@@ -36,7 +38,7 @@ const SeoPages = ({ seoPagesData = [] }) => {
                                 !alternate &&
                                 <div className="   col-span-12 xl:col-span-6  ">
                                     <img alt=""
-                                        src={`${BaseURL}${dt?.Image?.url}`}
+                                        src={`${ImageBaseURL}${dt?.Image?.url}`}
                                         className="w-full h-auto ml-auto mr-auto mt-5 md:mt-10 xl:mt-40 2xl:mt-20 "
                                     />
                                     <div class="text-center" bis_skin_checked="1">

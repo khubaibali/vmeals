@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
+const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
+
 export default function Categorylist({ categoriesAll }) {
   //console.log("categoriesAll", categoriesAll)
   const groups = categoriesAll?.docs?.reduce((groups, item) => {
@@ -61,7 +63,7 @@ export default function Categorylist({ categoriesAll }) {
           <div className="grid grid-cols-12 gap-4 2xl:gap-0    ">
             <div className="   col-span-6 md:col-span-4 lg:col-span-6 xl:col-span-5  ">
               <img
-                src={`${BaseURL}${blog?.VMealsBlogBreadcrumbImage?.url}`}
+                src={`${ImageBaseURL}${blog?.VMealsBlogBreadcrumbImage?.url}`}
                 className=" 2xl:w-[180px] 2xl:h-[113px] h-auto w-full   "
               />
             </div>
