@@ -10,6 +10,8 @@ import Dietryinput from './Dietryinputs'
 
 export default function CustomizeplanPersonalInformation({}) {
   
+  const [personalInformation, setPersonalInformation] = React.useState(1);
+  const [dietryInformation, setDietryInformation] = React.useState(1);
   
   const [openTab, setOpenTab] = React.useState(1);
   return (
@@ -30,12 +32,12 @@ export default function CustomizeplanPersonalInformation({}) {
         
             <h2 class=" text-base sm:text-2xl 2xl:text-4xl f-f-li uppercase text-green tracking-[0.22em] text-center lg:text-left  mt-4 2xl:mt-8 ">Client information</h2>
 
-              <Welcomeinput  />
+              <Welcomeinput personalInformation={personalInformation} setPersonalInformation={setPersonalInformation} />
             </div>
           </div>
           <div className="   col-span-12   xl:col-span-6  ">
           <h2 class=" text-base sm:text-2xl 2xl:text-4xl f-f-li uppercase text-green tracking-[0.22em] text-center lg:text-left  mt-4 2xl:mt-8 ">DIETARY information</h2>
-              <Dietryinput/>
+              <Dietryinput setDietryInformation={setDietryInformation} dietryInformation={dietryInformation} />
           </div>
         </div>
         </div>

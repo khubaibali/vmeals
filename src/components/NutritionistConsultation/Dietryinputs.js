@@ -6,16 +6,39 @@ import moment from "moment/moment";
 import CountryCodeData from "../../lib/data/countryCode/data.json";
 import { validateEmail } from "../../helpers";
 
-export default function Welcomeinput({ setStep, setPersonalInformation, personalInformation }) {
-  const [firstName, setFirstName] = useState(personalInformation?.firstName)
-  const [lastName, setLastName] = useState(personalInformation?.lastName)
-  const [email, setEmail] = useState(personalInformation?.email)
-  const [mobileNumber, setMobileNumber] = useState(personalInformation?.mobileNumber)
-  const [mobileNumberCode, setMobileNumberCode] = useState(personalInformation?.mobileNumberCode)
-  const [dateOfBirth, setDateOfBirth] = useState(personalInformation?.dateOfBirth)
-  const [nationality, setNationality] = useState(personalInformation?.nationality);
+export default function Welcomeinput({ setStep, setDietryInformation, dietryInformation }) {
+
+
+  const ActivityLevelOptions = [
+    {
+      label: "(x1) Very Minimal / Sedentary Lifestyle(little or no exercise)",
+      value: "x1"
+    },
+    {
+      label: "(x1.2) Low Activity(Light Sport 1 - 3 days / week)",
+      value: "x1.2"
+    },
+    {
+      label: "(x1.4) Active(Exercise / Sports 3 - 5 days / week)",
+      value: "x1.4"
+    },
+    {
+      label: "(x1.6) Very Active(Hard Exercise / Sport 5 - 6 days / week)",
+      value: "x1.6"
+    },
+    {
+      label: "(x2) Highly Active(Very hard sport & Physical Job or 2X Training)",
+      value: "x2"
+    }
+  ];
+
+  const contactOptions = [
+    {}
+  ]
+
+  const [firstName, setFirstName] = useState(dietryInformation?.firstName)
+  const [nationality, setNationality] = useState(dietryInformation?.nationality);
   const [errors, setErrors] = useState(null);
-  const [countryDialCode, setCountryDialCode] = useState("+971");
 
   const Validation = async () => {
     let err = [];
@@ -67,7 +90,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
     }
     setErrors(err);
     if (err.length <= 0) {
-      setPersonalInformation({
+      setDietryInformation({
         firstName,
         lastName,
         email,
@@ -90,13 +113,13 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
         <div className="grid grid-cols-12 gap-5  md:gap-8 2xl::gap-14  ">
           <div className="   col-span-12  ">
             <h2 className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
-            Do you have any dietary restrictions? <span className="text-green text-sm 2xl:text-base " > (If yes, please mention them) </span> <span className="text-red">* </span>
+              Do you have any dietary restrictions? <span className="text-green text-sm 2xl:text-base " > (If yes, please mention them) </span> <span className="text-red">* </span>
             </h2>
             <input
               placeholder="Enter your dietary restrictions..."
               className=" input-register "
-              onChange={(e) => setFirstName(e.target.value)}
-              value={firstName}
+              onChange={(e) => setDietryInformation({...dietryInformation, restriction: e.target.value})}
+              value={dietryInformation?.restriction}
             />
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
@@ -107,15 +130,16 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
               ""
             )}
           </div>
-       
+
           <div className="   col-span-12  ">
             <h2 className=" text-base f-f-b text-bla  ">
-            Do you have any allergies?<span className="text-green text-sm 2xl:text-base "> (If yes, please mention them) </span><span className="text-red">* </span>
+              Do you have any allergies?<span className="text-green text-sm 2xl:text-base "> (If yes, please mention them) </span><span className="text-red">* </span>
             </h2>
             <input
               placeholder="Enter your allergies..."
               className=" input-register "
-
+              onChange={(e) => setDietryInformation({...dietryInformation, allergies: e.target.value})}
+              value={dietryInformation?.allergies}
             />
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
@@ -126,32 +150,32 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
               ""
             )}
           </div>
-       
-        
+
+
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-base f-f-b text-bla  ">
-            Activity Level<span className="text-red">* </span>
+              Activity Level<span className="text-red">* </span>
             </h2>
 
             {/* new code data started */}
             <div className="relative" >
               <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
-              <option value="volvo" selected className="text-black" >Select an option...</option>
-  <option value="saab" className="text-black">Saab</option>
-  <option value="mercedes" className="text-black">Mercedes</option>
-  <option value="audi" className="text-black">Audi</option>
+                <option value="volvo" selected className="text-black" >Select an option...</option>
+               {ActivityLevelOptions?.map(al => (
+                 <option value={al.value} className="text-black">{al.label}</option>
+               ))}
               </select>
-       
+
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
               />
             </div>
-          
+
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6  ">
             <h2 className=" text-base f-f-b text-black   ">
-            Type of Activity <span className="text-red">* </span>
+              Type of Activity <span className="text-red">* </span>
             </h2>
             <input
               placeholder="Enter your activties…"
@@ -168,10 +192,10 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
               ""
             )}
           </div>
-          
+
           <div className="   col-span-12 md:col-span-6 xl:col-span-6  ">
             <h2 className=" text-base f-f-b text-black   ">
-            What is your fitness goal? <span className="text-red">* </span>
+              What is your fitness goal? <span className="text-red">* </span>
             </h2>
             <input
               placeholder="Enter your fitness goal…"
@@ -190,28 +214,28 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-base f-f-b text-bla  ">
-            How should we contact you<span className="text-red">* </span>
+              How should we contact you<span className="text-red">* </span>
             </h2>
 
             {/* new code data started */}
             <div className="relative" >
               <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
-              <option value="volvo" selected className="text-black" >Select an option...</option>
-  <option value="saab" className="text-black">Saab</option>
-  <option value="mercedes" className="text-black">Mercedes</option>
-  <option value="audi" className="text-black">Audi</option>
+                <option value="volvo" selected className="text-black" >Select an option...</option>
+                <option value="saab" className="text-black">Saab</option>
+                <option value="mercedes" className="text-black">Mercedes</option>
+                <option value="audi" className="text-black">Audi</option>
               </select>
-         
+
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
               />
             </div>
-          
+
           </div>
           <div className="   col-span-12  ">
             <h2 className=" text-base f-f-b text-black   ">
-            Additional Comments
+              Additional Comments
             </h2>
             <input
               placeholder="Enter your allergies..."
@@ -232,7 +256,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             <div className="text-center xl:text-left">
               <button className="  text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full  2xl:h-[79px] h-[40px] w-[112px] md:h-[52px] md:w-[143px] 2xl:w-[219px]  mt-5 2xl:mt-8"
               >
-            Submit
+                Submit
               </button>
             </div>
           </div>

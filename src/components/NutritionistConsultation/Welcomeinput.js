@@ -7,6 +7,7 @@ import CountryCodeData from "../../lib/data/countryCode/data.json";
 import { validateEmail } from "../../helpers";
 
 export default function Welcomeinput({ setStep, setPersonalInformation, personalInformation }) {
+
   const [firstName, setFirstName] = useState(personalInformation?.firstName)
   const [lastName, setLastName] = useState(personalInformation?.lastName)
   const [email, setEmail] = useState(personalInformation?.email)
@@ -95,8 +96,8 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             <input
               placeholder="Enter your first name…"
               className=" input-register "
-              onChange={(e) => setFirstName(e.target.value)}
-              value={firstName}
+              onChange={(e) => setPersonalInformation({...personalInformation, firstName: e.target.value})}
+              value={personalInformation?.firstName}
             />
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
@@ -114,8 +115,8 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             <input
               placeholder="Enter your last name…"
               className=" input-register "
-              onChange={(e) => setLastName(e.target.value)}
-              value={lastName}
+              onChange={(e) => setPersonalInformation({...personalInformation, lastName: e.target.value})}
+              value={personalInformation?.lastName}
             />
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
@@ -133,8 +134,8 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             <input
               placeholder="Enter your email address…"
               className=" input-register "
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
+              onChange={(e) => setPersonalInformation({...personalInformation, email: e.target.value})}
+              value={personalInformation?.email}
             />
             {errors?.length > 0 ? (
               <p style={{ color: "red" }}>
@@ -170,7 +171,7 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
                         }
                         className="text-black"
                       >
-                        &nbsp;&nbsp;<span className="text-left" style={{width: '20px'}}>{cc.dial_code}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-right" style={{ float: 'right' }}>{cc.name}</span>
+                        &nbsp;&nbsp;<span className="text-left" style={{ width: '20px' }}>{cc.dial_code}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-right" style={{ float: 'right' }}>{cc.name}</span>
                       </option>
                     ))}
                   </select>
@@ -422,88 +423,88 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-base f-f-b text-bla  ">
-            Gender<span className="text-red">* </span>
+              Gender<span className="text-red">* </span>
             </h2>
 
             {/* new code data started */}
             <div className="relative" >
               <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
-              <option value="volvo" selected className="text-black" >Volvo</option>
-  <option value="saab" className="text-black">Saab</option>
-  <option value="mercedes" className="text-black">Mercedes</option>
-  <option value="audi" className="text-black">Audi</option>
+                <option value="volvo" selected className="text-black" >Volvo</option>
+                <option value="saab" className="text-black">Saab</option>
+                <option value="mercedes" className="text-black">Mercedes</option>
+                <option value="audi" className="text-black">Audi</option>
               </select>
-       
+
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
               />
             </div>
-          
+
           </div>
-          
+
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-base f-f-b text-bla  ">
-            Height <span className="text-green" >(cm)  </span><span className="text-red">* </span>
+              Height <span className="text-green" >(cm)  </span><span className="text-red">* </span>
             </h2>
 
             {/* new code data started */}
             <div className="relative" >
               <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
-              <option value="volvo" selected className="text-black" >Volvo</option>
-  <option value="saab" className="text-black">Saab</option>
-  <option value="mercedes" className="text-black">Mercedes</option>
-  <option value="audi" className="text-black">Audi</option>
+                <option value="volvo" selected className="text-black" >Volvo</option>
+                <option value="saab" className="text-black">Saab</option>
+                <option value="mercedes" className="text-black">Mercedes</option>
+                <option value="audi" className="text-black">Audi</option>
               </select>
-         
-              <img alt=""
-                src="/images/mobilearrow.png"
-                className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
-              />
-            </div>
-          
-          </div>
-          <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
-            Current Weight  <span className="text-green" >(kg)  </span><span className="text-red">* </span>
-            </h2>
 
-            {/* new code data started */}
-            <div className="relative" >
-              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
-              <option value="volvo" selected className="text-black" >Volvo</option>
-  <option value="saab" className="text-black">Saab</option>
-  <option value="mercedes" className="text-black">Mercedes</option>
-  <option value="audi" className="text-black">Audi</option>
-              </select>
-         
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
               />
             </div>
-          
+
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
             <h2 className=" text-base f-f-b text-bla  ">
-            Desired Weight <span className="text-green" >(kg)  </span><span className="text-red">* </span>
+              Current Weight  <span className="text-green" >(kg)  </span><span className="text-red">* </span>
             </h2>
 
             {/* new code data started */}
             <div className="relative" >
               <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
-              <option value="volvo" selected className="text-black" >Volvo</option>
-  <option value="saab" className="text-black">Saab</option>
-  <option value="mercedes" className="text-black">Mercedes</option>
-  <option value="audi" className="text-black">Audi</option>
+                <option value="volvo" selected className="text-black" >Volvo</option>
+                <option value="saab" className="text-black">Saab</option>
+                <option value="mercedes" className="text-black">Mercedes</option>
+                <option value="audi" className="text-black">Audi</option>
               </select>
-         
+
               <img alt=""
                 src="/images/mobilearrow.png"
                 className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
               />
             </div>
-          
+
+          </div>
+          <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
+            <h2 className=" text-base f-f-b text-bla  ">
+              Desired Weight <span className="text-green" >(kg)  </span><span className="text-red">* </span>
+            </h2>
+
+            {/* new code data started */}
+            <div className="relative" >
+              <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  cursor-pointer" onChange={(e) => setNationality(e.target.value)} >
+                <option value="volvo" selected className="text-black" >Volvo</option>
+                <option value="saab" className="text-black">Saab</option>
+                <option value="mercedes" className="text-black">Mercedes</option>
+                <option value="audi" className="text-black">Audi</option>
+              </select>
+
+              <img alt=""
+                src="/images/mobilearrow.png"
+                className=" absolute top-[16px] 2xl:top-[24px] right-[17px]"
+              />
+            </div>
+
           </div>
           <div className="   col-span-12 ">
             <div className=" text-center xl:text-right">
