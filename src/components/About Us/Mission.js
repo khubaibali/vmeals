@@ -2,6 +2,7 @@ import React from "react";
 import RTFMapping from "../Common/RTFMapping";
 
 export default function Mission({ourCompanyData}) {
+  let staticImages =['/images/about-mission.png','/images/Design.png','/images/aboutvalue.png','/images/Goal.png']
   console.log("OUR COMPANY DSAT", ourCompanyData)
   return (
     <div className="about-goal-bg  " >
@@ -12,7 +13,7 @@ export default function Mission({ourCompanyData}) {
             <div className=" col-span-12 md:col-span-6 xl:col-span-3 text-center " key={item?.id}>
             <div className="relative ml-auto mr-auto ">
               <img
-                src="/images/Goal.png"
+                src={staticImages[index]}
                 className="w-full h-[759px] md:h-[640px] 2xl:h-[759px]  "
               />
               <div className="absolute top-[35%] md:top-[30%] w-[95%] right-0 left-0">
