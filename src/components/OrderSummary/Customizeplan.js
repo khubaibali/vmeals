@@ -95,7 +95,7 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                               </div>
                               <div className="   col-span-5  ">
                                 <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
-                                  + AED50.00
+                                  + AED{addOnFifty.toFixed(2)}
                                 </h2>
                               </div>
                             </>

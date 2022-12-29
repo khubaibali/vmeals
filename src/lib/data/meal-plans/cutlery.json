@@ -14,22 +14,22 @@
                         {
                             "id": "Breakfast_Lunch_Dinner",
                             "name": "Breakfast + Lunch + Dinner",
-                            "price": 50
+                            "price": 51
                         },
                         {
                             "id": "Breakfast_Lunch_Snack_Drink",
                             "name": "Breakfast + Lunch + Snack + Drink",
-                            "price": 50
+                            "price": 52
                         },
                         {
                             "id": "Lunch_Dinner",
                             "name": "Lunch + Dinner",
-                            "price": 50
+                            "price": 53
                         },
                         {
                             "id": "Lunch_Dinner_Snack_Drink",
                             "name": "Lunch + Dinner + Snack + Drink",
-                            "price": 50
+                            "price": 54
                         }
                     ]
                 },
@@ -39,27 +39,27 @@
                         {
                             "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                             "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                            "price": 50
+                            "price": 60
                         },
                         {
                             "id": "Breakfast_Lunch_Dinner",
                             "name": "Breakfast + Lunch + Dinner",
-                            "price": 50
+                            "price": 61
                         },
                         {
                             "id": "Breakfast_Lunch_Snack_Drink",
                             "name": "Breakfast + Lunch + Snack + Drink",
-                            "price": 50
+                            "price": 62
                         },
                         {
                             "id": "Lunch_Dinner",
                             "name": "Lunch + Dinner",
-                            "price": 50
+                            "price": 63
                         },
                         {
                             "id": "Lunch_Dinner_Snack_Drink",
                             "name": "Lunch + Dinner + Snack + Drink",
-                            "price": 50
+                            "price": 64
                         }
                     ]
                 },
@@ -69,27 +69,27 @@
                         {
                             "id": "Breakfast_Lunch_Dinner_Snack_Drink",
                             "name": "Breakfast + Lunch + Dinner + Snack + Drink",
-                            "price": 50
+                            "price": 70
                         },
                         {
                             "id": "Breakfast_Lunch_Dinner",
                             "name": "Breakfast + Lunch + Dinner",
-                            "price": 50
+                            "price": 70
                         },
                         {
                             "id": "Breakfast_Lunch_Snack_Drink",
                             "name": "Breakfast + Lunch + Snack + Drink",
-                            "price": 50
+                            "price": 70
                         },
                         {
                             "id": "Lunch_Dinner",
                             "name": "Lunch + Dinner",
-                            "price": 50
+                            "price": 70
                         },
                         {
                             "id": "Lunch_Dinner_Snack_Drink",
                             "name": "Lunch + Dinner + Snack + Drink",
-                            "price": 50
+                            "price": 70
                         }
                     ]
                 }

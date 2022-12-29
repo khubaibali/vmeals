@@ -338,7 +338,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   useEffect(() => {
     setTotalPrice()
   })
-  // console.log("aaaaaaaaaaaaa", planInformation)
+  // console.log("aaaaaaaaaaaaa", CutleryData?.Cutlery?.find(c => c.name == selectedDuration?.name)?.deliveriesPerWeek?.find(dpw => dpw.days == selectedDaysPerWeek?.days)?.mealType?.find(m => m.id == mealType?.id)?.price  )
   //console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   // console.log("cutlery", cutlery)
@@ -674,7 +674,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           checked={addOnFifty > 0 ? true : false}
                           onChange={(e) => {
                             if (e.target.checked) {
-                              setAddOnFifty(cutlery);
+                              setAddOnFifty(CutleryData?.Cutlery?.find(c => c.name == selectedDuration?.name)?.deliveriesPerWeek?.find(dpw => dpw.days == selectedDaysPerWeek?.days)?.mealType?.find(m => m.id == mealType?.id)?.price);
                               setAddOnsArray([...addOnsArray, "Eco-Friendly Cutlery"])
                               // setPrice(
                               //   Number(price) + 50
@@ -696,7 +696,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           className="text-black f-f-b text-sm 2xl:text-base ml-4 relative top-[-8px]   "
                         >
                           {" "}
-                          Eco-Friendly Cutlery + AED{cutlery.toFixed(2)}{" "}
+                          Eco-Friendly Cutlery + AED{CutleryData?.Cutlery?.find(c => c.name == selectedDuration?.name)?.deliveriesPerWeek?.find(dpw => dpw.days == selectedDaysPerWeek?.days)?.mealType?.find(m => m.id == mealType?.id)?.price}{" "}
                         </label>
                       </li> */}
                       <li className=" mt-4">
