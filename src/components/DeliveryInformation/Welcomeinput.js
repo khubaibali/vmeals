@@ -336,7 +336,7 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
                   <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
                 </li>
                 <li className=" ml-4 text-right ">
-                  <h2 className=" text-black text-2xl f-f-b   ">AED{Number(price + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h2>
+                  <h2 className=" text-black text-2xl f-f-b   ">AED{Number(price).toFixed(2)}</h2>
                   <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                     Price exclusive of VAT
                   </h3>

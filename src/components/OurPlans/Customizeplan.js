@@ -745,7 +745,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     <ul className=" inline-flex mt-7  ">
                       <li><h3 className=" text-black text-2xl f-f-b ">Total:</h3></li>
                       <li className=" ml-4 text-right ">
-                        <h3 className=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price) + Number(addOnFifty) + Number(addOnTwoHundred)).toFixed(2)}</h3>
+                        <h3 className=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price)).toFixed(2)}</h3>
                         <h3 className="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price Exclusive of VAT</h3>
                       </li>
                     </ul>
