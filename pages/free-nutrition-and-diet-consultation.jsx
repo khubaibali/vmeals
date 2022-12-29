@@ -2,7 +2,7 @@ import React from 'react'
 import Counsultation from '../src/components/NutritionistConsultation/Index'
 import { getServerSideProps as headerProps } from '../src/components/Common/Navbar'
 import { getServerSideProps as socialMediaIconsProps } from '../src/components/Common/Footer'
-import { getServerSideProps as contentDataProps } from '../src/components/NutritionistConsultation'
+import { getServerSideProps as contentDataProps } from '../src/components/NutritionistConsultation/Index'
 
 export default function Nutritionistconsultation(props) {
   return (

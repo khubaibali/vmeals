@@ -7,3 +7,4 @@ Host: https://vmeals.ae
 
 # Sitemaps
 Sitemap: https://vmeals.ae/sitemap.xml
+Sitemap: https://vmeals.ae/server-sitemap.xml
