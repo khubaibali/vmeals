@@ -47,7 +47,7 @@ export default function PaginationCom({ onPage, setPageNo, totalPages }) {
                     pageItemClassName={pageNumberCss}
                     // activeItemClassName={currentPageNumberCss}
                     className={"inline-flex items-center space-x-1 md:space-x-2 pagination-setting"}
-                    onPageChange={(e)=>{setPageNo(e)}}
+                    onPageChange={(e)=>{setPageNo(e-1)}}
                     maxWidth={"500px"}
                   
                 />
