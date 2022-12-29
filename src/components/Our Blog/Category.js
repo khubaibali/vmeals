@@ -34,7 +34,7 @@ export default function Category({ categoriesAll, blogs }) {
 
               {
                 blogs?.docs?.map((blog, index) => (
-                  (((index ) >= onPage) && ((index - 9) <= (onPage))) ?
+                  (((index ) >= onPage*10) && ((index - 9) <= (onPage*10))) ?
                     < div className="   col-span-12 md:col-span-6 xl:col-span-6  " >
                       <Link href={blog?.VmealsBlogURL}>
                         <div className="cardblog  h-[338px] md:h-[390px] 2xl:h-[500px] w-full 2xl:w-[500px]   ">
