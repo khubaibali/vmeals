@@ -6,7 +6,7 @@ import moment from "moment/moment";
 import CountryCodeData from "../../lib/data/countryCode/data.json";
 import { validateEmail } from "../../helpers";
 
-export default function Welcomeinput({ Validation, errors, setDietryInformation, dietryInformation }) {
+export default function Welcomeinput({ isLoading, setIsLoading, Validation, errors, setDietryInformation, dietryInformation }) {
 
 
   const ActivityLevelOptions = [
@@ -269,10 +269,11 @@ export default function Welcomeinput({ Validation, errors, setDietryInformation,
           </div>
           <div className="   col-span-12 ">
             <div className="text-center xl:text-left">
-              <button className="  text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full  2xl:h-[79px] h-[40px] w-[112px] md:h-[52px] md:w-[143px] 2xl:w-[219px]  mt-5 2xl:mt-8"
+              <button className="  text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full  2xl:h-[79px] h-[40px] w-[112px] md:h-[52px] md:w-[143px] 2xl:w-[219px]  mt-5 2xl:mt-8 flex items-center justify-center"
                 onClick={() => Validation()}
+                disabled={isLoading}
               >
-                Submit
+                {isLoading ? <img src="/images/loader.gif" width={35} className={"flex"} /> : "Submit"}
               </button>
             </div>
           </div>
