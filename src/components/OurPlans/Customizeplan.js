@@ -338,10 +338,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   useEffect(() => {
     setTotalPrice()
   })
-  // console.log("aaaaaaaaaaaaa", PlanData["GreenDietVegan"]?.portions[0]?.planDuration[0]?.deliveriesPerWeek)
+  // console.log("aaaaaaaaaaaaa", planInformation)
   //console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-  console.log("cutlery", cutlery)
+  // console.log("cutlery", cutlery)
   return (
     <>
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
@@ -568,7 +568,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                         //console.log("eeee", selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
                         setMealType({
                           id: e.target.value?.split?.("|")?.[0],
-                          price: e.target.value?.split?.("|")?.[1]
+                          price: e.target.value?.split?.("|")?.[1],
+                          name: e.target.value?.split?.("|")?.[0]?.replaceAll("_", " + ")
                         });
                         setPrice(PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price)
                         // setPrice(e.target.value?.split?.("|")?.[1]);
