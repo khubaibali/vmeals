@@ -1,6 +1,7 @@
 import Ourslick from "./ourslick";
 import {useState} from 'react'
 import RTFMapping from '../Common/RTFMapping'
+import RTFMappingTestimonials from "../Common/RTFMappingTestimonials";
 function OurSlickWraper({data,description}){
     console.log("description in rtf",description)
     return(
@@ -11,7 +12,8 @@ function OurSlickWraper({data,description}){
             <div className="  p-5 px-8 sm:p-6 2xl:p-12  ">
               <p className="   f-f-it text-white  text-xs sm:text-tiny  2xl:text-base leading-[12px] sm:leading-[23px] text-center  ">
                {/* {description}{" "} */}
-               <RTFMapping data={description}/>
+               {/* <RTFMapping data={description}/> */}
+               <RTFMappingTestimonials data={description} />
               </p>
             </div>
           </div>
