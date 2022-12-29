@@ -42,7 +42,7 @@ export default function PaginationCom({ onPage, setPageNo, totalPages }) {
                 /> */}
                 <Pagination
                     {...bootstrap5PaginationPreset}
-                    current={onPage}
+                    current={onPage+1}
                     total={totalPages}
                     pageItemClassName={pageNumberCss}
                     // activeItemClassName={currentPageNumberCss}
