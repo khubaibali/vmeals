@@ -13,11 +13,14 @@ import { toast, ToastContainer } from "react-toastify";
 
 export default function CustomizeplanPersonalInformation({ }) {
 
-  const [personalInformation, setPersonalInformation] = React.useState(1);
-  const [dietryInformation, setDietryInformation] = React.useState(1);
+  const [personalInformation, setPersonalInformation] = React.useState(null);
+  const [dietryInformation, setDietryInformation] = React.useState(null);
   const [errors, setErrors] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const Validation = async () => {
+    // setIsLoading(true)
+
     let err = [];
     if (personalInformation?.email?.length > 0) {
       let checkEmail = await validateEmail(personalInformation?.email);
@@ -128,16 +131,17 @@ export default function CustomizeplanPersonalInformation({ }) {
   }
 
   const addConsultation = () => {
+    setIsLoading(true)
     let body = {
       "clientInformation": {
         "firstName": personalInformation?.firstName,
         "lastName": personalInformation?.lastName,
         "email": personalInformation?.email,
-        "mobileNumber": personalInformation?.mobileNumberCode + personalInformation?.mobileNumber,
+        "mobileNumber": personalInformation?.mobileNumberCode || "+971" + personalInformation?.mobileNumber,
         "dateOfBirth": (new Date(personalInformation?.dateOfBirth)).toDateString(),
         "nationality": personalInformation?.nationality,
         "gender": personalInformation?.gender,
-        "height": personalInformation?.heigth + "cm",
+        "height": personalInformation?.height + "cm",
         "currentWeight": personalInformation?.currentWeight + "Kg(s)",
         "desiredWeight": personalInformation?.desiredWeight + "Kg(s)"
       },
@@ -151,15 +155,21 @@ export default function CustomizeplanPersonalInformation({ }) {
         "additionalComments": dietryInformation?.comment
       }
     }
+
+    console.log("body", body)
     axios
       .post(vmealsConsultationForm, body)
       .then((res) => {
         // if(res?.message == "Success"){
+          setDietryInformation(null);
+          setPersonalInformation(null)
           toast("Form Submitted Successfuly!")
         // } else {
           // toast("Some Error Occured!")
         // }
         console.log("form Submitted")
+        // setIsLoading(false)
+        window.location.reload(false);
       });
   }
 
@@ -186,7 +196,7 @@ export default function CustomizeplanPersonalInformation({ }) {
             </div>
             <div className="   col-span-12   xl:col-span-6  ">
               <h2 class=" text-base sm:text-2xl 2xl:text-4xl f-f-li uppercase text-green tracking-[0.22em] text-center lg:text-left  mt-4 2xl:mt-8 ">DIETARY information</h2>
-              <Dietryinput errors={errors} Validation={Validation} setDietryInformation={setDietryInformation} dietryInformation={dietryInformation} />
+              <Dietryinput setIsLoading={setIsLoading} isLoading={isLoading} errors={errors} Validation={Validation} setDietryInformation={setDietryInformation} dietryInformation={dietryInformation} />
             </div>
           </div>
         </div>
