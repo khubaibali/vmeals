@@ -7,8 +7,8 @@ import { seoPages, vmealsPages, vmealsSEO } from '../src/lib/APICommunications'
 export default function servicesharjah(props) {
   const metaData = props?.data?.docs?.find(d => d.title == "Sharjah");
   console.log("data",metaData)
-  const metaDataContent = Object.values(props?.metaData?.docs[0].VMealsCategoriesSeoList).find(c => c.VMealsSeoCategoriesTitle == "Meal Plans Service in Sharjah")
-  console.log("metaDataContent",metaDataContent)
+  //  const metaDataContent = Object.values(props?.metaData?.docs[0].VMealsCategoriesSeoList).find(c => c.VMealsSeoCategoriesTitle == "Meal Plans Service in Sharjah")
+  // console.log("metaDataContent",metaDataContent)
   const seoPagesData = props?.seoPages?.docs?.find(f => f.PageTitle =="Meal Plans Service in Sharjah") 
   return (
     <div>

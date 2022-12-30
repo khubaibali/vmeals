@@ -7,7 +7,7 @@ import { seoPages, vmealsPages, vmealsSEO } from '../src/lib/APICommunications'
 export default function servicedubai(props) {
   const metaData = props?.data?.docs?.find(d => d.title == "Abu Dhabi");
   console.log("meals in abu dahbi-->", props?.seoPages)
-  const metaDataContent = Object.values(props?.metaData?.docs[0].VMealsCategoriesSeoList).find(c => c.VMealsSeoCategoriesTitle == "Meal Plans Service in Abu Dhabi")
+  // const metaDataContent = Object.values(props?.metaData?.docs[0].VMealsCategoriesSeoList).find(c => c.VMealsSeoCategoriesTitle == "Meal Plans Service in Abu Dhabi")
   const seoPagesData = props?.seoPages?.docs?.find(f => f.PageTitle =="Meal Plans Service in Abu Dhabi") 
   console.log("CONTETN", seoPagesData)
   return (
