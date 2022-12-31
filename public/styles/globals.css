@@ -1438,7 +1438,13 @@ top: 3px;
 } */
 .fourzerofou-img{
   margin-top: 7em;
-  position: absolute;
-  top: 50%; right: 50%;
-  transform: translate(50%,-50%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  /* position: absolute; */
+  /* top: 50%; right: 50%; */
+  /* transform: translate(50%,-50%); */
 }
