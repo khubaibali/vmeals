@@ -5,10 +5,10 @@ import { useRouter } from "next/router";
 
 const SEO = ({ pageTitle, metaText }) => {
     const { asPath } = useRouter();
-    const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+    const origin = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
-    const URL = `${origin}${asPath}`;
-    // console.log("aaaaaaa,,,,",URL);
+    const URL = `${process.env.NEXT_PUBLIC_SITE_URL}${asPath}`;
+    console.log("aaaaaaa,,,,---------------------------------------",URL);
 
     return (
     <Head>
