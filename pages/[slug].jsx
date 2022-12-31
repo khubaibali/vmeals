@@ -11,19 +11,19 @@ export default function ourblogdetails(props) {
   console.log("our blog detail", props?.blog)
   const router = useRouter();
   useEffect(() => {
-    if (!Object.keys(props?.blog)?.length > 0) {
-      router.push("/404")
+    if (!props?.blog || !Object.keys(props?.blog)?.length > 0) {
+      router.push("/pagenotfound")
     }
   }, [router])
 
-  const metaDataContent = Object?.values(props?.metaData?.docs).find(c => c.title == "Blog")
-  if(!Object.keys(props?.blog)?.length > 0) {
+  // const metaDataContent = Object?.values(props?.metaData?.docs).find(c => c.title == "Blog")
+  if(!props?.blog ||  !Object.keys(props?.blog)?.length > 0) {
     return (<></>)
   } else {
     return (
       <div>
-        <Ourblogdetailspage headerData={props?.headerData} socialMediaIcon={props?.socialMediaIcon} tradeMarkData={props?.tradmark} footerData={props?.footerData} categoriesAll={props?.categoriesAll} selectedBlog={props?.blog} />
         <SEO pageTitle={props?.blog?.meta?.title} metaText={props?.blog?.meta?.description} />
+        <Ourblogdetailspage headerData={props?.headerData} socialMediaIcon={props?.socialMediaIcon} tradeMarkData={props?.tradmark} footerData={props?.footerData} categoriesAll={props?.categoriesAll} selectedBlog={props?.blog} />
       </div>
     )
   }
