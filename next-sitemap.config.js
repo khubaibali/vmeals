@@ -1,4 +1,4 @@
-const siteUrl = "https://vmeals.ae"
+const siteUrl = "http://localhost:3000"
 
 module.exports = {
     siteUrl,
