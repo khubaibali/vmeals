@@ -222,7 +222,6 @@ export async function getServerSideProps() {
     let vmealsHeaderData = await fetch(vmealsHeader)
     let data = await vmealsHeaderData.json()
     data = data?.docs?.find(p => p.VMealsHeaderEnableDisables == "Enable");
-    console.log("dddddddddddddddddd",data)
     return {
       props: { headerData: { ...data } }, // will be passed to the page component as props
     }

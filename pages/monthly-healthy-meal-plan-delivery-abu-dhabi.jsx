@@ -26,7 +26,7 @@ export async function getServerSideProps({ req, res }) {
   try {
     //console.log("calling")
     let resolvedPromises = await Promise.all([headerProps(), socialMediaIconsProps()])
-    let metaData = await (await fetch(vmealsSEO)).json()
+    // let metaData = await (await fetch(vmealsSEO)).json()
     let SeoPagesData = await (await fetch(seoPages)).json()
     let final = resolvedPromises.map((itx) => (itx.props))
     let newObject = {}
@@ -37,7 +37,7 @@ export async function getServerSideProps({ req, res }) {
     return {
       props: {
         ...newObject,
-        metaData: { ...metaData },
+        // metaData: { ...metaData },
         data: { ...data},
         seoPages:{...SeoPagesData}
       }, // will be passed to the page component as props
