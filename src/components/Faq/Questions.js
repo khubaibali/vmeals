@@ -2,7 +2,7 @@ import React from "react";
 import { vmealsFAQ } from '../../../src/lib/APICommunications';
 import DropDown from "../Common/DropDown";
 import { useRouter } from 'next/router';
-export default function Questions({ faqQuestions=[{}] }) {
+export default function Questions({ faqQuestions=[{}], showRTF }) {
   // console.log('question component', faqQuestions)
   const [openTab, setOpenTab] = React.useState(0);
   const { asPath, pathname } = useRouter();
@@ -64,7 +64,7 @@ export default function Questions({ faqQuestions=[{}] }) {
 
                       {faqQuestions[0]?.VMealsFaqsList[openTab]?.VMealsFaqsItemList?.map((faq, index) => (
                         <li key={faq.id} className={index !== 0 ? " mt-5" : ""}>
-                          <DropDown title={faq?.VMealsFaqsItemTitle}>{faq?.VMealsFaqsItemDescription}</DropDown>
+                          <DropDown showRTF={showRTF} title={faq?.VMealsFaqsItemTitle}>{faq?.VMealsFaqsItemDescription}</DropDown>
                         </li>
                       ))}
 

@@ -13,7 +13,7 @@ export default function Index({tradeMarkData,headerData,footerData,sliderBarData
         <Navbar headerData={headerData} />
         <Hero sliderBarData={sliderBarData}/>
       </div>
-      <Questions faqQuestions={faqQuestions} />
+      <Questions showRTF={true} faqQuestions={faqQuestions} />
       <div className=" 2xl:mt-[100px]" >
       <Review googleReviews={googleReviews}/>
       </div>

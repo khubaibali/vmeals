@@ -1,9 +1,9 @@
 import { useState } from "react"
 import RTFMapping from "./RTFMapping"
 
-export default function DropDown({ children,title }) {
-    const [isOpen,setOpen] =useState(false)
-    console.log("faqans",children) 
+export default function DropDown({ children, title, showRTF }) {
+    const [isOpen, setOpen] = useState(false)
+    console.log("faqans", children)
     return (
         <>
             <button
@@ -20,11 +20,15 @@ export default function DropDown({ children,title }) {
 
             <div
                 id="dropdownNavbar"
-                className={`${isOpen  ? "" : "hidden"
+                className={`${isOpen ? "" : "hidden"
                     }  z-10  block font-normal divide-y divide-gray-100 rounded-[20px] shadow  p-5  bg-white  w-full `}
             >
                 <h2 className=" f-f-r text-black text-tiny 2xl:text-lg  text-center  leading-[25px] ">
-                    <RTFMapping data={children}/>
+                    {showRTF ?
+                        <RTFMapping data={children}/>
+                        : 
+                        children 
+                    }
                 </h2>
             </div>
         </>
