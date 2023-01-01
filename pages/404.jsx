@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useRouter } from "next/router";
 
 export default function Fourzerofour(props) {
-  return (
-    <>
-      hello 404
-     
+  const router = useRouter();
 
-    </>
+  useEffect(() => {
+    router.push("/pagenotfound")
+  })
+  return (
+    <> </>
   )
 }
 
