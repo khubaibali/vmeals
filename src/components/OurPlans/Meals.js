@@ -142,54 +142,58 @@ export default function Meals() {
                 </Link>
               </div>
               {/*  one end */}
+
+    {/* new code card started  */}
+    <div className=" col-span-12  md:col-span-6 gap-4 md:gap-14 lg:gap-10  xl:hidden  ">
+
+<div className="cardurdu w-[374px] md:w-[100%] lg:w-[374px]  h-[257px] 2xl:w-[450px] 2xl:h-[300px] relative mt-2 md:mt-10 ml-auto mr-auto ">
+  <div className="text-right w-6/12 ml-auto pr-4 pt-8 ">
+    <h2 className="f-f-b text-green text-base 2xl:text-2xl   ">
+      بحاجة الى مساعدة في اختيار خطة؟
+    </h2>
+    <h2 className=" f-f-li text-black text-tiny 2xl:text-base   ">
+      تواصل مع خبير التغذية لدينا ودع الخبراء يقررون ما هو الأفضل
+      لك!
+    </h2>
+    <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full w-[180px] md:w-[143px] sm:px-[29px] h-[50px] sm:py-[14px] 2xl:px-[63px] 2xl:h-[69px] mt-5 2xl:mt-8  absolute right-[17px] bottom-[21px] ">
+      احجز موعدك
+    </button>
+    <img
+      src="/images/femaleplans.png"
+      className="  w-auto 2xl:w-[201px] h-[216px] 2xl:h-[263px]  absolute left-0 bottom-0"
+    />
+  </div>
+</div>
+
+</div>
+<div className=" col-span-12  md:col-span-6   xl:hidden  ">
+
+<div className="cardurdu w-[374px] md:w-[100%] lg:w-[374px]  h-[257px] 2xl:w-[450px] 2xl:h-[300px] relative mt-2 md:mt-10 ml-auto mr-auto ">
+  <div className="text-left w-8/12 mr-auto pl-4 pt-4 ">
+    <h2 className="f-f-b text-green text-xl md:text-base leading-[29px] 2xl:text-3xl 2xl:leading-[41px]   ">
+      Need help in choosing a plan?
+    </h2>
+    <h2 className=" f-f-r text-black-light text-tiny 2xl:text-base   ">
+      Get in touch with our nutritionist and let the experts decide
+      what is best for you!
+    </h2>
+    <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full  2xl:w-[219px] md:w-[173px] w-[180px] h-[50px] md:h-[50px] 2xl:h-[61px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] 2xl:bottom-[21px] ">
+      Book Appointment
+    </button>
+    <img
+      src="/images/femaleplnas.png"
+      className="  w-auto 2xl:w-[175px] h-[216px] 2xl:h-[282px]  absolute right-0 bottom-0"
+    />
+  </div>
+</div>
+
+</div>
+{/* new card ended */}
+
+
             </div>
           </div>
-          {/* new code card started  */}
-          <div className=" col-span-12  md:col-span-6 gap-4 md:gap-10  xl:hidden  ">
-
-            <div className="cardurdu w-[374px] md:w-[352px] lg:w-[374px]  h-[257px] 2xl:w-[450px] 2xl:h-[300px] relative mt-2 md:mt-10 ml-auto mr-auto ">
-              <div className="text-right w-6/12 ml-auto pr-4 pt-8 ">
-                <h2 className="f-f-b text-green text-base 2xl:text-2xl   ">
-                  بحاجة الى مساعدة في اختيار خطة؟
-                </h2>
-                <h2 className=" f-f-li text-black text-tiny 2xl:text-base   ">
-                  تواصل مع خبير التغذية لدينا ودع الخبراء يقررون ما هو الأفضل
-                  لك!
-                </h2>
-                <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full w-[180px] sm:px-[29px] h-[50px] sm:py-[14px] 2xl:px-[63px] 2xl:h-[69px] mt-5 2xl:mt-8  absolute right-[17px] bottom-[21px] ">
-                  احجز موعدك
-                </button>
-                <img
-                  src="/images/femaleplans.png"
-                  className="  w-auto 2xl:w-[201px] h-[216px] 2xl:h-[263px]  absolute left-0 bottom-0"
-                />
-              </div>
-            </div>
-
-          </div>
-          <div className=" col-span-12  md:col-span-6   xl:hidden  ">
-
-            <div className="cardurdu w-[374px] md:w-[352px] lg:w-[374px]  h-[257px] 2xl:w-[450px] 2xl:h-[300px] relative mt-2 md:mt-10 ml-auto mr-auto ">
-              <div className="text-left w-8/12 mr-auto pl-4 pt-4 ">
-                <h2 className="f-f-b text-green text-xl md:text-base leading-[29px] 2xl:text-3xl 2xl:leading-[41px]   ">
-                  Need help in choosing a plan?
-                </h2>
-                <h2 className=" f-f-r text-black-light text-tiny 2xl:text-base  mt-4 ">
-                  Get in touch with our nutritionist and let the experts decide
-                  what is best for you!
-                </h2>
-                <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full  2xl:w-[219px] md:w-[173px] w-[180px] h-[50px] md:h-[60px] 2xl:h-[61px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] 2xl:bottom-[21px] ">
-                  Book Appointment
-                </button>
-                <img
-                  src="/images/femaleplnas.png"
-                  className="  w-auto 2xl:w-[175px] h-[216px] 2xl:h-[282px]  absolute right-0 bottom-0"
-                />
-              </div>
-            </div>
-
-          </div>
-          {/* new card ended */}
+      
         </div>
 
         {/* meal card ended */}
