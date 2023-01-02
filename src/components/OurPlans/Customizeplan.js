@@ -664,7 +664,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 <div className="my-4">
                   <form action="/action_page.php">
                     <ul>
-                      {/* <li>
+                      <li>
                         <input
                           type="checkbox"
                           id="vehicle1"
@@ -698,7 +698,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           {" "}
                           Eco-Friendly Cutlery + AED{CutleryData?.Cutlery?.find(c => c.name == selectedDuration?.name)?.deliveriesPerWeek?.find(dpw => dpw.days == selectedDaysPerWeek?.days)?.mealType?.find(m => m.id == mealType?.id)?.price}{" "}
                         </label>
-                      </li> */}
+                      </li> 
                       <li className=" mt-4">
                         <input
                           type="checkbox"

@@ -11,13 +11,13 @@ export default function ourblogdetails(props) {
   console.log("our blog detail", props?.blog)
   const router = useRouter();
   useEffect(() => {
-    if (!props?.blog || !Object.keys(props?.blog)?.length > 0) {
+    if ((!props?.blog || !Object.keys(props?.blog)?.length > 0) && router.asPath != "/sitemap.xml") {
       router.push("/pagenotfound")
     }
   }, [router])
 
   // const metaDataContent = Object?.values(props?.metaData?.docs).find(c => c.title == "Blog")
-  if(!props?.blog ||  !Object.keys(props?.blog)?.length > 0) {
+  if ((!props?.blog || !Object.keys(props?.blog)?.length > 0) && router.asPath != "/sitemap.xml") {
     return (<></>)
   } else {
     return (
@@ -74,4 +74,3 @@ export async function getServerSideProps({ req, res, query }) {
   }
 
 }
-
