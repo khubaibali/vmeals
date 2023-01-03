@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <html lang={"en"} />
+        {/* <html lang={"en"} /> */}
         {/* <title>My page title</title> */}
         {/* <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" /> */}
       </Head>
