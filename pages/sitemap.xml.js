@@ -87,7 +87,7 @@ function generateSiteMap(data) {
          <url>
              <loc>${`${siteUrl}/${f.VmealsBlogURL}`}</loc>
              <lastmod>
-              ${new Date()}
+              ${new Date(f.updatedAt)}
              </lastmod>
              <changefreq>daily</changefreq>
              <priority>0.7</priority>
