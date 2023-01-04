@@ -6,11 +6,12 @@ import { getServerSideProps as socialMediaIconsProps } from '../src/components/C
 import { getServerSideProps as paymentSuccessProps } from '../src/components/Payment Confirmation/Customizeplan'
 import SEO from '../src/components/Common/SEO'
 
+
 export default function confirmation(props) {
   // console.log("paymentSuccessProps", props)
   return (
     <div>
-      <SEO pageTitle='Payment Successful' metaText={"Vmeal"} />
+      <SEO pageTitle='Payment Successful' metaText={"VMeal"} metaContent={"noindex, nofollow"} />
       <Paymentconfirmation
         testimonialsData={props?.testimonialsData}
         headerData={props?.headerData}

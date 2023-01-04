@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 
 
-const SEO = ({ pageTitle, metaText }) => {
+const SEO = ({ pageTitle, metaText, metaContent }) => {
     const { asPath } = useRouter();
     const origin = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
@@ -11,11 +11,11 @@ const SEO = ({ pageTitle, metaText }) => {
     console.log("aaaaaaa,,,,---------------------------------------",URL);
 
     return (
-    <Head>
-        <title>{pageTitle || "Vmeals"}</title>
+    <Head>  
+        <title>{pageTitle || "Vmeals"}</title>  
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="description" content={metaText || "Vmeals"} />
-        <meta name="robots" content="all" />
+        <meta name="robots" content={metaContent || "all"} />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -29,6 +29,7 @@ const SEO = ({ pageTitle, metaText }) => {
         <link href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' />
 
     </Head>
+    
 )};
 
 SEO.propTypes = {

@@ -8,7 +8,7 @@ export default function Fourzerofour(props) {
     console.log("pagenotfound", props)
     return (
         <>
-            <SEO pageTitle={"404: Page Not Found"} metaText={"Page Not Found 404 Page"} />
+            <SEO pageTitle={"404: Page Not Found"} metaText={"Page Not Found 404 Page"} metaContent={"noindex, nofollow"}/>
             <FourZeroFourDetail
                 tradeMarkData={props?.tradmark}
                 footerData={props?.footerData}
