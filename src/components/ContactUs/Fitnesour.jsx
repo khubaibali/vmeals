@@ -65,6 +65,7 @@ console.log("contactUsData",contactUsData)
               </a>
 
            
+              <a href="https://tawk.to/chat/5f678da3f0e7167d001209eb/1eim8qk44" target={'_blank'}>
             <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full ml-6 md:ml-8 w-[152px] h-[55px] md:w-[219px] md:h-[79px]  lg:w-[154px] lg:h-[62px] xl:w-[208px] xl:h-[79px]   mt-5 2xl:mt-8">
               <ul className="inline-flex">
                 <li>
@@ -76,6 +77,7 @@ console.log("contactUsData",contactUsData)
                 <li className="mt-2 md:mt-3 ml-2 md:ml-4">{contactUsData?.[0]?.VMealsContactUsButtonTextTwo}</li>
               </ul>
             </button>
+            </a>
           </div>
         </div>
         <div className="   col-span-12 lg:col-span-1 xl:col-span-1  "></div>
