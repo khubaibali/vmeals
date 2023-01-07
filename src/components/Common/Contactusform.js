@@ -9,15 +9,18 @@ export default function Contactusform() {
   const [validateEmailError, setValidateEmailError] = useState(null)
   const [isDisabled, setDisable] = useState(false)
   const [countryDialCode, setCountryDialCode] = useState("+971");
+  const [Loading, setLoading] = useState(false)
   function formControl(event) {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
   const CallSubmitForm = async () => {
+    setLoading(true)
     let validate = await validateEmail(registerForm.email)
     console.log("here", validate)
     if (validate == "Invalid Email Address!") {
-      console.log("here 1")
+      // console.log("here 1")
       setValidateEmailError(validate)
+      setLoading(false)
       return false
     }
     setDisable(true)
@@ -36,10 +39,15 @@ export default function Contactusform() {
       .then(function (data) {
         if (data?.name === "ValidationError") {
           toast("Please fill the required field")
-        }else{
+          setLoading(false)
+
+        } else {
           toast.success("Form submitted successfully")
+          // setFormData({})
+          window.location.reload(false);
+
         }
-        
+
         setDisable(false)
       }).catch(error => {
         setDisable(false)
@@ -108,32 +116,32 @@ export default function Contactusform() {
                   +971{" "}
                   <img src="/images/mobilearrow.png" className=" ml-1 h-[13px] w-[13px] " />
                 </button> */}
-          
+
 
                 <div className="relative" >
-                <select style={{ width: '70px', height:"100%" }} name="countryCode" onChange={formControl} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn" >
-                  {CountryCodeData.countryCodes.map((cc) => (
-                    <option
-                      value={cc.dial_code}
-                      selected={
-                        countryDialCode == cc.dial_code
-                          ? true
-                          : false
-                      }
-                      className="text-black"
-                    >
-                      &nbsp;&nbsp;{cc.dial_code}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
-                    </option>
-                  ))}
-                 
-                </select>
+                  <select style={{ width: '70px', height: "100%" }} name="countryCode" onChange={formControl} className="flex-shrink-0  inline-flex items-center text-sm f-f-b text-white  py-2.5 px-2 green-gradiant-2  text-center  focus:outline-none  mobile-btn" >
+                    {CountryCodeData.countryCodes.map((cc) => (
+                      <option
+                        value={cc.dial_code}
+                        selected={
+                          countryDialCode == cc.dial_code
+                            ? true
+                            : false
+                        }
+                        className="text-black"
+                      >
+                        &nbsp;&nbsp;{cc.dial_code}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cc.name}
+                      </option>
+                    ))}
 
-                <img alt=""
-                src="/images/mobilearrow.png"
-                className=" absolute top-[16px] 2xl:top-[22px] right-[3px] h-[12px] w-[12px] "
-              />
-            </div>
-              
+                  </select>
+
+                  <img alt=""
+                    src="/images/mobilearrow.png"
+                    className=" absolute top-[16px] 2xl:top-[22px] right-[3px] h-[12px] w-[12px] "
+                  />
+                </div>
+
                 <div
                   id="dropdown"
                   className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
@@ -224,8 +232,8 @@ export default function Contactusform() {
           </div>
         </div>
         <div className="text-center">
-          <button disabled={isDisabled} onClick={CallSubmitForm} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[14px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
-            Submit
+          <button disabled={Loading} onClick={CallSubmitForm} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[14px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8">
+            {Loading ? <img src="/images/loader.gif"  width={35} className={"flex"} /> : "Submit"}
           </button>
         </div>
       </div>

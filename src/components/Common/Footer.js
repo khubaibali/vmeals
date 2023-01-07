@@ -108,21 +108,32 @@ export default function Fotter({ socialMediaIcon = [{}], footerData = [{}], trad
         <div className="bg-green-dark py-1 md:py-5 ">
           <div className="w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
             <div className="grid grid-cols-12  gap-2   ">
-              <div className="col-span-4 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3  flex ">
-                <a href="/" className=" relative top-[-5px] md:top-[0px] lg:top-[12px] text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b " >{"VMeals - "}</a>
-                <div
+              <div className="col-span-4 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3   ">
+                <ul className="top-[-5px] relative md:top-[0px] lg:top-[12px] inline-flex" >
+                  <li>
+                    <h3 className="    text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b " >
+                    <a href="/"  >VMeals - </a>
+                    </h3>
                  
-                  className=" relative top-[-5px] md:top-[0px] lg:top-[12px] text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
-                >
-                  {/* VMeals - © All Rights Reserved - 2022 */}
-                  {" "}{tradeMarkData?.[0]?.CopyRightText}
-                </div>
+                  </li>
+                  <li>
+                  <h3
+                 
+                 className="  text-white  text-xsvsmall md:text-xs lg:text-sm xl:text-tiny cursor-pointer   2xl:text-lg f-f-b "
+               >
+                 {/* VMeals - © All Rights Reserved - 2022 */}
+                 {" "}{tradeMarkData?.[0]?.CopyRightText}
+               </h3>
+                  </li>
+                </ul>
+                
+            
               </div>
               <div className="col-span-2 md:col-span-3 lg:col-span-3 xl:col-span-3 2xl:col-span-3   ">
                 <div className=" text-center" >
 
 
-                  <ul className="inline-flex  mt-2" >
+                  <ul className="inline-flex  lg:mt-2" >
                     <li>
                       <img src="https://firebasestorage.googleapis.com/v0/b/joiingmandarin.appspot.com/o/VMeals-Visa-Card-Logo.svg?alt=media&token=c691e55d-a7a0-47b1-b9f0-41574a65b3c3" className="    bg-white  rounded-[7px] w-[24px] md:w-[40px] lg:w-[60px]  h-auto ml-2 md:ml-4 xl:ml-8  cursor-pointer " />
 

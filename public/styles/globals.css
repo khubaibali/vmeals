@@ -1300,7 +1300,7 @@ color: white;
 @media only screen and (max-width: 430px) {
   .question-bg-drp{
     background-image: url("/images/FAQ Mobile Shape.png");
-    height: 372px;
+    height: auto;
   }
 }
 .about-goal-bg{
@@ -1450,3 +1450,9 @@ top: 3px;
   /* top: 50%; right: 50%; */
   /* transform: translate(50%,-50%); */
 }
+
+
+
+
+
+

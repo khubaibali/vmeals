@@ -6,7 +6,7 @@ const RTFMapping = ({ data }) => {
 			{data?.map((d, i) => {
 				if (!d.type) {
 					return (
-						<p key={i}  className="text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px]">
+						<p key={i}  className="text-center  f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px]">
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (

@@ -185,7 +185,7 @@ export default function CustomizeplanPersonalInformation({ }) {
             Consultation Form
           </h2>
 
-          <div className="grid grid-cols-12  gap-8 2xl:gap-20  ">
+          <div className="grid grid-cols-12  sm:gap-8 2xl:gap-20  ">
             <div className="   col-span-12  xl:col-span-6  ">
               <div className=" ">
 

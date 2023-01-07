@@ -598,70 +598,14 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   </div>
                   {/* new code data end */}
                 </div>
-                {/* <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
-                Select your intolerance
-                </h3> */}
-                {/* nabeel bhai code  */}
-                {/* <div className="relative" >
-                  <Multiselect
-                    className="multiselectsetting shadow-xl "
-                    placeholder={
-                      !allergies || allergies.length <= 0
-                        ? "Select an option"
-                        : ""
-                    }
-                    selectionLimit="5"
-                    style={{
-                      chips: {
-                        backgroundColor: "#A4ED9F",
-                        color: "black",
-                        fontSize: "20px",
-                        padding: "0.8rem",
-                      },
-                      searchBox: {
-                        border: "1px solid #41A53D",
-                        borderRadius: "20px",
-                        minHeight: "60px",
-                        height: "fit-content",
-                        backgroundColor: "white",
-                        display: "flex",
-                        justifyContent: "start",
-                        flexWrap: "wrap",
-                      },
-                      input: {
-                        width: "10px",
-                      },
-                    }}
-                    onSelect={(e) => {
-                      //console.log("eeeeeeeeeeee", e);
-                      setAlerg(e);
-                    }}
-                    options={options}
-                    selectedValues={allergies}
-                    displayValue="name"
-                  />
-                  <svg
-                    width="36"
-                    height="36"
-                    className=" absolute top-[6px] md:top-[13px] right-[17px] "
-                    viewBox="0 0 36 36"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M21.6253 23.3015L27.9574 16.6136C28.3458 16.2033 28.5552 15.6554 28.5396 15.0907C28.5241 14.5259 28.2848 13.9904 27.8744 13.6021C27.464 13.2137 26.9162 13.0043 26.3514 13.0199C25.7867 13.0354 25.2512 13.2747 24.8629 13.6851L18.5321 20.3729C18.468 20.4408 18.3911 20.4954 18.3059 20.5336C18.2206 20.5717 18.1287 20.5927 18.0353 20.5952C17.942 20.5978 17.849 20.5819 17.7618 20.5484C17.6746 20.515 17.5948 20.4647 17.5271 20.4004L10.8406 14.0682C10.4304 13.6797 9.8827 13.47 9.31791 13.4853C8.75313 13.5006 8.21756 13.7396 7.82902 14.1498C7.44048 14.56 7.23079 15.1077 7.24609 15.6725C7.26139 16.2373 7.50042 16.7729 7.9106 17.1614L14.5985 23.4935C15.5566 24.3982 16.8344 24.886 18.1516 24.85C19.4688 24.814 20.718 24.2571 21.6253 23.3015V23.3015Z"
-                      fill="#41A53D"
-                    />
-                  </svg>
-                </div> */}
-                {/* nabeel bhai code ended */}
+              
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Select your allergies (5 maximum)
                 </h3>
                 {/* nabeel bhai code  */}
                 <div className="relative" >
                   <Multiselect
-                    className="multiselectsetting shadow-xl "
+                    className="multiselectsetting shadow-xl rounded-[20px] "
                     placeholder={
                       !allergies || allergies.length <= 0
                         ? "Select an option"
@@ -712,6 +656,63 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   </svg>
                 </div>
                 {/* nabeel bhai code ended */}
+                  <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+               Select your intolerances
+                </h3>
+                {/* nabeel bhai code  */}
+                <div className="relative" >
+                  <Multiselect
+                    className="multiselectsetting shadow-xl rounded-[20px]  "
+                    placeholder={
+                      !allergies || allergies.length <= 0
+                        ? "Select an option"
+                        : ""
+                    }
+                    selectionLimit="5"
+                    style={{
+                      chips: {
+                        backgroundColor: "#A4ED9F",
+                        color: "black",
+                        fontSize: "20px",
+                        padding: "0.8rem",
+                      },
+                      searchBox: {
+                        border: "1px solid #41A53D",
+                        borderRadius: "20px",
+                        minHeight: "60px",
+                        height: "fit-content",
+                        backgroundColor: "white",
+                        display: "flex",
+                        justifyContent: "start",
+                        flexWrap: "wrap",
+                      },
+                      input: {
+                        width: "10px",
+                      },
+                    }}
+                    onSelect={(e) => {
+                      //console.log("eeeeeeeeeeee", e);
+                      setAlerg(e);
+                    }}
+                    options={options}
+                    selectedValues={allergies}
+                    displayValue="name"
+                  />
+                  <svg
+                    width="36"
+                    height="36"
+                    className=" absolute top-[6px] md:top-[13px] right-[17px] "
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21.6253 23.3015L27.9574 16.6136C28.3458 16.2033 28.5552 15.6554 28.5396 15.0907C28.5241 14.5259 28.2848 13.9904 27.8744 13.6021C27.464 13.2137 26.9162 13.0043 26.3514 13.0199C25.7867 13.0354 25.2512 13.2747 24.8629 13.6851L18.5321 20.3729C18.468 20.4408 18.3911 20.4954 18.3059 20.5336C18.2206 20.5717 18.1287 20.5927 18.0353 20.5952C17.942 20.5978 17.849 20.5819 17.7618 20.5484C17.6746 20.515 17.5948 20.4647 17.5271 20.4004L10.8406 14.0682C10.4304 13.6797 9.8827 13.47 9.31791 13.4853C8.75313 13.5006 8.21756 13.7396 7.82902 14.1498C7.44048 14.56 7.23079 15.1077 7.24609 15.6725C7.26139 16.2373 7.50042 16.7729 7.9106 17.1614L14.5985 23.4935C15.5566 24.3982 16.8344 24.886 18.1516 24.85C19.4688 24.814 20.718 24.2571 21.6253 23.3015V23.3015Z"
+                      fill="#41A53D"
+                    />
+                  </svg>
+                </div> 
+                {/* * nabeel bhai code ended */}
                 {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
               </div> */}
                  <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
@@ -756,6 +757,22 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           Eco-Friendly Cutlery + AED{CutleryData?.Cutlery?.find(c => c.name == selectedDuration?.name)?.deliveriesPerWeek?.find(dpw => dpw.days == selectedDaysPerWeek?.days)?.mealType?.find(m => m.id == mealType?.id)?.price}{" "}
                         </label>
                       </li> */}
+                             <li className=" mt-4">
+                        <input
+                          type="checkbox"
+                          id="vehicle2"
+                          name="vehicle2"
+                          value="Car"
+                          className=" checkinpu "
+              
+                        />
+                        <label
+                          for="vehicle2"
+                          className="text-black f-f-b text-sm 2xl:text-base ml-4 relative top-[-8px]"
+                        >
+                          Eco-Friendly Cutlery  + AED50.00
+                        </label>
+                      </li>
                       <li className=" mt-4">
                         <input
                           type="checkbox"
