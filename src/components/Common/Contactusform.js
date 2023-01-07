@@ -37,7 +37,7 @@ export default function Contactusform() {
         if (data?.name === "ValidationError") {
           toast("Please fill the required field")
         }else{
-          toast("Form submitted successfully")
+          toast.success("Form submitted successfully")
         }
         
         setDisable(false)
