@@ -5,14 +5,14 @@ export default function journy({ourCompanyData}) {
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 sm:my-20">
       <div className="grid grid-cols-12 gap-4 md:gap-8 lg:gap-14  ">
         <div className="   col-span-12 xl:col-span-6  ">
-          <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li   lg:mt-10 text-green text-center lg:text-left tracking-[0.22em] ">
+          <p className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li   lg:mt-10 text-green text-center lg:text-left tracking-[0.22em] ">
             {/* ABOUT OUR COMPANY */}
             {ourCompanyData?.[0]?.VMealsAboutUsTitle}
-          </h2>
-          {/* <h2 className=" text-center xl:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px] mt-2 md:mt-8">
+          </p>
+          {/* <p className=" text-center xl:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px] mt-2 md:mt-8">
             Start your fitness journey with us!
-          </h2>
-          <h2 className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-7 leading-[23px] text-center xl:text-left ">
+          </p>
+          <p className="   f-f-r text-black text-tiny  2xl:text-base mt-2 md:mt-7 leading-[23px] text-center xl:text-left ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
             tellus cras adipiscing enim eu turpis egestas. Semper eget duis at
@@ -28,15 +28,14 @@ export default function journy({ourCompanyData}) {
             Scelerisque felis imperdiet proin fermentum leo vel orci porta non.
             Tellus in hac habitasse platea dictumst vestibulum rhoncus est
             pellentesque.
-          </h2> */}
+          </p> */}
           <RTFMaping data={ourCompanyData?.[0]?.VMealsAboutUsDescription}/>
         </div>
         <div className="   col-span-12 xl:col-span-6  ">
-          <img
-            src="/images/about our company-03.png"
-            alt=""
-            className="w-full h-auto xl:mt-20 2xl:mt-0 "
-          />
+ <div className='relative' >
+    <img  src="/images/about-testing-img-bg.png"   className="w-full h-auto xl:mt-20 2xl:mt-0 " />
+    <img src="/images/about-testing-img.png"  className="w-[92%] h-auto absolute top-[-16%] left-[3%] " />
+    </div>
         </div>
       </div>
     </div>

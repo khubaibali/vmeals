@@ -48,10 +48,10 @@ export default function Category({ categoriesAll, blogs }) {
                               {blog?.VmealsBlogCategory?.VmealsBlogsCategoryName}
                             </button>
                             <div className="w-10/12 ml-auto mr-auto">
-                              <h2 className=" f-f-b  text-black text-xl 2xl:text-2xl text-center mt-4 2xl:mt-10 ">
+                              <p className=" f-f-b  text-black text-xl 2xl:text-2xl text-center mt-4 2xl:mt-10 ">
                                 {/* 10 Foods that Speed Up Your Metabolism | VMeals */}
                                 {blog?.VmealsBlogTitle}
-                              </h2>
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -72,9 +72,9 @@ export default function Category({ categoriesAll, blogs }) {
             {/* inner ended */}
           </div>
           <div className="   col-span-12 lg:col-span-4 xl:col-span-4  ">
-            <h2 className="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li  uppercase text-green tracking-[1px] lg:tracking-[0.22em] ">
+            <p className="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li  uppercase text-green tracking-[1px] lg:tracking-[0.22em] ">
               Categories
-            </h2>
+            </p>
             <Categorylist categoriesAll={categoriesAll} />
           </div>
         </div>

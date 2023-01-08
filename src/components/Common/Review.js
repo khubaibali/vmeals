@@ -48,7 +48,7 @@ export default function Review({ googleReviews = [] }) {
             <img src='/images/Google-Logo 1.png' className='  width-[54px] h-auto md:width-[85px]  md:h-[36px]' />
             <ul className='inline-flex ' >
               <li>
-                <h2 className=' f-f-b text-black text-sm md:text-base ' >4.9</h2>
+                <p className=' f-f-b text-black text-sm md:text-base ' >4.9</p>
               </li>
               <li className=' mt-1.5 ml-2 md:ml-3' >
                 <div class="flex items-center">
@@ -60,7 +60,7 @@ export default function Review({ googleReviews = [] }) {
                 </div>
               </li>
               <li className='mt-1 md:mt-1.5 ml-2 md:ml-3'  >
-                <h2 className=' text-xs md:text-sm f-f-r text-grey-light  ' >200 reviews</h2>
+                <p className=' text-xs md:text-sm f-f-r text-grey-light  ' >200 reviews</p>
               </li>
             </ul>
           </div>
@@ -85,18 +85,18 @@ export default function Review({ googleReviews = [] }) {
                       <img src={gr?.profile_photo_url} className=' h-[84px] w-[84px] ' />
                     </div>
                     <div className=" col-span-5  ">
-                      <h2 className=' f-f-b text-black text-sm md:text-base ' >{gr?.author_name}</h2>
+                      <p className=' f-f-b text-black text-sm md:text-base ' >{gr?.author_name}</p>
                       <div class="flex items-center mt-1 ">
                         {[...Array(gr?.rating)].map(() => (
                           <svg aria-hidden="true" class=" w-[10px]  h-[auto] md:w-5 md:h-5 text-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title> star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                         ))}
 
                       </div>
-                      <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >1 month ago</h2>
+                      <p className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >1 month ago</p>
                     </div>
                     <div className=" col-span-3  ">
                       <div className='text-center' >
-                        <h2 className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >Posted On</h2>
+                        <p className=' text-xs md:text-sm f-f-r text-grey-light mt-1 ' >Posted On</p>
 
                         <img src='/images/Google-Short-Logo 1.png' className=' w-[55px] h-[56px] mt-1 ml-auto mr-auto ' />
 

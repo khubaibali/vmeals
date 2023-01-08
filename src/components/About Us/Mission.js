@@ -18,9 +18,9 @@ export default function Mission({ourCompanyData}) {
               />
               <div className="absolute top-[35%] md:top-[30%] w-[95%] right-0 left-0">
                 <div className="text-center w-11/12 ml-auto mr-auto    ">
-                  <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
+                  <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                     {item?.VMealsAboutUsCardTitle}
-                  </h2>
+                  </p>
                     <RTFMapping data={item?.VMealsAboutUsCardDescription}/>
                 </div>
               </div>
@@ -41,9 +41,9 @@ export default function Mission({ourCompanyData}) {
                     fill="#3E3E3E"
                   />
                 </svg>
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-1 text-center ">
+                <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-1 text-center ">
                   {index+1}
-                </h2>
+                </p>
               </div>
             </div>
           </div>

@@ -13,16 +13,16 @@ export default function Mission() {
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
               <div className="text-center w-10/12 ml-auto mr-auto    ">
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
+                <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                   Mission
-                </h2>
-                <h2 className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4">
+                </p>
+                <p className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4">
                   At VMeals we believe that the foundation of a happy life lies
                   in how healthy and good we feel about ourselves. This company
                   is devoted to changing lives by raising awareness and
                   providing solutions for a healthy lifestyle.
-                </h2>
-                <h2 className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4 ">
+                </p>
+                <p className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4 ">
                   In today’s world, it is becoming more difficult to manage a
                   busy lifestyle and schedule, especially in the United Arab
                   Emirates where nothing stays in one place, citizens and expats
@@ -31,7 +31,7 @@ export default function Mission() {
                   healthy and fit with minimum effort! Just go on the website,
                   select a plan, add allergies/dislikes, order and that’s it!
                   Simple as that.
-                </h2>
+                </p>
               </div>
             </div>
             <div className="absolute bottom-[10%] left-[33%] ">
@@ -51,9 +51,9 @@ export default function Mission() {
                   fill="#3E3E3E"
                 />
               </svg>
-              <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+              <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
                 01
-              </h2>
+              </p>
             </div>
           </div>
         </div>
@@ -65,17 +65,17 @@ export default function Mission() {
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
               <div className="text-center w-10/12 ml-auto mr-auto    ">
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
+                <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                   Vision
-                </h2>
-                <h2 className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm mt-10 md:mt-20 2xl:mt-24">
+                </p>
+                <p className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm mt-10 md:mt-20 2xl:mt-24">
                   Our vision is to simplify people’s lifestyle as much as
                   possible just by a few clicks all around the world. We aim to
                   reach every busy individual on this planet, and simplify their
                   life by offering tasty, healthy and affordable meals at their
                   doorstep everyday, let it be our set menu or even menu
                   customized specifically for you.
-                </h2>
+                </p>
               </div>
             </div>
             <div className="absolute bottom-[10%] left-[33%] ">
@@ -95,9 +95,9 @@ export default function Mission() {
                   fill="#3E3E3E"
                 />
               </svg>
-              <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+              <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
                 02
-              </h2>
+              </p>
             </div>
           </div>
         </div>
@@ -109,16 +109,16 @@ export default function Mission() {
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
               <div className="text-center w-10/12 ml-auto mr-auto    ">
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
+                <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                   Value
-                </h2>
-                <h2 className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm mt-10 md:mt-20 2xl:mt-24">
+                </p>
+                <p className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm mt-10 md:mt-20 2xl:mt-24">
                   It’s simple - time, cost and health. VMeals was created to
                   cater people with busy lifestyles, who are looking for
                   affordable and healthy solutions to fit their schedule. Our
                   food is not only healthy but TASTY! Boredom isn’t on our menu
                   as we have an international cuisine.
-                </h2>
+                </p>
               </div>
             </div>
             <div className="absolute bottom-[10%] left-[33%] ">
@@ -138,9 +138,9 @@ export default function Mission() {
                   fill="#3E3E3E"
                 />
               </svg>
-              <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+              <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
                 03
-              </h2>
+              </p>
             </div>
           </div>
         </div>
@@ -152,21 +152,21 @@ export default function Mission() {
             />
             <div className="absolute top-[31%] w-[95%] right-0 left-0">
               <div className="text-center w-10/12 ml-auto mr-auto    ">
-                <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
+                <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl">
                   Goal
-                </h2>
-                <h2 className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:mb-4  xl:mt-14 2xl:mt-16">
+                </p>
+                <p className="f-f-li text-black  text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:mb-4  xl:mt-14 2xl:mt-16">
                   Your goal is our goal. If you are looking to lose weight,
                   build muscle or just simply stay healthy - we are here to help
                   you achieve your desired milestone.
-                </h2>
-                <h2 className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4 ">
+                </p>
+                <p className="f-f-li text-black   text-xstwo md:text-smtwo 2xl:text-sm my-2 2xl:my-4 ">
                   We exist for people like you! Being constantly on the go,
                   working on complex projects, managing great ventures, having
                   an ambitious drive to grow in your career – it can be hard to
                   manage your food which can lead to unhealthy take-outs and
                   snacking; and we are here to end that!
-                </h2>
+                </p>
               </div>
             </div>
             <div className="absolute bottom-[10%] left-[33%] ">
@@ -186,9 +186,9 @@ export default function Mission() {
                   fill="#3E3E3E"
                 />
               </svg>
-              <h2 className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
+              <p className="f-f-b text-black text-base md:text-xl 2xl:text-4xl mt-4 text-center ">
                 04
-              </h2>
+              </p>
             </div>
           </div>
         </div>

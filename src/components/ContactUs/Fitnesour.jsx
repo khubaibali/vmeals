@@ -9,10 +9,10 @@ console.log("contactUsData",contactUsData)
     <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto mt-10 sm:my-20">
       <div className="grid grid-cols-12  gap-8 lg:gap-14 mt-10 md:mt-10 lg:my-24  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
-          <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-left tracking-[1px] uppercase lg:tracking-[0.22em] ">
+          <p className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-left tracking-[1px] uppercase lg:tracking-[0.22em] ">
             {/* Need Assistance? */}
             {contactUsData?.[0]?.VMealsContactUsTitle}
-          </h2>
+          </p>
           {/* code started */}
           <div className="w-11/12 ml-auto mr-auto md:w-12/12 mt-5 md:mt-10  lg:mt-20 text-left  ">
 
@@ -31,9 +31,9 @@ console.log("contactUsData",contactUsData)
                     <Link href={item?.VMealsContactUsLinkUrl} target={"_blank"}>
                       <li className="ml-3 md:ml-7 mt-1 md:mt-3">
                         {" "}
-                        <h2 className="f-f-b text-black-dark  text-sm md:text-tiny 2xl:text-lg   ">
+                        <p className="f-f-b text-black-dark  text-sm md:text-tiny 2xl:text-lg   ">
                           {item?.VMealsContactUsListTitle}
-                        </h2>{" "}
+                        </p>{" "}
                       </li>
                     </Link>
                   </ul>
@@ -43,10 +43,10 @@ console.log("contactUsData",contactUsData)
           </div>
           {/* code ended */}
 
-          <h2 className="f-f-b text-black-dark text-xl md:text-4xl mt-10 2xl:mt-20  text-left">
+          <p className="f-f-b text-black-dark text-xl md:text-4xl mt-10 2xl:mt-20  text-left">
             {/* Connect with us! */}
             {contactUsData?.[0]?.VMealsContactUsText}
-          </h2>
+          </p>
           <div className="text-left">
             
               <a href={contactUsData?.[0]?.VMealsContactUsButtonLinkUrl} target="_blank" >
@@ -83,9 +83,9 @@ console.log("contactUsData",contactUsData)
         <div className="   col-span-12 lg:col-span-1 xl:col-span-1  "></div>
         <div className="   col-span-12 lg:col-span-6 xl:col-span-6  ">
           <div className=" bg-white-light p-5 xl:p-7 2xl:p-10 rounded-lg ">
-            <h2 className=" text-green f-f-b text-center md:text-left text-xl  md:text-3xl 2xl:text-5xl ">
+            <p className=" text-green f-f-b text-center md:text-left text-xl  md:text-3xl 2xl:text-5xl ">
               Let’s have a chat
-            </h2>
+            </p>
             <Contactusform />
           </div>
         </div>

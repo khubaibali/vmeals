@@ -13,19 +13,19 @@ export default function Fitnesour({ ourParnersData }) {
       <div className="grid grid-cols-12  gap-8 lg:gap-14  ">
         <div className="   col-span-12 lg:col-span-5 xl:col-span-5  ">
           <div className=" md:w-10/12 lg:w-full ml-auto mr-auto" >
-          <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] uppercase  ">
+          <p className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center xl:text-left tracking-[1px] lg:tracking-[0.22em] uppercase  ">
             {/* OUR PARTNERS */}
             {ourParnersData?.[0]?.VMealsOurPartnersTitle}
-          </h2>
+          </p>
           {<OurSlickWraper description={ourParnersData[0]?.VMealsOurPartnersDescription} data={ourParnersData[0]?.VMealsOurPartnersList} setPartnerListIndex={setPartnerListIndex}/>}
           </div>
         </div>
         <div className="   col-span-12 lg:col-span-1 xl:col-span-1  "></div>
         <div className="   col-span-12 lg:col-span-6 xl:col-span-6  ">
           <div className=" bg-white-light p-5 xl:p-7 2xl:p-10 rounded-[20px] -mt-4 md:mt-0 ">
-            <h2 className=" text-green f-f-b text-center md:text-left text-xl  md:text-3xl 2xl:text-5xl ">
+            <p className=" text-green f-f-b text-center md:text-left text-xl  md:text-3xl 2xl:text-5xl ">
               Register your Company
-            </h2>
+            </p>
             <Registerform />
             <ToastContainer
               position="top-right"

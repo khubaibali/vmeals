@@ -139,9 +139,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
       <div className="w-11/12 sm:w-full ml-auto mr-auto ">
         <div className="grid grid-cols-12 gap-5   2xl:gap-4  ">
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black   mb-1 ">
+            <p className=" text-base f-f-b text-black   mb-1 ">
               Starting Date <span className="text-red">* </span>
-            </h2>
+            </p>
                 <div className="relative" >
             <DatePicker
               //   selected={new Date()}
@@ -171,9 +171,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             <img src="/images/mobilearrow.png" className="absolute right-4" />{" "}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black  mb-1 ">
+            <p className=" text-base f-f-b text-black  mb-1 ">
               City <span className="text-red">* </span>
-            </h2>
+            </p>
 
             <div className="relative" >
               <select id="cars" name="carlist" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px] cursor-pointer " onChange={(e) => {
@@ -211,9 +211,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12 ">
-            <h2 className=" text-base f-f-b text-black   ">
+            <p className=" text-base f-f-b text-black   ">
               Address <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your area, street & building name..."
               className=" input-register "
@@ -230,9 +230,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black   ">
+            <p className=" text-base f-f-b text-black   ">
               Apartment/Villa Number <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your apartment/villa number..."
               className=" input-register "
@@ -249,9 +249,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black  ">
+            <p className=" text-base f-f-b text-black  ">
               Access Code (Optional)
-            </h2>
+            </p>
             <input
               placeholder="Enter your building’s access code..."
               className=" input-register "
@@ -260,9 +260,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             />
           </div>
           <div className="   col-span-12  ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               Google Maps Link <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter the Google maps link..."
               className=" input-register "
@@ -281,9 +281,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             )}
           </div>
           <div className="   col-span-12  ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               Delivery Instructions (Optional)
-            </h2>
+            </p>
             <input
               placeholder="Enter delivery specific instructions..."
               className=" input-register "
@@ -292,9 +292,9 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             />
           </div>
           <div className="   col-span-12 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black  ">
+            <p className=" text-base f-f-b text-black  ">
               Delivery Slot <span className="text-red">* </span>
-            </h2>
+            </p>
                 <div className="relative" >
               
             <select id="city" name="city" onChange={(e) =>
@@ -333,10 +333,10 @@ export default function Welcomeinput({ step, setStep, setDeliveryInformation, pl
             <div className=" ml-auto mr-auto md:w-5/12 lg:w-4/12  xl:w-full ">
               <ul className=" inline-flex mt-7 w-full ">
                 <li>
-                  <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
+                  <p className=" text-black text-2xl f-f-b ">Total:</p>
                 </li>
                 <li className=" ml-4 text-right ">
-                  <h2 className=" text-black text-2xl f-f-b   ">AED{Number(price).toFixed(2)}</h2>
+                  <p className=" text-black text-2xl f-f-b   ">AED{Number(price).toFixed(2)}</p>
                   <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                     Price exclusive of VAT
                   </h3>

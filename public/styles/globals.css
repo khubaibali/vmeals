@@ -1450,9 +1450,33 @@ top: 3px;
   /* top: 50%; right: 50%; */
   /* transform: translate(50%,-50%); */
 }
+.blt-text-p{
+  font-size: 35px;
+}
 
-
-
-
-
+ @media only screen and (max-width: 1282px) {
+  .blt-text-p{
+    font-size: 27px;
+  }
+}
+@media only screen and (max-width: 1022px) {
+  .blt-text-p{
+    font-size: 34px;
+  }
+}
+@media only screen and (max-width: 822px) {
+  .blt-text-p{
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 765px) {
+  .blt-text-p{
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .blt-text-p{
+    font-size: 15px;
+  }
+}
 

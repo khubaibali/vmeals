@@ -39,9 +39,9 @@ export default function Categorylist({ categoriesAll }) {
           
               </li>
               <li>
-                <h2 className="f-f-li text-black-dark ml-4  text-sm md:text-tiny 2xl:text-lg   ">
+                <p className="f-f-li text-black-dark ml-4  text-sm md:text-tiny 2xl:text-lg   ">
                   {cat} ({groups[cat].length})
-                </h2>
+                </p>
               </li>
             </ul>
             {/* inner ended */}
@@ -50,9 +50,9 @@ export default function Categorylist({ categoriesAll }) {
      
 
       </ul>
-      <h2 className="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li text-green text-center lg:text-left uppercase  tracking-[1px] lg:tracking-[0.22em] mt-10 2xl:mt-24 ">
+      <p className="  text-base  sm:text-2xl xl:text-3xl 2xl:text-4xl f-f-li text-green text-center lg:text-left uppercase  tracking-[1px] lg:tracking-[0.22em] mt-10 2xl:mt-24 ">
         Recent posts
-      </h2>
+      </p>
       {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
 
       {categoriesAll?.docs.map((blog,index) => (
@@ -72,9 +72,9 @@ export default function Categorylist({ categoriesAll }) {
               {blog?.VmealsBlogCategory?.VmealsBlogsCategoryName}
               </button>
 
-              <h2 className="   f-f-b text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
+              <p className="   f-f-b text-black text-tiny  2xl:text-base mt-2 md:mt-5 leading-[23px] ">
               {blog?.VmealsBlogTitle}
-              </h2>
+              </p>
             </div>
           </div>
           </Link>

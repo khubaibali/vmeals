@@ -23,13 +23,13 @@ export default function DropDown({ children, title, showRTF }) {
                 className={`${isOpen ? "" : "hidden"
                     }  z-10  block font-normal divide-y divide-gray-100 rounded-[20px] shadow  p-5  bg-white  w-full `}
             >
-                <h2 className=" f-f-r text-black text-tiny 2xl:text-lg  text-center  leading-[25px] ">
+                <p className=" f-f-r text-black text-tiny 2xl:text-lg  text-center  leading-[25px] ">
                     {showRTF ?
                         <RTFMapping data={children}/>
                         : 
                         children 
                     }
-                </h2>
+                </p>
             </div>
         </>
     )

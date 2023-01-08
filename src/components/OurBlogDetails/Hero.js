@@ -30,9 +30,9 @@ export default function Hero({title="",cate=""}) {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2.5  ">
+            <p className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2.5  ">
               Our Blog
-            </h2>
+            </p>
           </li>
           <li className=" ml-5 2xl:ml-10">
             <svg
@@ -48,10 +48,10 @@ export default function Hero({title="",cate=""}) {
             </svg>
           </li>
           <li className=" ml-5 2xl:ml-10">
-            <h2 className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2.5  ">
+            <p className=" text-md md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2.5  ">
               {/* Food */}
               {cate}
-            </h2>
+            </p>
           </li>
         </ul>
       </div>

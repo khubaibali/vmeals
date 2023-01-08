@@ -14,20 +14,20 @@ export default function Genius({ ourGeniusData = [{}] }) {
           <div className="grid grid-cols-12  sm:gap-8 lg:gap-14  ">
             <div className="   col-span-12 xl:col-span-6   ">
            
-              <h2 className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10 tracking-[0.22em] ">
+              <p className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10 tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
-              </h2>
-              <h2 className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  xl:mt-8">
+              </p>
+              <p className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  xl:mt-8">
                 {/* A team of nutrition experts at your fingertips! */}
                 {ourGeniusData[0]?.VMealsOurGeniusesTitle}
-              </h2>
-              {/* <h2 className="  text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px] ">
+              </p>
+              {/* <p className="  text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px] ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.{" "}
-              </h2> */}
+              </p> */}
                  <div className="geniustext" >
               <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription} />
               </div>

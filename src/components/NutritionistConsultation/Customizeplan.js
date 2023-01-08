@@ -181,21 +181,21 @@ export default function CustomizeplanPersonalInformation({ }) {
         {/* code testing ended */}
 
         <div className=" bg-green-light rounded-[100px] p-6  lg:p-7 2xl:p-[50px]" >
-          <h2 className=" text-green f-f-b text-center  text-xl  md:text-5xl xl:text-4xl 2xl:text-9xl  ">
+          <p className=" text-green f-f-b text-center  text-xl  md:text-5xl xl:text-4xl 2xl:text-9xl  ">
             Consultation Form
-          </h2>
+          </p>
 
           <div className="grid grid-cols-12  sm:gap-8 2xl:gap-20  ">
             <div className="   col-span-12  xl:col-span-6  ">
               <div className=" ">
 
-                <h2 class=" text-base sm:text-2xl 2xl:text-4xl f-f-li uppercase text-green tracking-[0.22em] text-center lg:text-left  mt-4 2xl:mt-8 ">Client information</h2>
+                <p class=" text-base sm:text-2xl 2xl:text-4xl f-f-li uppercase text-green tracking-[0.22em] text-center lg:text-left  mt-4 2xl:mt-8 ">Client information</p>
 
                 <Welcomeinput errors={errors} personalInformation={personalInformation} setPersonalInformation={setPersonalInformation} />
               </div>
             </div>
             <div className="   col-span-12   xl:col-span-6  ">
-              <h2 class=" text-base sm:text-2xl 2xl:text-4xl f-f-li uppercase text-green tracking-[0.22em] text-center lg:text-left  mt-4 2xl:mt-8 ">DIETARY information</h2>
+              <p class=" text-base sm:text-2xl 2xl:text-4xl f-f-li uppercase text-green tracking-[0.22em] text-center lg:text-left  mt-4 2xl:mt-8 ">DIETARY information</p>
               <Dietryinput setIsLoading={setIsLoading} isLoading={isLoading} errors={errors} Validation={Validation} setDietryInformation={setDietryInformation} dietryInformation={dietryInformation} />
             </div>
           </div>

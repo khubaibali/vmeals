@@ -99,9 +99,9 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
       <div className="w-9/12 sm:w-full ml-auto mr-auto ">
         <div className="grid grid-cols-12 gap-5  md:gap-8 2xl::gap-14  ">
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
+            <p className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
               First Name <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your first name…"
               className=" input-register "
@@ -118,9 +118,9 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black md:mt-10 mb-1 ">
+            <p className=" text-base f-f-b text-black md:mt-10 mb-1 ">
               Last Name <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your last name…"
               className=" input-register "
@@ -137,9 +137,9 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               Email Address <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your email address…"
               className=" input-register "
@@ -156,9 +156,9 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-black  ">
+            <p className=" text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
-            </h2>
+            </p>
 
             <form>
               <div className="flex">
@@ -277,9 +277,9 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             )}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               Date of Birth <span className="text-red">* </span>
-            </h2>
+            </p>
 
             {/* date input */}
             <div className="relative" >
@@ -359,9 +359,9 @@ export default function Welcomeinput({ setStep, setPersonalInformation, personal
             </div>
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               Nationality<span className="text-red">* </span>
-            </h2>
+            </p>
 
             {/* new code data started */}
             <div className="relative" >

@@ -560,19 +560,19 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your meal type
                 </h3>
-                <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
-                  {/* new code data started */}
+                {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
+                
                   <div className="relative" >
                     <select id="cars" name="carlist" form="carform" className="text-black f-f-b text-sm 2xl:text-base   pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
                       onChange={(e) => {
-                        //console.log("eeee", selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
+                      
                         setMealType({
                           id: e.target.value?.split?.("|")?.[0],
                           price: e.target.value?.split?.("|")?.[1],
                           name: e.target.value?.split?.("|")?.[0]?.replaceAll("_", " + ")
                         });
                         setPrice(PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price)
-                        // setPrice(e.target.value?.split?.("|")?.[1]);
+                   
                       }}
                     >
                       {selectedDaysPerWeek?.mealType?.map((dpw) => (
@@ -596,8 +596,79 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                       />
                     </svg>
                   </div>
-                  {/* new code data end */}
-                </div>
+             
+                </div> */}
+              
+                <div class="grid grid-cols-12 my-4 border border-green shadow-xl rounded-[20px] bg-white " bis_skin_checked="1">
+   <div class=" col-span-12  md:col-span-6 " bis_skin_checked="1">
+      <button class=" cusntn  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
+      <ul>
+                          <li>
+                            <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              {" "}
+                              Breakfast
+                            </h3>
+                          </li>
+                          <li>
+                            <h3 className=" text-black f-f-r text-smtwo 2xl:text-tiny ">
+                            500kCal | AED5000.00
+                            </h3>
+                          </li>
+                        </ul>
+      </button>
+   </div>
+   <div class=" col-span-12  md:col-span-6 " bis_skin_checked="1">
+      <button class="    w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
+      <ul>
+                          <li>
+                            <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              
+                              Lunch
+                            </h3>
+                          </li>
+                          <li>
+                            <h3 className=" text-black f-f-r text-smtwo 2xl:text-tiny ">
+                            500kCal | AED5000.00
+                            </h3>
+                          </li>
+                        </ul>
+      </button>
+   </div>
+   <div class=" col-span-12  md:col-span-6 " bis_skin_checked="1">
+      <button class="    w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
+      <ul>
+                          <li>
+                            <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              
+                              Dinner
+                            </h3>
+                          </li>
+                          <li>
+                            <h3 className=" text-black f-f-r text-smtwo 2xl:text-tiny ">
+                            500kCal | AED5000.00
+                            </h3>
+                          </li>
+                        </ul>
+      </button>
+   </div>
+   <div class=" col-span-12  md:col-span-6 " bis_skin_checked="1">
+      <button class="    w-full h-[47px] md:h-[59px] 2xl:h-[68px]   ">
+      <ul>
+                          <li>
+                            <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              {" "}
+                              Snack + Drink
+                            </h3>
+                          </li>
+                          <li>
+                            <h3 className=" text-black f-f-r text-smtwo 2xl:text-tiny ">
+                            500kCal | AED5000.00
+                            </h3>
+                          </li>
+                        </ul>
+      </button>
+   </div>
+</div>
               
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Select your allergies (5 maximum)

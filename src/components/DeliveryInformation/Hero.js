@@ -3,9 +3,9 @@ import React from "react";
 export default function Hero() {
   return (
     <>
-      <h2 className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[240px] 2xl:pt-[330px] ">
+      <p className=" text-xl md:text-4xl 2xl:text-8xl text-white f-f-b text-center pt-[136px] lg:pt-[233px] xl:pt-[240px] 2xl:pt-[330px] ">
       Delivery Information
-      </h2>
+      </p>
       <div className="text-center mt-5  2xl:mt-16 ">
         <ul className="inline-flex">
           <li>
@@ -28,9 +28,9 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
-            <h2 className=" text-smtwo md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2 ">
+            <p className=" text-smtwo md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2 ">
             Our Plans
-            </h2>
+            </p>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
@@ -46,9 +46,9 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
-            <h2 className=" text-smtwo md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2 ">
+            <p className=" text-smtwo md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2 ">
             Classic Diet
-            </h2>
+            </p>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
             <svg
@@ -64,9 +64,9 @@ export default function Hero() {
             </svg>
           </li>
           <li className=" ml-3 md:ml-5 2xl:ml-10">
-            <h2 className=" text-smtwo md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2 ">
+            <p className=" text-smtwo md:text-lg 2xl:text-2xl text-white f-f-b text-center  md:-mt-1 2xl:-mt-2 ">
            Delivery Information
-            </h2>
+            </p>
           </li>
         </ul>
       </div>

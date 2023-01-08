@@ -58,14 +58,14 @@ export default function Customizeplan({testimonialsData}) {
           <div className="   col-span-12  lg:col-span-6  ">
             <div className=" p-6 md:p-16 xl:p-7 2xl:p-[50px]">
               <img src={success ? "/images/success.png" : "/images/failed.png"} className="ml-auto mr-auto w-[126px] md:w-[164px] 2xl:w-[213px] h-auto  mt-5 lg:mt-20  " style={{ color: "blue"}} />
-              <h2 className={` f-f-li ${success ? "text-green" : "text-red"} text-base md:text-xl 2xl:text-4xl text-center tracking-[0.2em]  mt-8 `} >PAYMENT {success ? "SUCCESSFUL!" : "FAILED!"}</h2>
-              <h2 className={` ${success ? "text-green" : "text-red"} 2xl:leading-[70px]  f-f-b text-center  text-xl mt-8 md:text-5xl xl:text-4xl 2xl:text-9xl  `}>
+              <p className={` f-f-li ${success ? "text-green" : "text-red"} text-base md:text-xl 2xl:text-4xl text-center tracking-[0.2em]  mt-8 `} >PAYMENT {success ? "SUCCESSFUL!" : "FAILED!"}</p>
+              <p className={` ${success ? "text-green" : "text-red"} 2xl:leading-[70px]  f-f-b text-center  text-xl mt-8 md:text-5xl xl:text-4xl 2xl:text-9xl  `}>
                 {success ? "Thank you for making us a part of your fitness journey!" : "Your Payment is failed Please try again!"}
-              </h2>
+              </p>
               {success &&
-                <h2 className=" text-dark f-f-r text-sm text-center  mt-8  2xl:text-2xl ">
+                <p className=" text-dark f-f-r text-sm text-center  mt-8  2xl:text-2xl ">
                   Please check your email for the invoice & starter kit.
-                </h2>
+                </p>
               }
             </div>
           </div>

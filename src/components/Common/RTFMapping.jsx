@@ -141,9 +141,9 @@ const RTFMapping = ({ data }) => {
 							})}
 						</h1>
 					);
-				} else if (d.type == "h2") {
+				} else if (d.type == "p") {
 					return (
-						<h2 key={i} className="text-center lg:text-left f-f-r text-green  my-4 text-lg md:text-xl  md:leading-[23px]">
+						<p key={i} className="text-center lg:text-left f-f-r text-green  my-4 text-lg md:text-xl  md:leading-[23px]">
 							{d.children.map((child) => {
 								if (child.bold) {
 									return (
@@ -180,7 +180,7 @@ const RTFMapping = ({ data }) => {
 									return child.text;
 								}
 							})}
-						</h2>
+						</p>
 					);
 				} else if (d.type == "h3") {
 					return (

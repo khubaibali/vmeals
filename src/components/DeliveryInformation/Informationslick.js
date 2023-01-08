@@ -26,12 +26,12 @@ export default function Informationslick() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum”
           </p>
-          <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
+          <p className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
             John Doe
-          </h2>
-          <h2 className=" f-f-it text-white text-sm 2xl:text-base  ">
+          </p>
+          <p className=" f-f-it text-white text-sm 2xl:text-base  ">
             Personal Trainer
-          </h2>
+          </p>
         </div>
         <div>
           <p className=" text-white f-f-li text-sm 2xl:text-tiny text-center  ">
@@ -44,12 +44,12 @@ export default function Informationslick() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum”
           </p>
-          <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
+          <p className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
             John Doe
-          </h2>
-          <h2 className=" f-f-it text-white text-sm 2xl:text-base ">
+          </p>
+          <p className=" f-f-it text-white text-sm 2xl:text-base ">
             Personal Trainer
-          </h2>
+          </p>
         </div>
         <div>
           <p className=" text-white f-f-li text-sm 2xl:text-tiny text-center  ">
@@ -62,12 +62,12 @@ export default function Informationslick() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum”
           </p>
-          <h2 className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
+          <p className=" f-f-b text-white text-base 2xl:text-xl mt-4 ">
             John Doe
-          </h2>
-          <h2 className=" f-f-it text-white text-sm 2xl:text-base ">
+          </p>
+          <p className=" f-f-it text-white text-sm 2xl:text-base ">
             Personal Trainer
-          </h2>
+          </p>
         </div>
       </Slider>
     </div>

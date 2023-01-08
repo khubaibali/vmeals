@@ -15,12 +15,12 @@ export default function CustomizeplanDeliveryInformation({ step, setStep, setDel
         <div className="grid grid-cols-12 gap-8 mt-10 md:my-10 2xl:my-20   bg-green-light rounded-[100px] ">
           <div className="   col-span-12  xl:col-span-6  ">
             <div className=" p-6 md:p-16 xl:p-7 2xl:p-[50px]">
-              <h2 className=" text-green f-f-b text-center md:text-left text-xl  md:text-5xl xl:text-4xl 2xl:text-9xl  ">
+              <p className=" text-green f-f-b text-center md:text-left text-xl  md:text-5xl xl:text-4xl 2xl:text-9xl  ">
                 Delivery Information
-              </h2>
-              <h2 className=" text-dark f-f-li text-sm text-center md:text-left md:text-base 2xl:text-4xl ">
+              </p>
+              <p className=" text-dark f-f-li text-sm text-center md:text-left md:text-base 2xl:text-4xl ">
                 We bring joy at your doorstep!
-              </h2>
+              </p>
 
               <Welcomeinput setStep={setStep} step={step} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} />
             </div>

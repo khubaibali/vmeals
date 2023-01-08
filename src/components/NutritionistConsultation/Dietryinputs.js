@@ -113,9 +113,9 @@ export default function Welcomeinput({ isLoading, setIsLoading, Validation, erro
       <div className="w-9/12 sm:w-full ml-auto mr-auto ">
         <div className="grid grid-cols-12 gap-5  md:gap-8 2xl::gap-14  ">
           <div className="   col-span-12  ">
-            <h2 className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
+            <p className=" text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
               Do you have any dietary restrictions? <span className="text-green text-sm 2xl:text-base " > (If yes, please mention them) </span> <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your dietary restrictions..."
               className=" input-register "
@@ -133,9 +133,9 @@ export default function Welcomeinput({ isLoading, setIsLoading, Validation, erro
           </div>
 
           <div className="   col-span-12  ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               Do you have any allergies?<span className="text-green text-sm 2xl:text-base "> (If yes, please mention them) </span><span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your allergies..."
               className=" input-register "
@@ -154,9 +154,9 @@ export default function Welcomeinput({ isLoading, setIsLoading, Validation, erro
 
 
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               Activity Level<span className="text-red">* </span>
-            </h2>
+            </p>
 
             {/* new code data started */}
             <div className="relative" >
@@ -184,9 +184,9 @@ export default function Welcomeinput({ isLoading, setIsLoading, Validation, erro
 
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6  ">
-            <h2 className=" text-base f-f-b text-black   ">
+            <p className=" text-base f-f-b text-black   ">
               Type of Activity <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               placeholder="Enter your activties…"
               className=" input-register "
@@ -204,10 +204,10 @@ export default function Welcomeinput({ isLoading, setIsLoading, Validation, erro
           </div>
 
           <div className="   col-span-12 md:col-span-6 xl:col-span-6  ">
-            <h2 className=" text-base f-f-b text-black   ">
+            <p className=" text-base f-f-b text-black   ">
               What is your fitness goal?
               {/* <span className="text-red">* </span> */}
-            </h2>
+            </p>
             <input
               placeholder="Enter your fitness goal…"
               className=" input-register "
@@ -217,9 +217,9 @@ export default function Welcomeinput({ isLoading, setIsLoading, Validation, erro
 
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-base f-f-b text-bla  ">
+            <p className=" text-base f-f-b text-bla  ">
               How should we contact you<span className="text-red">* </span>
-            </h2>
+            </p>
 
             {/* new code data started */}
             <div className="relative" >
@@ -249,9 +249,9 @@ export default function Welcomeinput({ isLoading, setIsLoading, Validation, erro
 
           </div>
           <div className="   col-span-12  ">
-            <h2 className=" text-base f-f-b text-black   ">
+            <p className=" text-base f-f-b text-black   ">
               Additional Comments
-            </h2>
+            </p>
             <input
               placeholder="Enter your allergies..."
               className=" input-register "

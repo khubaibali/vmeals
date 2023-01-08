@@ -61,9 +61,9 @@ export default function Contactusform() {
       <div className="w-9/12 sm:w-full ml-auto mr-auto ">
         <div className="grid grid-cols-12 gap-5  md:gap-8 2xl::gap-14  ">
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
+            <p className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black mt-5 md:mt-10 mb-1  ">
               First Name <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               name="firstName"
               placeholder="Enter your first name…"
@@ -72,9 +72,9 @@ export default function Contactusform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black md:mt-10 mb-1 ">
+            <p className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black md:mt-10 mb-1 ">
               Last Name <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               name="lastName"
               placeholder="Enter your last name…"
@@ -83,21 +83,21 @@ export default function Contactusform() {
             />
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-bla  ">
+            <p className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-bla  ">
               Email Address <span className="text-red">* </span>
-            </h2>
+            </p>
             <input
               name="email"
               placeholder="Enter your email address…"
               className=" input-register "
               onChange={formControl}
             />
-            {validateEmailError && <h2 className="text-red">{validateEmailError}</h2>}
+            {validateEmailError && <p className="text-red">{validateEmailError}</p>}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black  ">
+            <p className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black  ">
               Mobile Number <span className="text-red">* </span>
-            </h2>
+            </p>
 
             <form>
               <div className="flex">
@@ -164,9 +164,9 @@ export default function Contactusform() {
             </form>
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black  ">
+            <p className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black  ">
               Inquiry Type <span className="text-red">* </span>
-            </h2>
+            </p>
 
             {/* new code data started */}
             <div className="relative" >
@@ -191,9 +191,9 @@ export default function Contactusform() {
             {/* new code data end */}
           </div>
           <div className="   col-span-12 md:col-span-6 xl:col-span-6 ">
-            <h2 className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-bla  ">
+            <p className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-bla  ">
               How should we contact you?<span className="text-red">* </span>
-            </h2>
+            </p>
             {/* new code data started */}
             <div className="relative" >
               <select onChange={formControl} id="wayToContact" name="wayToContact" form="carform" className=" items-center text-sm f-f-b text-white  optinbg  contact-btn   lg:text-sm  pl-5 w-full rounded-[20px] h-[47px] md:h-[49px] 2xl:h-[57px]  "  >
@@ -217,9 +217,9 @@ export default function Contactusform() {
             {/* new code data end */}
           </div>
           <div className="   col-span-12  ">
-            <h2 className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black  ">
+            <p className=" text-sm xl:text-tiny 2xl:text-base f-f-b text-black  ">
               Message <span className="text-red">* </span>
-            </h2>
+            </p>
 
             <textarea
               rows="4"

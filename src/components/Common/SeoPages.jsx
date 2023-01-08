@@ -7,11 +7,11 @@ const SeoPages = ({ seoPagesData = [] }) => {
     let alternate = false
     return (
         <div>
-            <h2 class="   f-f-r text-black text-tiny  2xl:text-lg mt-2 md:mt-7 leading-[25px] text-center xl:text-left ">
+            <p class="   f-f-r text-black text-tiny  2xl:text-lg mt-2 md:mt-7 leading-[25px] text-center xl:text-left ">
                 {
                     <RTFMapping data={seoPagesData?.MainContentParagraph} />
                 }
-            </h2>
+            </p>
 
 
             <div className="grid grid-cols-12  gap-8    ">

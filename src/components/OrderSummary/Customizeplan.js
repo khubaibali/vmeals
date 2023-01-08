@@ -32,54 +32,54 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
           <div className="grid grid-cols-12 gap-8 my-10 2xl:my-20    ">
             <div className="   col-span-12 lg:col-span-6   xl:col-span-4  ">
               <div className=" bg-white-light h-[631px] 2xl:h-[759px] rounded-[100px] w-full p-6">
-                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <p className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Plan Information
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Plan Name:{" "}
                   <span className=" float-right  f-f-r ">{mapPlanName(planInformation?.selectedPlan)}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Diet Type:<span className=" float-right  f-f-r ">{planInformation?.selectedPlan == "IndianFusionVegetarianDiet" || planInformation?.selectedPlan == "IndianFusionNonVegetarian" || planInformation?.selectedPlan == "IndianFusionVegetarianDiet" || planInformation?.selectedPlan == "GreenDietVegan" || planInformation?.selectedPlan == "GreenDietVegetarian" ? mapPlanNameType(planInformation?.selectedPlan) : "N/A"}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Portion Size:
                   <span className=" float-right  f-f-r ">
                     {planInformation?.selectedPortion?.caloriesRange + " | " + planInformation?.selectedPortion?.name}
                   </span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Deliveries per week:
                   <span className=" float-right  f-f-r ">{planInformation?.selectedDaysPerWeek?.days} Days</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Off-Day(s):
                   <span className=" float-right  f-f-r ">
                     {planInformation?.offDays}
                   </span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Plan Duration:
                   <span className=" float-right  f-f-r ">{planInformation?.selectedDuration?.name}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Meal Type:
                   <span className=" float-right  f-f-r ">
                     {planInformation?.mealType?.name}
                   </span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Allergies:
                   <span className=" float-right  f-f-r ">
                     {planInformation?.allergies?.length > 0 ? planInformation?.allergies?.map(alg => alg.name)?.join(",") : "N/A"}{" "}
                   </span>{" "}
-                </h2>
+                </p>
 
                 <div className="grid grid-cols-12 mt-6 ">
                   <div className="   col-span-4  ">
-                    <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                    <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                       Add On:{" "}
-                    </h2>
+                    </p>
                   </div>
                   <div className="   col-span-8  ">
                     <div className="grid grid-cols-12  ">
@@ -89,28 +89,28 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
                           {addOnFifty > 0 &&
                             <>
                               <div className="   col-span-7  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
+                                <p className=" text-black text-sm 2xl:text-base text-center  f-f-r ">
                                   Eco-Friendly Cutlery
-                                </h2>
+                                </p>
                               </div>
                               <div className="   col-span-5  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
+                                <p className=" text-black text-sm 2xl:text-base text-right  f-f-r ">
                                   + AED{addOnFifty.toFixed(2)}
-                                </h2>
+                                </p>
                               </div>
                             </>
                           }
                           {addOnTwoHundred > 0 &&
                             <>
                               <div className="   col-span-6  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
+                                <p className=" text-black text-sm 2xl:text-base text-center  f-f-r mt-4 ">
                                   Thermal Bags (x2)
-                                </h2>
+                                </p>
                               </div>
                               <div className="   col-span-6  ">
-                                <h2 className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
+                                <p className=" text-black text-sm 2xl:text-base text-right  f-f-r mt-4 ">
                                   + AED200.00 (Refundable Deposit)
-                                </h2>
+                                </p>
                               </div>
 
                             </>
@@ -128,37 +128,37 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
 
             <div className="   col-span-12 lg:col-span-6  hidden xl:block xl:col-span-4  ">
               <div className=" bg-white-light h-[400px] 2xl:h-[467px] rounded-[100px] w-full p-6">
-                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <p className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Personal Information
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   First Name: <span className=" float-right  f-f-r ">{personalInformation?.firstName}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Last Name: <span className=" float-right  f-f-r ">{personalInformation?.lastName}</span>{" "}
-                </h2>
-                {/* <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                {/* <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Diet Type:<span className=" float-right  f-f-r ">Doe</span>{" "}
-                </h2> */}
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p> */}
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Email Address:
                   <span className=" float-right  f-f-r ">
                     {personalInformation?.email}
                   </span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Mobile Number:
                   <span className=" float-right  f-f-r ">{personalInformation?.mobileNumberCode} {personalInformation?.mobileNumber}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Date of Birth:
                   <span className=" float-right  f-f-r ">{(new Date(personalInformation?.dateOfBirth)).toDateString()}</span>{" "}
-                </h2>
+                </p>
               </div>
 
               <div className="bg-white-light my-2 rounded-[100px]  " >
-                {couponError && <h2 className="text-red text-center f-f-b text-sm 2xl:text-base ">{couponError}</h2>}
-                {coupunApplied && <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >{discountPercentage}% discount applied!</h2>}
+                {couponError && <p className="text-red text-center f-f-b text-sm 2xl:text-base ">{couponError}</p>}
+                {coupunApplied && <p className="  text-green text-center f-f-b text-sm 2xl:text-base " >{discountPercentage}% discount applied!</p>}
               </div>
               {/* input filed  */}
               <div className=" relative ">
@@ -176,26 +176,26 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               {/* input filed ended */}
               <div className="grid grid-cols-12 mt-6 gap-4 ">
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Discount:<span className=" f-f-r float-right ">{discountPercentage || 0}%</span>{" "}
-                  </h2>
+                  </p>
                 </div>
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
                     <span className=" f-f-r float-right ">AED{(Number(price) - Number(discountPrice || 0)).toFixed(2)}</span>{" "}
-                  </h2>
+                  </p>
                 </div>
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Discount Amount:
                     <span className=" f-f-r float-right ">AED{Number(discountPrice || 0).toFixed(2)}</span>{" "}
-                  </h2>
+                  </p>
                 </div>
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0)) * 0.05).toFixed(2)}</span>{" "}
-                  </h2>
+                  </p>
                 </div>
               </div>
 
@@ -205,10 +205,10 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               >
                 <ul className=" inline-flex mt-7  ">
                   <li>
-                    <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
+                    <p className=" text-black text-2xl f-f-b ">Total:</p>
                   </li>
                   <li className=" ml-4 text-right ">
-                    <h2 className=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
+                    <p className=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</p>
                     <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>
@@ -236,85 +236,85 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
             </div>
             <div className="   col-span-12  lg:col-span-6   xl:col-span-4 ">
               <div className=" bg-white-light h-[525px] overflow-hidden md:h-[631px] 2xl:h-[759px] rounded-[100px] w-full p-6">
-                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <p className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Delivery Information
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Starting Date:{" "}
                   <span className=" float-right  f-f-r ">{(new Date(deliveryInformation?.startingDate)).toDateString()}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   City:<span className=" float-right  f-f-r ">{deliveryInformation?.city}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Address:
                   <span className=" float-right  f-f-r ">
                     {deliveryInformation?.address}
                   </span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Apartment/Villa Number:
                   <span className=" float-right  f-f-r ">{deliveryInformation?.appartmentNumber}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Access Code:<span className=" float-right  f-f-r ">{deliveryInformation?.accessCode || "N/A"}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Delivery Slot:
                   <span className=" float-right  f-f-r ">{deliveryInformation?.deliverySlot}</span>{" "}
-                </h2>
+                </p>
 
                 <div className="grid grid-cols-12 mt-6 w-full ">
                   <div className="   col-span-12  xl:col-span-4  ">
-                    <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                    <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                       Google Maps Link:{" "}
-                    </h2>
+                    </p>
                   </div>
                   <div className="   col-span-12  xl:col-span-8  ">
-                    <h2 className=" text-black text-sm 2xl:text-base  text-right f-f-r ">
+                    <p className=" text-black text-sm 2xl:text-base  text-right f-f-r ">
                       {deliveryInformation?.googleLink}
-                    </h2>
+                    </p>
                   </div>
                 </div>
 
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Delivery Instructions:
                   <span className=" float-right  f-f-r ">
                     {deliveryInformation?.deliveryInstructions || "N/A"}
                   </span>{" "}
-                </h2>
+                </p>
               </div>
             </div>
 
             <div className="   col-span-12 lg:col-start-4 lg:col-end-10  xl:hidden xl:col-span-4  ">
               <div className=" bg-white-light h-[400px] 2xl:h-[467px] rounded-[100px] w-full p-6">
-                <h2 className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
+                <p className=" text-green f-f-b text-2xl 2xl:text-6xl text-center">
                   Personal Information
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Last Name: <span className=" float-right  f-f-r ">{personalInformation?.firstName}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Diet Type:<span className=" float-right  f-f-r ">{personalInformation?.lastName}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Email Address:
                   <span className=" float-right  f-f-r ">
                     {personalInformation?.email}
                   </span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Mobile Number:
                   <span className=" float-right  f-f-r ">{personalInformation?.mobileNumberCode} {personalInformation?.mobileNumber}</span>{" "}
-                </h2>
-                <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
+                </p>
+                <p className=" text-black-dark  text-sm 2xl:text-base f-f-b mt-6 ">
                   Date of Birth:
                   <span className=" float-right  f-f-r ">{(new Date(personalInformation?.dateOfBirth)).toDateString()}</span>{" "}
-                </h2>
+                </p>
               </div>
               <div className="bg-white-light my-2 rounded-[100px]  " >
-                {couponError && <h2 className="text-red text-center f-f-b text-sm 2xl:text-base ">{couponError}</h2>}
-                {coupunApplied && <h2 className="  text-green text-center f-f-b text-sm 2xl:text-base " >{discountPercentage}% discount applied!</h2>}
+                {couponError && <p className="text-red text-center f-f-b text-sm 2xl:text-base ">{couponError}</p>}
+                {coupunApplied && <p className="  text-green text-center f-f-b text-sm 2xl:text-base " >{discountPercentage}% discount applied!</p>}
               </div>
               {/* input filed  */}
               <div className=" relative ">
@@ -330,26 +330,26 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               {/* input filed ended */}
               <div className="grid grid-cols-12 mt-6 gap-4 ">
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Discount:<span className=" f-f-r float-right ">{discountPercentage || 0}%</span>{" "}
-                  </h2>
+                  </p>
                 </div>
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Sub-Total:
                     <span className=" f-f-r float-right ">AED{(Number(price) - Number(discountPrice || 0)).toFixed(2)}</span>{" "}
-                  </h2>
+                  </p>
                 </div>
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     Discount Amount:
                     <span className=" f-f-r float-right ">AED{Number(discountPrice || 0).toFixed(2)}</span>{" "}
-                  </h2>
+                  </p>
                 </div>
                 <div className="   col-span-6  ">
-                  <h2 className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
+                  <p className=" text-black-dark  text-sm 2xl:text-base f-f-b  ">
                     VAT:<span className=" f-f-r float-right ">AED{((Number(price) - Number(discountPrice || 0)) * 0.05).toFixed(2)}</span>{" "}
-                  </h2>
+                  </p>
                 </div>
               </div>
 
@@ -359,10 +359,10 @@ export default function CustomizeplanOrderSummary({ step, setStep, deliveryInfor
               >
                 <ul className=" inline-flex mt-7  ">
                   <li>
-                    <h2 className=" text-black text-2xl f-f-b ">Total:</h2>
+                    <p className=" text-black text-2xl f-f-b ">Total:</p>
                   </li>
                   <li className=" ml-4 text-right ">
-                    <h2 className=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</h2>
+                    <p className=" text-black text-2xl f-f-b ">AED{((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)}</p>
                     <h3 className="text-green f-f-r text-sm 2xl:text-tiny -mt-2 ">
                       Price inclusive of VAT
                     </h3>

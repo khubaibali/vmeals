@@ -11,11 +11,11 @@ export default function Questions({ faqQuestions=[{}], showRTF }) {
   return (
     <div className="relative  ">
       <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto my-10 md:my-20">
-        <h2 className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center  tracking-[1px] lg:tracking-[0.22em] ">
+        <p className="  text-base  sm:text-3xl 2xl:text-4xl f-f-li text-green text-center  tracking-[1px] lg:tracking-[0.22em] ">
           {/* FREQUENTLY ASKED QUESTIONS */}
           {faqQuestions[0]?.VMealsFaqsTitle}
        
-        </h2>
+        </p>
         </div>
         {/* code testing */}
         <div className={`${pathname=="/faq" ? "question-bg-drp" : ""   } `} >
