@@ -8,5 +8,10 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 }
+module.exports = {
+  compiler: {
+    removeConsole: true,
+  },
+}
 
 module.exports = nextConfig

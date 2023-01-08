@@ -13,7 +13,7 @@ export default function Registerform() {
   const [Loading, setLoading] = useState(false)
 
   function formControl(event) {
-    // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", { [event.target.name]: event.target.value })
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", { [event.target.name]: event.target.value })
 
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
