@@ -150,9 +150,9 @@ export default function CustomizeplanPersonalInformation({ }) {
         "allergies": dietryInformation?.allergies,
         "activityLevel": dietryInformation?.activityLevel,
         "acitivityType": dietryInformation?.activityType,
-        "fitnessGoal": dietryInformation?.goal,
+        "fitnessGoal": dietryInformation?.goal || "N/A",
         "wayToContact": dietryInformation?.contact,
-        "additionalComments": dietryInformation?.comment
+        "additionalComments": dietryInformation?.comment || "N/A"
       }
     }
 
