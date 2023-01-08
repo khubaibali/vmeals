@@ -43,7 +43,7 @@ export default function Questions({ faqQuestions=[{}], showRTF }) {
                           setOpenTab(index);
                         }}
                         data-toggle="tab"
-                        href="#link1"
+                        href=""
                         role="tablist"
                       >
                         {Item?.VMealsFaqsText}

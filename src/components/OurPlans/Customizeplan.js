@@ -238,7 +238,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
         deliveriesPerWeek: selectedDaysPerWeek.days,
-        offDays: offDays,
+        offDays: selectedDaysPerWeek.days == 7 ? "N/A" : offDays,
         planDuration: selectedDuration.name,
         mealType: mealType?.id?.split("_"),
         allergies: allergies?.length > 0 ? allergies?.map((a) => a.name)?.join(", ") : "N/A",
