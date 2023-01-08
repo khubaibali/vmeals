@@ -7,7 +7,7 @@ import { vmealsOurGeniuses } from '../../../src/lib/APICommunications';
 import RTFMapping from '../Common/RTFMapping.jsx'
 
 export default function Genius({ ourGeniusData = [{}] }) {
-  //console.log("ourGeniusData--->", ourGeniusData)
+  console.log("ourGeniusData--->", ourGeniusData)
   return (
     <>
       <div className="bg-green-light  pt-[235px] -mt-[241px] sm:pt-[131px] sm:-mt-[98px] lg:pt-[290px] lg:-mt-[160px]  ">
@@ -22,6 +22,7 @@ export default function Genius({ ourGeniusData = [{}] }) {
               <p className=" text-center lg:text-left text-xl sm:text-5xl 2xl:text-7xl f-f-b black md:leading-[50px] 2xl:leading-[75px]  xl:mt-8">
                 {/* A team of nutrition experts at your fingertips! */}
                 {ourGeniusData[0]?.VMealsOurGeniusesTitle}
+                
               </p>
               {/* <p className="  text-center lg:text-left f-f-r text-black text-tiny  2xl:text-base mt-7 leading-[23px] ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
