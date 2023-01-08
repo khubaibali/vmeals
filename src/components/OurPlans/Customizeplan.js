@@ -159,8 +159,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   };
 
   const checkout = () => {
-    createOrder();
-    return false;
+    // createOrder();
+    // return false;
     setLoading(true);
     let body = {
       amount: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
