@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 const BaseURL = process.env.NEXT_PUBLIC_BASE_URL
 const ImageBaseURL = process.env.NEXT_PUBLIC_BASE_URL_IMAGE
@@ -13,7 +14,7 @@ export default function Genius({ ourGeniusData = [{}] }) {
         <div className=" w-11/12 2xl:max-w-[1600px] ml-auto mr-auto">
           <div className="grid grid-cols-12  sm:gap-8 lg:gap-14  ">
             <div className="   col-span-12 xl:col-span-6   ">
-           
+
               <p className="  text-base text-center lg:text-left sm:text-3xl 2xl:text-4xl f-f-li text-green mt-10 tracking-[0.22em] ">
                 {/* OUR GENIUSES */}
                 {ourGeniusData[0]?.VMealsOurGeniusesHeading}
@@ -28,19 +29,19 @@ export default function Genius({ ourGeniusData = [{}] }) {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.{" "}
               </p> */}
-                 <div className="geniustext" >
-              <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription} />
+              <div className="geniustext" >
+                <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription} />
               </div>
               <div className="text-center lg:text-left mb-10 ">
+                <Link href='https://wa.me/+971562922081' target={"_blank"}>
+                  <button className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  " >
+                    {/* Book Appointment */}
+                    {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
 
-                <button className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  " href='https://wa.me/+971562922081' target={"_blank"}>
-                  {/* Book Appointment */}
-                  {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}
-
-                </button>
-
+                  </button>
+                </Link>
               </div>
-          
+
             </div>
             <div className="   col-span-12 xl:col-span-6 relative ">
               <img
@@ -49,7 +50,7 @@ export default function Genius({ ourGeniusData = [{}] }) {
                 className="w-full h-auto xl:absolute xl:bottom-0 "
               />
             </div>
-    
+
           </div>
         </div>
       </div>
