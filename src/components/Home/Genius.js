@@ -33,7 +33,7 @@ export default function Genius({ ourGeniusData = [{}] }) {
                 <RTFMapping data={ourGeniusData[0]?.VMealsOurGeniusesDescription} />
               </div>
               <div className="text-center lg:text-left mb-10 ">
-                <Link href='https://wa.me/+971562922081' target={"_blank"}>
+                <Link href={ourGeniusData[0]?.VMealsOurGeniusesButtonLinkURL} target={"_blank"}>
                   <button className="green-gradiant shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px] mt-5 rounded-full  " >
                     {/* Book Appointment */}
                     {ourGeniusData[0]?.VMealsOurGeniusesButtonBookAppointment}

@@ -26,7 +26,7 @@ export default function Meals() {
                   تواصل مع خبير التغذية لدينا ودع الخبراء يقررون ما هو الأفضل
                   لك!
                 </p>
-                <a href="/contact-us" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}} className=" text-center text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full w-[180px] 2xl:w-[221px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[63px] 2xl:h-[61px] mt-5 2xl:mt-8  absolute right-[17px] bottom-[21px] ">
+                <a href="https://wa.me/+971562922081" target={"_blank"} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}} className=" text-center text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full w-[180px] 2xl:w-[221px] sm:px-[29px] h-[60px] sm:py-[14px] 2xl:px-[63px] 2xl:h-[61px] mt-5 2xl:mt-8  absolute right-[17px] bottom-[21px] ">
                   احجز موعدك
                 </a>
                 <img
@@ -45,7 +45,7 @@ export default function Meals() {
                   Get in touch with our nutritionist and let the experts decide
                   what is best for you!
                 </p>
-                <a href="/contact-us" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full  2xl:w-[219px] w-[173px] h-[60px] 2xl:h-[61px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] 2xl:bottom-[21px] text-center align-middle  ">
+                <a href="https://wa.me/+971562922081" target={"_blank"} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}} className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white green-gradiant-2 rounded-full  2xl:w-[219px] w-[173px] h-[60px] 2xl:h-[61px] mt-5 2xl:mt-8  absolute left-[17px] bottom-[21px] 2xl:bottom-[21px] text-center align-middle  ">
                   Book Appointment
                 </a>
                 <img
