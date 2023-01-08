@@ -272,7 +272,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         discountPrice: Number((discountPrice).toFixed(2)),
       },
     };
-    console.log("orderDetail", body);return false
+    console.log("orderDetail", body);
+    // return false
     cookies.set(
       "orderDetail",
       JSON.stringify(body)
