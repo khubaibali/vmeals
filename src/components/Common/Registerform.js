@@ -10,6 +10,7 @@ export default function Registerform() {
   const [isDisabled, setDisable] = useState(false)
   const [validateEmailError, setValidateEmailError] = useState(null)
   const [countryDialCode, setCountryDialCode] = useState("+971");
+  const [Loading, setLoading] = useState(false)
 
   function formControl(event) {
     // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", { [event.target.name]: event.target.value })
@@ -17,6 +18,7 @@ export default function Registerform() {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
   const CallSubmitForm = async () => {
+    setLoading(true)
     // if(registerForm.email){
     let validate = await validateEmail(registerForm.email)
     // console.log("here", validate)
@@ -26,12 +28,16 @@ export default function Registerform() {
       return false
     }
     // }
-    // console.log("registerForm", registerForm); return
+    // console.log("registerForm", {
+    //   ...registerForm,
+    //   mobileNumber: `${registerForm?.countryCode || "+971"}${registerForm?.mobileNumber}`
+    // }); return
     setDisable(true)
     fetch(`${vmealsRegisterCompany}`, {
       method: 'POST',
       body: JSON.stringify({
-        ...registerForm
+        ...registerForm,
+        mobileNumber: `${registerForm?.countryCode || "+971"}${registerForm?.mobileNumber}`
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
@@ -42,9 +48,11 @@ export default function Registerform() {
       })
       .then(function (data) {
         if (data?.name === "ValidationError") {
-          toast("Please fill the required field")
+          toast.error("Please fill the required field")
+          setLoading(false)
         } else {
-          toast("Form submitted successfully")
+          toast.success("Form submitted successfully")
+          window.location.reload(false);
         }
         setDisable(false)
       }).catch(error => {
@@ -234,9 +242,9 @@ export default function Registerform() {
         <div className="text-center">
           <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[13px] sm:py-[17px] 2xl:px-[79px] 2xl:py-[25px] mt-5 2xl:mt-8"
             onClick={CallSubmitForm}
-            disabled={isDisabled}
+            disabled={Loading}
           >
-            Submit
+            {Loading ? <img src="/images/loader.gif"  width={35} className={"flex"} /> : "Submit"}
           </button>
         </div>
       </div>

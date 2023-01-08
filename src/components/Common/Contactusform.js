@@ -24,20 +24,25 @@ export default function Contactusform() {
       return false
     }
     setDisable(true)
+    // console.log("registerForm", {
+    //   ...registerForm,
+    //   mobileNumber: `${registerForm?.countryCode || "+971"}${registerForm?.mobileNumber}`
+    // });
     fetch(`${vmealsContact}`, {
       method: 'POST',
       body: JSON.stringify({
-        ...registerForm
+        ...registerForm,
+        mobileNumber: `${registerForm?.countryCode || "+971"}${registerForm?.mobileNumber}`
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       }
     })
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        if (data?.name === "ValidationError") {
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      if (data?.name === "ValidationError") {
           toast("Please fill the required field")
           setLoading(false)
 
