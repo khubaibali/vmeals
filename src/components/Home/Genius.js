@@ -46,7 +46,8 @@ export default function Genius({ ourGeniusData = [{}] }) {
             </div>
             <div className="   col-span-12 xl:col-span-6 relative ">
               <img
-                src="/images/Gunjan-Photo 1.png"
+                // src="/images/Gunjan-Photo 1.png"
+                src={ImageBaseURL + ourGeniusData[0]?.VMealsOurGeniusesImage.url}
                 alt=""
                 className="w-full h-auto xl:absolute xl:bottom-0 "
               />
