@@ -2,56 +2,92 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Steps from "./Steps";
-import { mealPlansFaqs, useCoupon, vmealsCreatePayment, vmealsOrder, vmealsOrderForm, vmealsPages } from "../../lib/APICommunications";
-import PlanData from '../../lib/data/meal-plans/data.json'
-import CutleryData from '../../lib/data/meal-plans/cutlery.json'
+import {
+  mealPlansFaqs,
+  useCoupon,
+  vmealsCreatePayment,
+  vmealsOrder,
+  vmealsOrderForm,
+  vmealsPages,
+} from "../../lib/APICommunications";
+import PlanData from "../../lib/data/meal-plans/data.json";
+import CutleryData from "../../lib/data/meal-plans/cutlery.json";
 import RTFMapping from "../Common/RTFMapping";
 import { getDurationName } from "../../helpers";
 import { Multiselect } from "multiselect-react-dropdown";
-import CustomizeplanDeliveryInformation from '../DeliveryInformation/Customizeplan';
+import CustomizeplanDeliveryInformation from "../DeliveryInformation/Customizeplan";
 import CustomizeplanPersonalInformation from "../PersonalInformation/Customizeplan";
 import CustomizeplanOrderSummary from "../OrderSummary/Customizeplan";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 const cookies = new Cookies();
-export default function Customizeplan({ heading, description, selectedPlan, setSelectedPlan, setStep, step = 1, weeklyMenu, testimonialsData }) {
+export default function Customizeplan({
+  heading,
+  description,
+  selectedPlan,
+  setSelectedPlan,
+  setStep,
+  step = 1,
+  weeklyMenu,
+  testimonialsData,
+}) {
   // console.log("testimonialsData>>>>",testimonialsData)
 
   const mapPlanName = (plan) => {
-    if (plan == "ClassicDiet") return "Classic Diet"
-    if (plan == "IndianFusionVegetarianDiet") return "Indian Fusion"
-    if (plan == "GreenDietVegan") return "Green Diet"
-    if (plan == "GreenDietVegetarian") return "Green Diet"
-    if (plan == "IndianFusionNonVegetarian") return "Indian Fusion"
-    else return plan
-  }
+    if (plan == "ClassicDiet") return "Classic Diet";
+    if (plan == "IndianFusionVegetarianDiet") return "Indian Fusion";
+    if (plan == "GreenDietVegan") return "Green Diet";
+    if (plan == "GreenDietVegetarian") return "Green Diet";
+    if (plan == "IndianFusionNonVegetarian") return "Indian Fusion";
+    else return plan;
+  };
   const mapPlanNameType = (plan) => {
-    if (plan == "IndianFusionVegetarianDiet") return "Vegetarian Diet"
-    if (plan == "GreenDietVegan") return "Vegan Diet"
-    if (plan == "GreenDietVegetarian") return "Vegetarian Diet"
-    if (plan == "IndianFusionNonVegetarian") return "Non Vegetarian Diet"
-    else return plan
-  }
+    if (plan == "IndianFusionVegetarianDiet") return "Vegetarian Diet";
+    if (plan == "GreenDietVegan") return "Vegan Diet";
+    if (plan == "GreenDietVegetarian") return "Vegetarian Diet";
+    if (plan == "IndianFusionNonVegetarian") return "Non Vegetarian Diet";
+    else return plan;
+  };
 
   //console.log("setStepsetStep", weeklyMenu);
   const [isLoading, setLoading] = useState(false);
 
   // const [selectedPlan, setSelectedPlan]
-  const [selectedPortion, setSelectedPortion] = useState(PlanData[selectedPlan]?.portions[0])
-  const [selectedDuration, setSelectedDuration] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]);
-  const [selectedDaysPerWeek, setSelectedDaysPerWeek] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]);
-  const [options, setOptions] = useState(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
-    id: i,
-    name: a
-  })));
+  const [selectedPortion, setSelectedPortion] = useState(
+    PlanData[selectedPlan]?.portions[0]
+  );
+  const [selectedDuration, setSelectedDuration] = useState(
+    PlanData[selectedPlan]?.portions[0]?.planDuration[0]
+  );
+  const [selectedDaysPerWeek, setSelectedDaysPerWeek] = useState(
+    PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]
+  );
+  const [options, setOptions] = useState(
+    PlanData[selectedPlan]?.allergies?.map((a, i) => ({
+      id: i,
+      name: a,
+    }))
+  );
   const [allergies, setAllergiesData] = useState(null);
   const [addOnsArray, setAddOnsArray] = useState([]);
-  const [mealType, setMealType] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]);
+  const [mealType, setMealType] = useState(
+    PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]
+      ?.mealType[0]
+  );
   const [offDays, setOffDays] = useState("Friday - Saturday");
-  const [price, setPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price);
-  const [totalPrice, setTotalPrice] = useState(PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price - (PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price * 0.05));
-  const [cutlery, setCutlery] = useState(CutleryData[selectedDuration.name])
+  const [price, setPrice] = useState(
+    PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]
+      ?.mealType[0]?.price
+  );
+  const [totalPrice, setTotalPrice] = useState(
+    PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]
+      ?.mealType[0]?.price -
+      PlanData[selectedPlan]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]
+        ?.mealType[0]?.price *
+        0.05
+  );
+  const [cutlery, setCutlery] = useState(CutleryData[selectedDuration.name]);
   const [addOnFifty, setAddOnFifty] = useState(0);
   const [addOnTwoHundred, setAddOnTwoHundred] = useState(0);
   const [personalInformation, setPersonalInformation] = useState({});
@@ -76,9 +112,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     setAllergiesData(data);
   };
 
-  const setAllPrices = (plan, portion, duration, dpw, mealType) => {
-    
-  }
+  const setAllPrices = (plan, portion, duration, dpw, mealType) => {};
 
   const setPlanInformationData = () => {
     setPlanInformation({
@@ -89,9 +123,9 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       allergies,
       mealType,
       price,
-      offDays
-    })
-  }
+      offDays,
+    });
+  };
 
   const applyCoupun = (e) => {
     if (couponValue == "" || !couponValue) {
@@ -100,7 +134,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       setCouponError(null);
       //console.log("useee", couponValue);
       axios
-        .post(useCoupon, { code: couponValue, email: personalInformation?.email })
+        .post(useCoupon, {
+          code: couponValue,
+          email: personalInformation?.email,
+        })
         .then((res) => {
           setCouponAPIResponse(res);
 
@@ -163,9 +200,20 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
     // return false;
     setLoading(true);
     let body = {
-      amount: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
+      amount: (
+        Number(price) +
+        (Number(price) - Number(discountPrice)) * 0.05 -
+        Number(discountPrice) +
+        Number(addOnTwoHundred) +
+        Number(addOnFifty)
+      ).toFixed(2),
       totals: {
-        subtotal: ((Number(price)) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
+        subtotal: (
+          Number(price) -
+          Number(discountPrice) +
+          Number(addOnTwoHundred) +
+          Number(addOnFifty)
+        ).toFixed(2),
         tax: 0,
         discount: Number(discountPrice).toFixed(2),
         skipTotalsValidation: true,
@@ -174,7 +222,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         {
           name: selectedPlan,
           quantity: 1,
-          linetotal: ((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2),
+          linetotal: (
+            Number(price) +
+            (Number(price) - Number(discountPrice)) * 0.05 -
+            Number(discountPrice) +
+            Number(addOnTwoHundred) +
+            Number(addOnFifty)
+          ).toFixed(2),
         },
       ],
       customer: {
@@ -182,10 +236,13 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         firstName: personalInformation?.firstName,
         lastName: personalInformation?.lastName,
         email: personalInformation?.email,
-        phone: personalInformation?.mobileNumberCode + personalInformation?.mobileNumber,
+        phone:
+          personalInformation?.mobileNumberCode +
+          personalInformation?.mobileNumber,
       },
       billingAddress: {
-        name: personalInformation?.firstName + " " + personalInformation?.lastName,
+        name:
+          personalInformation?.firstName + " " + personalInformation?.lastName,
         address1: deliveryInformation?.address,
         address2: "",
         city: deliveryInformation?.city || "Dubai",
@@ -194,7 +251,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         country: "AE",
       },
       deliveryAddress: {
-        name: personalInformation?.firstName + " " + personalInformation?.lastName,
+        name:
+          personalInformation?.firstName + " " + personalInformation?.lastName,
         address1: deliveryInformation?.address,
         address2: "",
         city: personalInformation?.city || "Dubai",
@@ -214,7 +272,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
           toast.success(res?.data?.doc?.error);
         }
         if (res?.data?.doc?.success == true) {
-          cookies.set("paymentSuccess", true)
+          cookies.set("paymentSuccess", true);
           //console.log("aaaaa", res?.data?.doc?.result?.redirectUrl);
           window.location = res?.data?.doc?.result?.redirectUrl;
           createOrder();
@@ -236,14 +294,26 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
       clientID: clientID,
       plan: {
         planName: mapPlanName(selectedPlan),
-        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ? "Vegetarian" : "N/A",
+        typeOfDiet:
+          selectedPlan == "IndianFusionNonVegetarian"
+            ? "Non Vegetarian"
+            : selectedPlan == "GreenDietVegan"
+            ? "Vegan Diet"
+            : selectedPlan == "GreenDietVegetarian"
+            ? "Vegetarian"
+            : selectedPlan == "IndianFusionVegetarianDiet"
+            ? "Vegetarian"
+            : "N/A",
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
         deliveriesPerWeek: selectedDaysPerWeek.days,
         offDays: selectedDaysPerWeek.days == 7 ? "N/A" : offDays,
         planDuration: selectedDuration.name,
         mealType: mealType?.id?.split("_"),
-        allergies: allergies?.length > 0 ? allergies?.map((a) => a.name)?.join(", ") : "N/A",
+        allergies:
+          allergies?.length > 0
+            ? allergies?.map((a) => a.name)?.join(", ")
+            : "N/A",
         addOns: addOnsArray,
         couponCode: {
           code: couponAPIResponse?.doc?.code,
@@ -254,30 +324,40 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         firstName: personalInformation?.firstName,
         lastName: personalInformation?.lastName,
         email: personalInformation?.email,
-        mobileNumber: personalInformation?.mobileNumberCode + personalInformation?.mobileNumber,
+        mobileNumber:
+          personalInformation?.mobileNumberCode +
+          personalInformation?.mobileNumber,
         nationality: personalInformation?.nationality,
-        dateOfBirth: (new Date(personalInformation?.dateOfBirth)).toDateString(),
+        dateOfBirth: new Date(personalInformation?.dateOfBirth).toDateString(),
       },
       deliveryDetails: {
-        startingDate: (new Date(deliveryInformation?.startingDate).toDateString()),
+        startingDate: new Date(
+          deliveryInformation?.startingDate
+        ).toDateString(),
         city: deliveryInformation?.city,
         address: deliveryInformation?.address,
         apartmentNumber: deliveryInformation?.appartmentNumber,
         accessCode: deliveryInformation?.accessCode || "N/A",
         googleMapsLink: deliveryInformation?.googleLink || "N/A",
-        deliveryInstructions: deliveryInformation?.deliveryInstructions || "N/A",
+        deliveryInstructions:
+          deliveryInformation?.deliveryInstructions || "N/A",
         deliverySlot: deliveryInformation?.deliverySlot,
         price: Number(price),
-        totalPrice: Number(((Number(price) + (Number(price) - Number(discountPrice)) * 0.05) - Number(discountPrice) + Number(addOnTwoHundred) + Number(addOnFifty)).toFixed(2)),
-        discountPrice: Number((discountPrice).toFixed(2)),
+        totalPrice: Number(
+          (
+            Number(price) +
+            (Number(price) - Number(discountPrice)) * 0.05 -
+            Number(discountPrice) +
+            Number(addOnTwoHundred) +
+            Number(addOnFifty)
+          ).toFixed(2)
+        ),
+        discountPrice: Number(discountPrice.toFixed(2)),
       },
     };
     console.log("orderDetail", body);
     // return false
-    cookies.set(
-      "orderDetail",
-      JSON.stringify(body)
-    );
+    cookies.set("orderDetail", JSON.stringify(body));
     // axios
     //   .post(vmealsOrder, body)
     //   .then((res) => {
@@ -290,42 +370,54 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   };
 
   const saveInfo = (data) => {
-    let client_id = uuid()
-    setClientID(client_id)
+    let client_id = uuid();
+    setClientID(client_id);
     // console.log("personalInformation", personalInformation);
-    setSentInfo(true)
+    setSentInfo(true);
     let body = {
       clientID: client_id,
       plan: {
         planName: mapPlanName(selectedPlan),
-        typeOfDiet: selectedPlan == "IndianFusionNonVegetarian" ? "Non Vegetarian" : selectedPlan == "GreenDietVegan" ? "Vegan Diet" : selectedPlan == "GreenDietVegetarian" ? "Vegetarian" : selectedPlan == "IndianFusionVegetarianDiet" ? "Vegetarian" : "N/A",
+        typeOfDiet:
+          selectedPlan == "IndianFusionNonVegetarian"
+            ? "Non Vegetarian"
+            : selectedPlan == "GreenDietVegan"
+            ? "Vegan Diet"
+            : selectedPlan == "GreenDietVegetarian"
+            ? "Vegetarian"
+            : selectedPlan == "IndianFusionVegetarianDiet"
+            ? "Vegetarian"
+            : "N/A",
         portionSize:
           selectedPortion.name + " | " + selectedPortion.caloriesRange,
         deliveriesPerWeek: selectedDaysPerWeek.days,
         offDays: offDays,
         planDuration: selectedDuration.name,
         mealType: mealType?.id?.split("_"),
-        allergies: allergies?.length > 0 ? allergies?.map((a) => a.name)?.join(", ") : "N/A",
+        allergies:
+          allergies?.length > 0
+            ? allergies?.map((a) => a.name)?.join(", ")
+            : "N/A",
         addOns: addOnsArray,
         couponCode: {
           code: couponAPIResponse?.doc?.code,
           percentageOff: couponAPIResponse?.doc?.discountPercentage || 0 + "%",
         },
       },
-      personalInfo: data
-    }
+      personalInfo: data,
+    };
     axios
-    .post(vmealsOrderForm, body)
-    .then((res) => {
-      // setOrderAPIResponse(res);
-      return;
-    })
-    .catch((err) => {
-      //console.log("ERROR", err);
-      return false;
-    });
-    console.log("client_id", client_id)
-  }
+      .post(vmealsOrderForm, body)
+      .then((res) => {
+        // setOrderAPIResponse(res);
+        return;
+      })
+      .catch((err) => {
+        //console.log("ERROR", err);
+        return false;
+      });
+    console.log("client_id", client_id);
+  };
   //console.log("Personal Information", personalInformation)
 
   const getCustomizeActiveClass = (selected, checked, type) => {
@@ -340,8 +432,8 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
   };
 
   useEffect(() => {
-    setTotalPrice()
-  })
+    setTotalPrice();
+  });
   // console.log("aaaaaaaaaaaaa", CutleryData?.Cutlery?.find(c => c.name == selectedDuration?.name)?.deliveriesPerWeek?.find(dpw => dpw.days == selectedDaysPerWeek?.days)?.mealType?.find(m => m.id == mealType?.id)?.price  )
   //console.log("optionsoptions", price, mealType, PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
   //?.portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
@@ -352,8 +444,7 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
         {/* code testing */}
         <Steps step={step} setStep={setStep} />
         {/* code testing ended */}
-        {step == 1 &&
-
+        {step == 1 && (
           <div className="grid grid-cols-12 gap-8  mt-10 lg:mt-20   ">
             <div className="   col-span-12  lg:col-span-6  ">
               <h1 className="  text-base  sm:text-2xl  2xl:text-4xl f-f-li  captalize text-green tracking-[1px] lg:tracking-[0.22em]  text-center lg:text-left  md:leading-[56px] uppercase ">
@@ -370,7 +461,10 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     </h3>
                   </li>
                   <li className="text-right ml-auto ">
-                    <a href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`} target="_blank">
+                    <a
+                      href={`${process.env.NEXT_PUBLIC_BASE_URL}${weeklyMenu?.url}`}
+                      target="_blank"
+                    >
                       <button className="green-gradiant-2 shadow-lg f-f-b text-sm md:text-base 2xl:text-lg text-white   w-[136px]  h-[49px] md:w-[182px]  md:h-[60px] 2xl:h-[79px]  2xl:w-[219px]  rounded-full  ">
                         <ul className="inline-flex">
                           <li>
@@ -391,78 +485,153 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   selectedPlan == "GreenDietVegan" ||
                   selectedPlan == "IndianFusionVegetarianDiet" ||
                   selectedPlan == "GreenDietVegetarian") && (
-                    <>
+                  <>
+                    <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                      Choose your type of diet
+                    </h3>
 
-                      <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
-                        Choose your type of diet
-                      </h3>
-
-                      <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                        <div className="   col-span-6 ">
-
-                          <button className={`${selectedPlan == "GreenDietVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `} onClick={() => {
-                            setSelectedPlan(selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet");
-                            let select = selectedPlan == "GreenDietVegan" ? "GreenDietVegetarian" : "IndianFusionVegetarianDiet"
+                    <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
+                      <div className="   col-span-6 ">
+                        <button
+                          className={`${
+                            selectedPlan == "GreenDietVegetarian" ||
+                            selectedPlan == "IndianFusionVegetarianDiet"
+                              ? "cusntn"
+                              : ""
+                          } w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
+                          onClick={() => {
+                            setSelectedPlan(
+                              selectedPlan == "GreenDietVegan"
+                                ? "GreenDietVegetarian"
+                                : "IndianFusionVegetarianDiet"
+                            );
+                            let select =
+                              selectedPlan == "GreenDietVegan"
+                                ? "GreenDietVegetarian"
+                                : "IndianFusionVegetarianDiet";
                             // setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-                            setSelectedPortion(PlanData[select]?.portions[0])
-                            setSelectedDuration(PlanData[select]?.portions[0]?.planDuration[0])
-                            setSelectedDaysPerWeek(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
-                            setMealType(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0])
-                            setPrice(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
-                            setCutlery(CutleryData[selectedDuration.name])
-                            setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
-                              id: i,
-                              name: a
-                            })))
-                          }}>
-                            <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
-                              Vegetarian Diet
-                            </h3>
-                          </button>
-                        </div>
-
-                        <div className="   col-span-6  ">
-                          <button className={`${selectedPlan == "GreenDietVegan" || selectedPlan == "IndianFusionNonVegetarian" ? "cusntn" : ""} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
-                            onClick={() => {
-                              let select = selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian"
-                              setSelectedPlan(selectedPlan == "GreenDietVegetarian" ? "GreenDietVegan" : "IndianFusionNonVegetarian");
-                              // setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-                              setSelectedPortion(PlanData[select]?.portions[0])
-                              setSelectedDuration(PlanData[select]?.portions[0]?.planDuration[0])
-                              setSelectedDaysPerWeek(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0])
-                              setCutlery(CutleryData[PlanData[select]?.portions[0]?.planDuration[0]?.name])
-                              setMealType(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0])
-                              setPrice(PlanData[select]?.portions[0]?.planDuration[0]?.deliveriesPerWeek[0]?.mealType[0]?.price)
-                              setOptions(PlanData[selectedPlan]?.allergies?.map((a, i) => ({
-                                id: i,
-                                name: a
-                              })))
-                            }}
-                          >
-                            <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
-                              {selectedPlan == "IndianFusionNonVegetarian" || selectedPlan == "IndianFusionVegetarianDiet" ? "Non-Vegetarian" : "Vegan"} Diet
-                            </h3>
-                          </button>
-                        </div>
-
-
+                            setSelectedPortion(PlanData[select]?.portions[0]);
+                            setSelectedDuration(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                            );
+                            setSelectedDaysPerWeek(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                                ?.deliveriesPerWeek[0]
+                            );
+                            setMealType(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                                ?.deliveriesPerWeek[0]?.mealType[0]
+                            );
+                            setPrice(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                                ?.deliveriesPerWeek[0]?.mealType[0]?.price
+                            );
+                            setCutlery(CutleryData[selectedDuration.name]);
+                            setOptions(
+                              PlanData[selectedPlan]?.allergies?.map(
+                                (a, i) => ({
+                                  id: i,
+                                  name: a,
+                                })
+                              )
+                            );
+                          }}
+                        >
+                          <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
+                            Vegetarian Diet
+                          </h3>
+                        </button>
                       </div>
 
-                    </>
-                  )}
+                      <div className="   col-span-6  ">
+                        <button
+                          className={`${
+                            selectedPlan == "GreenDietVegan" ||
+                            selectedPlan == "IndianFusionNonVegetarian"
+                              ? "cusntn"
+                              : ""
+                          } w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
+                          onClick={() => {
+                            let select =
+                              selectedPlan == "GreenDietVegetarian"
+                                ? "GreenDietVegan"
+                                : "IndianFusionNonVegetarian";
+                            setSelectedPlan(
+                              selectedPlan == "GreenDietVegetarian"
+                                ? "GreenDietVegan"
+                                : "IndianFusionNonVegetarian"
+                            );
+                            // setPrice(PlanData[select]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                            setSelectedPortion(PlanData[select]?.portions[0]);
+                            setSelectedDuration(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                            );
+                            setSelectedDaysPerWeek(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                                ?.deliveriesPerWeek[0]
+                            );
+                            setCutlery(
+                              CutleryData[
+                                PlanData[select]?.portions[0]?.planDuration[0]
+                                  ?.name
+                              ]
+                            );
+                            setMealType(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                                ?.deliveriesPerWeek[0]?.mealType[0]
+                            );
+                            setPrice(
+                              PlanData[select]?.portions[0]?.planDuration[0]
+                                ?.deliveriesPerWeek[0]?.mealType[0]?.price
+                            );
+                            setOptions(
+                              PlanData[selectedPlan]?.allergies?.map(
+                                (a, i) => ({
+                                  id: i,
+                                  name: a,
+                                })
+                              )
+                            );
+                          }}
+                        >
+                          <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
+                            {selectedPlan == "IndianFusionNonVegetarian" ||
+                            selectedPlan == "IndianFusionVegetarianDiet"
+                              ? "Non-Vegetarian"
+                              : "Vegan"}{" "}
+                            Diet
+                          </h3>
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                )}
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your portion size
                 </h3>
 
                 <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                  {PlanData[selectedPlan]?.portions?.map(portion => (
+                  {PlanData[selectedPlan]?.portions?.map((portion) => (
                     <div className="   col-span-12  md:col-span-6  ">
                       <button
-                        className={`${getCustomizeActiveClass(selectedPortion, portion, "id")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
+                        className={`${getCustomizeActiveClass(
+                          selectedPortion,
+                          portion,
+                          "id"
+                        )} w-full h-[47px] md:h-[59px] 2xl:h-[68px]  pt-1 `}
                         onClick={() => {
-                          setSelectedPortion(portion)
-                          setPrice(portion?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
-                        }}>
+                          setSelectedPortion(portion);
+                          setPrice(
+                            portion?.planDuration
+                              ?.find((p) => p.name == selectedDuration.name)
+                              ?.deliveriesPerWeek.find(
+                                (d) => d.days == selectedDaysPerWeek.days
+                              )
+                              ?.mealType?.find((m) => m.id == mealType.id)
+                              ?.price
+                          );
+                        }}
+                      >
                         <ul>
                           <li>
                             <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
@@ -485,16 +654,24 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   Choose plan duration
                 </h3>
                 <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                  {selectedPortion?.planDuration?.map(duration => (
+                  {selectedPortion?.planDuration?.map((duration) => (
                     <div className="   col-span-6  ">
-
                       <button
-                        className={` ${getCustomizeActiveClass(selectedDuration, duration, "name")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
+                        className={` ${getCustomizeActiveClass(
+                          selectedDuration,
+                          duration,
+                          "name"
+                        )} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                         onClick={() => {
-                          setSelectedDuration(duration)
-                          setCutlery(CutleryData[duration?.name])
+                          setSelectedDuration(duration);
+                          setCutlery(CutleryData[duration?.name]);
 
-                          setPrice(duration?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                          setPrice(
+                            duration?.deliveriesPerWeek
+                              .find((d) => d.days == selectedDaysPerWeek.days)
+                              ?.mealType?.find((m) => m.id == mealType.id)
+                              ?.price
+                          );
                         }}
                       >
                         <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
@@ -506,21 +683,40 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   ))}
                 </div>
 
-
-
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose deliveries per week{" "}
                 </h3>
                 <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                  {selectedDuration?.deliveriesPerWeek?.map(dpw => (
+                  {selectedDuration?.deliveriesPerWeek?.map((dpw) => (
                     <div className="   col-span-4  ">
                       <button
-                        className={`${getCustomizeActiveClass(selectedDaysPerWeek, dpw, "days")} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
+                        className={`${getCustomizeActiveClass(
+                          selectedDaysPerWeek,
+                          dpw,
+                          "days"
+                        )} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                         onClick={() => {
-                          setSelectedDaysPerWeek(dpw)
+                          setSelectedDaysPerWeek(dpw);
                           // console.log("dpw", dpw)
-                          setOffDays(dpw?.days == 5 ? "Friday - Saturday" : dpw?.days == 6 ? "Friday" : "N/A")
-                          setPrice(PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == dpw.days)?.mealType?.find((m) => m.id == mealType.id)?.price)
+                          setOffDays(
+                            dpw?.days == 5
+                              ? "Friday - Saturday"
+                              : dpw?.days == 6
+                              ? "Friday"
+                              : "N/A"
+                          );
+                          setPrice(
+                            PlanData[selectedPlan]?.portions
+                              ?.find((p) => p.name == selectedPortion.name)
+                              ?.planDuration?.find(
+                                (p) => p.name == selectedDuration.name
+                              )
+                              ?.deliveriesPerWeek.find(
+                                (d) => d.days == dpw.days
+                              )
+                              ?.mealType?.find((m) => m.id == mealType.id)
+                              ?.price
+                          );
                           // setPrice(dpw?.mealType?.find((m) => m.id == mealType.id)?.price)
                         }}
                       >
@@ -531,62 +727,151 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                     </div>
                   ))}
                 </div>
-                {selectedDaysPerWeek.days != 7 &&
+                {selectedDaysPerWeek.days != 7 && (
                   <>
                     <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                       Choose your off days(s){" "}
                     </h3>
                     <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                      <div className="   col-span-6  ">
-                        <button className={` ${offDays == "Friday" || offDays == "Friday - Saturday" ? "cusntn" : ""}  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
+                      <div
+                        className={`${
+                          offDays == "Friday" ||
+                          offDays == "Saturday" ||
+                          offDays == "Sunday"
+                            ? "col-span-4"
+                            : "col-span-6"
+                        }`}
+                      >
+                        <button
+                          className={` ${
+                            offDays == "Friday" ||
+                            offDays == "Friday - Saturday"
+                              ? "cusntn"
+                              : ""
+                          }  w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                           onClick={() => {
-                            setOffDays(selectedDaysPerWeek.days == 6 ? "Friday" : "Friday - Saturday");
+                            setOffDays(
+                              selectedDaysPerWeek.days == 6
+                                ? "Friday"
+                                : "Friday - Saturday"
+                            );
                           }}
                         >
                           <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
-                            {selectedDaysPerWeek.days == 6 ? "Friday" : "Friday - Saturday"}
+                            {selectedDaysPerWeek.days == 6
+                              ? "Friday"
+                              : "Friday - Saturday"}
                           </h3>
                         </button>
                       </div>
-                      <div className="   col-span-6  ">
-                        <button className={` ${offDays == "Saturday" || offDays == "Saturday - Sunday" ? "cusntn" : ""}   w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
+                      <div
+                        className={`${
+                          offDays == "Friday" ||
+                          offDays == "Saturday" ||
+                          offDays == "Sunday"
+                            ? "col-span-4"
+                            : "col-span-6"
+                        }`}
+                      >
+                        <button
+                          className={` ${
+                            offDays == "Saturday" ||
+                            offDays == "Saturday - Sunday"
+                              ? "cusntn"
+                              : ""
+                          }   w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
                           onClick={() => {
-                            setOffDays(selectedDaysPerWeek.days == 6 ? "Saturday" : "Saturday - Sunday");
+                            setOffDays(
+                              selectedDaysPerWeek.days == 6
+                                ? "Saturday"
+                                : "Saturday - Sunday"
+                            );
                           }}
                         >
                           <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
                             {" "}
-                            {selectedDaysPerWeek.days == 6 ? "Saturday" : "Saturday - Sunday"}
+                            {selectedDaysPerWeek.days == 6
+                              ? "Saturday"
+                              : "Saturday - Sunday"}
                           </h3>
                         </button>
                       </div>
+                      {(offDays == "Friday" ||
+                        offDays == "Saturday" ||
+                        offDays == "Sunday") && (
+                        <div className="   col-span-4  ">
+                          <button
+                            className={`${
+                              offDays == "Sunday" ? "cusntn" : ""
+                            } w-full h-[47px] md:h-[59px] 2xl:h-[68px]`}
+                            onClick={() => {
+                              setOffDays(
+                                selectedDaysPerWeek.days == 6 && "Sunday"
+                              );
+                            }}
+                          >
+                            <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
+                              {" "}
+                              {selectedDaysPerWeek.days == 6 && "Sunday"}
+                            </h3>
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </>
-                }
+                )}
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your meal type
                 </h3>
                 <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
                   {/* new code data started */}
-                  <div className="relative" >
-                    <select id="cars" name="carlist" form="carform" className="text-black f-f-b text-sm 2xl:text-base   pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
+                  <div className="relative">
+                    <select
+                      id="cars"
+                      name="carlist"
+                      form="carform"
+                      className="text-black f-f-b text-sm 2xl:text-base   pl-5 w-full rounded-[20px] h-[47px] md:h-[59px] 2xl:h-[68px]  "
                       onChange={(e) => {
                         //console.log("eeee", selectedDaysPerWeek?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price);
                         setMealType({
                           id: e.target.value?.split?.("|")?.[0],
                           price: e.target.value?.split?.("|")?.[1],
-                          name: e.target.value?.split?.("|")?.[0]?.replaceAll("_", " + ")
+                          name: e.target.value
+                            ?.split?.("|")?.[0]
+                            ?.replaceAll("_", " + "),
                         });
-                        setPrice(PlanData[selectedPlan]?.portions?.find(p => p.name == selectedPortion.name)?.planDuration?.find((p) => p.name == selectedDuration.name)?.deliveriesPerWeek.find((d) => d.days == selectedDaysPerWeek.days)?.mealType?.find((m) => m.id == e.target.value?.split?.("|")?.[0])?.price)
+                        setPrice(
+                          PlanData[selectedPlan]?.portions
+                            ?.find((p) => p.name == selectedPortion.name)
+                            ?.planDuration?.find(
+                              (p) => p.name == selectedDuration.name
+                            )
+                            ?.deliveriesPerWeek.find(
+                              (d) => d.days == selectedDaysPerWeek.days
+                            )
+                            ?.mealType?.find(
+                              (m) => m.id == e.target.value?.split?.("|")?.[0]
+                            )?.price
+                        );
                         // setPrice(e.target.value?.split?.("|")?.[1]);
                       }}
                     >
                       {selectedDaysPerWeek?.mealType?.map((dpw) => (
-                        <option className=" text-center hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
-                          value={`${dpw.id}|${dpw.price}`} selected={mealType.id == dpw.id ? true : dpw.id == "Breakfast_Lunch_Dinner_Snack_Drink" ? true : false}
-                        >{dpw.name}</option>
-
-                      ))};
+                        <option
+                          className=" text-center hover:bg-green md:hover:bg-transparent hover:text-white md:hover:text-black f-f-b  text-xsone lg:text-sm "
+                          value={`${dpw.id}|${dpw.price}`}
+                          selected={
+                            mealType.id == dpw.id
+                              ? true
+                              : dpw.id == "Breakfast_Lunch_Dinner_Snack_Drink"
+                              ? true
+                              : false
+                          }
+                        >
+                          {dpw.name}
+                        </option>
+                      ))}
+                      ;
                     </select>
                     <svg
                       width="36"
@@ -604,12 +889,12 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   </div>
                   {/* new code data end */}
                 </div>
-              
+
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Select your allergies (5 maximum)
                 </h3>
                 {/* nabeel bhai code  */}
-                <div className="relative" >
+                <div className="relative">
                   <Multiselect
                     className="multiselectsetting shadow-xl rounded-[20px] "
                     placeholder={
@@ -662,11 +947,11 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                   </svg>
                 </div>
                 {/* nabeel bhai code ended */}
-                  <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
-               Select your intolerances
+                <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                  Select your intolerances
                 </h3>
                 {/* nabeel bhai code  */}
-                <div className="relative" >
+                <div className="relative">
                   <Multiselect
                     className="multiselectsetting shadow-xl rounded-[20px]  "
                     placeholder={
@@ -717,11 +1002,11 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                       fill="#41A53D"
                     />
                   </svg>
-                </div> 
+                </div>
                 {/* * nabeel bhai code ended */}
                 {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
               </div> */}
-                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
+                <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Add Ons
                 </h3>
 
@@ -763,20 +1048,19 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           Eco-Friendly Cutlery + AED{CutleryData?.Cutlery?.find(c => c.name == selectedDuration?.name)?.deliveriesPerWeek?.find(dpw => dpw.days == selectedDaysPerWeek?.days)?.mealType?.find(m => m.id == mealType?.id)?.price}{" "}
                         </label>
                       </li> */}
-                             <li className=" mt-4">
+                      <li className=" mt-4">
                         <input
                           type="checkbox"
                           id="vehicle2"
                           name="vehicle2"
                           value="Car"
                           className=" checkinpu "
-              
                         />
                         <label
                           for="vehicle2"
                           className="text-black f-f-b text-sm 2xl:text-base ml-4 relative top-[-8px]"
                         >
-                          Eco-Friendly Cutlery  + AED50.00
+                          Eco-Friendly Cutlery + AED50.00
                         </label>
                       </li>
                       <li className=" mt-4">
@@ -786,19 +1070,21 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                           name="vehicle2"
                           value="Car"
                           className=" checkinpu "
-                          checked={
-                            addOnTwoHundred > 0 ? true : false
-                          }
+                          checked={addOnTwoHundred > 0 ? true : false}
                           onChange={(e) => {
                             if (e.target.checked) {
                               setAddOnTwoHundred(200);
-                              setAddOnsArray([...addOnsArray, "Thermal Bags (x2)"])
+                              setAddOnsArray([
+                                ...addOnsArray,
+                                "Thermal Bags (x2)",
+                              ]);
                               // setPrice(
                               //   Number(price) + 200
                               // );
                             } else {
                               setAddOnTwoHundred(0);
-                              let index = addOnsArray.indexOf("Thermal Bags (x2)");
+                              let index =
+                                addOnsArray.indexOf("Thermal Bags (x2)");
                               if (index > -1) {
                                 addOnsArray.splice(index, 1);
                               }
@@ -823,62 +1109,104 @@ export default function Customizeplan({ heading, description, selectedPlan, setS
                 <div className="grid grid-cols-12 gap-8  md:mt-8   ">
                   <div className="   col-span-6 xl:col-span-6 ">
                     <ul className=" inline-flex mt-7  ">
-                      <li><h3 className=" text-black text-2xl f-f-b ">Total:</h3></li>
+                      <li>
+                        <h3 className=" text-black text-2xl f-f-b ">Total:</h3>
+                      </li>
                       <li className=" ml-4 text-right ">
-                        <h3 className=" text-black text-base md:text-2xl f-f-b ">AED{(Number(price)).toFixed(2)}</h3>
-                        <h3 className="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">Price Exclusive of VAT</h3>
+                        <h3 className=" text-black text-base md:text-2xl f-f-b ">
+                          AED{Number(price).toFixed(2)}
+                        </h3>
+                        <h3 className="text-green f-f-r text-xsone md:text-sm 2xl:text-tiny -mt-2 ">
+                          Price Exclusive of VAT
+                        </h3>
                       </li>
                     </ul>
                   </div>
                   <div className="   col-span-6 xl:col-span-6 ">
                     <div className="text-center">
-                      <button className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8" onClick={() => {
-                        setPlanInformationData()
-                        scrollTo(0, 500);
-                        setStep(2)
-                      }}>
+                      <button
+                        className=" text-sm sm:text-tiny 2xl:text-lg f-f-b text-white sub rounded-full px-[47px] sm:px-[50px] py-[15px] sm:py-[17px] 2xl:w-[219px] 2xl:h-[79px] mt-5 2xl:mt-8"
+                        onClick={() => {
+                          setPlanInformationData();
+                          scrollTo(0, 500);
+                          setStep(2);
+                        }}
+                      >
                         Next
                       </button>
                     </div>
                   </div>
                 </div>
-
-
               </div>
             </div>
           </div>
-        }
+        )}
       </div>
-      {step == 2 &&
-        <CustomizeplanPersonalInformation step={step} setStep={setStep} setPersonalInformation={setPersonalInformation} personalInformation={personalInformation} testimonialsData={testimonialsData} saveInfo={saveInfo} sentInfo={sentInfo} />
-      }
-      {step == 3 &&
-        <CustomizeplanDeliveryInformation step={step} setStep={setStep} setDeliveryInformation={setDeliveryInformation} planInformation={planInformation} price={price} deliveryInformation={deliveryInformation} addOnFifty={addOnFifty} addOnTwoHundred={addOnTwoHundred} testimonialsData={testimonialsData} />
-      }
-      {step == 4 &&
-        <CustomizeplanOrderSummary step={step} setStep={setStep} deliveryInformation={deliveryInformation} personalInformation={personalInformation} planInformation={planInformation} price={price} applyCoupun={applyCoupun} setCouponValue={setCouponValue} couponError={couponError} checkout={checkout} discountPercentage={discountPercentage} discountPrice={discountPrice} addOnTwoHundred={addOnTwoHundred} addOnFifty={addOnFifty} coupunApplied={coupunApplied} />
-      }
+      {step == 2 && (
+        <CustomizeplanPersonalInformation
+          step={step}
+          setStep={setStep}
+          setPersonalInformation={setPersonalInformation}
+          personalInformation={personalInformation}
+          testimonialsData={testimonialsData}
+          saveInfo={saveInfo}
+          sentInfo={sentInfo}
+        />
+      )}
+      {step == 3 && (
+        <CustomizeplanDeliveryInformation
+          step={step}
+          setStep={setStep}
+          setDeliveryInformation={setDeliveryInformation}
+          planInformation={planInformation}
+          price={price}
+          deliveryInformation={deliveryInformation}
+          addOnFifty={addOnFifty}
+          addOnTwoHundred={addOnTwoHundred}
+          testimonialsData={testimonialsData}
+        />
+      )}
+      {step == 4 && (
+        <CustomizeplanOrderSummary
+          step={step}
+          setStep={setStep}
+          deliveryInformation={deliveryInformation}
+          personalInformation={personalInformation}
+          planInformation={planInformation}
+          price={price}
+          applyCoupun={applyCoupun}
+          setCouponValue={setCouponValue}
+          couponError={couponError}
+          checkout={checkout}
+          discountPercentage={discountPercentage}
+          discountPrice={discountPrice}
+          addOnTwoHundred={addOnTwoHundred}
+          addOnFifty={addOnFifty}
+          coupunApplied={coupunApplied}
+        />
+      )}
     </>
   );
 }
 
 export async function getServerSideProps() {
   try {
-
-    let contentData = await fetch(vmealsPages)
+    let contentData = await fetch(vmealsPages);
     let data = await contentData.json();
 
-    let mealPlansFaqsData = await fetch(mealPlansFaqs)
-    let faqData = await mealPlansFaqsData.json()
+    let mealPlansFaqsData = await fetch(mealPlansFaqs);
+    let faqData = await mealPlansFaqsData.json();
     //console.log("slider bar ->>", data)
 
     return {
-      props: { contentData: { ...data?.docs }, mealPlansFaqsData: { ...faqData?.docs } }, // will be passed to the page component as props
-    }
+      props: {
+        contentData: { ...data?.docs },
+        mealPlansFaqsData: { ...faqData?.docs },
+      }, // will be passed to the page component as props
+    };
   } catch (error) {
     return {
-      props: { contentData: [] }
-    }
+      props: { contentData: [] },
+    };
   }
-
 }
