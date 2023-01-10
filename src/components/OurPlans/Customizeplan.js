@@ -105,14 +105,6 @@ export default function Customizeplan({
   // const [step, setStep] = React.useState(1);
   const [aboutus, setaboutus] = React.useState(false);
   const [maximum, setmaximum] = React.useState(false);
-  const [mealTypeList, setMealTypeList] = useState([
-    "Breakfast",
-    "Lunch",
-    "Dinner",
-    "Snack",
-    "Drink",
-  ]);
-  const [selectedMealList, setSelectedMealList] = useState(["Breakfast"]);
 
   const setAlerg = (data) => {
     //console.log("hhhhhhhhhhhhhhhh", data);
@@ -831,42 +823,9 @@ export default function Customizeplan({
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Choose your meal type
                 </h3>
-                <div className="grid grid-cols-12  my-4 border border-green shadow-xl rounded-[20px] bg-white ">
-                  {mealTypeList.map((meal) => (
-                    <div className="   col-span-6  ">
-                      <button
-                        className={`${
-                          selectedMealList[0] == meal ? "cusntn" : ""
-                        } w-full h-[47px] md:h-[59px] 2xl:h-[68px]`}
-                        // {` ${getCustomizeActiveClass(
-                        //   selectedDuration,
-                        //   duration,
-                        //   "name"
-                        // )} w-full h-[47px] md:h-[59px] 2xl:h-[68px]   `}
-                        // onClick={()=> {selectedMealList.push()}}
-                        // () => {
-                        // setSelectedDuration(duration);
-                        // setCutlery(CutleryData[duration?.name]);
-
-                        //   setPrice(
-                        //     duration?.deliveriesPerWeek
-                        //       .find((d) => d.days == selectedDaysPerWeek.days)
-                        //       ?.mealType?.find((m) => m.id == mealType.id)
-                        //       ?.price
-                        //   );
-                        // }}
-                      >
-                        <h3 className=" text-black f-f-b text-sm 2xl:text-base ">
-                          {" "}
-                          {meal}
-                        </h3>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-                {/* <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white"> */}
-                {/* new code data started */}
-                {/* <div className="relative">
+                <div className=" my-4 border border-green shadow-xl rounded-[20px] bg-white">
+                  {/* new code data started */}
+                  <div className="relative">
                     <select
                       id="cars"
                       name="carlist"
@@ -927,9 +886,9 @@ export default function Customizeplan({
                         fill="#41A53D"
                       />
                     </svg>
-                  </div> */}
-                {/* new code data end */}
-                {/* </div> */}
+                  </div>
+                  {/* new code data end */}
+                </div>
 
                 <h3 className=" f-f-b text-black  text-lg 2xl:text-2xl mt-8 ">
                   Select your allergies (5 maximum)
