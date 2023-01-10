@@ -94,7 +94,7 @@ const RTFMapping = ({ data }) => {
 				} else if (d.type == "upload") {
 					return (
 						<img key={i}
-							src={`${process.env.NEXT_PUBLIC_BASE_URL}${d.value.url}`}
+							src={`${process.env.NEXT_PUBLIC_BASE_URL_IMAGE}${d.value.url}`}
 							width={d.value.width}
 							height={d.value.height}
 							style={{ width: "97%",margin: '2em 0' }}
@@ -141,7 +141,48 @@ const RTFMapping = ({ data }) => {
 							})}
 						</h1>
 					);
-				} else if (d.type == "p") {
+				} else if (d.type == "h2") {
+					return (
+						<h2 key={i}  className="text-center lg:text-left f-f-r text-green  my-4 text-lg md:text-xl  md:leading-[23px]">
+							{d.children.map((child) => {
+								if (child.bold) {
+									return (
+										<span>
+											<b>{child.text}</b>
+										</span>
+									);
+								} else if (child.italic) {
+									return (
+										<span>
+											<i>{child.text}</i>
+										</span>
+									);
+								} else if (child.underline) {
+									return (
+										<span>
+											<u>{child.text}</u>
+										</span>
+									);
+								} else if (child.strikethrough) {
+									return (
+										<span>
+											<s>{child.text}</s>
+										</span>
+									);
+                                } else if (child.type == 'link') {
+									return (
+										<span>
+											<a href={child.url} target={child.newTab ? "_blank" : ""}
+                                            rel={child?.fields?.rel?.length > 0 && child?.fields?.rel[0]}>{child.children[0]?.text}</a>
+										</span>
+									);
+								} else {
+									return child.text;
+								}
+							})}
+						</h2>
+					);
+				}else if (d.type == "p") {
 					return (
 						<p key={i} className="text-center lg:text-left f-f-r text-green  my-4 text-lg md:text-xl  md:leading-[23px]">
 							{d.children.map((child) => {
